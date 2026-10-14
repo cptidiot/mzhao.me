@@ -260,8 +260,8 @@
   ],
   "d": "旧金山Richmond区的中式烧烤小店，以羊肉串、鸡心、鱿鱼串等把把烧闻名，另有饺子和担担面，店面小但味道地道，口碑佳（4.6分）。",
   "u": "https://www.google.com/maps/search/?api=1&query=Taste%20of%20Old%20Street%20%E8%80%81%E8%A1%97%E6%8A%8A%E6%8A%8A%E7%83%A7%20San%20Francisco",
-  "r": "peninsula",
-  "a": "Palo Alto"
+  "r": "san_francisco",
+  "a": "San Francisco"
  },
  {
   "n": "Qian Xun Kabab Bar",
@@ -403,8 +403,8 @@
   ],
   "d": "Cupertino的川味中餐厅，以手工拉面、担担面和四川风味牛肉面著称，服务热情、分量实在（4.2星）。",
   "u": "https://www.google.com/maps/search/?api=1&query=C.Q.%20Taste%20Cupertino",
-  "r": "peninsula",
-  "a": "Palo Alto"
+  "r": "south_bay",
+  "a": "Cupertino"
  },
  {
   "n": "Caffe Stellato",
@@ -492,7 +492,7 @@
   "d": "加州Monterey Park的东北烧烤中餐厅（4.0星，156条评价）；以羊肉串、东北烤串、锅包肉和烤茄子等深夜烧烤菜品闻名，营业至凌晨2点。",
   "u": "https://www.google.com/maps/search/?api=1&query=Ningjie%20Jinzhou%20BBQ%20Monterey%20Park",
   "r": "other",
-  "a": "Monterey"
+  "a": "Los Angeles Area"
  },
  {
   "n": "Sekoya",
@@ -786,8 +786,8 @@
   "s": [
    "want_to_go"
   ],
-  "d": "日式连锁餐馆（4.5星，1791条评价），供应寿司、便当、天妇罗等经典日餐，价格公道、午餐性价比高；旧金山Sutter St店（圣何塞亦有分店）。",
-  "u": "https://www.google.com/maps/search/?api=1&query=Sanraku%20San%20Jose%2C%20CA",
+  "d": "日式连锁餐馆，供应寿司、便当、天妇罗等经典日餐，价格公道、午餐性价比高；圣何塞店在Westfield Oakridge，旧金山另有Sutter St和Metreon分店。",
+  "u": "https://www.google.com/maps/search/?api=1&query=Sanraku%20Westfield%20Oakridge%20San%20Jose",
   "r": "south_bay",
   "a": "San Jose"
  },
@@ -952,7 +952,7 @@
    "want_to_go"
   ],
   "d": "",
-  "u": "https://www.google.com/maps/search/?api=1&query=Daeho%20Kalbijim%20San%20Francisco",
+  "u": "https://www.google.com/maps/search/?api=1&query=Daeho%20Kalbijim%20Milpitas",
   "r": "south_bay",
   "a": "Milpitas"
  },
@@ -1436,9 +1436,9 @@
    "want_to_go"
   ],
   "d": "加州Palo Alto的日式定食餐厅（4.1星，1205条评价）；以日式定食、鸡排、寿喜烧定食和平板自助点餐为特色；该连锁在湾区另有Cupertino、Hillsdale分店。",
-  "u": "https://www.google.com/maps/search/?api=1&query=YAYOI%20San%20Jose%2C%20CA",
-  "r": "south_bay",
-  "a": "San Jose"
+  "u": "https://www.google.com/maps/search/?api=1&query=YAYOI%20Palo%20Alto",
+  "r": "peninsula",
+  "a": "Palo Alto"
  },
  {
   "n": "Poke Koma",
@@ -1546,9 +1546,9 @@
    "want_to_go"
   ],
   "d": "纽约曼哈顿东20街的人气连锁寿司店（4.5星，2084条评价）；以新鲜的传统寿司、手卷、清酒和价格含小费的亲民omakase套餐著称，堂食外卖品质都稳定。",
-  "u": "https://www.google.com/maps/search/?api=1&query=SUGARFISH%20by%20sushi%20nozawa%20San%20Jose%2C%20CA",
-  "r": "south_bay",
-  "a": "San Jose"
+  "u": "https://www.google.com/maps/search/?api=1&query=SUGARFISH%20by%20sushi%20nozawa%20Flatiron%20New%20York",
+  "r": "new_york",
+  "a": "Flatiron"
  },
  {
   "n": "湘川小厨",
