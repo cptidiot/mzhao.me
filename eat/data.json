@@ -16,7 +16,7 @@
   "s": [
    "5star"
   ],
-  "d": "你收藏在 5star 的中餐馆。",
+  "d": "",
   "u": "https://www.google.com/maps/search/?api=1&query=%E9%A6%99%E5%B0%8F%E9%A6%86%20%C2%B7%20Shang%20Cafe",
   "r": "south_bay",
   "a": ""
@@ -27,7 +27,7 @@
   "s": [
    "5star"
   ],
-  "d": "你收藏在 5star 的 Santa Clara 餐厅。",
+  "d": "",
   "u": "https://www.google.com/maps/search/?api=1&query=%E5%A1%94%E9%87%8C%E6%9C%A8%E9%A4%90%E5%8E%85%20%C2%B7%20Tarim%20Garden%20Santa%20Clara",
   "r": "south_bay",
   "a": "Santa Clara"
@@ -269,7 +269,7 @@
   "s": [
    "5star"
   ],
-  "d": "以东北式中式烧烤闻名的中餐厅（牛羊肉串、锡纸蒜蓉蛤蜊粉丝等），评价两极（3.4分）；注意：地图上该店实际位于南加州El Monte，并非湾区。",
+  "d": "南加州El Monte的东北式中式烧烤（牛羊肉串、锡纸蒜蓉蛤蜊粉丝等），评价两极（3.4分）。",
   "u": "https://www.google.com/maps/search/?api=1&query=Qian%20Xun%20Kabab%20Bar%20El%20Monte",
   "r": "other",
   "a": "Los Angeles Area"
@@ -434,7 +434,7 @@
   "s": [
    "5star"
   ],
-  "d": "位于意大利Baronissi（萨莱诺省）的比萨店（4.5星，804条评价）；以正宗那不勒斯披萨闻名，面团轻盈、口味地道，食客评价极高；注意：非湾区店，导入时需确认用户是否要收录意大利店。",
+  "d": "位于意大利Baronissi（萨莱诺省）的比萨店（4.5星，804条评价）；以正宗那不勒斯披萨闻名，面团轻盈、口味地道，食客评价极高。",
   "u": "https://www.google.com/maps/search/?api=1&query=Pizzeria%20Il%20Corallo%20Baronissi",
   "r": "other",
   "a": "Italy"
@@ -445,7 +445,7 @@
   "s": [
    "5star"
   ],
-  "d": "位于意大利Siano（萨莱诺省）的家庭式意式餐馆兼比萨店（4.4星）；以披萨、前菜和意面闻名，分量大、服务快，氛围温馨；非湾区店，导入时需确认。",
+  "d": "位于意大利Siano（萨莱诺省）的家庭式意式餐馆兼比萨店（4.4星）；以披萨、前菜和意面闻名，分量大、服务快，氛围温馨。",
   "u": "https://www.google.com/maps/search/?api=1&query=Trattoria%20da%20Mena%20Siano",
   "r": "other",
   "a": "Italy"
@@ -456,7 +456,7 @@
   "s": [
    "5star"
   ],
-  "d": "位于南加州La Puente的甜甜圈店（4.5星，920条评价）；以巨大的甜甜圈造型建筑和得来速通道闻名，甜甜圈便宜新鲜、仅收现金，是当地历史地标级网红店；非湾区。",
+  "d": "位于南加州La Puente的甜甜圈店（4.5星，920条评价）；以巨大的甜甜圈造型建筑和得来速通道闻名，甜甜圈便宜新鲜、仅收现金，是当地历史地标级网红店。",
   "u": "https://www.google.com/maps/search/?api=1&query=The%20Donut%20Hole%20La%20Puente",
   "r": "other",
   "a": "Los Angeles Area"
@@ -687,7 +687,7 @@
   "s": [
    "4star"
   ],
-  "d": "Palo Alto的日式咖啡馆/餐厅，以抹茶拿铁、焙茶芝麻拿铁等饮品和抹茶甜品闻名，也有便当和味噌三文鱼盖饭等简餐，氛围温馨，户外座位受欢迎；页面实际是抹茶咖啡馆而非omakase（4.2星，222条评价）。",
+  "d": "Palo Alto的日式咖啡馆/餐厅，以抹茶拿铁、焙茶芝麻拿铁等饮品和抹茶甜品闻名，也有便当和味噌三文鱼盖饭等简餐，氛围温馨，户外座位受欢迎；现在也有晚餐（4.2星，222条评价）。",
   "u": "https://www.google.com/maps/search/?api=1&query=Yutori%20Palo%20Alto",
   "r": "peninsula",
   "a": "Palo Alto"
@@ -716,11 +716,11 @@
  },
  {
   "n": "Anomaly",
-  "c": "asian",
+  "c": "other",
   "s": [
    "4star"
   ],
-  "d": "旧金山Sutter街的高级fine dining餐厅，以富有创意的品尝菜单(tasting menu)和葡萄酒搭配著称，另提供pescatarian菜单；4.8高分，服务与开放式厨房体验获好评（4.8星，208条评价；Maps未明示韩餐）。",
+  "d": "旧金山Sutter街的高级fine dining餐厅，以富有创意的品尝菜单(tasting menu)和葡萄酒搭配著称，另提供pescatarian菜单；服务与开放式厨房体验获好评（4.8星，208条评价）。",
   "u": "https://www.google.com/maps/search/?api=1&query=Anomaly%20San%20Francisco",
   "r": "san_francisco",
   "a": "San Francisco"
@@ -759,13 +759,13 @@
   "a": "San Francisco"
  },
  {
-  "n": "Hu Din Ji",
+  "n": "Hu Din Ji Shanghai Bistro",
   "c": "chinese",
   "s": [
    "4star"
   ],
-  "d": "Newark（东湾）的上海菜馆（4.3星，522条评价）；以招牌上海生煎包和汤包、小笼包闻名，还有鸭血粉丝汤等本帮菜，适合家庭聚餐；Maps上实际名称为 Hu Din Ji Shanghai Bistro。",
-  "u": "https://www.google.com/maps/search/?api=1&query=Hu%20Din%20Ji%20Newark",
+  "d": "Newark（东湾）的上海菜馆（4.3星，522条评价）；以招牌上海生煎包和汤包、小笼包闻名，还有鸭血粉丝汤等本帮菜，适合家庭聚餐。",
+  "u": "https://www.google.com/maps/search/?api=1&query=Hu%20Din%20Ji%20Shanghai%20Bistro%20Newark",
   "r": "east_bay",
   "a": "Newark"
  },
@@ -792,24 +792,24 @@
   "a": "San Jose"
  },
  {
-  "n": "Mifen",
+  "n": "Mifen101 幺零幺",
   "c": "chinese",
   "s": [
    "want_to_go"
   ],
-  "d": "采用最佳匹配 Mifen101幺零幺（原花溪王，Mountain View，4.4星，564条评价）；主打米粉、香辣牛肉米粉，评价称是湾区最好吃的米粉店之一，小店环境；最佳匹配。",
-  "u": "https://www.google.com/maps/search/?api=1&query=Mifen%20Mountain%20View",
+  "d": "Mountain View的米粉小店（原花溪王，4.4星，564条评价）；主打米粉、香辣牛肉米粉，评价称是湾区最好吃的米粉店之一。",
+  "u": "https://www.google.com/maps/search/?api=1&query=Mifen101%20Mountain%20View",
   "r": "south_bay",
   "a": "Mountain View"
  },
  {
-  "n": "Chuan Yang",
+  "n": "川湘阁 · Chuan Xiang Spicy Cuisine",
   "c": "chinese",
   "s": [
    "want_to_go"
   ],
-  "d": "采用最佳匹配 Chuan Xiang Spicy Cuisine 川湘阁（Newark，4.6星，375条评价）；川湘风味中餐馆，菜量大、味道正宗不油腻，麻婆豆腐、辣椒炒肉、炒青豆等受欢迎，环境雅致有氛围；最佳匹配。",
-  "u": "https://www.google.com/maps/search/?api=1&query=Chuan%20Yang%20Newark",
+  "d": "Newark的川湘风味中餐馆（4.6星，375条评价）；菜量大、味道正宗不油腻，麻婆豆腐、辣椒炒肉、炒青豆等受欢迎，环境雅致有氛围。",
+  "u": "https://www.google.com/maps/search/?api=1&query=Chuan%20Xiang%20Spicy%20Cuisine%20Newark",
   "r": "east_bay",
   "a": "Newark"
  },
@@ -819,7 +819,7 @@
   "s": [
    "want_to_go"
   ],
-  "d": "川菜馆（4.2星，379条评价），以地道四川麻辣菜著称，牙签羊肉、担担面、麻婆豆腐、重庆辣子鸡等受欢迎，价格实惠；注意：Maps上仅此一家，位于南加州Alhambra，非湾区。",
+  "d": "南加州Alhambra的川菜馆（4.2星，379条评价），以地道四川麻辣菜著称，牙签羊肉、担担面、麻婆豆腐、重庆辣子鸡等受欢迎，价格实惠。",
   "u": "https://www.google.com/maps/search/?api=1&query=Xiang%20La%20Hui%20Alhambra",
   "r": "other",
   "a": "Los Angeles Area"
@@ -830,7 +830,7 @@
   "s": [
    "want_to_go"
   ],
-  "d": "川菜馆（4.1星，3833条评价），以川菜与北方菜著称，茶熏鸭、口水鸡、红油水饺等受欢迎，口味正宗偏辣；注意：Maps上只有旧金山唐人街655 Jackson St店，未找到Palo Alto/Sunnyvale分店页面。",
+  "d": "旧金山唐人街的川菜馆（4.1星，3833条评价），以川菜与北方菜著称，茶熏鸭、口水鸡、红油水饺等受欢迎，口味正宗偏辣。",
   "u": "https://www.google.com/maps/search/?api=1&query=Z%26Y%20%E5%BE%A1%E9%A3%9F%E5%9B%AD%20San%20Francisco",
   "r": "san_francisco",
   "a": "Chinatown"
@@ -841,7 +841,7 @@
   "s": [
    "want_to_go"
   ],
-  "d": "高档亚洲融合牛排馆（4.6星，1081条评价），以战斧猪排、和牛炒饭、台湾鸡、金枪鱼脆米等创意菜著称，氛围奢华；注意：Maps上仅此一家，位于圣地亚哥969 Pacific Hwy，旧金山无此店。",
+  "d": "圣地亚哥的高档亚洲融合牛排馆（4.6星，1081条评价），以战斧猪排、和牛炒饭、台湾鸡、金枪鱼脆米等创意菜著称，氛围奢华。",
   "u": "https://www.google.com/maps/search/?api=1&query=Animae%20San%20Diego",
   "r": "other",
   "a": "San Diego"
@@ -885,19 +885,19 @@
   "s": [
    "want_to_go"
   ],
-  "d": "日式拉面兼清酒吧（4.4星，1820条评价），主打坦坦面、素食拉面和丰富清酒，欢乐时光菜单受欢迎，时尚现代氛围、价格偏高；注意：仅有圣地亚哥East Village和Carlsbad两家分店，湾区没有分店。",
+  "d": "圣地亚哥的日式拉面兼清酒吧（4.4星，1820条评价），主打坦坦面、素食拉面和丰富清酒，欢乐时光菜单受欢迎，时尚现代氛围、价格偏高。",
   "u": "https://www.google.com/maps/search/?api=1&query=Beshock%20Ramen%20%26%20Sake%20Bar%20San%20Diego",
   "r": "other",
   "a": "San Diego"
  },
  {
-  "n": "Akira Sushi SF",
+  "n": "Akira Japanese Restaurant",
   "c": "asian",
   "s": [
    "want_to_go"
   ],
-  "d": "日式寿司餐厅（旧金山Bush街，Maps收录名为Akira Japanese Restaurant，4.5星，356条评价）；以新鲜寿司拼盘、寿司套餐和omakase闻名；店面小巧雅致，服务友好，评价称质量好、价格合理。",
-  "u": "https://www.google.com/maps/search/?api=1&query=Akira%20Sushi%20SF%20San%20Francisco",
+  "d": "日式寿司餐厅（旧金山Bush街，4.5星，356条评价）；以新鲜寿司拼盘、寿司套餐和omakase闻名；店面小巧雅致，服务友好，评价称质量好、价格合理。",
+  "u": "https://www.google.com/maps/search/?api=1&query=Akira%20Japanese%20Restaurant%20San%20Francisco",
   "r": "san_francisco",
   "a": "San Francisco"
  },
@@ -1424,7 +1424,7 @@
   "s": [
    "want_to_go"
   ],
-  "d": "拉斯维加斯的日式烤串餐厅（4.6星，194条评价）；以烤鸡肉串（yakitori）、鸡尾串、鸡肉丸子和鸡白汤拉面等传统日式串烧闻名；非湾区/纽约。",
+  "d": "拉斯维加斯的日式烤串餐厅（4.6星，194条评价）；以烤鸡肉串（yakitori）、鸡尾串、鸡肉丸子和鸡白汤拉面等传统日式串烧闻名。",
   "u": "https://www.google.com/maps/search/?api=1&query=Toridokoro%20Raku%20Las%20Vegas",
   "r": "other",
   "a": "Las Vegas"
@@ -1441,13 +1441,13 @@
   "a": "San Jose"
  },
  {
-  "n": "Koma",
+  "n": "Poke Koma",
   "c": "other",
   "s": [
    "want_to_go"
   ],
-  "d": "（Maps最佳匹配：Poke Koma，Alameda）夏威夷poke盖饭柜台店（4.5星，436条评价）；可自定义poke bowl，休闲外卖式小店氛围。",
-  "u": "https://www.google.com/maps/search/?api=1&query=Koma%20Alameda",
+  "d": "Alameda的夏威夷poke盖饭柜台店（4.5星，436条评价）；可自定义poke bowl，休闲外卖式小店氛围。",
+  "u": "https://www.google.com/maps/search/?api=1&query=Poke%20Koma%20Alameda",
   "r": "east_bay",
   "a": "Alameda"
  },
@@ -1556,7 +1556,7 @@
   "s": [
    "manual"
   ],
-  "d": "作者推荐石锅豆腐牛肉、紫苏牛蛙，称饭汤和儿童餐免费，服务贴心；帖子带饭团外卖标签。该地址与历史Grandma’s Kitchen相同，店名关系待核实。",
+  "d": "推荐石锅豆腐牛肉、紫苏牛蛙；饭汤和儿童餐免费，服务贴心。",
   "u": "https://www.google.com/maps/search/?api=1&query=%E6%B9%98%E5%B7%9D%E5%B0%8F%E5%8E%A8%2019541%20Richwood%20Dr%2C%20Cupertino%2C%20CA%2095014",
   "r": "south_bay",
   "a": "Cupertino"
@@ -1567,7 +1567,7 @@
   "s": [
    "manual"
   ],
-  "d": "作者喜欢牛杂菌菇锅、松露野菌拌饭；部分菜偏咸，油焖鸡不够入味，饮料偏甜。",
+  "d": "推荐牛杂菌菇锅、松露野菌拌饭；部分菜偏咸，油焖鸡不够入味，饮料偏甜。",
   "u": "https://www.google.com/maps/search/?api=1&query=Jun%20Bistro%20290%20Barber%20Ct%2C%20Milpitas%2C%20CA%2095035",
   "r": "south_bay",
   "a": "Milpitas"
@@ -1578,7 +1578,7 @@
   "s": [
    "manual"
   ],
-  "d": "作者反映出菜慢、部分菜结账时仍未上齐，服务不足。 作者认可锅包肉、腰花和捞汁千层肚口味，但五道菜等约85分钟，服务混乱，认为不值得等。",
+  "d": "锅包肉、腰花和捞汁千层肚口味不错，但出菜很慢（五道菜等了约85分钟，结账时仍有菜没上齐），服务混乱。",
   "u": "https://www.google.com/maps/place/Sichuan+Bistro/data=!4m6!3m5!1s0x808fbf7738948863:0xc1b8a1a64a6d2dd5",
   "r": "east_bay",
   "a": "Newark"
@@ -1589,7 +1589,7 @@
   "s": [
    "manual"
   ],
-  "d": "作者推荐江西炒米粉、南昌白糖糕、瓦罐汤；建议点单时确认辣度。",
+  "d": "推荐江西炒米粉、南昌白糖糕、瓦罐汤；建议点单时确认辣度。",
   "u": "https://www.google.com/maps/place/J+&+X+Bistro/data=!4m6!3m5!1s0x808581a22294780b:0xafc35eab00d567f7",
   "r": "san_francisco",
   "a": "San Francisco"
@@ -1600,7 +1600,7 @@
   "s": [
    "manual"
   ],
-  "d": "作者连续两天下班后前往，推荐烤鱼和牛蛙干锅，人均40美元以上；建议提前打电话确认供应。",
+  "d": "推荐烤鱼和牛蛙干锅，人均40美元以上；建议提前打电话确认供应。",
   "u": "https://www.google.com/maps/place/General+Pot/data=!4m6!3m5!1s0x808fc76c42e96665:0x7b71b88baa37ae20",
   "r": "east_bay",
   "a": "Fremont"
@@ -1611,7 +1611,7 @@
   "s": [
    "manual"
   ],
-  "d": "作者推荐大酱骨和地三鲜；锅包肉偏软、酱料不均，服务解释不足。标题写Fremont，实际正文及地图地址是Union City。 锅包肉、酱大骨、大拉皮",
+  "d": "推荐大酱骨和地三鲜；锅包肉偏软、酱料不均，服务解释不足。",
   "u": "https://www.google.com/maps/place/Wang+Jia+Wei/data=!4m6!3m5!1s0x808f956234e92489:0xe3ea66ac56c32a11",
   "r": "east_bay",
   "a": "Union City"
@@ -1622,7 +1622,7 @@
   "s": [
    "manual"
   ],
-  "d": "烤串、涮串和炒菜选择多，作者喜欢鸡皮、鸡架、辣子鸡；部分串偏咸，可选少盐少辣，停车方便。",
+  "d": "烤串、涮串和炒菜选择多，推荐鸡皮、鸡架、辣子鸡；部分串偏咸，可选少盐少辣，停车方便。",
   "u": "https://www.google.com/maps/place/BBQ+Factory/data=!4m6!3m5!1s0x808fc77b1bc73b69:0x4a6ec072b6c96722",
   "r": "east_bay",
   "a": "Fremont"
@@ -1677,7 +1677,7 @@
   "s": [
    "manual"
   ],
-  "d": "作者称开业约4个月，人均约150美元。",
+  "d": "人均约150美元。",
   "u": "https://www.google.com/maps/search/?api=1&query=Haru%20325%20Main%20St%2C%20Los%20Altos%2C%20CA%2094022",
   "r": "south_bay",
   "a": "Los Altos"
@@ -1688,7 +1688,7 @@
   "s": [
    "manual"
   ],
-  "d": "作者称新开几天；食材冻住难夹取，服务态度好，建议稍后再去。",
+  "d": "服务态度好；有反馈食材冻住、不好夹取。",
   "u": "https://www.google.com/maps/search/?api=1&query=%E5%BC%A0%E4%BA%AE%E9%BA%BB%E8%BE%A3%E7%83%AB%2039055%20Cedar%20Blvd%20%23108%2C%20Newark%2C%20CA%2094560",
   "r": "east_bay",
   "a": "Newark"
@@ -1710,7 +1710,7 @@
   "s": [
    "manual"
   ],
-  "d": "新开吊龙火锅及烧鸟自助；作者推荐牛肋眼、扇贝。",
+  "d": "新开吊龙火锅及烧鸟自助；推荐牛肋眼、扇贝。",
   "u": "https://www.google.com/maps/search/?api=1&query=Midnight%20Kitchen%20%7C%20Shinya%20Shokudo%202016%20Newpark%20Mall%2C%20Newark%2C%20CA%2094560",
   "r": "east_bay",
   "a": "Newark"
@@ -1809,7 +1809,7 @@
   "s": [
    "manual"
   ],
-  "d": "作者称今年3月新开；口味好但分量小、价格高。",
+  "d": "口味好但分量小、价格高。",
   "u": "https://www.google.com/maps/search/?api=1&query=TBD%20431%20Bush%20St%2C%20San%20Francisco%2C%20CA%2094108",
   "r": "san_francisco",
   "a": "San Francisco"
