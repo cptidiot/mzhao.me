@@ -9,9 +9,6 @@ flying/photos.json. All EXIF metadata, GPS included, is dropped from the
 published files; only the capture date is kept, in the manifest. Photos
 without a capture date go to the end of the wall and show no date.
 
-It also redraws assets/flying.png, the photo-stack icon on the home page,
-from three photos (the first three on the wall, or --icon 05,12,30).
-
 Re-running is incremental: photos already in the manifest (matched by source
 file name) are skipped, new ones are appended, and the wall is re-sorted by
 capture date. Hand-written "alt" and "caption" fields are preserved.
@@ -27,7 +24,7 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFilter, ImageOps
+from PIL import Image, ImageOps
 
 try:
     from pillow_heif import register_heif_opener
@@ -39,7 +36,6 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "flying"
 PHOTOS = OUT / "photos"
 MANIFEST = OUT / "photos.json"
-ICON = ROOT / "assets" / "flying.png"
 EXTS = {".jpg", ".jpeg", ".png", ".heic", ".heif", ".tif", ".tiff", ".webp"}
 SIZES = (600, 1200, 2400)
 
@@ -92,44 +88,9 @@ def process(path, pid):
     }
 
 
-def make_icon(ids):
-    """Three photos fanned like loose prints, on a transparent canvas."""
-    S = 4                                   # supersample, then downscale
-    size = 360 * S
-    pw, ph = 104 * S, 130 * S
-    border = 5 * S
-    canvas = Image.new("RGBA", (size, size), (0, 0, 0, 0))
-    for pid, angle, dx, dy in zip(ids, (-11, 9, -1), (-27, 27, 0), (6, 3, 0)):
-        with Image.open(PHOTOS / f"{pid}-600.jpg") as im:
-            photo = ImageOps.fit(im.convert("RGB"), (pw, ph), Image.LANCZOS)
-        card = Image.new("RGBA", (pw + border * 2, ph + border * 2), (255, 255, 255, 255))
-        card.paste(photo, (border, border))
-        mask = Image.new("L", card.size, 0)
-        ImageDraw.Draw(mask).rounded_rectangle([0, 0, card.width - 1, card.height - 1], radius=4 * S, fill=255)
-        card.putalpha(mask)
-        card = card.rotate(angle, resample=Image.BICUBIC, expand=True)
-
-        shadow = Image.new("RGBA", card.size, (20, 24, 30, 0))
-        shadow.putalpha(card.getchannel("A").point(lambda a: int(a * 0.22)))
-        shadow = shadow.filter(ImageFilter.GaussianBlur(5 * S))
-        x = (size - card.width) // 2 + dx * S
-        y = (size - card.height) // 2 + dy * S
-        canvas.alpha_composite(shadow, (x, y + 4 * S))
-        canvas.alpha_composite(card, (x, y))
-
-    # Crop to the cards plus a little room for the shadow.
-    l, t, r, b = canvas.getchannel("A").point(lambda a: 255 if a > 200 else 0).getbbox()
-    m = 8 * S
-    canvas = canvas.crop((l - m, t - m, r + m, b + m))
-    canvas = canvas.resize((canvas.width // S, canvas.height // S), Image.LANCZOS)
-    ICON.parent.mkdir(exist_ok=True)
-    canvas.save(ICON, optimize=True)
-
-
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("src", type=Path, help="folder of original photos")
-    ap.add_argument("--icon", help="comma-separated photo ids for the home-page icon")
     args = ap.parse_args()
 
     files = sorted(p for p in args.src.iterdir()
@@ -155,11 +116,6 @@ def main():
     photos.sort(key=lambda p: (p["date"] or "~", p["source"]))  # undated last
     MANIFEST.write_text(json.dumps(photos, indent=1, ensure_ascii=False) + "\n")
     print(f"Added {added}, {len(photos)} photos total -> {MANIFEST.relative_to(ROOT)}")
-
-    ids = args.icon.split(",") if args.icon else [p["id"] for p in photos[:3]]
-    if len(ids) == 3:
-        make_icon(ids)
-        print(f"Icon from {', '.join(ids)} -> {ICON.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":
