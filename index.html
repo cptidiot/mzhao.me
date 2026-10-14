@@ -28,10 +28,11 @@
     from { opacity: 0; transform: translateY(14px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-  header, .about { animation: rise .8s cubic-bezier(.22, .61, .36, 1) both; }
+  header, .about, .apps { animation: rise .8s cubic-bezier(.22, .61, .36, 1) both; }
   .about { animation-delay: .15s; }
+  .apps { animation-delay: .3s; }
   @media (prefers-reduced-motion: reduce) {
-    header, .about { animation: none; }
+    header, .about, .apps { animation: none; }
   }
   body {
     font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
@@ -79,6 +80,22 @@
   }
   .label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
   .about p { font-size: 17px; color: var(--body); font-weight: 400; }
+  .apps { margin-top: 56px; }
+  a.app {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+    text-decoration: none;
+    padding: 6px 0 18px;
+    border-bottom: 1px solid var(--line);
+  }
+  .app-name {
+    display: block;
+    font-size: 19px; font-weight: 500; color: #2e3d4a;
+    transition: color .15s;
+  }
+  .app-desc { display: block; margin-top: 3px; font-size: 15px; color: var(--muted); line-height: 1.6; }
+  .app-arrow { font-size: 19px; color: var(--muted); transition: transform .18s, color .15s; flex-shrink: 0; }
+  a.app:hover .app-name { color: var(--accent); }
+  a.app:hover .app-arrow { color: var(--accent); transform: translateX(4px); }
   footer {
     margin-top: 72px; padding-top: 22px;
     border-top: 1px solid var(--line);
@@ -103,6 +120,17 @@
       fly Cessna 182s out of the Bay Area whenever the weather behaves, and spend the
       rest of my time on photography, tennis, and good coffee. This page is my small
       corner of the internet.</p>
+    </div>
+
+    <div class="apps">
+      <div class="label">Apps</div>
+      <a class="app" href="/eat">
+        <span>
+          <span class="app-name">今天吃什么</span>
+          <span class="app-desc">A picker for the eternal question — 334 restaurants from my own list, filterable by city and cuisine.</span>
+        </span>
+        <span class="app-arrow">→</span>
+      </a>
     </div>
   </div>
 </body>
