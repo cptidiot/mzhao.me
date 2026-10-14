@@ -10,7 +10,9 @@
 <meta property="og:url" content="https://mzhao.me/flying/">
 <meta property="og:title" content="Flying — Marshall Zhao">
 <meta property="og:description" content="Photographs from the air.">
+<meta property="og:image" content="https://mzhao.me/flying/photos/05-1200.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mzhao.me/flying/photos/05-1200.jpg">
 <meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0d0d0e" media="(prefers-color-scheme: dark)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -281,7 +283,7 @@
   const pad2 = n => String(n).padStart(2, '0');
   const src = (p, size) => `photos/${p.id}-${size}.jpg`;
   const srcset = (p, sizes) => sizes.map(s => `${src(p, s)} ${Math.min(s, Math.max(p.w, p.h)) * p.w / Math.max(p.w, p.h) | 0}w`).join(', ');
-  const monthYear = d => new Date(d).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+  const monthYear = d => d ? new Date(d).toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) : '';
 
   let photos = [], tiles = [], idx = -1, lastFocus = null;
 
@@ -301,9 +303,11 @@
     }
     $('count').textContent = photos.length;
     $('lbTotal').textContent = pad2(photos.length);
-    const years = photos.map(p => +p.date.slice(0, 4));
-    const lo = Math.min(...years), hiY = Math.max(...years);
-    $('years').textContent = lo === hiY ? lo : `${lo}–${hiY}`;
+    const years = photos.filter(p => p.date).map(p => +p.date.slice(0, 4));
+    if (years.length) {
+      const lo = Math.min(...years), hiY = Math.max(...years);
+      $('years').textContent = lo === hiY ? lo : `${lo}–${hiY}`;
+    }
 
     tiles = photos.map(makeTile);
     layout();
@@ -376,7 +380,16 @@
         }
       }
     });
-    if (row.length) rows.push({ items: row, h: target, last: true });
+    if (row.length) {
+      // A short leftover row is folded into the one above rather than left stranded.
+      const fill = (sum * target + gap * (row.length - 1)) / W;
+      const prev = rows[rows.length - 1];
+      const items = prev ? prev.items.concat(row) : row;
+      const h = (W - gap * (items.length - 1)) / items.reduce((s, i) => s + photos[i].w / photos[i].h, 0);
+      if (prev && fill < .5 && h > target * .6) rows[rows.length - 1] = { items, h };
+      else if (fill > .8) rows.push({ items: row, h: (W - gap * (row.length - 1)) / sum });
+      else rows.push({ items: row, h: target, last: true });
+    }
 
     const frag = document.createDocumentFragment();
     rows.forEach(({ items, h, last }) => {

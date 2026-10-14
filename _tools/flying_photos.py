@@ -6,7 +6,8 @@
 For every image in the source folder this writes three web sizes
 (600 / 1200 / 2400 px on the long edge) to flying/photos/ and records it in
 flying/photos.json. All EXIF metadata, GPS included, is dropped from the
-published files; only the capture date is kept, in the manifest.
+published files; only the capture date is kept, in the manifest. Photos
+without a capture date go to the end of the wall and show no date.
 
 It also redraws assets/flying.png, the photo-stack icon on the home page,
 from three photos (the first three on the wall, or --icon 05,12,30).
@@ -43,15 +44,13 @@ EXTS = {".jpg", ".jpeg", ".png", ".heic", ".heif", ".tif", ".tiff", ".webp"}
 SIZES = (600, 1200, 2400)
 
 
-def capture_date(img, path):
+def capture_date(img):
     exif = img.getexif()
     raw = exif.get_ifd(0x8769).get(36867) or exif.get(306)  # DateTimeOriginal, DateTime
-    if raw:
-        try:
-            return datetime.strptime(str(raw).strip()[:19], "%Y:%m:%d %H:%M:%S")
-        except ValueError:
-            pass
-    return datetime.fromtimestamp(path.stat().st_mtime)
+    try:
+        return datetime.strptime(str(raw).strip()[:19], "%Y:%m:%d %H:%M:%S").strftime("%Y-%m-%dT%H:%M")
+    except ValueError:
+        return ""
 
 
 def save_jpeg(img, dest, icc, quality):
@@ -61,7 +60,7 @@ def save_jpeg(img, dest, icc, quality):
 
 def process(path, pid):
     with Image.open(path) as src:
-        date = capture_date(src, path)
+        date = capture_date(src)
         icc = src.info.get("icc_profile")
         img = ImageOps.exif_transpose(src).convert("RGB")
 
@@ -84,7 +83,7 @@ def process(path, pid):
         "id": pid,
         "w": w,
         "h": h,
-        "date": date.strftime("%Y-%m-%dT%H:%M"),
+        "date": date,
         "color": f"#{r:02x}{g:02x}{b:02x}",
         "lqip": lqip,
         "alt": "",
@@ -153,7 +152,7 @@ def main():
         next_id += 1
         added += 1
 
-    photos.sort(key=lambda p: (p["date"], p["source"]))
+    photos.sort(key=lambda p: (p["date"] or "~", p["source"]))  # undated last
     MANIFEST.write_text(json.dumps(photos, indent=1, ensure_ascii=False) + "\n")
     print(f"Added {added}, {len(photos)} photos total -> {MANIFEST.relative_to(ROOT)}")
 
