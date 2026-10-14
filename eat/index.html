@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light" />
+  <link rel="icon" href="data:," />
+  <title>今天吃什么转盘（分享版）</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800;900&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--paper:#f3efe6;--ink:#201b17;--muted:#6f645b;--red:#c83c2f;--mustard:#e2aa32;--jade:#287a63;--blue:#36769a;--line:#d8cfc0;--white:#fffdf8;--shadow:0 18px 50px rgba(44,31,20,.13)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:"Noto Sans SC",sans-serif;background-color:var(--paper);background-image:radial-gradient(rgba(32,27,23,.055) .7px,transparent .7px);background-size:7px 7px;min-height:100vh}button,input{font:inherit}button,a{-webkit-tap-highlight-color:transparent}.wrap{width:min(1160px,calc(100% - 34px));margin:auto;padding:38px 0 72px}.intro{display:grid;grid-template-columns:1fr auto;align-items:end;gap:24px;border-bottom:2px solid var(--ink);padding-bottom:22px}.intro h1{font:900 clamp(38px,6vw,76px)/.98 "Noto Serif SC",serif;letter-spacing:-.04em;margin:0;max-width:760px}.intro h1 span{color:var(--red)}.intro p{margin:8px 0 0;color:var(--muted);font-size:15px}.count-stamp{width:112px;height:112px;border:3px solid var(--red);border-radius:50%;display:grid;place-items:center;text-align:center;color:var(--red);transform:rotate(4deg);font-weight:800;line-height:1.2}.count-stamp strong{font-size:32px;display:block}.toolbar{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;padding:22px 0}.filters{display:flex;flex-wrap:wrap;gap:8px}.filter{border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:99px;padding:9px 15px;font-weight:700;cursor:pointer;transition:.18s}.filter[aria-pressed="true"]{background:var(--ink);color:var(--white)}.filter:hover{background:#fff}.filter[aria-pressed="true"]:hover{background:var(--ink)}.filter small{opacity:.7;margin-left:5px}.main-grid{display:grid;grid-template-columns:minmax(340px,1.1fr) minmax(300px,.9fr);gap:34px;align-items:center}.wheel-wrap{position:relative;aspect-ratio:1;max-width:620px;margin:auto;width:100%;padding:18px}.wheel{width:100%;height:100%;border-radius:50%;border:8px solid var(--ink);box-shadow:var(--shadow);overflow:hidden;transition:transform 4.1s cubic-bezier(.12,.72,.13,1);background:var(--mustard)}canvas{width:100%;height:100%;display:block}.pointer{position:absolute;z-index:3;top:2px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:22px solid transparent;border-right:22px solid transparent;border-top:48px solid var(--ink);filter:drop-shadow(0 4px 0 rgba(255,255,255,.55))}.spin{position:absolute;z-index:4;inset:50% auto auto 50%;transform:translate(-50%,-50%);width:104px;height:104px;border-radius:50%;border:5px solid var(--ink);background:var(--white);font-weight:900;font-size:29px;color:var(--red);cursor:pointer;box-shadow:0 6px 0 var(--ink);transition:.12s}.spin:active{transform:translate(-50%,-46%);box-shadow:0 2px 0 var(--ink)}.spin:disabled{cursor:not-allowed;opacity:.6}.side{display:grid;gap:18px}.pool-note{font-size:15px;color:var(--muted);display:flex;gap:9px;align-items:center}.pool-note:before{content:"";width:9px;height:9px;background:var(--jade);border-radius:50%}.result{min-height:330px;background:var(--white);border:2px solid var(--ink);box-shadow:9px 9px 0 var(--ink);padding:28px;display:flex;flex-direction:column;justify-content:center;position:relative}.result:before,.result:after{content:"";position:absolute;width:24px;height:24px;border-radius:50%;background:var(--paper);border:2px solid var(--ink);top:50%;transform:translateY(-50%)}.result:before{left:-14px}.result:after{right:-14px}.result .idle{text-align:center;color:var(--muted);font-size:18px}.kicker{font-size:13px;font-weight:900;letter-spacing:.12em;color:var(--red);margin-bottom:12px}.result h2{font:900 clamp(28px,4vw,45px)/1.15 "Noto Serif SC",serif;margin:0 0 13px}.badges{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:15px}.badge{font-size:12px;font-weight:800;border:1px solid currentColor;border-radius:4px;padding:4px 7px}.b5{color:#a8362e;background:#fff0e8}.b4{color:#226951;background:#eaf7f1}.bw{color:#755b0b;background:#fff5c8}.bm{color:#4f6672;background:#edf3f5}.desc{line-height:1.75;color:#4c433d;margin:0}.result-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.action{display:inline-flex;align-items:center;justify-content:center;border:1.5px solid var(--ink);padding:11px 15px;font-weight:800;text-decoration:none;color:var(--ink);background:var(--mustard);cursor:pointer}.action.secondary{background:transparent}.source-row{border-top:1px solid var(--line);margin-top:24px;padding-top:18px}.source-row strong{display:block;font-size:14px;margin-bottom:10px}.source-filter{border:0;background:transparent;padding:7px 10px;border-bottom:2px solid transparent;font-weight:700;color:var(--muted);cursor:pointer}.source-filter[aria-pressed="true"]{border-color:var(--red);color:var(--red)}.catalog{margin-top:54px;border-top:2px solid var(--ink);padding-top:26px}.catalog-head{display:flex;justify-content:space-between;gap:18px;align-items:end;margin-bottom:20px}.catalog h2{font:900 30px/1.1 "Noto Serif SC",serif;margin:0}.catalog p{margin:5px 0 0;color:var(--muted)}.search{width:min(330px,100%);border:1.5px solid var(--ink);background:var(--white);padding:11px 13px;border-radius:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:rgba(255,253,248,.74);border-top:4px solid var(--ink);padding:18px;min-width:0}.card:nth-child(4n+1){border-color:var(--red)}.card:nth-child(4n+2){border-color:var(--jade)}.card:nth-child(4n+3){border-color:var(--mustard)}.card h3{font:800 17px/1.35 "Noto Sans SC",sans-serif;margin:0 0 9px;overflow-wrap:anywhere}.card p{font-size:13px;line-height:1.65;color:var(--muted);margin:10px 0}.card a{font-size:13px;font-weight:800;color:var(--red);text-underline-offset:3px}.more{display:block;margin:22px auto 0;border:1.5px solid var(--ink);background:transparent;padding:11px 26px;font-weight:800;cursor:pointer}.empty{text-align:center;color:var(--muted);padding:40px 0;grid-column:1/-1}.foot{margin-top:52px;color:var(--muted);font-size:12px;text-align:center}.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(max-width:760px){.wrap{width:min(100% - 24px,620px);padding-top:24px}.intro{grid-template-columns:1fr}.count-stamp{width:84px;height:84px;justify-self:end;margin-top:-10px}.count-stamp strong{font-size:25px}.main-grid{grid-template-columns:1fr;gap:12px}.wheel-wrap{padding:14px}.pointer{border-left-width:16px;border-right-width:16px;border-top-width:38px}.spin{width:82px;height:82px;font-size:23px}.result{min-height:280px;box-shadow:6px 6px 0 var(--ink);padding:25px 22px}.catalog-head{align-items:stretch;flex-direction:column}.search{width:100%}.cards{grid-template-columns:1fr}.toolbar{padding-bottom:14px}.filter{padding:8px 12px}.intro h1{font-size:46px}}@media(max-width:380px){.intro h1{font-size:39px}.filter{font-size:13px}.wheel-wrap{padding:8px}.result{padding-inline:19px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.wheel{transition-duration:.01ms}}
+  </style>
+</head>
+<body>
+<main class="wrap">
+  <header class="intro">
+    <div><h1>别纠结，<span>转一下。</span></h1><p>从收藏清单里随机挑一家，今晚就吃它。</p></div>
+    <div class="count-stamp"><div><strong id="totalCount">142</strong>个选择</div></div>
+  </header>
+  <section class="toolbar" aria-label="筛选餐厅">
+    <div class="filters" id="categoryFilters"></div>
+  </section>
+  <div class="main-grid">
+    <section class="wheel-wrap" aria-label="餐厅转盘">
+      <div class="pointer" aria-hidden="true"></div>
+      <div class="wheel" id="wheel"><canvas id="wheelCanvas" width="900" height="900"></canvas></div>
+      <button class="spin" id="spinBtn" type="button">开转</button>
+    </section>
+    <aside class="side">
+      <div class="pool-note" id="poolNote">正在整理餐厅池…</div>
+      <section class="result" id="result" aria-live="polite"><p class="idle">默认从全部 142 个选择里随机抽<br>按一下中间的「开转」就好。</p></section>
+      <div class="source-row"><strong>只看这份收藏</strong><div id="sourceFilters"></div></div>
+    </aside>
+  </div>
+  <section class="catalog">
+    <div class="catalog-head"><div><h2>转盘里有什么</h2><p id="catalogMeta"></p></div><input id="search" class="search" type="search" aria-label="搜索餐厅" placeholder="搜餐厅、菜系或城市"></div>
+    <div class="cards" id="cards"></div><button class="more" id="moreBtn" type="button">再看一些</button>
+  </section>
+  <p class="foot">餐厅状态、营业时间与菜单可能变化，请以 Google Maps 页面为准。</p>
+</main>
+<script>
+const R=[
+{"c":"c","n":"留湘 · Pings Bistro","s":"m","d":"清单里的常去中餐选择，适合想吃熟悉家常味的时候。"},
+{"c":"c","n":"香小馆 · Shang Cafe","s":"5","d":"San Jose 川菜馆，小馆辣子鸡、干锅手撕包心菜、夫妻肺片与青花椒鱼是人气菜。"},
+{"c":"c","n":"塔里木餐厅 · Tarim Garden","s":"5","d":"Santa Clara 的新疆风味餐厅，适合羊肉、烤串与大盘菜。"},
+{"c":"c","n":"杨裕兴 · Yum Noodles","s":"m","d":"Santa Clara 长沙米粉面馆，主打慢熬骨汤米粉与面条；牛腱米粉、口味牛腩和榨菜肉丝是常见选择。"},
+{"c":"c","n":"北京 BBQ","s":"m","d":"中式烧烤选择，适合烤串与重口味夜宵。"},
+{"c":"a","n":"Krung Thai","s":"m","d":"位于圣何塞 Winchester 大道（95128）的老牌泰餐馆，被评为圣何塞最佳泰餐之一；以绿咖喱、罗勒鸡、泰式炒河粉著称，周末人气很旺，建议早点去。","u":"https://www.google.com/maps/search/?api=1&query=Krung%20Thai%20San%20Jose"},
+{"c":"a","n":"Gen Korean BBQ House","s":"m","d":"Saratoga 大道上的韩式自助烤肉（4.7 星）；桌边现烤牛五花、调味猪五花、蒜香鸡等，两小时任吃，肉类选择多，适合多人聚餐。","u":"https://www.google.com/maps/search/?api=1&query=Gen%20Korean%20BBQ%20House%20San%20Jose"},
+{"c":"a","n":"日料 · Gochi","s":"m","d":"日式融合小馆，适合想吃日料与分享小菜时。"},
+{"c":"a","n":"Sogongdong Tofu Town","s":"m","d":"圣何塞韩式豆腐汤专门店（4.8 星，上千条评价）；以嫩豆腐汤、石锅拌饭著称，汤底浓郁、分量实在，是喝热汤的舒服选择。","u":"https://www.google.com/maps/search/?api=1&query=Sogongdong%20Tofu%20Town%20San%20Jose"},
+{"c":"o","n":"Oveja Negra","s":"m","d":"Santana Row（Hotel Valencia 三楼）的现代西班牙 tapas 餐厅（4.4 星，600 多条评价）；以创意小食、海鲜饭、现场音乐和露天庭院著称，适合约会或朋友聚餐。","u":"https://www.google.com/maps/search/?api=1&query=Oveja%20Negra%20San%20Jose"},
+{"c":"o","n":"In-N-Out","s":"m","d":"主打现做汉堡、薯条和奶昔的加州连锁店。"},
+{"c":"o","n":"Chicken G","s":"m","d":"以韩式炸鸡为主的轻松选择。"},
+{"c":"o","n":"Domino's","s":"m","d":"以外带和配送披萨为主的连锁店。"},
+{"c":"c","n":"故湘 · Hometown Kitchen","s":"m","d":"湖南风味中餐选择，适合想吃家常湘菜的时候。"},
+{"c":"c","n":"重庆铺盖面","s":"m","d":"重庆面食选择，适合想吃麻辣汤面时。"},
+{"c":"c","n":"外婆家","s":"m","d":"家常中餐选择，适合多人一起点菜分享。"},
+{"c":"c","n":"Famous Foods","s":"m","d":"清单里的中餐自选项，抽到后可直接在地图里确认分店。"},
+{"c":"c","n":"麻辣诱惑 活鱼","s":"m","d":"以麻辣活鱼为主的重口味中餐选择。"},
+{"c":"c","n":"老刘家烤鱼","s":"m","d":"以中式烤鱼为主，适合多人分享。"},
+{"c":"c","n":"太二酸菜鱼","s":"m","d":"连锁酸菜鱼餐厅，招牌是酸辣鲜香的酸菜鱼。"},
+{"c":"c","n":"XPP Claypot 肖婆婆砂锅","s":"5","d":"Cupertino 川味砂锅馆，黑鸭砂锅、番茄牛腩砂锅等炖菜分量足。"},
+{"c":"o","n":"Lago di Como","s":"5","d":"Santa Cruz 意大利餐厅，以木烤披萨、手工意面和海鲜菜闻名。"},
+{"c":"o","n":"Evvia Estiatorio","s":"5","d":"Palo Alto 老牌希腊餐厅，烤整鱼、羊排与烤章鱼很受欢迎。"},
+{"c":"o","n":"Macarena Restaurant","s":"5","d":"Palo Alto 西班牙餐厅，以海鲜饭、tapas 和 churros 为特色。"},
+{"c":"c","n":"Taste of Old Street 老街把把烧","s":"5","d":"旧金山 Richmond 区中式烧烤小店，主打羊肉串、鸡心和鱿鱼串。"},
+{"c":"c","n":"Qian Xun Kabab Bar","s":"5","d":"El Monte 东北风味烧烤店，以牛羊肉串和锡纸海鲜为主。"},
+{"c":"c","n":"ChongQing Xiao Mian","s":"5","d":"Fremont 重庆小面馆，也有夫妻肺片、口水鸡和担担面。"},
+{"c":"c","n":"XiangBobo 湘卜卜·新派湖南菜","s":"5","d":"Cupertino 新派湘菜馆，菜品精致，也保留鲜明的湖南辣味。"},
+{"c":"c","n":"Blue Sky Café","s":"5","d":"Belmont 粤菜茶餐厅，以鳗鱼煲仔饭和传统家常菜受欢迎。"},
+{"c":"d","n":"Mitchell's Ice Cream","s":"5","d":"旧金山老字号冰淇淋店，自 1953 年起供应手工热带风味冰淇淋。"},
+{"c":"c","n":"Bostan Uyghur Cuisine","s":"5","d":"Arlington 维吾尔族餐厅，羊肉串、凉皮和辣子鸡炖菜是热门选择。"},
+{"c":"a","n":"Bar Nohm","s":"5","d":"盐湖城亚洲风酒吧餐吧，主打 yakitori 烤串、芝麻面和鸡尾酒。"},
+{"c":"c","n":"AiPaPa Hot Burger","s":"5","d":"Rowland Heights 清真小吃店，肉夹馍、羊肉汤和麻辣烫很受欢迎。"},
+{"c":"c","n":"Xi Top BBQ","s":"5","d":"纽约 Flushing 东北风味烧烤店，以西塔肥牛和炭火烤串为主。"},
+{"c":"c","n":"Spicy Kitchen 重庆老贾厨房","s":"5","d":"Newark 重庆菜馆，渝州鸡、麻婆豆腐和重庆小面口味地道。"},
+{"c":"d","n":"The Original Brooklyn Water Bagel Co.","s":"5","d":"Florida Lake Mary 贝果店，供应多种贝果、三明治、煎蛋卷和咖啡。"},
+{"c":"o","n":"The Good Spot","s":"5","d":"San Jose Downtown 的创意鸡尾酒吧。"},
+{"c":"c","n":"C.Q. Taste","s":"5","d":"Cupertino 川味中餐厅，以手工拉面、担担面和四川牛肉面著称。"},
+{"c":"d","n":"Caffe Stellato","s":"5","d":"Palo Alto 意式冰淇淋甜品店，也有咖啡和意式三明治。"},
+{"c":"o","n":"La Strada Kitchen & Bar","s":"5","d":"San Pablo 传统意式餐厅，供应手工意面、小牛肉等经典菜。"},
+{"c":"o","n":"Pizzeria Il Corallo","s":"5","d":"意大利 Baronissi 的披萨店，以正宗那不勒斯披萨闻名。"},
+{"c":"o","n":"Trattoria da Mena","s":"5","d":"意大利 Siano 的家庭式意餐馆兼披萨店，氛围温馨、分量大。"},
+{"c":"d","n":"The Donut Hole","s":"5","d":"La Puente 甜甜圈店，以巨型甜甜圈建筑和得来速闻名，仅收现金。"},
+{"c":"o","n":"Tacos Santiaguito","s":"4","d":"San Jose Downtown 的墨西哥 taco 卡车，al pastor 与 carne asada 很受欢迎。"},
+{"c":"c","n":"Lee & Bai","s":"4","d":"Sunnyvale 包子面食小店，成都包子、牛肉面与豆浆适合早午餐。"},
+{"c":"c","n":"Ningjie Jinzhou BBQ","s":"4","d":"Monterey Park 东北烧烤店，羊肉串、锅包肉和烤茄子是夜宵热门。"},
+{"c":"o","n":"Sekoya","s":"4","d":"Palo Alto 加州新派餐厅，以干式熟成牛排和烤章鱼为特色。"},
+{"c":"a","n":"Rintaro","s":"4","d":"旧金山 Mission 区日式居酒屋，烤鸡肉丸串、猪排和焙茶甜点受欢迎。"},
+{"c":"o","n":"Chelokababi","s":"4","d":"Sunnyvale 波斯餐厅，以烤鸡肉串、羊排和藏红花茶闻名。"},
+{"c":"c","n":"Changsha Rice Noodle","s":"4","d":"Cupertino 长沙米粉店，也有烤鸭和串串，口味偏辣。"},
+{"c":"o","n":"Blind Rabbit Kitchen","s":"4","d":"盐湖城美式餐厅，bone marrow tacos、butter cake 和周末早午餐受欢迎。"},
+{"c":"c","n":"成都特色 Chinese Bistro","s":"4","d":"盐湖城川菜小馆，主打成都牛肉面等川味面食。"},
+{"c":"c","n":"Tie Mu Zhen 铁木真","s":"4","d":"Palo Alto 内蒙菜小馆，羊排、羊肉烧麦和炒面片是特色。"},
+{"c":"c","n":"Mr.D's Instant Hot Pot","s":"4","d":"Taylorsville 自选麻辣烫与麻辣香锅店，食材按重量计价。"},
+{"c":"a","n":"SK Seoul Kalbi","s":"4","d":"San Bruno 韩式自助烤肉，牛小排、wagyu 与丰富配菜受欢迎。"},
+{"c":"c","n":"Grill Bar 炭烤吧","s":"4","d":"Taylorsville 中餐炭火烧烤，以羊肉串、牛肉串和四川风味为主。"},
+{"c":"c","n":"Mom's Kitchen","s":"4","d":"盐湖城台湾与中式家常菜馆，水饺、宫保鸡丁和牛肉卷是招牌。"},
+{"c":"c","n":"Long Men Bay Hotpot","s":"4","d":"Newark 火锅店，麻辣锅底、羊肉和香菜牛肉受欢迎。"},
+{"c":"o","n":"Tacos Lopez West Valley","s":"4","d":"West Valley City 墨西哥街头塔可店，al pastor、tripa 与 suadero 是热门。"},
+{"c":"a","n":"SAN HO WON","s":"4","d":"旧金山 Mission 区高端韩式炭火烤肉店，肉质与蒸蛋口碑突出。"},
+{"c":"c","n":"秦张记 Chin Xi'an Style","s":"4","d":"Ellicott City 西安风味餐厅，biangbiang 面、孜然羊肉夹馍与凉皮出名。"},
+{"c":"a","n":"Shabuway","s":"4","d":"San Jose 日式涮涮锅，套餐可自选肉类、汤底和主食。"},
+{"c":"a","n":"Marufuku","s":"4","d":"湾区日式拉面连锁，以博多豚骨和鸡白汤拉面著称。"},
+{"c":"a","n":"Yutori","s":"4","d":"Palo Alto 日式抹茶咖啡馆，也有便当和味噌三文鱼盖饭。"},
+{"c":"a","n":"Sumiya","s":"4","d":"Santa Clara 炭火串烧店，日式鸡肉串与午餐便当受欢迎。"},
+{"c":"a","n":"JinSho","s":"4","d":"Palo Alto 设计感日料店，寿司、味噌黑鳕鱼和定价套餐是特色。"},
+{"c":"a","n":"Anomaly","s":"4","d":"旧金山 Sutter Street 高级餐厅，以创意品尝菜单和配酒著称。"},
+{"c":"a","n":"Chubby Cattle","s":"4","d":"Pleasanton 蒙古烤肉与火锅餐厅，A5 和牛等优质肉类很受欢迎。"},
+{"c":"c","n":"Tasty Pot","s":"4","d":"台式个人小火锅连锁，一人一锅，有麻辣、番茄等多种汤底。"},
+{"c":"c","n":"Tasty Noodle House","s":"4","d":"旧金山中国城上海菜面馆，牛肉面、小笼包和汤面分量足。"},
+{"c":"c","n":"Hu Din Ji","s":"4","d":"Newark 上海菜馆，以生煎包、汤包、小笼包和鸭血粉丝汤受欢迎。"},
+{"c":"a","n":"Noodle Palace","s":"w","d":"Santa Rosa 越南面馆，牛肉粉、Pad Thai 和牛肉炖汤分量足。"},
+{"c":"a","n":"Sanraku","s":"w","d":"日式餐馆，供应寿司、便当、天妇罗等经典日餐。"},
+{"c":"c","n":"Mifen","s":"w","d":"最佳匹配为 Mountain View 的 Mifen101 幺零幺，主打香辣牛肉米粉。"},
+{"c":"c","n":"Chuan Yang","s":"w","d":"最佳匹配为 Newark 川湘阁，菜量大，麻婆豆腐和辣椒炒肉受欢迎。"},
+{"c":"c","n":"Xiang La Hui","s":"w","d":"Alhambra 川菜馆，牙签羊肉、担担面、麻婆豆腐和重庆辣子鸡受欢迎。"},
+{"c":"c","n":"Z&Y 御食园","s":"w","d":"旧金山唐人街川菜馆，茶熏鸭、口水鸡和红油水饺是热门菜。"},
+{"c":"a","n":"Animae","s":"w","d":"San Diego 高档亚洲融合牛排馆，战斧猪排、和牛炒饭与创意小菜出名。"},
+{"c":"c","n":"Umami Dumpling House","s":"w","d":"手工饺子馆，生煎包和猪肉白菜饺子分量实在。"},
+{"c":"c","n":"Boiling Point","s":"4","d":"台式个人小火锅连锁，以麻辣锅等汤底和轻松聚餐氛围为主。"},
+{"c":"c","n":"Dumpling Home","s":"w","d":"旧金山米其林推荐中餐馆，小笼包、生煎包和蟹粉小笼人气很高。"},
+{"c":"a","n":"Beshock Ramen & Sake Bar","s":"w","d":"San Diego 日式拉面兼清酒吧，坦坦面、素食拉面和清酒选择丰富。"},
+{"c":"a","n":"Akira Sushi SF","s":"w","d":"旧金山 Bush Street 日式餐厅，以寿司拼盘、套餐和 omakase 为主。"},
+{"c":"a","n":"Soba Ichi","s":"w","d":"Oakland 手工荞麦面店，鸭肉荞麦面和虾天妇罗荞麦面受欢迎。"},
+{"c":"o","n":"Ristorante Rocca","s":"w","d":"Burlingame 经典意餐馆，千层面、茄子帕尔马干酪和宽面是特色。"},
+{"c":"a","n":"Umami Sushi","s":"w","d":"Milpitas 小而精的日式餐厅，海胆寿司、刺身和 omakase 受好评。"},
+{"c":"a","n":"Ramen Well","s":"w","d":"旧金山 Mission 区拉面店，猪肉拉面、鸡排和素食拉面很受欢迎。"},
+{"c":"a","n":"Daeho Kalbijim","s":"w","d":"旧金山 Japantown 韩餐厅，以炖牛排骨、牛骨汤和芝士辣排骨闻名。"},
+{"c":"o","n":"Selby's","s":"w","d":"Redwood City 高档美式餐厅，惠灵顿牛排、松露汉堡与甜点适合庆祝。"},
+{"c":"a","n":"Tomi Sushi","s":"w","d":"Mountain View 老牌寿司店，刺身、海鲜丼和厨师发办套餐口碑稳定。"},
+{"c":"a","n":"Yuu Japanese Tapas","s":"w","d":"Brooklyn Greenpoint 日法融合餐厅，以 omakase 品尝菜单和鸭肉惠灵顿著称。"},
+{"c":"a","n":"Sushi Tsubomi","s":"w","d":"纽约 Upper East Side 日料店，供应寿司、omakase 与烤黑鳕鱼。"},
+{"c":"o","n":"The Village Pub","s":"w","d":"Woodside 高端美式餐厅，以时令菜单、葡萄酒和巧克力舒芙蕾闻名。"},
+{"c":"a","n":"Sushi by Scratch Restaurants","s":"w","d":"曼哈顿 omakase 日料店，入口隐秘，前菜和骨髓菜品常被提到。"},
+{"c":"a","n":"Omakase Room by Mitsu","s":"w","d":"纽约 West Village 仅 18 道菜的 omakase，选用美日两地海鲜。"},
+{"c":"a","n":"Icca Niku Bar","s":"w","d":"纽约 Tribeca 正宗日料店，以 omakase、清酒搭配和私密环境著称。"},
+{"c":"a","n":"Sushi Seki","s":"w","d":"纽约 Upper East Side 日料店，以 omakase 和香辣金枪鱼卷为主。"},
+{"c":"a","n":"Noda","s":"w","d":"纽约 Flatiron 仅八席的高端 omakase 餐厅，强调私密吧台体验。"},
+{"c":"a","n":"Sushi Ryusei","s":"w","d":"纽约 Murray Hill 寿司店，以 Oyama 主厨的 omakase 和新鲜鱼料闻名。"},
+{"c":"a","n":"Sushi by Bou","s":"w","d":"纽约 Times Square 私密寿司吧，以相对亲民的 12 道 omakase 为主。"},
+{"c":"a","n":"Sushi Noz","s":"w","d":"纽约 Upper East Side 仅做 omakase 的高端寿司店，木质空间安静私密。"},
+{"c":"a","n":"Sushi Nakazawa","s":"w","d":"纽约 West Village 高端 omakase 寿司店，以板前体验和细致服务闻名。"},
+{"c":"a","n":"Sushi Yasuda","s":"w","d":"纽约 Midtown East 传统寿司店，使用日本空运鱼料，吧台体验出色。"},
+{"c":"a","n":"Sushi Ishikawa","s":"w","d":"纽约 Upper East Side 寿司店，主打 17 道渐进式 omakase。"},
+{"c":"a","n":"COTE Korean Steakhouse","s":"w","d":"纽约 Flatiron 高端韩式牛排店，桌边无烟烧烤和 Butcher's Feast 很受欢迎。"},
+{"c":"a","n":"Atomix","s":"w","d":"纽约创意韩餐，以主厨品尝菜单与酒饮搭配著称。"},
+{"c":"a","n":"Jungsik","s":"w","d":"纽约 Tribeca 高端韩餐厅，以创新品尝菜单和优雅服务为主。"},
+{"c":"a","n":"Kochi","s":"w","d":"纽约 Hell's Kitchen 高端韩餐，供应季节性多道式品尝菜单。"},
+{"c":"a","n":"Sushi Amane","s":"w","d":"纽约 Midtown East 八席寿司吧，以多道式 omakase 和传统日式氛围著称。"},
+{"c":"a","n":"Atoboy","s":"w","d":"纽约 NoMad 现代韩餐厅，以四道 prix-fixe 与炸鸡、牛肉塔塔为特色。"},
+{"c":"a","n":"Joo Ok","s":"w","d":"纽约 Koreatown 高端韩式 fine dining，以品尝菜单和精致肉类菜品为主。"},
+{"c":"a","n":"Naro","s":"w","d":"纽约 Rockefeller Center 韩餐厅，以品尝菜单和创意韩式小食闻名。"},
+{"c":"a","n":"Oiji Mi","s":"w","d":"纽约 Flatiron 现代韩餐，以海鲜、牛排和精致品尝菜单为主。"},
+{"c":"o","n":"Misi","s":"w","d":"Brooklyn Williamsburg 意大利餐厅，菜单精炼，以手工意面和橄榄油冰淇淋闻名。"},
+{"c":"o","n":"Don Angie","s":"w","d":"纽约 West Village 创意意餐，菊花沙拉、千层面和提拉米苏很受欢迎。"},
+{"c":"o","n":"Lilia","s":"w","d":"Brooklyn Williamsburg 柴火意餐厅，由旧修理厂改建，以自制意面著称。"},
+{"c":"o","n":"Oxomoco","s":"w","d":"Brooklyn Greenpoint 米其林墨西哥餐厅，以柴火烹饪、tostada 与 barbacoa 为主。"},
+{"c":"o","n":"Rubirosa","s":"w","d":"纽约 Nolita 意式美式餐厅，以薄底 tie-dye 和 vodka 披萨闻名。"},
+{"c":"o","n":"Via Carota","s":"w","d":"纽约 Greenwich Village 质朴温馨的传统意餐馆，cacio e pepe 很受欢迎。"},
+{"c":"o","n":"Torrisi","s":"w","d":"纽约 Nolita 高端意餐，番茄馄饨、zeppole 和龙虾意面是热门。"},
+{"c":"a","n":"Adda","s":"w","d":"纽约 East Village 印度餐厅，奶油鸡、羊排和 biryani 风味鲜明。"},
+{"c":"a","n":"Rowdy Rooster","s":"w","d":"纽约 Midtown 印度风味炸鸡店，以香料炸鸡三明治和 masala 薯条为主。"},
+{"c":"a","n":"Dhamaka","s":"w","d":"纽约 Lower East Side 印度餐厅，主打各邦地方菜、羊肉 biryani 和烤串。"},
+{"c":"a","n":"Bungalow","s":"w","d":"纽约 East Village 创意印度餐厅，酸奶烤串与玫瑰 kulfi 受欢迎。"},
+{"c":"a","n":"Kebab aur Sharab","s":"w","d":"纽约 Upper West Side 印度餐厅，以烤串、roomali 烤饼和奶酪咖喱为主。"},
+{"c":"o","n":"Il Buco Alimentari e Vineria","s":"w","d":"纽约 Great Jones Street 意餐兼食品杂货店，cacio e pepe 与脆皮洋蓟闻名。"},
+{"c":"a","n":"Semma","s":"w","d":"纽约 Greenwich Village 米其林南印度餐厅，以 gunpowder dosa、龙虾尾和羊排为特色。"},
+{"c":"a","n":"Tamarind Tribeca","s":"w","d":"纽约 Tribeca 高档印度餐厅，以现代精致印度菜和挑高空间著称。"},
+{"c":"a","n":"Indian Accent","s":"w","d":"纽约 Midtown 创意印度餐厅，品尝菜单、蘑菇烤串和甜品口碑突出。"},
+{"c":"a","n":"Junoon","s":"w","d":"纽约 Flatiron 米其林印度餐厅，以品尝菜单和高级印度菜著称。"},
+{"c":"a","n":"Toridokoro Raku","s":"w","d":"Las Vegas 日式烤串餐厅，主打 yakitori、鸡肉丸子和鸡白汤拉面。"},
+{"c":"a","n":"YAYOI","s":"w","d":"Palo Alto 日式定食餐厅，供应鸡排、寿喜烧等套餐。"},
+{"c":"o","n":"Koma","s":"w","d":"最佳匹配为 Alameda 的 Poke Koma，可自选夏威夷 poke bowl。"},
+{"c":"d","n":"Dipped","s":"w","d":"Emeryville 甜品店，以迪拜巧克力、巧克力草莓杯和焦糖苹果为主。"},
+{"c":"a","n":"Chola","s":"w","d":"纽约 Midtown East 家庭经营印度餐厅，鸡肉咖喱、龙虾咖喱与周末自助餐受欢迎。"},
+{"c":"c","n":"FEY Restaurant","s":"w","d":"Menlo Park 川菜馆，主打麻辣川菜，干煸四季豆等家常菜常被提到。"},
+{"c":"a","n":"Nōksu","s":"w","d":"纽约 Koreatown 米其林星级韩餐，创意品尝菜单与精美摆盘是重点。"},
+{"c":"a","n":"Omakase by Gino","s":"w","d":"Santa Ana 寿司店，以精致 omakase 和清酒选择著称，需预约。"},
+{"c":"a","n":"Sushi Sho","s":"w","d":"纽约 Midtown 寿司店，以高水准 omakase、清酒搭配和散寿司著称。"},
+{"c":"a","n":"Jōji","s":"w","d":"纽约 One Vanderbilt 内的米其林寿司店，主打极简吧台与精致握寿司。"},
+{"c":"a","n":"Sushi Azabu Miami Beach","s":"w","d":"Miami Beach 日式餐厅，以日本空运鱼获、寿司和欢乐时光套餐著称。"},
+{"c":"a","n":"SUGARFISH by sushi nozawa","s":"w","d":"纽约 East 20th Street 人气寿司连锁，传统寿司、手卷和定价清晰的 omakase 口碑稳定。"}
+];
+const C={all:{name:"全部随机",mark:"食"},c:{name:"中餐",mark:"中"},a:{name:"亚洲",mark:"亚"},o:{name:"其他",mark:"西"},d:{name:"甜品饮品",mark:"甜"}};
+const S={all:"全部",5:"5★",4:"4★",w:"想去",m:"自选"};
+const COLORS=["#e2aa32","#c83c2f","#287a63","#36769a","#e98947","#8c5d49","#d8c659","#5c916e"];
+let cat="all",source="all",rotation=0,spinning=false,shown=12;
+const $=q=>document.querySelector(q), cats=$("#categoryFilters"), sources=$("#sourceFilters"), canvas=$("#wheelCanvas"),ctx=canvas.getContext("2d");
+function pool(){const q=$("#search").value.trim().toLowerCase();return R.filter(x=>(cat==="all"||x.c===cat)&&(source==="all"||x.s===source)&&(!q||(`${x.n} ${x.d}`).toLowerCase().includes(q)))}
+function mapUrl(x){if(x.u)return x.u;let locator=(x.d.match(/(?:Cupertino|Palo Alto|Santa Clara|San Jose|Sunnyvale|Fremont|Newark|Belmont|Burlingame|Oakland|Milpitas|Menlo Park|Redwood City|Woodside|San Francisco|旧金山|纽约|Brooklyn|Manhattan|Salt Lake City|盐湖城|Las Vegas|Miami Beach|Santa Ana|Santa Cruz|San Diego|Alhambra|Rowland Heights|Monterey Park|Arlington|El Monte|Emeryville|Pleasanton|San Bruno|Lake Mary|La Puente|Taylorsville|West Valley City|Ellicott City|Tribeca|Nolita|Greenwich Village|West Village|Flatiron|Midtown|Upper East Side|East Village|Lower East Side|Upper West Side)/)||[])[0]||"";return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x.n+(locator?`, ${locator}`:""))}`}
+function badge(x){const cls=x.s==="5"?"b5":x.s==="4"?"b4":x.s==="w"?"bw":"bm";return `<span class="badge ${cls}">${S[x.s]}</span>`}
+function renderFilters(){cats.innerHTML=Object.entries(C).map(([k,v])=>{const n=R.filter(x=>k==="all"||x.c===k).length;return `<button class="filter" data-cat="${k}" aria-pressed="${cat===k}">${v.name}<small>${n}</small></button>`}).join("");sources.innerHTML=Object.entries(S).map(([k,v])=>`<button class="source-filter" data-source="${k}" aria-pressed="${source===k}">${v}</button>`).join("");cats.querySelectorAll("button").forEach(b=>b.onclick=()=>{if(spinning)return;cat=b.dataset.cat;shown=12;render()});sources.querySelectorAll("button").forEach(b=>b.onclick=()=>{if(spinning)return;source=b.dataset.source;shown=12;render()})}
+function draw(){const p=pool(),dpr=Math.min(devicePixelRatio||1,2),size=900;canvas.width=size*dpr;canvas.height=size*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,size,size);const cx=450,r=430,visual=p.slice(0,Math.min(p.length,18)),arc=Math.PI*2/Math.max(visual.length,1);if(!visual.length){ctx.fillStyle="#ded5c7";ctx.beginPath();ctx.arc(cx,cx,r,0,Math.PI*2);ctx.fill();ctx.fillStyle="#201b17";ctx.textAlign="center";ctx.font='700 30px "Noto Sans SC"';ctx.fillText("没有符合筛选的选择",cx,cx-95);return}visual.forEach((x,i)=>{const st=-Math.PI/2+i*arc,en=st+arc,mid=st+arc/2;ctx.beginPath();ctx.moveTo(cx,cx);ctx.arc(cx,cx,r,st,en);ctx.closePath();ctx.fillStyle=COLORS[i%COLORS.length];ctx.fill();ctx.strokeStyle="#201b17";ctx.lineWidth=4;ctx.stroke();if(visual.length<=14){ctx.save();ctx.translate(cx,cx);ctx.rotate(mid);ctx.fillStyle=i%3===1?"#fffdf8":"#201b17";ctx.textAlign="right";ctx.textBaseline="middle";ctx.font='800 22px "Noto Sans SC"';let t=x.n.split(" · ")[0];if(t.length>12)t=t.slice(0,11)+"…";ctx.fillText(t,r-28,0,250);ctx.restore()}});ctx.beginPath();ctx.arc(cx,cx,103,0,Math.PI*2);ctx.fillStyle="#fffdf8";ctx.fill();ctx.strokeStyle="#201b17";ctx.lineWidth=5;ctx.stroke();if(p.length>18){ctx.fillStyle="#201b17";ctx.textAlign="center";ctx.textBaseline="middle";ctx.font='900 25px "Noto Sans SC"';ctx.fillText(`${p.length} 家`,cx,cx+64)}}
+function result(x){$("#result").innerHTML=`<div class="kicker">今晚的答案</div><h2>${x.n}</h2><div class="badges">${badge(x)}<span class="badge">${C[x.c].name}</span></div><p class="desc">${x.d}</p><div class="result-actions"><a class="action" href="${mapUrl(x)}" target="_blank" rel="noopener noreferrer">去 Google Maps 看看 ↗</a><button class="action secondary" type="button" id="again">再转一次</button></div>`;$("#again").onclick=spin}
+function renderCards(){const p=pool();$("#catalogMeta").textContent=`现在显示 ${p.length} 个选择`;$("#cards").innerHTML=p.slice(0,shown).map(x=>`<article class="card"><h3>${x.n}</h3><div class="badges">${badge(x)}<span class="badge">${C[x.c].name}</span></div><p>${x.d}</p><a href="${mapUrl(x)}" target="_blank" rel="noopener noreferrer">在地图里查看 ↗</a></article>`).join("")||'<div class="empty">没有找到匹配的餐厅。</div>';$("#moreBtn").hidden=shown>=p.length}
+function render(){renderFilters();draw();const p=pool();$("#poolNote").textContent=`当前池里有 ${p.length} 个选择`;renderCards();$("#spinBtn").disabled=p.length<2}
+function spin(){const p=pool();if(spinning||p.length<2)return;spinning=true;$("#spinBtn").disabled=true;$("#spinBtn").textContent="转…";const winner=p[Math.floor(Math.random()*p.length)],visual=Math.min(p.length,18),slice=360/visual,index=p.indexOf(winner)%visual,target=360-(index+.5)*slice,current=((rotation%360)+360)%360,delta=((target-current+360)%360)+360*7;rotation+=delta;$("#wheel").style.transform=`rotate(${rotation}deg)`;$("#result").innerHTML='<p class="idle">正在认真替你纠结…</p>';const delay=matchMedia("(prefers-reduced-motion: reduce)").matches?50:4150;setTimeout(()=>{spinning=false;$("#spinBtn").textContent="开转";$("#spinBtn").disabled=false;result(winner)},delay)}
+$("#spinBtn").onclick=spin;$("#search").oninput=()=>{shown=12;draw();renderCards();$("#poolNote").textContent=`当前池里有 ${pool().length} 个选择`;$("#spinBtn").disabled=pool().length<2};$("#moreBtn").onclick=()=>{shown+=12;renderCards()};$("#totalCount").textContent=R.length;render();
+</script>
+</body>
+</html>
