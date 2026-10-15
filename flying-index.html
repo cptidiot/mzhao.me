@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Flying</title>
+<meta name="description" content="Flying — photographs from the air by Marshall Zhao.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232e3d4a'/%3E%3Ctext x='32' y='44' font-family='Helvetica, Arial, sans-serif' font-size='36' font-weight='500' fill='%23ffffff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mzhao.me/flying/">
+<meta property="og:title" content="Flying — Marshall Zhao">
+<meta property="og:description" content="Photographs from the air.">
+<meta property="og:image" content="https://mzhao.me/flying/photos/05-1200.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mzhao.me/flying/photos/05-1200.jpg">
+<meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0d0e" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&display=swap">
+<style>
+  :root {
+    --bg: #fafaf8;
+    --ink: #151515;
+    --body: #4a4a47;
+    --muted: #94948f;
+    --line: rgba(21, 21, 21, .1);
+    --tile: #ecebe7;
+
+    --pad: clamp(16px, 4vw, 64px);
+    --gap: clamp(4px, .5vw, 8px);
+    --row: 340;
+    --bar: 64px;
+
+    --serif: "Instrument Serif", "Iowan Old Style", "Times New Roman", serif;
+    --sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --ease: cubic-bezier(.22, .61, .36, 1);
+    --ease-out: cubic-bezier(.16, 1, .3, 1);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d0d0e;
+      --ink: #ecebe7;
+      --body: #b4b3ae;
+      --muted: #74746f;
+      --line: rgba(236, 235, 231, .12);
+      --tile: #1a1a1b;
+    }
+  }
+  @media (max-width: 1100px) { :root { --row: 260; } }
+  @media (max-width: 700px)  { :root { --row: 170; --bar: 56px; } }
+  @media (min-width: 1700px) { :root { --row: 400; } }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scrollbar-gutter: stable; -webkit-text-size-adjust: 100%; }
+  html.locked { overflow: hidden; }
+  ::selection { background: var(--ink); color: var(--bg); }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+  img { display: block; }
+
+  .caps {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: .16em; text-transform: uppercase;
+    font-variant-numeric: tabular-nums;
+  }
+  .link { color: var(--muted); transition: color .25s; }
+  .link:hover, .link:focus-visible { color: var(--ink); }
+  :focus-visible { outline: 1px solid var(--ink); outline-offset: 4px; }
+
+  /* ---------- header ---------- */
+  .top {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 28px var(--pad) 0;
+  }
+
+  .intro {
+    display: grid; grid-template-columns: 1fr auto; align-items: end;
+    gap: 32px 64px;
+    padding: clamp(72px, 14vh, 160px) var(--pad) clamp(40px, 7vh, 80px);
+  }
+  .title {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(88px, 15vw, 248px);
+    line-height: .9; letter-spacing: -.025em;
+    margin-left: -.04em;
+    overflow: hidden; padding-bottom: .14em; margin-bottom: -.14em;
+  }
+  .title span {
+    display: inline-block;
+    animation: rise 1.3s var(--ease-out) both;
+    animation-delay: calc(var(--i) * 55ms + 100ms);
+  }
+  @keyframes rise { from { transform: translateY(110%); } }
+
+  .lede {
+    max-width: 340px; padding-bottom: 1.05em;
+    font-size: clamp(16px, 1.2vw, 18px); line-height: 1.55;
+    color: var(--body);
+    animation: fade 1.2s var(--ease) both; animation-delay: .65s;
+  }
+  @keyframes fade { from { opacity: 0; transform: translateY(10px); } }
+
+  /* ---------- wall ---------- */
+  .wall {
+    display: flex; flex-direction: column; gap: var(--gap);
+    padding: 0 var(--pad);
+  }
+  .row { display: flex; gap: var(--gap); }
+  .row.last .tile { flex: 0 0 calc(var(--r) * var(--h) * 1px); }
+  .tile {
+    position: relative; overflow: hidden;
+    flex: var(--r) 1 0; min-width: 0;
+    aspect-ratio: var(--r);
+    background: var(--c, var(--tile));
+    cursor: zoom-in;
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 1s var(--ease), transform 1.1s var(--ease-out);
+    transition-delay: var(--d, 0ms);
+  }
+  .tile.in { opacity: 1; transform: none; }
+  .tile::before {
+    content: ""; position: absolute; inset: -12%;
+    background: var(--lqip) center / cover no-repeat;
+    filter: blur(18px);
+    transition: opacity .9s var(--ease);
+  }
+  .tile.loaded { background: none; }
+  .tile.loaded::before { opacity: 0; }
+  .tile img {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    opacity: 0;
+    transition: opacity .9s var(--ease), transform 1.6s var(--ease-out), filter .7s var(--ease);
+  }
+  .tile.loaded img { opacity: 1; }
+  .tile.ghost img, .tile.ghost::before { visibility: hidden; }
+  .tile:focus-visible { outline-offset: 3px; }
+  @media (hover: hover) and (pointer: fine) {
+    html:not(.locked) .tile:hover img { transform: scale(1.035); }
+    html:not(.locked) .wall:has(.tile:hover) .tile:not(:hover) img { opacity: .38; filter: saturate(.6); }
+  }
+
+  .empty { padding: 0 var(--pad); color: var(--muted); font-family: var(--serif); font-style: italic; font-size: 22px; }
+
+  /* ---------- footer ---------- */
+  footer {
+    display: flex; justify-content: space-between; gap: 16px;
+    margin: clamp(80px, 14vh, 160px) var(--pad) 0;
+    padding: 22px 0 calc(32px + env(safe-area-inset-bottom));
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+  }
+
+  /* ---------- lightbox ---------- */
+  .lb { position: fixed; inset: 0; z-index: 50; touch-action: none; }
+  .lb[hidden] { display: none; }
+  .lb-bg {
+    position: absolute; inset: 0; background: var(--bg);
+    opacity: 0; transition: opacity .5s var(--ease);
+  }
+  .lb.open .lb-bg { opacity: 1; }
+  .lb-bar {
+    position: absolute; left: 0; right: 0; z-index: 2;
+    height: var(--bar);
+    display: flex; justify-content: space-between; align-items: center; gap: 24px;
+    padding: 0 var(--pad);
+    color: var(--muted);
+    opacity: 0; transition: opacity .45s var(--ease);
+    pointer-events: none;
+  }
+  .lb.ui .lb-bar { opacity: 1; }
+  .lb.ui .lb-bar button { pointer-events: auto; }
+  .lb-top { top: env(safe-area-inset-top); }
+  .lb-bottom { bottom: env(safe-area-inset-bottom); }
+  .lb-count b { color: var(--ink); font-weight: 500; }
+  .lb-cap { display: flex; align-items: baseline; gap: 14px; min-width: 0; }
+  .lb-cap em {
+    font-family: var(--serif); font-size: 19px; letter-spacing: 0;
+    text-transform: none; color: var(--ink);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .lb-cap em:empty { display: none; }
+  .lb-nav { display: flex; gap: 28px; flex-shrink: 0; }
+  .lb-bar button { padding: 10px 0; }
+  .lb-frame {
+    position: fixed; z-index: 1;
+    transform-origin: 0 0;
+    overflow: hidden;
+    background: var(--c, var(--tile));
+    cursor: pointer;
+  }
+  .lb-frame img {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+    user-select: none; -webkit-user-drag: none;
+  }
+  .lb-hi { opacity: 0; transition: opacity .5s var(--ease); }
+  .lb-hi.ready { opacity: 1; }
+
+  @media (max-width: 700px) {
+    .top { padding-top: 20px; }
+    .intro { grid-template-columns: 1fr; gap: 28px; padding-top: 64px; }
+    .lede { padding-bottom: 0; }
+    .lb-cap em { font-size: 17px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .title span, .lede { animation: none; }
+    .tile { transform: none; transition: opacity .4s; }
+    .tile img, .tile::before { transition: opacity .4s; }
+    .tile:hover img { transform: none; }
+  }
+</style>
+</head>
+<body>
+  <header class="top caps">
+    <a class="brand" href="/">Home</a>
+  </header>
+
+  <section class="intro">
+    <h1 class="title" aria-label="Flying"><span aria-hidden="true" style="--i:0">F</span><span aria-hidden="true" style="--i:1">l</span><span aria-hidden="true" style="--i:2">y</span><span aria-hidden="true" style="--i:3">i</span><span aria-hidden="true" style="--i:4">n</span><span aria-hidden="true" style="--i:5">g</span></h1>
+    <p class="lede">The world, seen from the air.</p>
+  </section>
+
+  <main class="wall" id="wall" aria-label="Photographs"></main>
+
+  <footer class="caps">
+    <span>© <span id="year"></span> Marshall Zhao</span>
+    <button class="link caps" id="toTop">Back to top</button>
+  </footer>
+
+  <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <div class="lb-bg" id="lbBg"></div>
+    <div class="lb-bar lb-top caps">
+      <span class="lb-count" aria-live="polite"><b id="lbIdx">01</b> / <span id="lbTotal">00</span></span>
+      <button class="link caps" id="lbClose">Close</button>
+    </div>
+    <div class="lb-frame" id="lbFrame">
+      <img class="lb-low" id="lbLow" alt="">
+      <img class="lb-hi" id="lbHi" alt="">
+    </div>
+    <div class="lb-bar lb-bottom caps">
+      <span class="lb-cap"><em id="lbCaption"></em><span id="lbDate"></span></span>
+      <span class="lb-nav">
+        <button class="link caps" id="lbPrev" aria-label="Previous photo">Prev</button>
+        <button class="link caps" id="lbNext" aria-label="Next photo">Next</button>
+      </span>
+    </div>
+  </div>
+
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const wall = $('wall'), lb = $('lb'), frame = $('lbFrame'), low = $('lbLow'), hi = $('lbHi');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const EASE = 'cubic-bezier(.2, .8, .2, 1)';
+  const pad2 = n => String(n).padStart(2, '0');
+  const src = (p, size) => `photos/${p.id}-${size}.jpg`;
+  const srcset = (p, sizes) => sizes.map(s => `${src(p, s)} ${Math.min(s, Math.max(p.w, p.h)) * p.w / Math.max(p.w, p.h) | 0}w`).join(', ');
+  const monthYear = d => d ? new Date(d).toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) : '';
+
+  let photos = [], tiles = [], idx = -1, lastFocus = null;
+
+  $('year').textContent = new Date().getFullYear();
+  $('toTop').onclick = () => scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
+
+  fetch('photos.json')
+    .then(r => r.ok ? r.json() : [])
+    .catch(() => [])
+    .then(init);
+
+  function init(data) {
+    photos = data;
+    if (!photos.length) {
+      wall.outerHTML = '<p class="empty">Photographs coming soon.</p>';
+      return;
+    }
+    $('lbTotal').textContent = pad2(photos.length);
+
+    tiles = photos.map(makeTile);
+    layout();
+    new ResizeObserver(() => { if (wall.clientWidth !== lastWidth) layout(); }).observe(wall);
+
+    const fromHash = photos.findIndex(p => '#' + p.id === location.hash);
+    if (fromHash >= 0) open(fromHash, false);
+  }
+
+  /* ---------- tiles ---------- */
+  function makeTile(p, i) {
+    const a = document.createElement('a');
+    a.className = 'tile';
+    a.href = src(p, 2400);
+    a.setAttribute('aria-label', `Photo ${i + 1} of ${photos.length}` + (p.alt ? ` — ${p.alt}` : ''));
+    a.style.setProperty('--r', (p.w / p.h).toFixed(4));
+    a.style.setProperty('--c', p.color);
+    a.style.setProperty('--lqip', `url("${p.lqip}")`);
+
+    const img = new Image();
+    img.alt = p.alt || '';
+    img.decoding = 'async';
+    if (i > 7) img.loading = 'lazy';
+    img.addEventListener('load', () => img.decode().catch(() => {}).then(() => a.classList.add('loaded')), { once: true });
+    a.appendChild(img);
+
+    a.addEventListener('click', e => {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+      e.preventDefault();
+      open(i, true);
+    });
+    reveal.observe(a);
+    return a;
+  }
+
+  // Stagger tiles in as they scroll into view.
+  const reveal = new IntersectionObserver(entries => {
+    const shown = entries.filter(e => e.isIntersecting)
+      .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top || a.boundingClientRect.left - b.boundingClientRect.left);
+    shown.forEach((e, k) => {
+      e.target.style.setProperty('--d', reduced ? '0ms' : `${Math.min(k, 8) * 70}ms`);
+      e.target.classList.add('in');
+      reveal.unobserve(e.target);
+    });
+  }, { rootMargin: '0px 0px -6% 0px' });
+
+  /* ---------- justified rows ---------- */
+  let lastWidth = 0;
+  function layout() {
+    const W = lastWidth = wall.clientWidth;
+    const css = getComputedStyle(wall);
+    const target = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--row'));
+    const gap = parseFloat(css.rowGap) || 0;
+    const rows = [];
+    let row = [], sum = 0;
+
+    photos.forEach((p, i) => {
+      const r = p.w / p.h;
+      row.push(i); sum += r;
+      const h = (W - gap * (row.length - 1)) / sum;
+      if (h <= target) {
+        // Close the row here, or one photo earlier if that lands nearer the target height.
+        const prevH = row.length > 1 ? (W - gap * (row.length - 2)) / (sum - r) : Infinity;
+        if (Math.abs(prevH - target) < Math.abs(h - target)) {
+          rows.push({ items: row.slice(0, -1), h: prevH });
+          row = [i]; sum = r;
+        } else {
+          rows.push({ items: row, h });
+          row = []; sum = 0;
+        }
+      }
+    });
+    if (row.length) {
+      // A short leftover row is folded into the one above rather than left stranded.
+      const fill = (sum * target + gap * (row.length - 1)) / W;
+      const prev = rows[rows.length - 1];
+      const items = prev ? prev.items.concat(row) : row;
+      const h = (W - gap * (items.length - 1)) / items.reduce((s, i) => s + photos[i].w / photos[i].h, 0);
+      if (prev && fill < .5 && h > target * .6) rows[rows.length - 1] = { items, h };
+      else if (fill > .8) rows.push({ items: row, h: (W - gap * (row.length - 1)) / sum });
+      else rows.push({ items: row, h: target, last: true });
+    }
+
+    const frag = document.createDocumentFragment();
+    rows.forEach(({ items, h, last }) => {
+      const el = document.createElement('div');
+      el.className = 'row' + (last ? ' last' : '');
+      el.style.setProperty('--h', h);
+      const sumR = items.reduce((s, i) => s + photos[i].w / photos[i].h, 0);
+      items.forEach(i => {
+        const r = photos[i].w / photos[i].h;
+        const w = last ? r * h : r / sumR * (W - gap * (items.length - 1));
+        const img = tiles[i].querySelector('img');
+        img.sizes = Math.ceil(w) + 'px';
+        if (!img.getAttribute('srcset')) {
+          img.srcset = srcset(photos[i], [600, 1200]);
+          img.src = src(photos[i], 1200);
+        }
+        el.appendChild(tiles[i]);
+      });
+      frag.appendChild(el);
+    });
+    wall.replaceChildren(frag);
+  }
+
+  /* ---------- lightbox ---------- */
+  function fit(p) {
+    const vw = innerWidth, vh = innerHeight;
+    const bar = parseFloat(getComputedStyle(lb).getPropertyValue('--bar')) || 64;
+    const padX = vw <= 700 ? 0 : parseFloat(getComputedStyle(wall).paddingLeft);
+    const s = Math.min((vw - padX * 2) / p.w, (vh - bar * 2 - 8) / p.h);
+    const w = p.w * s, h = p.h * s;
+    return { left: (vw - w) / 2, top: (vh - h) / 2, width: w, height: h };
+  }
+
+  function place(rect) {
+    Object.assign(frame.style, {
+      left: rect.left + 'px', top: rect.top + 'px',
+      width: rect.width + 'px', height: rect.height + 'px',
+    });
+  }
+
+  let token = 0;
+  function show(i) {
+    idx = i;
+    const p = photos[i], rect = fit(p), t = ++token;
+    place(rect);
+    frame.style.setProperty('--c', p.color);
+
+    const tileImg = tiles[i].querySelector('img');
+    low.src = tileImg.complete && tileImg.naturalWidth ? tileImg.currentSrc : p.lqip;
+
+    hi.style.transition = 'none';
+    hi.classList.remove('ready');
+    void hi.offsetWidth;
+    hi.style.transition = '';
+    hi.onload = () => { if (t === token) hi.classList.add('ready'); };
+    hi.alt = p.alt || '';
+    hi.sizes = Math.ceil(rect.width) + 'px';
+    hi.srcset = srcset(p, [1200, 2400]);
+    if (hi.complete && hi.naturalWidth && hi.currentSrc.includes(`/${p.id}-`)) hi.classList.add('ready');
+
+    $('lbIdx').textContent = pad2(i + 1);
+    $('lbCaption').textContent = p.caption || '';
+    $('lbDate').textContent = monthYear(p.date);
+    history.replaceState(null, '', '#' + p.id);
+
+    // Warm up the neighbours.
+    [-1, 1].forEach(d => {
+      const q = photos[(i + d + photos.length) % photos.length], im = new Image();
+      im.sizes = Math.ceil(fit(q).width) + 'px';
+      im.srcset = srcset(q, [1200, 2400]);
+    });
+    return rect;
+  }
+
+  const inView = el => {
+    const r = el.getBoundingClientRect();
+    return r.bottom > 0 && r.top < innerHeight;
+  };
+  const flipFrom = (tile, rect) => {
+    const t = tile.getBoundingClientRect();
+    return `translate(${t.left - rect.left}px, ${t.top - rect.top}px) scale(${t.width / rect.width})`;
+  };
+
+  function open(i, animate) {
+    lastFocus = document.activeElement;
+    document.documentElement.classList.add('locked');
+    lb.hidden = false;
+    const rect = show(i);
+    void lb.offsetWidth;
+    lb.classList.add('open');
+
+    const tile = tiles[i];
+    if (animate && !reduced && inView(tile)) {
+      tile.classList.add('ghost');
+      frame.animate([{ transform: flipFrom(tile, rect) }, { transform: 'none' }], { duration: 650, easing: EASE })
+        .finished.then(() => tile.classList.remove('ghost'));
+    } else {
+      frame.animate([{ opacity: 0, transform: 'scale(.97)' }, { opacity: 1, transform: 'none' }],
+        { duration: reduced ? 1 : 500, easing: EASE });
+    }
+    setTimeout(() => lb.classList.add('ui'), animate ? 280 : 0);
+    $('lbClose').focus({ preventScroll: true });
+  }
+
+  let closing = false;
+  function close(fromTransform = 'none') {
+    if (closing || lb.hidden) return;
+    closing = true;
+    const tile = tiles[idx];
+    lb.classList.remove('ui', 'open');
+    history.replaceState(null, '', location.pathname + location.search);
+
+    // Bring the photo's tile into view behind the overlay, then fly back into it.
+    const r = tile.getBoundingClientRect();
+    if (r.top < 0 || r.bottom > innerHeight) {
+      scrollBy({ top: r.top + r.height / 2 - innerHeight / 2, behavior: 'instant' });
+    }
+    tiles.filter(t => !t.classList.contains('in') && inView(t)).forEach(t => {
+      t.style.transition = 'none';
+      t.classList.add('in');
+      reveal.unobserve(t);
+      void t.offsetWidth;
+      t.style.transition = '';
+    });
+    let anim;
+    if (!reduced) {
+      tile.classList.add('ghost');
+      const base = { left: parseFloat(frame.style.left), top: parseFloat(frame.style.top), width: parseFloat(frame.style.width) };
+      anim = frame.animate([{ transform: fromTransform }, { transform: flipFrom(tile, base) }],
+        { duration: 520, easing: EASE, fill: 'forwards' });
+    } else {
+      anim = frame.animate([{ opacity: 1, transform: fromTransform }, { opacity: 0, transform: 'scale(.97)' }],
+        { duration: reduced ? 1 : 300, easing: EASE, fill: 'forwards' });
+    }
+    anim.finished.then(() => {
+      lb.hidden = true;
+      tile.classList.remove('ghost');
+      frame.getAnimations().forEach(a => a.cancel());
+      frame.style.transform = '';
+      document.documentElement.classList.remove('locked');
+      (lastFocus && lastFocus !== document.body ? lastFocus : tile).focus({ preventScroll: true });
+      closing = false;
+    });
+  }
+
+  let leaving = false;
+  async function go(dir, fromTransform = 'none') {
+    if (leaving || closing) return;
+    leaving = true;
+    const out = frame.animate(
+      [{ opacity: 1, transform: fromTransform }, { opacity: 0, transform: `translateX(${-dir * 40}px)` }],
+      { duration: reduced ? 1 : 200, easing: 'cubic-bezier(.4, 0, 1, 1)', fill: 'forwards' });
+    await out.finished;
+    frame.style.transform = '';
+    show((idx + dir + photos.length) % photos.length);
+    frame.animate([{ opacity: 0, transform: `translateX(${dir * 40}px)` }, { opacity: 1, transform: 'none' }],
+      { duration: reduced ? 1 : 420, easing: EASE });
+    out.cancel();
+    leaving = false;
+  }
+
+  $('lbClose').onclick = () => close();
+  $('lbPrev').onclick = () => go(-1);
+  $('lbNext').onclick = () => go(1);
+  $('lbBg').onclick = () => close();
+
+  addEventListener('keydown', e => {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowRight') go(1);
+    else if (e.key === 'ArrowLeft') go(-1);
+    else if (e.key === 'Tab') {
+      const f = [$('lbClose'), $('lbPrev'), $('lbNext')];
+      const at = f.indexOf(document.activeElement);
+      e.preventDefault();
+      f[(at + (e.shiftKey ? -1 : 1) + f.length) % f.length].focus();
+    }
+  });
+
+  addEventListener('resize', () => { if (!lb.hidden && !closing) place(fit(photos[idx])); });
+
+  // Tap the photo to advance; on touch, swipe sideways to browse or down to close.
+  let drag = null;
+  frame.addEventListener('pointerdown', e => {
+    if (e.pointerType === 'mouse' || leaving || closing) return;
+    drag = { x: e.clientX, y: e.clientY, t: performance.now(), axis: null, dx: 0, dy: 0 };
+    frame.setPointerCapture(e.pointerId);
+  });
+  frame.addEventListener('pointermove', e => {
+    if (!drag) return;
+    drag.dx = e.clientX - drag.x;
+    drag.dy = e.clientY - drag.y;
+    if (!drag.axis && Math.hypot(drag.dx, drag.dy) > 8) drag.axis = Math.abs(drag.dx) > Math.abs(drag.dy) ? 'x' : 'y';
+    if (drag.axis === 'x') frame.style.transform = `translateX(${drag.dx}px)`;
+    if (drag.axis === 'y' && drag.dy > 0) {
+      frame.style.transform = `translateY(${drag.dy}px) scale(${1 - Math.min(drag.dy, 400) / 1600})`;
+      $('lbBg').style.opacity = 1 - Math.min(drag.dy, 400) / 500;
+    }
+  });
+  const endDrag = () => {
+    if (!drag) return;
+    const { axis, dx, dy, t } = drag;
+    const fast = performance.now() - t < 250;
+    const current = frame.style.transform || 'none';
+    drag = null;
+    $('lbBg').style.opacity = '';
+    if (axis === 'x' && (Math.abs(dx) > 70 || (fast && Math.abs(dx) > 24))) go(dx < 0 ? 1 : -1, current);
+    else if (axis === 'y' && dy > 110) { frame.style.transform = ''; close(current); }
+    else if (axis) {
+      frame.style.transform = '';
+      frame.animate([{ transform: current }, { transform: 'none' }], { duration: 300, easing: EASE });
+    }
+    frame.dragged = !!axis;
+  };
+  frame.addEventListener('pointerup', endDrag);
+  frame.addEventListener('pointercancel', endDrag);
+  frame.addEventListener('click', () => {
+    if (frame.dragged) { frame.dragged = false; return; }
+    go(1);
+  });
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c1869bd5dea64c8a878c7be3162521fa"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
