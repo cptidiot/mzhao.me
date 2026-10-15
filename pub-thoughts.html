@@ -1,0 +1,21 @@
+---
+layout: page
+title: Random Thoughts
+---
+<p>Short notes, now and then.</p>
+
+{% assign sorted = site.thoughts | sort: "date" | reverse %}
+{% for t in sorted %}
+<article class="thought">
+  <p class="thought-meta"><time datetime="{{ t.date | date_to_xmlschema }}">{{ t.date | date: "%b %-d, %Y · %-I:%M %p" }}{% if t.location %} · {{ t.location }}{% endif %}</time></p>
+  {{ t.content }}
+</article>
+{% else %}
+<p>Nothing here yet.</p>
+{% endfor %}
+
+<style>
+  .thought { padding: 1.1rem 0 .4rem; border-top: 1px solid rgba(0,0,0,.14); margin-top: 1.4rem; }
+  .thought-meta { font-size: .78rem; letter-spacing: .09em; text-transform: uppercase; opacity: .55; margin-bottom: .3rem; }
+</style>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c1869bd5dea64c8a878c7be3162521fa"}'></script><!-- End Cloudflare Web Analytics -->
