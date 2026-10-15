@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marshall Zhao — mzhao.me</title>
-<meta name="description" content="Marshall Zhao — software engineer, private pilot, based in the San Francisco Bay Area.">
+<meta name="description" content="Marshall Zhao — private pilot based in the San Francisco Bay Area.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232e3d4a'/%3E%3Ctext x='32' y='44' font-family='Helvetica, Arial, sans-serif' font-size='36' font-weight='500' fill='%23ffffff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mzhao.me/">
 <meta property="og:title" content="Marshall Zhao">
-<meta property="og:description" content="Software engineer, private pilot, based in the San Francisco Bay Area.">
+<meta property="og:description" content="Private pilot based in the San Francisco Bay Area.">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Marshall Zhao">
-<meta name="twitter:description" content="Software engineer, private pilot, based in the San Francisco Bay Area.">
+<meta name="twitter:description" content="Private pilot based in the San Francisco Bay Area.">
 <style>
   :root {
     --bg: #f6f8fa;
@@ -28,11 +28,10 @@
     from { opacity: 0; transform: translateY(14px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-  header, .about, .apps { animation: rise .8s cubic-bezier(.22, .61, .36, 1) both; }
-  .about { animation-delay: .15s; }
-  .apps { animation-delay: .3s; }
+  .about, .apps { animation: rise .8s cubic-bezier(.22, .61, .36, 1) both; }
+  .apps { animation-delay: .15s; }
   @media (prefers-reduced-motion: reduce) {
-    header, .about, .apps { animation: none; }
+    .about, .apps { animation: none; }
   }
   body {
     font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
@@ -62,15 +61,6 @@
     max-width: 640px; margin: 0 auto;
     padding: 15vh 24px 64px;
   }
-  h1 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: clamp(34px, 6vw, 46px);
-    font-weight: 500;
-    letter-spacing: -0.015em;
-    line-height: 1.15;
-    color: #2e3d4a;
-  }
-  .about { margin-top: 56px; }
   .label {
     font-size: 12px; font-weight: 600;
     letter-spacing: .22em; text-transform: uppercase;
@@ -86,7 +76,7 @@
     text-decoration: none;
     padding: 6px 0 18px;
   }
-  .app-logo { height: 58px; width: auto; display: block; flex-shrink: 0; }
+  .app-logo { height: 58px; width: 66px; object-fit: contain; display: block; flex-shrink: 0; }
   .app-text { flex: 1; }
   .app-name {
     display: block;
@@ -108,15 +98,10 @@
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <h1>Marshall Zhao</h1>
-    </header>
-
     <div class="about">
       <div class="label">About</div>
-      <p>Hi, I'm Marshall — friends call me Captain. I build software for a living,
-      fly Cessna 182s out of the Bay Area whenever the weather behaves, and spend the
-      rest of my time on photography, tennis, and good coffee. I'm a foodie at heart,
+      <p>Hi, I'm Marshall. I fly Cessna 182s out of the Bay Area whenever the weather
+      behaves, and spend the rest of my time on photography, tennis, and good coffee. I'm a foodie at heart,
       happiest when the grill is lit and something is sizzling. This page is my small
       corner of the internet.</p>
     </div>
@@ -127,6 +112,12 @@
         <img class="app-logo" src="assets/what-to-eat.png" alt="What to Eat">
         <span class="app-text">
           <span class="app-name">What to Eat</span>
+        </span>
+      </a>
+      <a class="app" href="/flying/">
+        <img class="app-logo" src="assets/flying.png" alt="Flying">
+        <span class="app-text">
+          <span class="app-name">Flying</span>
         </span>
       </a>
     </div>
