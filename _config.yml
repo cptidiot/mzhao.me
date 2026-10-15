@@ -1,0 +1,9 @@
+title: Marshall Zhao
+timezone: America/Los_Angeles
+remote_theme: broccolini/swiss
+theme_color: white
+plugins:
+  - jekyll-remote-theme
+collections:
+  thoughts:
+    output: false
