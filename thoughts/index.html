@@ -1,21 +1,135 @@
 ---
-layout: page
+layout: null
 title: Random Thoughts
 ---
-<p>Short notes, now and then.</p>
-
-{% assign sorted = site.thoughts | sort: "date" | reverse %}
-{% for t in sorted %}
-<article class="thought">
-  <p class="thought-meta"><time datetime="{{ t.date | date_to_xmlschema }}">{{ t.date | date: "%b %-d, %Y · %-I:%M %p" }}{% if t.location %} · {{ t.location }}{% endif %}</time></p>
-  {{ t.content }}
-</article>
-{% else %}
-<p>Nothing here yet.</p>
-{% endfor %}
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Random Thoughts</title>
+<meta name="description" content="Random Thoughts — short notes from Marshall Zhao.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232e3d4a'/%3E%3Ctext x='32' y='44' font-family='Helvetica, Arial, sans-serif' font-size='36' font-weight='500' fill='%23ffffff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mzhao.me/thoughts/">
+<meta property="og:title" content="Random Thoughts — Marshall Zhao">
+<meta property="og:description" content="Short notes, now and then.">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c0c0c" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap">
 <style>
-  .thought { padding: 1.1rem 0 .4rem; border-top: 1px solid rgba(0,0,0,.14); margin-top: 1.4rem; }
-  .thought-meta { font-size: .78rem; letter-spacing: .09em; text-transform: uppercase; opacity: .55; margin-bottom: .3rem; }
+  :root {
+    --bg: #fafaf8;
+    --ink: #111111;
+    --body: #3a3a38;
+    --muted: #8e8e89;
+    --line: rgba(17, 17, 17, .1);
+    --rule: #111111;
+    --red: #e8261c;
+
+    --serif: "Instrument Serif", "Iowan Old Style", "Times New Roman", serif;
+    --sans: "Inter", "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0c0c0c;
+      --ink: #f1f1ee;
+      --body: #bdbdb8;
+      --muted: #76766f;
+      --line: rgba(241, 241, 238, .12);
+      --rule: #f1f1ee;
+      --red: #ff4a3d;
+      color-scheme: dark;
+    }
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--body);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+
+  .wrap { max-width: 720px; margin: 0 auto; padding-block: 48px 96px; }
+
+  .top { display: flex; justify-content: space-between; font: 500 12px/1 var(--sans); color: var(--muted); }
+  .top a { text-decoration: none; }
+  .top a:hover { color: var(--ink); }
+
+  h1 { margin-top: 56px; font: 400 clamp(52px, 10vw, 92px)/.95 var(--serif); letter-spacing: -.02em; color: var(--ink); text-wrap: balance; }
+  h1 em { font-style: italic; color: var(--muted); }
+  .redline { display: block; width: 56px; height: 4px; margin: 20px 0 8px; background: var(--red); }
+
+  .month { display: flex; justify-content: space-between; align-items: baseline; margin-top: 44px; padding: 10px 0 4px; border-top: 2px solid var(--rule); }
+  .month h2 { font: 600 12px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--ink); }
+  .month span { font: 500 11px/1 var(--sans); color: var(--muted); font-variant-numeric: tabular-nums; }
+
+  .day { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 18px; padding-block: 16px; border-top: 1px solid var(--line); }
+  .month + .day { border-top: 0; }
+  .date { text-align: right; }
+  .date .n { display: block; font: 400 26px/1 var(--serif); color: var(--ink); }
+  .date .w { display: block; margin-top: 5px; font: 600 9.5px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+
+  .entries { display: flex; flex-direction: column; gap: 14px; padding-top: 3px; min-width: 0; }
+  .meta { display: block; margin-bottom: 7px; font: 500 11px/1 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .text { overflow-wrap: anywhere; }
+  .text p, .text ul, .text ol, .text blockquote { margin-bottom: .5em; font-size: 15px; line-height: 1.65; color: var(--body); }
+  .text > :last-child { margin-bottom: 0; }
+  .text ul, .text ol { padding-left: 1.2em; }
+  .text blockquote { padding-left: 12px; border-left: 2px solid var(--line); color: var(--muted); }
+  .text img { display: block; max-width: 100%; height: auto; margin-block: 6px; }
+  .text a { color: var(--ink); text-decoration-color: var(--red); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+  .text a:hover { color: var(--red); }
+
+  .empty { margin-top: 44px; font-size: 15px; color: var(--muted); }
+
+  @media (max-width: 560px) {
+    .wrap { padding-block: 32px 72px; }
+    h1 { margin-top: 44px; }
+    .redline { width: 44px; height: 3px; }
+    .day { grid-template-columns: 34px minmax(0, 1fr); gap: 12px; }
+    .date .n { font-size: 22px; }
+  }
 </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a href="/">Home</a><span>{{ site.thoughts.size }} {% if site.thoughts.size == 1 %}note{% else %}notes{% endif %}</span></div>
+
+  <h1><em>Random</em> Thoughts</h1>
+  <span class="redline" aria-hidden="true"></span>
+
+  {%- assign sorted = site.thoughts | sort: "date" | reverse -%}
+  {%- assign months = sorted | group_by_exp: "t", "t.date | date: '%Y-%m'" -%}
+  {%- for month in months %}
+  <div class="month"><h2>{{ month.items.first.date | date: "%B %Y" }}</h2><span>{{ month.size }}</span></div>
+    {%- assign days = month.items | group_by_exp: "t", "t.date | date: '%Y-%m-%d'" -%}
+    {%- for day in days %}
+  <section class="day">
+    <div class="date"><span class="n">{{ day.items.first.date | date: "%-d" }}</span><span class="w">{{ day.items.first.date | date: "%a" }}</span></div>
+    <div class="entries">
+      {%- for t in day.items %}
+      <article>
+        <time class="meta" datetime="{{ t.date | date_to_xmlschema }}">{{ t.date | date: "%-I:%M %p" }}{% if t.location %} · {{ t.location | split: "," | first }}{% endif %}</time>
+        <div class="text">{{ t.content }}</div>
+      </article>
+      {%- endfor %}
+    </div>
+  </section>
+    {%- endfor %}
+  {%- else %}
+  <p class="empty">Nothing here yet.</p>
+  {%- endfor %}
+</div>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c1869bd5dea64c8a878c7be3162521fa"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
