@@ -1,139 +1,421 @@
+---
+layout: null
+title: Daily Digest
+---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marshall</title>
-<meta name="description" content="Marshall Zhao — private pilot based in the San Francisco Bay Area.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232e3d4a'/%3E%3Ctext x='32' y='44' font-family='Helvetica, Arial, sans-serif' font-size='36' font-weight='500' fill='%23ffffff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Daily Digest</title>
+<meta name="description" content="Daily digests — AI Builders, X Lists, Consensus, Hacker News, 段永平晚报.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232e3d4a'/%3E%3Ctext x='32' y='44' font-family='Helvetica, Arial, sans-serif' font-size='36' font-weight='500' fill='%23ffffff' text-anchor='middle'%3E%4D%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://mzhao.me/">
-<meta property="og:title" content="Marshall Zhao">
-<meta property="og:description" content="Private pilot based in the San Francisco Bay Area.">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Marshall Zhao">
-<meta name="twitter:description" content="Private pilot based in the San Francisco Bay Area.">
+<meta property="og:url" content="https://mzhao.me/digest/">
+<meta property="og:title" content="Daily Digest — Marshall Zhao">
+<meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c0c0c" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap">
 <style>
-  :root {
-    --bg: #f6f8fa;
-    --ink: #131a22;
-    --body: #3d4a57;
-    --muted: #8593a1;
-    --accent: #2f6db3;
-    --line: rgba(19, 26, 34, .09);
+/* Layout: masthead → sticky source nav + date filter → one section per source; each section is a 4-col (2-col on phones) masonry grid of entry cards, newest issue first. */
+:root {
+  --bg: #fafaf8;
+  --card: #ffffff;
+  --ink: #111111;
+  --text: #3a3a38;
+  --muted: #8b8a84;
+  --line: #e6e5df;
+  --line-hover: #cfcec7;
+  --accent: #e8261c;
+  --accent-soft: rgba(232, 38, 28, .38);
+  --track: #efeee9;
+
+  --f-display: "Instrument Serif", "Songti SC", "Noto Serif SC", "Source Han Serif SC", Georgia, serif;
+  --f-body: "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+
+  --gap: 14px;
+  --radius: 6px;
+  --maxw: 1200px;
+  --nav-h: 46px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0c0c0c; --card: #161616; --ink: #f1f0ec; --text: #b7b6b0; --muted: #77766f;
+    --line: #262624; --line-hover: #3a3a37; --accent: #ff4a3d; --accent-soft: rgba(255, 74, 61, .45); --track: #232321;
+    color-scheme: dark;
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  ::selection { background: rgba(47, 109, 179, .20); }
-  @keyframes rise {
-    from { opacity: 0; transform: translateY(14px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .about, .apps { animation: rise .8s cubic-bezier(.22, .61, .36, 1) both; }
-  .apps { animation-delay: .15s; }
-  @media (prefers-reduced-motion: reduce) {
-    .about, .apps { animation: none; }
-  }
-  body {
-    font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-    background: var(--bg);
-    color: var(--ink);
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-    min-height: 100vh;
-    position: relative;
-    overflow-x: hidden;
-  }
-  /* soft ambient glows */
-  body::before, body::after {
-    content: ""; position: fixed; border-radius: 50%;
-    filter: blur(110px); pointer-events: none; z-index: 0;
-  }
-  body::before {
-    width: 560px; height: 560px; top: -220px; right: -140px;
-    background: radial-gradient(circle, rgba(88, 152, 224, .30), transparent 65%);
-  }
-  body::after {
-    width: 480px; height: 480px; bottom: -240px; left: -160px;
-    background: radial-gradient(circle, rgba(150, 120, 230, .22), transparent 65%);
-  }
-  .wrap {
-    position: relative; z-index: 1;
-    max-width: 640px; margin: 0 auto;
-    padding: 15vh 24px 64px;
-  }
-  .label {
-    font-size: 12px; font-weight: 600;
-    letter-spacing: .22em; text-transform: uppercase;
-    color: var(--accent);
-    display: flex; align-items: center; gap: 12px;
-    margin-bottom: 18px;
-  }
-  .label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
-  .about p { font-size: 17px; color: var(--body); font-weight: 400; }
-  .apps { margin-top: 56px; }
-  a.app {
-    display: flex; align-items: center; gap: 15px;
-    text-decoration: none;
-    padding: 6px 0 18px;
-  }
-  .app-logo { height: 58px; width: 66px; object-fit: contain; display: block; flex-shrink: 0; }
-  .app-text { flex: 1; }
-  .app-name {
-    display: block;
-    font-size: 19px; font-weight: 500; color: #2e3d4a;
-    transition: color .15s;
-  }
-  a.app:hover .app-name { color: var(--accent); }
-  footer {
-    margin-top: 72px; padding-top: 22px;
-    border-top: 1px solid var(--line);
-    color: var(--muted); font-size: 13px;
-    display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
-  }
-  @media (max-width: 560px) {
-    .wrap { padding: 10vh 20px 48px; }
-    .about p { font-size: 16px; }
-  }
+}
+:root[data-theme="dark"] {
+  --bg: #0c0c0c; --card: #161616; --ink: #f1f0ec; --text: #b7b6b0; --muted: #77766f;
+  --line: #262624; --line-hover: #3a3a37; --accent: #ff4a3d; --accent-soft: rgba(255, 74, 61, .45); --track: #232321;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--f-body);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; z-index: 10;
+  height: env(safe-area-inset-top, 0px); background: var(--bg);
+}
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+/* ── Masthead ─────────────────────────────── */
+.mast { padding-block: 28px 22px; }
+.topbar {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap;
+  font-size: 12.5px; color: var(--muted);
+}
+.topbar a { text-decoration: none; color: var(--ink); font-weight: 500; }
+.topbar a:hover { color: var(--accent); }
+.topbar .stats { font-variant-numeric: tabular-nums; }
+.mast h1 {
+  margin: 40px 0 18px;
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: clamp(52px, 9vw, 96px);
+  line-height: .92;
+  letter-spacing: -.015em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.mast h1 em { font-style: italic; }
+.rule { position: relative; height: 1px; background: var(--line); }
+.rule::before { content: ""; position: absolute; left: 0; top: -1px; width: 72px; height: 3px; background: var(--accent); }
+.dek { margin: 14px 0 0; max-width: 62ch; font-size: 14px; color: var(--text); }
+
+/* ── Section nav + date filter (sticky) ───── */
+.secnav {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--bg);
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.secnav-inner {
+  display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none;
+}
+.secnav-inner::-webkit-scrollbar { display: none; }
+.secnav a {
+  display: inline-flex; align-items: baseline; gap: 6px;
+  padding: 13px 10px 11px; white-space: nowrap;
+  font-size: 13px; font-weight: 500; text-decoration: none; color: var(--text);
+  border-bottom: 2px solid transparent;
+}
+.secnav a:first-child { padding-left: 0; }
+.secnav a span { font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.secnav a:hover { color: var(--ink); }
+.secnav a[aria-current="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.filterbar {
+  display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+  padding-block: 0 10px;
+}
+.filterbar .flabel { font-size: 12px; color: var(--muted); margin-right: 2px; }
+.dateselect {
+  font: inherit; font-size: 12.5px; line-height: 1.3; color: var(--text);
+  background: transparent; border: 1px solid var(--line); border-radius: 999px;
+  padding: 5px 11px; cursor: pointer; font-variant-numeric: tabular-nums;
+  max-width: 190px;
+}
+.dateselect:hover { border-color: var(--line-hover); color: var(--ink); }
+.dateselect.active { border-color: var(--accent); color: var(--ink); font-weight: 600; }
+.dateselect:disabled { cursor: default; opacity: .65; }
+
+/* ── Sections ─────────────────────────────── */
+main.wrap { padding-block: 34px 72px; display: flex; flex-direction: column; gap: 52px; }
+.sec { scroll-margin-top: 130px; }
+.sec-head {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 4px 16px; flex-wrap: wrap;
+  padding-top: 12px; margin-bottom: 16px;
+  border-top: 1px solid var(--ink);
+}
+.sec-head h2 {
+  margin: 0; font-family: var(--f-display); font-weight: 400;
+  font-size: clamp(26px, 3.4vw, 34px); line-height: 1.1; color: var(--ink); letter-spacing: -.005em;
+}
+.sec-meta { margin: 0; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* ── Masonry grid ─────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--gap);
+  align-items: start;
+}
+/* JS turns on fine row tracks and sets each item's row span; without JS it stays a plain grid. */
+.grid.is-masonry { grid-auto-rows: 2px; row-gap: 0; }
+@media (max-width: 980px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 640px) {
+  :root { --gap: 10px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Issue bar: a slim full-width header above each issue's own grid */
+.issue {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 4px 14px; flex-wrap: wrap;
+  margin-top: 30px; padding: 9px 2px 0;
+  border-top: 1px dashed var(--line-hover);
+  font-size: 11px; line-height: 1.5; color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.sec .issue:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
+.issue + .grid { margin-top: 12px; }
+.issue b {
+  font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink);
+}
+.issue a { color: var(--muted); text-underline-offset: 2px; text-decoration-color: var(--line-hover); }
+.issue a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+
+/* ── Card ─────────────────────────────────── */
+.card {
+  min-width: 0;
+  display: flex; flex-direction: column; gap: 7px;
+  padding: 14px 16px 13px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color .15s ease;
+}
+.card:hover { border-color: var(--line-hover); }
+.card-tag {
+  margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 6px;
+  font-size: 10.5px; line-height: 1.4; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--muted); font-variant-numeric: tabular-nums;
+}
+.card-tag .src { color: var(--ink); font-weight: 600; }
+.card-title {
+  margin: 0;
+  font-family: var(--f-display); font-weight: 400;
+  font-size: 21px; line-height: 1.22; color: var(--ink);
+  overflow-wrap: anywhere; text-wrap: pretty;
+}
+.card-role { display: block; margin-top: -3px; font-size: 12px; color: var(--muted); }
+.card-body { margin: 0; font-size: 13.5px; line-height: 1.62; color: var(--text); overflow-wrap: anywhere; }
+.card-foot {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 10px;
+  margin-top: 2px; font-size: 12px;
+}
+.stat { color: var(--muted); font-variant-numeric: tabular-nums; }
+.src-link {
+  color: var(--accent); font-weight: 500; text-decoration: underline;
+  text-decoration-color: var(--accent-soft); text-decoration-thickness: 1px; text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+.src-link:hover { text-decoration-color: var(--accent); }
+
+/* Consensus: lead-answer bar */
+.poll { display: flex; align-items: center; gap: 8px; font-size: 11.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.poll-track { flex: 1; height: 3px; border-radius: 2px; background: var(--track); overflow: hidden; }
+.poll-track i { display: block; height: 100%; width: var(--p); background: var(--accent); }
+.poll b { color: var(--ink); font-weight: 600; }
+
+@media (max-width: 640px) {
+  .card { padding: 11px 12px 11px; gap: 6px; }
+  .card-title { font-size: 17.5px; }
+  .card-body { font-size: 13px; line-height: 1.58; }
+  .card-tag { font-size: 9.5px; letter-spacing: .04em; }
+  .card-foot { font-size: 11.5px; }
+  .mast h1 { margin-top: 30px; }
+}
+
+footer.site-foot { padding-block: 0 40px; font-size: 12px; color: var(--muted); }
+footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
 </style>
 </head>
 <body>
+{% assign section_ids = "ai-builders,x-lists,consensus,hacker-news,duan" | split: "," %}
+{% assign total_items = 0 %}
+{% for doc in site.digests %}{% assign total_items = total_items | plus: doc.items.size %}{% endfor %}
+{% assign latest = site.digests | sort: "date" | last %}
+{% assign date_str = "" %}
+{% for doc in site.digests %}{% assign dstr = doc.date | date: "%Y-%m-%d" %}{% assign date_str = date_str | append: dstr | append: "," %}{% endfor %}
+{% assign dates = date_str | split: "," | uniq | sort | reverse %}
+<header class="mast">
   <div class="wrap">
-    <div class="about">
-      <div class="label">About</div>
-      <p>Hi, I'm Marshall. I fly Cessna 182s out of the Bay Area whenever the weather
-      behaves, and spend the rest of my time on photography, tennis, and good coffee. I'm a foodie at heart,
-      happiest when the grill is lit and something is sizzling. This page is my small
-      corner of the internet.</p>
+    <div class="topbar">
+      <a href="/">← Home</a>
+      <span class="stats">5 个来源 · {{ site.digests | size }} 期 · {{ total_items }} 条 · 更新于 {{ latest.date | date: "%b %-d, %-I:%M %p" }}</span>
     </div>
-
-    <div class="apps">
-      <div class="label">Little Things</div>
-      <a class="app" href="/eat">
-        <img class="app-logo" src="assets/what-to-eat.png" alt="What to Eat">
-        <span class="app-text">
-          <span class="app-name">What to Eat</span>
-        </span>
-      </a>
-      <a class="app" href="/flying/">
-        <img class="app-logo" src="assets/flying.png" alt="Flying">
-        <span class="app-text">
-          <span class="app-name">Flying</span>
-        </span>
-      </a>
-      <a class="app" href="/thoughts/">
-        <img class="app-logo" src="assets/thoughts.png" alt="Thoughts">
-        <span class="app-text">
-          <span class="app-name">Thoughts</span>
-        </span>
-      </a>
-      <a class="app" href="/digest/">
-        <img class="app-logo" src="assets/digest.png" alt="Digest">
-        <span class="app-text">
-          <span class="app-name">Digest</span>
-        </span>
-      </a>
-    </div>
+    <h1><em>Daily</em> Digest</h1>
+    <div class="rule" role="presentation"></div>
+    <p class="dek">每天定时汇总 5 个来源。每张卡片是一条完整条目，直接读完即可；按来源分组，新的一期在前。顶部下拉按日期筛选，默认只看最新一天。</p>
   </div>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c1869bd5dea64c8a878c7be3162521fa"}'></script><!-- End Cloudflare Web Analytics -->
+</header>
+
+<div class="secnav">
+  <nav class="secnav-inner wrap" aria-label="来源">
+    {% for sid in section_ids %}
+    {% assign docs = site.digests | where: "section", sid | sort: "date" | reverse %}
+    {% assign sec_items = 0 %}
+    {% for doc in docs %}{% assign sec_items = sec_items | plus: doc.items.size %}{% endfor %}
+    {% case sid %}
+      {% when "ai-builders" %}{% assign sname = "AI Builders" %}
+      {% when "x-lists" %}{% assign sname = "X Lists 精选" %}
+      {% when "consensus" %}{% assign sname = "Consensus 民意" %}
+      {% when "hacker-news" %}{% assign sname = "Hacker News" %}
+      {% when "duan" %}{% assign sname = "段永平晚报" %}
+    {% endcase %}
+    <a href="#sec-{{ sid }}" data-navsec="sec-{{ sid }}">{{ sname }} <span>{{ sec_items }}</span></a>
+    {% endfor %}
+  </nav>
+  <div class="filterbar wrap" role="group" aria-label="按日期筛选">
+    <span class="flabel">日期</span>
+    <select class="dateselect" id="date-select" aria-label="选择日期">
+      <option value="all">全部日期</option>
+      {% assign first_date = true %}
+      {% for d in dates %}{% if d != "" %}
+      {% assign dcount = 0 %}
+      {% for doc in site.digests %}{% assign docd = doc.date | date: "%Y-%m-%d" %}{% if docd == d %}{% assign dcount = dcount | plus: doc.items.size %}{% endif %}{% endfor %}
+      <option value="{{ d }}"{% if first_date %} selected{% assign first_date = false %}{% endif %}>{{ d | date: "%m-%d %a" }} · {{ dcount }} 条</option>
+      {% endif %}{% endfor %}
+    </select>
+  </div>
+</div>
+
+<main class="wrap">
+  {% for sid in section_ids %}
+  {% assign docs = site.digests | where: "section", sid | sort: "date" | reverse %}
+  {% assign sec_items = 0 %}
+  {% for doc in docs %}{% assign sec_items = sec_items | plus: doc.items.size %}{% endfor %}
+  {% case sid %}
+    {% when "ai-builders" %}{% assign sname = "AI Builders" %}{% assign ssched = "每日 09:00" %}
+    {% when "x-lists" %}{% assign sname = "X Lists 精选" %}{% assign ssched = "每日 09:00 / 21:00" %}
+    {% when "consensus" %}{% assign sname = "Consensus 民意" %}{% assign ssched = "每日约 09:30" %}
+    {% when "hacker-news" %}{% assign sname = "Hacker News" %}{% assign ssched = "每日 21:00" %}
+    {% when "duan" %}{% assign sname = "段永平晚报" %}{% assign ssched = "每日 22:00" %}
+  {% endcase %}
+  <section id="sec-{{ sid }}" class="sec">
+    <header class="sec-head">
+      <h2>{{ sname }}</h2>
+      <p class="sec-meta">{{ ssched }} · {{ docs | size }} 期 · {{ sec_items }} 条</p>
+    </header>
+    {% for doc in docs %}
+    <div class="issue" data-date="{{ doc.date | date: "%Y-%m-%d" }}"><b>{{ doc.date | date: "%a · %b %d · %-I:%M %p" | upcase }}</b><span>{{ doc.items | size }} 条 · <a href="{{ doc.url }}">整期全文 ↗</a></span></div>
+    <div class="grid" data-masonry>
+      {% for item in doc.items %}
+      <article class="card" data-date="{{ doc.date | date: "%Y-%m-%d" }}">
+        <p class="card-tag"><span class="src">{{ doc.section_name }}</span><span>·</span><time datetime="{{ doc.date | date_to_xmlschema }}">{{ doc.date | date: "%m-%d %H:%M" }}</time></p>
+        <h3 class="card-title">{{ item.title | escape }}{% if item.role %}<span class="card-role">{{ item.role | escape }}</span>{% endif %}</h3>
+        <p class="card-body">{{ item.summary | escape }}</p>
+        {% if item.poll %}<div class="poll"><span class="poll-track"><i style="--p:{{ item.poll }}%"></i></span><span>{{ item.poll_label | escape }} <b>{{ item.poll }}%</b></span></div>{% endif %}
+        <footer class="card-foot">{% if item.stat %}<span class="stat">{{ item.stat | escape }}</span>{% endif %}<a class="src-link" href="{{ item.url | escape }}" target="_blank" rel="noopener">{{ item.link_label | escape }} ↗</a></footer>
+      </article>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </section>
+  {% endfor %}
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">Digest 由定时任务生成 · mzhao.me</div>
+</footer>
+
+<script>
+(function () {
+  /* Masonry: fine 2px row tracks + per-item row span. Grid auto-placement then drops
+     each item into the column that frees up first, so reading order stays left-to-right. */
+  var ROW = 2;
+  var grids = Array.prototype.slice.call(document.querySelectorAll('[data-masonry]'));
+
+  function layout(grid) {
+    var gap = parseFloat(getComputedStyle(grid).columnGap) || 0;
+    var items = grid.children;
+    for (var i = 0; i < items.length; i++) {
+      if (items[i].offsetParent === null) { items[i].style.gridRowEnd = ''; continue; }
+      var h = items[i].getBoundingClientRect().height;
+      items[i].style.gridRowEnd = 'span ' + Math.ceil((h + gap) / ROW);
+    }
+  }
+  function layoutAll() { grids.forEach(layout); }
+
+  grids.forEach(function (g) { g.classList.add('is-masonry'); });
+  layoutAll();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(layoutAll);
+  window.addEventListener('load', layoutAll);
+
+  if ('ResizeObserver' in window) {
+    var raf = 0, lastW = new WeakMap();
+    var ro = new ResizeObserver(function (entries) {
+      var changed = entries.some(function (e) {
+        var w = Math.round(e.contentRect.width);
+        if (lastW.get(e.target) === w) return false;
+        lastW.set(e.target, w); return true;
+      });
+      if (!changed) return;
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(layoutAll);
+    });
+    grids.forEach(function (g) { ro.observe(g); });
+  } else {
+    window.addEventListener('resize', layoutAll);
+  }
+
+  /* Date filter: one dropdown with every date, newest first.
+     Defaults to the latest day; "全部日期" shows everything. */
+  var dateSelect = document.getElementById('date-select');
+  var sections = Array.prototype.slice.call(document.querySelectorAll('.sec'));
+  function applyFilter(f) {
+    sections.forEach(function (sec) {
+      var visible = 0;
+      Array.prototype.forEach.call(sec.querySelectorAll('[data-date]'), function (el) {
+        var show = f === 'all' || el.getAttribute('data-date') === f;
+        el.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      sec.style.display = visible ? '' : 'none';
+      var navLink = document.querySelector('[data-navsec="' + sec.id + '"]');
+      if (navLink) navLink.style.display = visible ? '' : 'none';
+    });
+    requestAnimationFrame(layoutAll);
+  }
+  if (dateSelect) {
+    dateSelect.addEventListener('change', function () { applyFilter(dateSelect.value); });
+    applyFilter(dateSelect.value || 'all');
+  }
+
+  /* Section nav: mark the section currently in view. */
+  var links = Array.prototype.slice.call(document.querySelectorAll('.secnav a'));
+  var nav = document.querySelector('.secnav-inner');
+  function setActive(id) {
+    links.forEach(function (a) {
+      var on = a.getAttribute('href') === '#' + id;
+      if (on) {
+        a.setAttribute('aria-current', 'true');
+        var left = a.offsetLeft - nav.clientWidth / 2 + a.offsetWidth / 2;
+        nav.scrollTo ? nav.scrollTo({ left: left }) : (nav.scrollLeft = left);
+      } else {
+        a.removeAttribute('aria-current');
+      }
+    });
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) setActive(e.target.id); });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    document.querySelectorAll('.sec').forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c1869bd5dea64c8a878c7be3162521fa"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
