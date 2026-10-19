@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>段永平今日观点 — 2026-10-17</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232e3d4a'/%3E%3Ctext x='32' y='44' font-family='Helvetica, Arial, sans-serif' font-size='36' font-weight='500' fill='%23ffffff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
 <meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0c0c0c" media="(prefers-color-scheme: dark)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,8 +57,7 @@
   <div class="text"><p>来源：雪球「大道无形我有型」（段永平本人账号）
 <a href="https://xueqiu.com/u/1247347556">https://xueqiu.com/u/1247347556</a>
 说明：主页第 1 页无需登录可读（最新 20 条，覆盖至 2026-10-16 19:59 PDT），详情页逐帖核对，未登录、未绕过验证。去重截点为上次已报的 2026-10-16 21:58 PDT；其后新内容 14 条，过滤无实质内容 6 条（葡萄酒玩笑、英语闲聊/感怀寒暄、一句裸附和），报告 8 条。时间均为 America/Los_Angeles，他的话与被回复原文已分清。</p>
-
-<h3 id="投资">投资</h3>
+<h3>投资</h3>
 <p>· 苹果估值算账：苹果现在约 5 万亿市值，对照 10 年期美债约 5.2%/年的利息，5 万亿买国债 10 年后约收回 8.36 万亿；苹果未来 10 年因此需要赚到约 3.36 万亿利润、即年利润增长约 12.6%，以目前基数并不容易；但若真能达到甚至超过这个增速，苹果其实也不算贵。（泡泡玛特话题串中的回复）
 <a href="https://xueqiu.com/1247347556/412752606">https://xueqiu.com/1247347556/412752606</a>
 · 附带更正：同串里他更正自己先前的口径——利润基数应按过去四个季度算，而不是上个年度，并承认自己可能说错了。
@@ -73,22 +71,46 @@
 <a href="https://xueqiu.com/1247347556/412749889">https://xueqiu.com/1247347556/412749889</a>
 · 谈时间尺度：泡泡玛特话题串里有人提“10 年”，他说其实用 20 年可能更合适。
 <a href="https://xueqiu.com/1247347556/412763264">https://xueqiu.com/1247347556/412763264</a></p>
-
-<h3 id="生活心态">生活/心态</h3>
+<h3>生活/心态</h3>
 <p>· 回应“投资有点像坐牢、知道能出去却要一直等”：他反问——假如你拥有一家非上市公司，比如茅台，你真的会有这种感觉吗？
 <a href="https://xueqiu.com/1247347556/412761744">https://xueqiu.com/1247347556/412761744</a></p>
-
 <hr />
-<p>发送记录（补发）</p>
-<ul>
-  <li>发送时间：2026-10-17 22:15:21 PDT</li>
-  <li>实际收件人：+19492328737</li>
-  <li>message_id：ADC322CF-FB14-47F5-8E7F-EB6B0F7E7799</li>
-  <li>状态：已送达（delivered）—— 已按 message_id 核实，chat 2</li>
-</ul>
-</div>
+<p>发送记录（补发）
+- 发送时间：2026-10-17 22:15:21 PDT
+- 实际收件人：+19492328737
+- message_id：ADC322CF-FB14-47F5-8E7F-EB6B0F7E7799
+- 状态：已送达（delivered）—— 已按 message_id 核实，chat 2</p></div>
   <div class="back"><a href="/digest-preview/">← All digests</a></div>
 </div>
+<script>
+(function () {
+  var re = /(https?:\/\/[^\s<>\])）]+)/g;
+  document.querySelectorAll('.text').forEach(function (el) {
+    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        return n.parentElement.closest('a, code, pre') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function (n) {
+      if (!/https?:\/\//.test(n.textContent)) return;
+      var frag = document.createDocumentFragment(), last = 0, m;
+      re.lastIndex = 0;
+      while ((m = re.exec(n.textContent))) {
+        var url = m[1].replace(/[。，、；：!?…]+$/, '');
+        frag.appendChild(document.createTextNode(n.textContent.slice(last, m.index)));
+        var a = document.createElement('a');
+        a.href = url; a.textContent = url;
+        frag.appendChild(a);
+        last = m.index + url.length;
+      }
+      frag.appendChild(document.createTextNode(n.textContent.slice(last)));
+      n.replaceWith(frag);
+    });
+  });
+})();
+</script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c1869bd5dea64c8a878c7be3162521fa"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
