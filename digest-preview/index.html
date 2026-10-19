@@ -176,15 +176,17 @@ main.wrap { padding-block: 34px 72px; display: flex; flex-direction: column; gap
   .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-/* Issue marker: a quiet tile that opens each issue inside the grid */
+/* Issue bar: a slim full-width header above each issue's own grid */
 .issue {
-  padding: 10px 2px 8px;
+  display: flex; justify-content: space-between; align-items: baseline; gap: 4px 14px; flex-wrap: wrap;
+  margin-top: 30px; padding: 9px 2px 0;
   border-top: 1px dashed var(--line-hover);
   font-size: 11px; line-height: 1.5; color: var(--muted);
   font-variant-numeric: tabular-nums;
 }
+.sec .issue:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
+.issue + .grid { margin-top: 12px; }
 .issue b {
-  display: block; margin-bottom: 2px;
   font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink);
 }
 .issue a { color: var(--muted); text-underline-offset: 2px; text-decoration-color: var(--line-hover); }
@@ -342,9 +344,9 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
       <h2>AI Builders</h2>
       <p class="sec-meta">每日 09:00 · 3 期 · 21 条</p>
     </header>
+    
+    <div class="issue" data-date="2026-10-18"><b>SUN · OCT 18 · 9:00 AM</b><span>6 条 · <a href="/digest-preview/2026-10-18-ai-builders/">整期全文 ↗</a></span></div>
     <div class="grid" data-masonry>
-      
-      <div class="issue" data-date="2026-10-18"><b>SUN · OCT 18 · 9:00 AM</b>6 条 · <a href="/digest-preview/2026-10-18-ai-builders/">整期全文 ↗</a></div>
       
       <article class="card" data-date="2026-10-18">
         <p class="card-tag"><span class="src">AI Builders</span><span>·</span><time datetime="2026-10-18T09:00:00-07:00">10-18 09:00</time></p>
@@ -394,8 +396,10 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
         <footer class="card-foot"><a class="src-link" href="https://www.youtube.com/@DataDrivenNYC/videos" target="_blank" rel="noopener">节目页 ↗</a></footer>
       </article>
       
-      
-      <div class="issue" data-date="2026-10-17"><b>SAT · OCT 17 · 9:00 AM</b>9 条 · <a href="/digest-preview/2026-10-17-ai-builders/">整期全文 ↗</a></div>
+    </div>
+    
+    <div class="issue" data-date="2026-10-17"><b>SAT · OCT 17 · 9:00 AM</b><span>9 条 · <a href="/digest-preview/2026-10-17-ai-builders/">整期全文 ↗</a></span></div>
+    <div class="grid" data-masonry>
       
       <article class="card" data-date="2026-10-17">
         <p class="card-tag"><span class="src">AI Builders</span><span>·</span><time datetime="2026-10-17T09:00:00-07:00">10-17 09:00</time></p>
@@ -469,8 +473,10 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
         <footer class="card-foot"><a class="src-link" href="https://www.youtube.com/@NoPriorsPodcast" target="_blank" rel="noopener">X 原帖 ↗</a></footer>
       </article>
       
-      
-      <div class="issue" data-date="2026-10-16"><b>FRI · OCT 16 · 9:00 AM</b>6 条 · <a href="/digest-preview/2026-10-16-ai-builders/">整期全文 ↗</a></div>
+    </div>
+    
+    <div class="issue" data-date="2026-10-16"><b>FRI · OCT 16 · 9:00 AM</b><span>6 条 · <a href="/digest-preview/2026-10-16-ai-builders/">整期全文 ↗</a></span></div>
+    <div class="grid" data-masonry>
       
       <article class="card" data-date="2026-10-16">
         <p class="card-tag"><span class="src">AI Builders</span><span>·</span><time datetime="2026-10-16T09:00:00-07:00">10-16 09:00</time></p>
@@ -520,8 +526,8 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
         <footer class="card-foot"><a class="src-link" href="https://www.youtube.com/@DataDrivenNYC/videos" target="_blank" rel="noopener">节目页 ↗</a></footer>
       </article>
       
-      
     </div>
+    
   </section>
   
   
@@ -533,9 +539,9 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
       <h2>X Lists 精选</h2>
       <p class="sec-meta">每日 09:00 / 21:00 · 6 期 · 234 条</p>
     </header>
+    
+    <div class="issue" data-date="2026-10-18"><b>SUN · OCT 18 · 9:00 PM</b><span>44 条 · <a href="/digest-preview/2026-10-18-x-lists-2100/">整期全文 ↗</a></span></div>
     <div class="grid" data-masonry>
-      
-      <div class="issue" data-date="2026-10-18"><b>SUN · OCT 18 · 9:00 PM</b>44 条 · <a href="/digest-preview/2026-10-18-x-lists-2100/">整期全文 ↗</a></div>
       
       <article class="card" data-date="2026-10-18">
         <p class="card-tag"><span class="src">X Lists 精选</span><span>·</span><time datetime="2026-10-18T21:00:00-07:00">10-18 21:00</time></p>
@@ -889,8 +895,10 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
         <footer class="card-foot"><span class="stat">@rabois / @VentureBeat</span><a class="src-link" href="https://x.com/rabois/status/2111861735678197875" target="_blank" rel="noopener">X 原帖 ↗</a></footer>
       </article>
       
-      
-      <div class="issue" data-date="2026-10-18"><b>SUN · OCT 18 · 9:00 AM</b>49 条 · <a href="/digest-preview/2026-10-18-x-lists-0900/">整期全文 ↗</a></div>
+    </div>
+    
+    <div class="issue" data-date="2026-10-18"><b>SUN · OCT 18 · 9:00 AM</b><span>49 条 · <a href="/digest-preview/2026-10-18-x-lists-0900/">整期全文 ↗</a></span></div>
+    <div class="grid" data-masonry>
       
       <article class="card" data-date="2026-10-18">
         <p class="card-tag"><span class="src">X Lists 精选</span><span>·</span><time datetime="2026-10-18T09:00:00-07:00">10-18 09:00</time></p>
@@ -1284,8 +1292,10 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
         <footer class="card-foot"><span class="stat">@KatieMiller</span><a class="src-link" href="https://x.com/KatieMiller/status/2111844205714673717" target="_blank" rel="noopener">X 原帖 ↗</a></footer>
       </article>
       
-      
-      <div class="issue" data-date="2026-10-17"><b>SAT · OCT 17 · 9:00 PM</b>39 条 · <a href="/digest-preview/2026-10-17-x-lists-2100/">整期全文 ↗</a></div>
+    </div>
+    
+    <div class="issue" data-date="2026-10-17"><b>SAT · OCT 17 · 9:00 PM</b><span>39 条 · <a href="/digest-preview/2026-10-17-x-lists-2100/">整期全文 ↗</a></span></div>
+    <div class="grid" data-masonry>
       
       <article class="card" data-date="2026-10-17">
         <p class="card-tag"><span class="src">X Lists 精选</span><span>·</span><time datetime="2026-10-17T21:00:00-07:00">10-17 21:00</time></p>
@@ -1599,8 +1609,10 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
         <footer class="card-foot"><span class="stat">@dens / @wotancore</span><a class="src-link" href="https://x.com/dens/status/2111641635750912142" target="_blank" rel="noopener">X 原帖 ↗</a></footer>
       </article>
       
-      
-      <div class="issue" data-date="2026-10-17"><b>SAT · OCT 17 · 9:00 AM</b>41 条 · <a href="/digest-preview/2026-10-17-x-lists-0900/">整期全文 ↗</a></div>
+    </div>
+    
+    <div class="issue" data-date="2026-10-17"><b>SAT · OCT 17 · 9:00 AM</b><span>41 条 · <a href="/digest-preview/2026-10-17-x-lists-0900/">整期全文 ↗</a></span></div>
+    <div class="grid" data-masonry>
       
       <article class="card" data-date="2026-10-17">
         <p class="card-tag"><span class="src">X Lists 精选</span><span>·</span><time datetime="2026-10-17T09:00:00-07:00">10-17 09:00</time></p>
@@ -1930,8 +1942,10 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
         <footer class="card-foot"><span class="stat">@packyM</span><a class="src-link" href="https://x.com/packyM/status/2111470520235708730" target="_blank" rel="noopener">X 原帖 ↗</a></footer>
       </article>
       
-      
-      <div class="issue" data-date="2026-10-16"><b>FRI · OCT 16 · 9:00 PM</b>30 条 · <a href="/digest-preview/2026-10-16-x-lists-2100/">整期全文 ↗</a></div>
+    </div>
+    
+    <div class="issue" data-date="2026-10-16"><b>FRI · OCT 16 · 9:00 PM</b><span>30 条 · <a href="/digest-preview/2026-10-16-x-lists-2100/">整期全文 ↗</a></span></div>
+    <div class="grid" data-masonry>
       
       <article class="card" data-date="2026-10-16">
         <p class="card-tag"><span class="src">X Lists 精选</span><span>·</span><time datetime="2026-10-16T21:00:00-07:00">10-16 21:00</time></p>
@@ -2173,8 +2187,10 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
         <footer class="card-foot"><span class="stat">@WorldBankGroup</span><a class="src-link" href="https://x.com/WorldBankGroup/status/2111278547902075131" target="_blank" rel="noopener">X 原帖 ↗</a></footer>
       </article>
       
-      
-      <div class="issue" data-date="2026-10-16"><b>FRI · OCT 16 · 9:00 AM</b>31 条 · <a href="/digest-preview/2026-10-16-x-lists-0900/">整期全文 ↗</a></div>
+    </div>
+    
+    <div class="issue" data-date="2026-10-16"><b>FRI · OCT 16 · 9:00 AM</b><span>31 条 · <a href="/digest-preview/2026-10-16-x-lists-0900/">整期全文 ↗</a></span></div>
+    <div class="grid" data-masonry>
       
       <article class="card" data-date="2026-10-16">
         <p class="card-tag"><span class="src">X Lists 精选</span><span>·</span><time datetime="2026-10-16T09:00:00-07:00">10-16 09:00</time></p>
@@ -2424,8 +2440,8 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
         <footer class="card-foot"><span class="stat">@ai_for_success</span><a class="src-link" href="https://x.com/ai_for_success/status/2110973461690802487" target="_blank" rel="noopener">X 原帖 ↗</a></footer>
       </article>
       
-      
     </div>
+    
   </section>
   
   
@@ -2437,9 +2453,9 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
       <h2>Consensus 民意</h2>
       <p class="sec-meta">每日约 09:30 · 3 期 · 8 条</p>
     </header>
+    
+    <div class="issue" data-date="2026-10-18"><b>SUN · OCT 18 · 9:49 AM</b><span>1 条 · <a href="/digest-preview/2026-10-18-consensus/">整期全文 ↗</a></span></div>
     <div class="grid" data-masonry>
-      
-      <div class="issue" data-date="2026-10-18"><b>SUN · OCT 18 · 9:49 AM</b>1 条 · <a href="/digest-preview/2026-10-18-consensus/">整期全文 ↗</a></div>
       
       <article class="card" data-date="2026-10-18">
         <p class="card-tag"><span class="src">Consensus 民意</span><span>·</span><time datetime="2026-10-18T09:49:00-07:00">10-18 09:49</time></p>
@@ -2449,8 +2465,10 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
         <footer class="card-foot"><span class="stat">1,921 条意见</span><a class="src-link" href="https://useconsensus.io/search?id=ZP30qaRbmtp5b_mo&amp;q=iPhone%20vs%20Pixel" target="_blank" rel="noopener">Consensus 投票 ↗</a></footer>
       </article>
       
-      
-      <div class="issue" data-date="2026-10-17"><b>SAT · OCT 17 · 9:49 AM</b>6 条 · <a href="/digest-preview/2026-10-17-consensus/">整期全文 ↗</a></div>
+    </div>
+    
+    <div class="issue" data-date="2026-10-17"><b>SAT · OCT 17 · 9:49 AM</b><span>6 条 · <a href="/digest-preview/2026-10-17-consensus/">整期全文 ↗</a></span></div>
+    <div class="grid" data-masonry>
       
       <article class="card" data-date="2026-10-17">
         <p class="card-tag"><span class="src">Consensus 民意</span><span>·</span><time datetime="2026-10-17T09:49:00-07:00">10-17 09:49</time></p>
@@ -2500,8 +2518,10 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
         <footer class="card-foot"><span class="stat">1,663 条意见</span><a class="src-link" href="https://useconsensus.io" target="_blank" rel="noopener">Consensus 投票 ↗</a></footer>
       </article>
       
-      
-      <div class="issue" data-date="2026-10-16"><b>FRI · OCT 16 · 9:49 AM</b>1 条 · <a href="/digest-preview/2026-10-16-consensus/">整期全文 ↗</a></div>
+    </div>
+    
+    <div class="issue" data-date="2026-10-16"><b>FRI · OCT 16 · 9:49 AM</b><span>1 条 · <a href="/digest-preview/2026-10-16-consensus/">整期全文 ↗</a></span></div>
+    <div class="grid" data-masonry>
       
       <article class="card" data-date="2026-10-16">
         <p class="card-tag"><span class="src">Consensus 民意</span><span>·</span><time datetime="2026-10-16T09:49:00-07:00">10-16 09:49</time></p>
@@ -2511,8 +2531,8 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
         <footer class="card-foot"><span class="stat">1,921 条意见</span><a class="src-link" href="https://useconsensus.io/search?id=ZP30qaRbmtp5b_mo&amp;q=iPhone%20vs%20Pixel" target="_blank" rel="noopener">Consensus 投票 ↗</a></footer>
       </article>
       
-      
     </div>
+    
   </section>
   
   
@@ -2524,9 +2544,9 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
       <h2>Hacker News</h2>
       <p class="sec-meta">每日 21:00 · 3 期 · 30 条</p>
     </header>
+    
+    <div class="issue" data-date="2026-10-18"><b>SUN · OCT 18 · 9:00 PM</b><span>10 条 · <a href="/digest-preview/2026-10-18-hacker-news/">整期全文 ↗</a></span></div>
     <div class="grid" data-masonry>
-      
-      <div class="issue" data-date="2026-10-18"><b>SUN · OCT 18 · 9:00 PM</b>10 条 · <a href="/digest-preview/2026-10-18-hacker-news/">整期全文 ↗</a></div>
       
       <article class="card" data-date="2026-10-18">
         <p class="card-tag"><span class="src">Hacker News</span><span>·</span><time datetime="2026-10-18T21:00:00-07:00">10-18 21:00</time></p>
@@ -2608,8 +2628,10 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
         <footer class="card-foot"><span class="stat">123 分 · 25 评论</span><a class="src-link" href="https://news.ycombinator.com/item?id=50144066" target="_blank" rel="noopener">HN 讨论 ↗</a></footer>
       </article>
       
-      
-      <div class="issue" data-date="2026-10-17"><b>SAT · OCT 17 · 9:00 PM</b>10 条 · <a href="/digest-preview/2026-10-17-hacker-news/">整期全文 ↗</a></div>
+    </div>
+    
+    <div class="issue" data-date="2026-10-17"><b>SAT · OCT 17 · 9:00 PM</b><span>10 条 · <a href="/digest-preview/2026-10-17-hacker-news/">整期全文 ↗</a></span></div>
+    <div class="grid" data-masonry>
       
       <article class="card" data-date="2026-10-17">
         <p class="card-tag"><span class="src">Hacker News</span><span>·</span><time datetime="2026-10-17T21:00:00-07:00">10-17 21:00</time></p>
@@ -2691,8 +2713,10 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
         <footer class="card-foot"><span class="stat">231 分 · 59 评论</span><a class="src-link" href="https://news.ycombinator.com/item?id=50126312" target="_blank" rel="noopener">HN 讨论 ↗</a></footer>
       </article>
       
-      
-      <div class="issue" data-date="2026-10-16"><b>FRI · OCT 16 · 9:00 PM</b>10 条 · <a href="/digest-preview/2026-10-16-hacker-news/">整期全文 ↗</a></div>
+    </div>
+    
+    <div class="issue" data-date="2026-10-16"><b>FRI · OCT 16 · 9:00 PM</b><span>10 条 · <a href="/digest-preview/2026-10-16-hacker-news/">整期全文 ↗</a></span></div>
+    <div class="grid" data-masonry>
       
       <article class="card" data-date="2026-10-16">
         <p class="card-tag"><span class="src">Hacker News</span><span>·</span><time datetime="2026-10-16T21:00:00-07:00">10-16 21:00</time></p>
@@ -2774,8 +2798,8 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
         <footer class="card-foot"><span class="stat">197 分 · 89 评论</span><a class="src-link" href="https://news.ycombinator.com/item?id=50118688" target="_blank" rel="noopener">HN 讨论 ↗</a></footer>
       </article>
       
-      
     </div>
+    
   </section>
   
   
@@ -2787,9 +2811,9 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
       <h2>段永平晚报</h2>
       <p class="sec-meta">每日 22:00 · 3 期 · 23 条</p>
     </header>
+    
+    <div class="issue" data-date="2026-10-18"><b>SUN · OCT 18 · 10:00 PM</b><span>9 条 · <a href="/digest-preview/2026-10-18-duan/">整期全文 ↗</a></span></div>
     <div class="grid" data-masonry>
-      
-      <div class="issue" data-date="2026-10-18"><b>SUN · OCT 18 · 10:00 PM</b>9 条 · <a href="/digest-preview/2026-10-18-duan/">整期全文 ↗</a></div>
       
       <article class="card" data-date="2026-10-18">
         <p class="card-tag"><span class="src">段永平晚报</span><span>·</span><time datetime="2026-10-18T22:00:00-07:00">10-18 22:00</time></p>
@@ -2863,8 +2887,10 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
         <footer class="card-foot"><a class="src-link" href="https://xueqiu.com/1247347556/412845947" target="_blank" rel="noopener">雪球原帖 ↗</a></footer>
       </article>
       
-      
-      <div class="issue" data-date="2026-10-17"><b>SAT · OCT 17 · 10:00 PM</b>7 条 · <a href="/digest-preview/2026-10-17-duan/">整期全文 ↗</a></div>
+    </div>
+    
+    <div class="issue" data-date="2026-10-17"><b>SAT · OCT 17 · 10:00 PM</b><span>7 条 · <a href="/digest-preview/2026-10-17-duan/">整期全文 ↗</a></span></div>
+    <div class="grid" data-masonry>
       
       <article class="card" data-date="2026-10-17">
         <p class="card-tag"><span class="src">段永平晚报</span><span>·</span><time datetime="2026-10-17T22:00:00-07:00">10-17 22:00</time></p>
@@ -2922,8 +2948,10 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
         <footer class="card-foot"><a class="src-link" href="https://xueqiu.com/1247347556/412761744" target="_blank" rel="noopener">雪球原帖 ↗</a></footer>
       </article>
       
-      
-      <div class="issue" data-date="2026-10-16"><b>FRI · OCT 16 · 10:00 PM</b>7 条 · <a href="/digest-preview/2026-10-16-duan/">整期全文 ↗</a></div>
+    </div>
+    
+    <div class="issue" data-date="2026-10-16"><b>FRI · OCT 16 · 10:00 PM</b><span>7 条 · <a href="/digest-preview/2026-10-16-duan/">整期全文 ↗</a></span></div>
+    <div class="grid" data-masonry>
       
       <article class="card" data-date="2026-10-16">
         <p class="card-tag"><span class="src">段永平晚报</span><span>·</span><time datetime="2026-10-16T22:00:00-07:00">10-16 22:00</time></p>
@@ -2981,8 +3009,8 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
         <footer class="card-foot"><a class="src-link" href="https://xueqiu.com/1247347556/412715503" target="_blank" rel="noopener">雪球原帖 ↗</a></footer>
       </article>
       
-      
     </div>
+    
   </section>
   
 </main>
