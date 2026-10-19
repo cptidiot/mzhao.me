@@ -153,6 +153,15 @@ main.wrap { padding-block: 34px 72px; display: flex; flex-direction: column; gap
   font-size: clamp(26px, 3.4vw, 34px); line-height: 1.1; color: var(--ink); letter-spacing: -.005em;
 }
 .sec-meta { margin: 0; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.sec-toggle {
+  flex: none; width: 30px; height: 30px; padding: 0;
+  background: none; border: 1px solid var(--line); border-radius: 999px;
+  font-size: 14px; line-height: 1; color: var(--muted); cursor: pointer;
+  transition: transform .18s ease, color .15s ease, border-color .15s ease;
+}
+.sec-toggle:hover { color: var(--ink); border-color: var(--line-hover); }
+.sec.collapsed .sec-toggle { transform: rotate(-90deg); }
+.sec.collapsed .sec-body { display: none; }
 
 /* ── Masonry grid ─────────────────────────── */
 .grid {
@@ -253,7 +262,7 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
   <div class="wrap">
     <div class="topbar">
       <a href="/">← Home</a>
-      <span class="stats">6 个来源 · {{ site.digests | size }} 期 · {{ total_items }} 条 · 更新于 {{ latest.date | date: "%b %-d, %-I:%M %p" }}</span>
+      <span class="stats">6 个来源 · 更新于 {{ latest.date | date: "%b %-d, %-I:%M %p" }}</span>
     </div>
     <h1><em>Daily</em> Digest</h1>
     <div class="rule" role="presentation"></div>
@@ -275,7 +284,7 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
       {% when "duan" %}{% assign sname = "段永平晚报" %}
       {% when "reddit" %}{% assign sname = "Reddit 精选" %}
     {% endcase %}
-    <a href="#sec-{{ sid }}" data-navsec="sec-{{ sid }}">{{ sname }} <span>{{ sec_items }}</span></a>
+    <a href="#sec-{{ sid }}" data-navsec="sec-{{ sid }}">{{ sname }}</a>
     {% endfor %}
   </nav>
   <div class="filterbar wrap" role="group" aria-label="按日期筛选">
@@ -308,14 +317,15 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
   <section id="sec-{{ sid }}" class="sec">
     <header class="sec-head">
       <h2>{{ sname }}</h2>
-      <p class="sec-meta">{{ ssched }} · {{ docs | size }} 期 · {{ sec_items }} 条</p>
+      <button class="sec-toggle" type="button" aria-expanded="true" aria-label="折叠或展开本栏目">▾</button>
     </header>
+    <div class="sec-body">
     {% for doc in docs %}
     <div class="issue" data-date="{{ doc.date | date: "%Y-%m-%d" }}"><b>{{ doc.date | date: "%a · %b %d · %-I:%M %p" | upcase }}</b><span>{{ doc.items | size }} 条 · <a href="{{ doc.url }}">整期全文 ↗</a></span></div>
     <div class="grid" data-masonry>
       {% for item in doc.items %}
       <article class="card" data-date="{{ doc.date | date: "%Y-%m-%d" }}">
-        <p class="card-tag"><span class="src">{{ doc.section_name }}</span><span>·</span><time datetime="{{ doc.date | date_to_xmlschema }}">{{ doc.date | date: "%m-%d %H:%M" }}</time></p>
+        <p class="card-tag"><span class="src">{{ doc.section_name }}</span><span>·</span>{% if item.time %}<time>{{ item.time | escape }}</time>{% else %}<time datetime="{{ doc.date | date_to_xmlschema }}">{{ doc.date | date: "%m-%d" }}</time>{% endif %}</p>
         <h3 class="card-title">{{ item.title | escape }}{% if item.role %}<span class="card-role">{{ item.role | escape }}</span>{% endif %}</h3>
         <p class="card-body">{{ item.summary | escape }}</p>
         {% if item.poll %}<div class="poll"><span class="poll-track"><i style="--p:{{ item.poll }}%"></i></span><span>{{ item.poll_label | escape }} <b>{{ item.poll }}%</b></span></div>{% endif %}
@@ -324,6 +334,7 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
       {% endfor %}
     </div>
     {% endfor %}
+    </div>
   </section>
   {% endfor %}
 </main>
@@ -394,6 +405,24 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
     dateSelect.addEventListener('change', function () { applyFilter(dateSelect.value); });
     applyFilter(dateSelect.value || 'all');
   }
+
+  /* Section collapse: click the chevron (or the header row) to fold a section away. */
+  document.querySelectorAll('.sec-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var sec = btn.closest('.sec');
+      var collapsed = sec.classList.toggle('collapsed');
+      btn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+      if (!collapsed) requestAnimationFrame(layoutAll);
+    });
+  });
+  document.querySelectorAll('.sec-head').forEach(function (head) {
+    head.style.cursor = 'pointer';
+    head.addEventListener('click', function () {
+      var btn = head.querySelector('.sec-toggle');
+      if (btn) btn.click();
+    });
+  });
 
   /* Section nav: mark the section currently in view. */
   var links = Array.prototype.slice.call(document.querySelectorAll('.secnav a'));
