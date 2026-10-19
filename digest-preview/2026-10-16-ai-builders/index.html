@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>AI Builders Digest — 2026-10-16</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232e3d4a'/%3E%3Ctext x='32' y='44' font-family='Helvetica, Arial, sans-serif' font-size='36' font-weight='500' fill='%23ffffff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c0c0c" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --bg: #fafaf8; --ink: #111111; --body: #3a3a38; --muted: #8e8e89;
+    --line: rgba(17, 17, 17, .1); --rule: #111111; --red: #e8261c;
+    --serif: "Instrument Serif", "Iowan Old Style", "Times New Roman", serif;
+    --sans: "Inter", "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0c0c0c; --ink: #f1f1ee; --body: #bdbdb8; --muted: #76766f; --line: rgba(241, 241, 238, .12); --rule: #f1f1ee; --red: #ff4a3d; color-scheme: dark; }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { background: var(--bg); color: var(--body); font-family: var(--sans); -webkit-font-smoothing: antialiased; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  a { color: inherit; }
+  .wrap { max-width: 720px; margin: 0 auto; padding-block: 48px 96px; }
+  .top { display: flex; justify-content: space-between; font: 500 12px/1 var(--sans); color: var(--muted); }
+  .top a { text-decoration: none; }
+  .top a:hover { color: var(--ink); }
+  h1 { margin-top: 48px; font: 400 clamp(30px, 5.6vw, 44px)/1.12 var(--serif); letter-spacing: -.01em; color: var(--ink); text-wrap: balance; }
+  .meta { margin-top: 14px; font: 500 11.5px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .meta b { color: var(--red); font-weight: 600; }
+  .redline { display: block; width: 56px; height: 4px; margin: 18px 0 26px; background: var(--red); }
+  .text { overflow-wrap: anywhere; font-size: 15px; line-height: 1.7; color: var(--body); }
+  .text p, .text ul, .text ol, .text blockquote { margin-bottom: .8em; }
+  .text > :last-child { margin-bottom: 0; }
+  .text h2 { font: 600 17px/1.4 var(--sans); color: var(--ink); margin: 1.3em 0 .5em; }
+  .text h3 { font: 600 15px/1.45 var(--sans); color: var(--ink); margin: 1.25em 0 .4em; }
+  .text ul, .text ol { padding-left: 1.2em; }
+  .text li { margin-bottom: .3em; }
+  .text blockquote { padding-left: 12px; border-left: 2px solid var(--line); color: var(--muted); }
+  .text a { color: var(--ink); text-decoration-color: var(--red); text-decoration-thickness: 1.5px; text-underline-offset: 3px; overflow-wrap: anywhere; }
+  .text a:hover { color: var(--red); }
+  .text strong { color: var(--ink); }
+  .back { margin-top: 44px; padding-top: 14px; border-top: 2px solid var(--rule); font: 600 12px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+  .back a { text-decoration: none; }
+  .back a:hover { color: var(--red); }
+  @media (max-width: 560px) { .wrap { padding-block: 32px 72px; } h1 { margin-top: 36px; } .redline { width: 44px; height: 3px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a href="/">Home</a><a href="/digest-preview/">Digest</a></div>
+  <h1>AI Builders Digest — 2026-10-16</h1>
+  <p class="meta"><b>AI Builders</b> · October 16, 2026 · 9:00 AM</p>
+  <span class="redline" aria-hidden="true"></span>
+  <div class="text"><p>日期：2026-10-16（America/Los_Angeles）
+Feed 更新时间：X / 博客 / 播客均生成于 2026-10-16T06:42 UTC（洛杉矶 10-15 23:42），为最近 24 小时窗口的新 feed，不是旧内容冒充今日新闻。</p>
+
+<h2 id="x-开发者观点">X 开发者观点</h2>
+
+<p><strong>Boris Cherny（Claude @ Anthropic）</strong>
+随着 agent 能做的事越来越多，prompt injection 正变得必须全行业一起解决。他宣布 Anthropic 与 Gray Swan 合作办一场相关竞赛，邀请大家来找漏洞——重点不在单个模型修补，而是把攻击面公开测出来。
+<a href="https://x.com/bcherny/status/2110791698611855624">X 原帖</a></p>
+
+<p><strong>Aaron Levie（CEO @ Box）</strong>
+① 谈 Meta 推出 Muse 开放权重模型：他认为这会加速 AI 扩散——企业可以把前沿模型用于 orchestration 和高端任务，同时用低成本、post-trained 的小模型跑可重复 workflow，整体反而拉高全栈的 token 消耗。
+<a href="https://x.com/levie/status/2110787013809222141">X 原帖</a>
+② 谈 agent 形态变化：从一来一回聊天，转向把 agent 放到后台并行干活，token 消耗可能是现在的 100–1000 倍量级。大量知识工作原本卡在人的带宽和上下文上；当可以同时甩出多个 agent 并让它们“做完再回来”时，很多 QA、安全审查、文档风险排查、审计都是净新增的工作，而非替代存量。下一道瓶颈是 compute。（此条发布时间 2026-10-15 06:45 UTC，处在 24 小时窗口边缘，此前未报告过。）
+<a href="https://x.com/levie/status/2110622982762803449">X 原帖</a></p>
+
+<p><strong>Aditya Agarwal（General Partner @ SPC，前 Dropbox CTO）</strong>
+他看好 SPC 系的 Goodfire，理由是这家公司在证明 interpretability 和 alignment 可以当作工程问题来做，而不是停留在研究口号——如果可解释性变成可落地的工程能力，对模型部署和治理都有实际意义。
+<a href="https://x.com/adityaag/status/2110779602453066224">X 原帖</a></p>
+
+<p><strong>Dan Shipper（CEO @ Every）</strong>
+用一段戏仿式的吐槽质疑 interpretability 的常见叙事：能定位某个 neuron 对某个概念有反应，并不等于理解模型在计划什么，更不等于能据此对齐 superintelligence。属于观点型段子，不是研究结论，但点出了“识别特征 ≠ 理解意图”这个落差。
+<a href="https://x.com/danshipper/status/2110831666587713810">X 原帖</a></p>
+
+<p><strong>Zara Zhang（Builder）</strong>
+转述 Ezra Klein 的一条沟通原则：不要低估受众的智力，也不要高估他们的先验知识。对做产品讲解和内容的人是个实用的校准——讲清楚背景，但别把人当傻子。
+<a href="https://x.com/zarazhangrui/status/2110815456458412179">X 原帖</a></p>
+
+<p>其余 X 条目多为纯宣传、玩笑、无内容转发或私人动态（如 T 恤征集、法语玩梗），已按规则过滤。</p>
+
+<h2 id="官方博客">官方博客</h2>
+
+<p>本次 feed-blogs.json（generatedAt 2026-10-16T06:42:48Z，lookback 72 小时）条目为 0，没有新的官方博客公告可报告。</p>
+
+<h2 id="播客">播客</h2>
+
+<p><strong>The MAD Podcast with Matt Turck — Jev: The AI That Makes Decisions, Not Text（嘉宾 Diogo Almeida，TypeSafe CEO，2026-10-15 发布）</strong>
+这一期的核心主张是“machine-native AI”：大多数软件里的自动化需要的不是生成文本，而是快速、可靠、可组合的判断。Jev 输出的是概率和决策，开发者可以像写 smart if-statement 一样设阈值、做 eval、把小判断拼成大系统，类比软件里的 logic gate——价值不在单次多聪明，而在 intelligence per dollar 和可复靠性。Almeida 解释了为何 stealth 两年、为何认为 copycat 只抄到 interface 抄不到可靠性和训练数据，也表达了对 benchmark 崇拜和 recursive self-improvement 叙事的怀疑。对 builders 的启发：做后台自动化时，先问问题能不能拆成一串可测量的小决策，而不是先写一个巨型 prompt 祈祷模型别出错。
+节目页：<a href="https://www.youtube.com/@DataDrivenNYC/videos">节目页</a>
+相关索引帖（Matt Turck，含全集章节）：<a href="https://x.com/mattturck/status/2110799882952831302">X 原帖</a></p>
+
+<hr />
+<p>内容来源：Follow Builders — <a href="https://github.com/zarazhangrui/follow-builders">Follow Builders</a></p>
+</div>
+  <div class="back"><a href="/digest-preview/">← All digests</a></div>
+</div>
+<script>
+(function () {
+  // Safety net: turn any remaining bare URLs in the body into links.
+  var re = /(https?:\/\/[^\s<>\])）]+)/g;
+  document.querySelectorAll('.text').forEach(function (el) {
+    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        return n.parentElement.closest('a, code, pre') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function (n) {
+      if (!/https?:\/\//.test(n.textContent)) return;
+      var frag = document.createDocumentFragment(), last = 0, m;
+      re.lastIndex = 0;
+      while ((m = re.exec(n.textContent))) {
+        var url = m[1].replace(/[。，、；：!?…]+$/, '');
+        frag.appendChild(document.createTextNode(n.textContent.slice(last, m.index)));
+        var a = document.createElement('a');
+        a.href = url; a.textContent = url;
+        frag.appendChild(a);
+        last = m.index + url.length;
+      }
+      frag.appendChild(document.createTextNode(n.textContent.slice(last)));
+      n.replaceWith(frag);
+    });
+  });
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c1869bd5dea64c8a878c7be3162521fa"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
