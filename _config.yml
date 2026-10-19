@@ -7,3 +7,12 @@ plugins:
 collections:
   thoughts:
     output: false
+  digests:
+    output: true
+    permalink: /digest/:name/
+defaults:
+  - scope:
+      path: ""
+      type: "digests"
+    values:
+      layout: "digest"
