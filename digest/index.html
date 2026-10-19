@@ -8,7 +8,7 @@ title: Daily Digest
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Daily Digest</title>
-<meta name="description" content="Daily digests — AI Builders, X Lists, Consensus, Hacker News, 段永平晚报, Reddit 精选.">
+<meta name="description" content="Daily digests — AI Builders, Zara AI Digest, X Lists, Consensus, Hacker News, 段永平晚报, Newsletter 精选, Reddit 精选.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232e3d4a'/%3E%3Ctext x='32' y='44' font-family='Helvetica, Arial, sans-serif' font-size='36' font-weight='500' fill='%23ffffff' text-anchor='middle'%3E%4D%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mzhao.me/digest/">
@@ -251,7 +251,7 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
 </style>
 </head>
 <body>
-{% assign section_ids = "ai-builders,x-lists,consensus,hacker-news,duan,reddit" | split: "," %}
+{% assign section_ids = "ai-builders,zara,x-lists,consensus,hacker-news,duan,newsletter,reddit" | split: "," %}
 {% assign total_items = 0 %}
 {% for doc in site.digests %}{% assign total_items = total_items | plus: doc.items.size %}{% endfor %}
 {% assign latest = site.digests | sort: "date" | last %}
@@ -262,11 +262,11 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
   <div class="wrap">
     <div class="topbar">
       <a href="/">← Home</a>
-      <span class="stats">6 个来源 · 更新于 {{ latest.date | date: "%b %-d, %-I:%M %p" }}</span>
+      <span class="stats">8 个来源 · 更新于 {{ latest.date | date: "%b %-d, %-I:%M %p" }}</span>
     </div>
     <h1><em>Daily</em> Digest</h1>
     <div class="rule" role="presentation"></div>
-    <p class="dek">每天定时汇总 6 个来源。每张卡片是一条完整条目，直接读完即可；按来源分组，新的一期在前。顶部下拉按日期筛选，默认只看最新一天。</p>
+    <p class="dek">每天定时汇总 8 个来源。每张卡片是一条完整条目，直接读完即可；按来源分组，新的一期在前。顶部下拉按日期筛选，默认只看最新一天。</p>
   </div>
 </header>
 
@@ -278,10 +278,12 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
     {% for doc in docs %}{% assign sec_items = sec_items | plus: doc.items.size %}{% endfor %}
     {% case sid %}
       {% when "ai-builders" %}{% assign sname = "AI Builders" %}
+      {% when "zara" %}{% assign sname = "Zara AI Digest" %}
       {% when "x-lists" %}{% assign sname = "X Lists 精选" %}
       {% when "consensus" %}{% assign sname = "Consensus 民意" %}
       {% when "hacker-news" %}{% assign sname = "Hacker News" %}
       {% when "duan" %}{% assign sname = "段永平晚报" %}
+      {% when "newsletter" %}{% assign sname = "Newsletter 精选" %}
       {% when "reddit" %}{% assign sname = "Reddit 精选" %}
     {% endcase %}
     <a href="#sec-{{ sid }}" data-navsec="sec-{{ sid }}">{{ sname }}</a>
@@ -308,10 +310,12 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
   {% for doc in docs %}{% assign sec_items = sec_items | plus: doc.items.size %}{% endfor %}
   {% case sid %}
     {% when "ai-builders" %}{% assign sname = "AI Builders" %}{% assign ssched = "每日 09:00" %}
+    {% when "zara" %}{% assign sname = "Zara AI Digest" %}{% assign ssched = "每日 09:15" %}
     {% when "x-lists" %}{% assign sname = "X Lists 精选" %}{% assign ssched = "每日 09:00 / 21:00" %}
     {% when "consensus" %}{% assign sname = "Consensus 民意" %}{% assign ssched = "每日约 09:30" %}
     {% when "hacker-news" %}{% assign sname = "Hacker News" %}{% assign ssched = "每日 21:00" %}
     {% when "duan" %}{% assign sname = "段永平晚报" %}{% assign ssched = "每日 22:00" %}
+    {% when "newsletter" %}{% assign sname = "Newsletter 精选" %}{% assign ssched = "每日 08:30" %}
     {% when "reddit" %}{% assign sname = "Reddit 精选" %}{% assign ssched = "每日 09:00 / 21:00" %}
   {% endcase %}
   <section id="sec-{{ sid }}" class="sec">
