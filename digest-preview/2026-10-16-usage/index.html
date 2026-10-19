@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Consensus 今日民意 — 2026-10-17</title>
+<title>每日用量与运行报告 — 2026-10-16</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232e3d4a'/%3E%3Ctext x='32' y='44' font-family='Helvetica, Arial, sans-serif' font-size='36' font-weight='500' fill='%23ffffff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
 <meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0c0c0c" media="(prefers-color-scheme: dark)">
@@ -52,33 +52,81 @@
 <body>
 <div class="wrap">
   <div class="top"><a href="/">Home</a><a href="/digest-preview/">Digest</a></div>
-  <h1>Consensus 今日民意 — 2026-10-17</h1>
-  <p class="meta"><b>Consensus 民意</b> · October 17, 2026 · 9:49 AM</p>
+  <h1>每日用量与运行报告 — 2026-10-16</h1>
+  <p class="meta"><b>用量与运行</b> · October 17, 2026 · 11:00 PM</p>
   <span class="redline" aria-hidden="true"></span>
-  <div class="text"><p>Consensus 今日无新投票，也无风向变化。</p>
+  <div class="text"><p>统计日期：2026-10-16（周五）
+统计区间：2026-10-16 00:00–24:00 America/Los_Angeles
+范围：Muse 四项每日 Digest（ai-builders-digest-daily 09:00、hacker-news-top10-daily 21:00、duan-yongping-evening-daily 22:00、daily-usage-run-report 23:00，迁移标识 HERMES-MUSE-20261013）
+来源：cron.runs / cron.status 运行记录；各任务落盘文件；「每日 Digest」chat 补发与送达记录（~/memory/2026-10-16.md、~/memory/2026-10-17.md）
+口径说明：本报告自身 2026-10-17 23:00 的运行不在统计区间内；统计区间内的 daily-usage-run-report 是 2026-10-16 23:00 那次（报告对象为 2026-10-15）。</p>
 
-<p>首页 Recent polls 共 6 条，与去重台账基线（2026-10-14）完全一致，领先百分比和意见数均未变化：</p>
+<p>用量口径
+当前 Muse 不提供可核实的 token/费用统计。
+因此不报告 input/output/cache/reasoning tokens 或费用，未知不写成 0，也不估算。裸 token 与供应商 credits/quota 未混加。</p>
+
+<p>四项任务运行情况（2026-10-16，共 4 次运行）</p>
+<ol>
+  <li>ai-builders-digest-daily（09:00）：运行 1 次，cron 状态 failed
+    <ul>
+      <li>run_id d77fd488-21e4-448d-a5b0-818b8f2b5d4a，09:00 PDT 定时运行</li>
+      <li>内容生成完成：Follow Builders 三个 feed（generatedAt 2026-10-16T06:42Z），X 6 条实质观点（Boris Cherny、Aaron Levie 两条、Aditya Agarwal、Dan Shipper、Zara Zhang）、博客 0 条、播客 1 期（MAD Podcast — Jev / Diogo Almeida）；报告存 ~/workspace/goals/digest-hermes/hidden_files/ai-builders-2026-10-16.md，去重台账更新至 36 条</li>
+      <li>cron 记为 failed 的原因：worker 报告 iMessage 投递未完成，不是内容抓取失败</li>
+    </ul>
+  </li>
+  <li>hacker-news-top10-daily（21:00）：运行 1 次，cron 状态 failed
+    <ul>
+      <li>run_id 752c322b-bf15-4806-aab7-914776a7f71e，21:00 PDT 定时运行</li>
+      <li>内容生成完成：20:59 PDT 抓取 HN 官方 API 前 30 条，按 score 选 Top 10，含中文摘要、原文与讨论链接；榜首 Tesla Roadster（1275 分 / 2271 评论）；报告存 ~/workspace/goals/digest-hermes/hidden_files/hn-daily-2026-10-16.md，原始数据 hn-raw-2026-10-16.json</li>
+      <li>cron 记为 failed 的原因同上：worker 的 iMessage 未发出</li>
+    </ul>
+  </li>
+  <li>duan-yongping-evening-daily（22:00）：运行 1 次，cron 状态 failed
+    <ul>
+      <li>run_id f65bd5e0-5057-4a96-8395-2a2d2649e3b0，22:00 PDT 定时运行</li>
+      <li>内容生成完成：雪球「大道无形我有型」主页第 1 页读取成功，覆盖至 2026-10-15 19:56 PDT；去重后新帖 13 条，过滤 4 条无实质内容，报告 9 条；报告存 ~/workspace/goals/digest-hermes/hidden_files/duan-daily-2026-10-16.md，去重台账更新至 41 条</li>
+      <li>覆盖缺口：翻第 2 页触发登录弹窗（未登录、未绕过），第 2 页覆盖缺失，报告中已标注</li>
+      <li>cron 记为 failed 的原因同上：worker 的 iMessage 未发出</li>
+    </ul>
+  </li>
+  <li>daily-usage-run-report（23:00）：运行 1 次（统计区间内），cron 状态 failed
+    <ul>
+      <li>run_id 8a41e167-7680-4cb6-89ec-67011c03cb7d，23:00 PDT 定时运行，报告对象为 2026-10-15</li>
+      <li>全文已生成并落盘 ~/workspace/goals/digest-hermes/hidden_files/usage-report-2026-10-15.md；cron 记为 failed 的原因是 worker 的 iMessage 未发出</li>
+    </ul>
+  </li>
+</ol>
+
+<p>来源抓取状态（2026-10-16）</p>
 <ul>
-  <li>Is starting a startup worth it? — 70% Worth it，1,458 opinions</li>
-  <li>Cursor vs Claude Code — 42% Claude Code is better，948 opinions</li>
-  <li>Is a Costco membership worth it? — 79% Worth it，2,123 opinions</li>
-  <li>iPhone vs Pixel — 51% Pixel is better，1,921 opinions</li>
-  <li>Best Thai food in SF — 10% Marnee Thai，939 opinions</li>
-  <li>LeBron vs Jordan — 60% Jordan is better，1,663 opinions</li>
+  <li>AI Builders：三个 Follow Builders feed 已读取，内容如上</li>
+  <li>Hacker News：HN 官方 API 抓取成功，前 30 条核实、选出 Top 10</li>
+  <li>段永平：雪球主页第 1 页核查成功、报告 9 条；第 2 页登录缺口如上</li>
+  <li>本项（用量报告）：基于 cron 记录统计，无外部抓取</li>
 </ul>
 
-<p>无旧投票领先百分比变动 ≥10 个百分点，故无「风向变化」更新。</p>
+<p>iMessage 投递状态（2026-10-16 四项，最终状态）
+worker 步骤四项均未发送：各运行的 device.list 均返回不可重试的错误——该调度缺少 owner-authorized device access，无法核对 +19492328737 的会话，也无法发送。
+最终状态以「每日 Digest」chat 补发记录为准，四项均已补发并核实 delivered（chat 2）：</p>
+<ul>
+  <li>AI Builders：message_id A968D3C7-A196-4656-991D-F56B0924E3B8，2026-10-16 09:01:51 PDT，delivered</li>
+  <li>Hacker News Top 10：message_id DC8C4EB4-32E4-4117-BBE9-59D0B5186AE4，2026-10-16 21:02:08 PDT，delivered</li>
+  <li>段永平晚报：message_id E199D32C-0621-4B83-90D1-D938FDDC80B8，2026-10-16 22:02:28 PDT，delivered</li>
+  <li>用量报告（报 2026-10-15）：message_id AE21ECDC-BA88-434D-9921-D419C09A158F，2026-10-16 23:01:34 PDT，delivered
+不要把 worker 的 failed 状态记为最终投递失败；该补发模式 2026-10-14、10-15、10-16 连续三天一致。</li>
+</ul>
 
-<p>今日一瞥（存量投票回看，不是新投票）</p>
+<p>全文留档于「每日 Digest」chat（本报告）及 ~/workspace/goals/digest-hermes/hidden_files/usage-report-2026-10-16.md。</p>
 
-<p><strong>Is a Costco membership worth it?</strong>
-中文转述：Costco 会员到底值不值？
-领先答案：Worth it — 79%
-意见数：2,123 opinions
-为什么挑这条：这是首页意见数最高的一条（2,123 条），结论也最一边倒——近八成真实帖子/评论认为会员费花得值，在当前 6 条里信息量和共识强度都最高。
-投票页面：<a href="https://useconsensus.io/search?id=Wb4j47vGl-eorl6y&amp;q=Is%20a%20Costco%20membership%20worth%20it%3F">https://useconsensus.io/search?id=Wb4j47vGl-eorl6y&amp;q=Is%20a%20Costco%20membership%20worth%20it%3F</a></p>
-
-<p>来源：useconsensus.io</p>
+<hr />
+<p>发送记录（本次报告，2026-10-17 23:00 运行）</p>
+<ul>
+  <li>发送时间：2026-10-17 23:00 PDT 运行中尝试，未发送</li>
+  <li>实际收件人：+19492328737（拟发送，未实际发出）</li>
+  <li>thread_key：本次未核对（device.list 返回 non-retryable：this exact schedule lacks owner-authorized device access; an owner must review and update its definition，未能调用 imessage.threads 核对，未使用含星号的 chat 6/7）</li>
+  <li>message_id：无</li>
+  <li>状态：发送失败 — 调度缺少设备授权，未发送、未重发，不标 sent/delivered；报告已留档，待主 agent 在有设备权限的会话中补发，不积压多天旧日报</li>
+</ul>
 </div>
   <div class="back"><a href="/digest-preview/">← All digests</a></div>
 </div>
