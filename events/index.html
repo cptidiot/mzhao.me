@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="data:," />
+  <title>湾区周末活动</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      color-scheme:light dark;
+      --paper:#f4f1e8;--surface:#fffdf7;--ink:#152018;--muted:#5e685f;--line:#d8d5c9;
+      --green:#0b5c45;--green-soft:#dceadf;--orange:#df5b35;--yellow:#f3cc4a;--blue:#2b6180;
+      --shadow:0 14px 40px rgba(31,43,34,.11);--radius:18px;
+    }
+    @media(prefers-color-scheme:dark){:root{--paper:#101411;--surface:#19201b;--ink:#f4f0e5;--muted:#b2b9b1;--line:#384139;--green:#7bc3a6;--green-soft:#203c31;--orange:#ff8a63;--yellow:#f4d86a;--blue:#80b9d8;--shadow:0 18px 50px rgba(0,0,0,.28)}}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans SC",sans-serif;line-height:1.55} button,input{font:inherit} a{color:inherit}
+    .page{max-width:1240px;margin:auto;padding:32px 28px 72px}
+    .hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:36px;align-items:end;padding:44px 0 32px;border-bottom:1px solid var(--line)}
+    .date{font-size:14px;font-weight:700;color:var(--orange);letter-spacing:.04em;margin-bottom:10px}
+    h1{font-family:"Noto Serif SC",serif;font-size:clamp(38px,6vw,72px);line-height:1.08;letter-spacing:-.05em;margin:0;max-width:760px}
+    .lede{font-size:18px;color:var(--muted);max-width:680px;margin:18px 0 0}
+    .refresh-line{margin-top:14px;font-size:13px;color:var(--muted)}
+    .refresh-line strong{color:var(--green)}
+    .weekend-note{border-top:4px solid var(--green);padding:18px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .metric strong{font-family:"Noto Serif SC",serif;font-size:30px;display:block}.metric span{font-size:12px;color:var(--muted)}
+    .toolbar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(12px);padding:18px 0 14px;border-bottom:1px solid var(--line)}
+    .toolbar-main{display:flex;gap:14px;justify-content:space-between;align-items:center;flex-wrap:wrap}.segmented{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px;flex-wrap:wrap}.segmented button{border:0;background:transparent;color:var(--muted);padding:9px 14px;border-radius:999px;font-weight:700;cursor:pointer;white-space:nowrap}.segmented button.active{background:var(--ink);color:var(--paper)}
+    .search{position:relative;min-width:220px;max-width:360px;flex:1}.search input{width:100%;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:11px 14px 11px 40px;border-radius:999px;outline:none}.search svg{position:absolute;left:14px;top:13px;width:18px;color:var(--muted)}
+    .filters{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.filter{border:1px solid var(--line);background:transparent;color:var(--muted);padding:7px 12px;border-radius:999px;cursor:pointer;font-size:13px}.filter.active{border-color:var(--green);background:var(--green-soft);color:var(--green);font-weight:700}.filter:disabled{opacity:.42;cursor:not-allowed}
+    .day-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin:34px 0 18px}.day-head h2{font-family:"Noto Serif SC",serif;font-size:clamp(28px,4vw,44px);margin:0;letter-spacing:-.035em}.day-head p{color:var(--muted);margin:0;text-align:right;max-width:500px}
+    .editorial{display:grid;grid-template-columns:1.22fr .78fr;gap:16px;margin-bottom:26px}.lead-card{min-height:410px;position:relative;overflow:hidden;border-radius:26px;background:#213328;color:#fff;box-shadow:var(--shadow);text-decoration:none;display:block}.lead-card img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}.lead-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.06) 25%,rgba(0,0,0,.82) 100%)}.lead-card.no-img{background:linear-gradient(150deg,#2c4a38 0%,#0b5c45 55%,#173d2c 100%)}.lead-card.no-img:after{background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.45) 100%)}.lead-glyph{position:absolute;top:6px;right:22px;font-family:"Noto Serif SC",serif;font-size:170px;font-weight:900;color:rgba(255,255,255,.14);line-height:1}.lead-copy{position:absolute;inset:auto 0 0;padding:28px;z-index:1}.lead-copy h3{font-family:"Noto Serif SC",serif;font-size:clamp(28px,4vw,44px);line-height:1.1;margin:8px 0}.eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em}.lead-meta{display:flex;gap:14px;flex-wrap:wrap;color:#f4f1e8;font-size:14px}
+    .picks{display:grid;grid-template-rows:1fr 1fr;gap:16px}.pick{display:grid;grid-template-columns:40% 1fr;overflow:hidden;border-radius:18px;background:var(--surface);border:1px solid var(--line);min-height:196px;text-decoration:none}.pick img{width:100%;height:100%;object-fit:cover}.pick-visual{display:flex;align-items:center;justify-content:center;background:var(--green-soft);font-family:"Noto Serif SC",serif;font-size:44px;font-weight:900;color:var(--green)}.pick-copy{padding:20px}.pick h3{font-family:"Noto Serif SC",serif;font-size:21px;line-height:1.25;margin:6px 0}.pick p{color:var(--muted);font-size:13px;margin:0}
+    .section-row{display:flex;justify-content:space-between;align-items:center;margin:32px 0 14px}.section-row h2{font-size:20px;margin:0}.result-count{font-size:13px;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;min-width:0}.card.has-image .visual{display:block}.visual{display:none;aspect-ratio:16/9;overflow:hidden;background:var(--green-soft)}.visual img{width:100%;height:100%;object-fit:cover}.card-body{padding:18px;display:flex;flex-direction:column;gap:11px;flex:1}.card-top{display:flex;align-items:center;justify-content:space-between;gap:10px}.region{font-size:12px;font-weight:700;color:var(--green)}.price{font-size:12px;background:var(--green-soft);color:var(--green);padding:4px 8px;border-radius:999px;white-space:nowrap}.card h3{font-family:"Noto Serif SC",serif;font-size:21px;line-height:1.25;margin:0;overflow-wrap:anywhere}.meta{display:grid;gap:5px;color:var(--muted);font-size:13px}.meta-row{display:flex;align-items:flex-start;gap:8px}.meta-row svg{width:15px;height:15px;margin-top:3px;flex:none}.desc{font-size:14px;margin:0;color:var(--muted)}.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}.tag{font-size:11px;border:1px solid var(--line);border-radius:999px;padding:4px 8px;color:var(--muted)}.card-link{display:flex;align-items:center;justify-content:space-between;margin:4px -18px -18px;padding:14px 18px;border-top:1px solid var(--line);text-decoration:none;font-size:13px;font-weight:700}.card-link:hover{background:var(--green-soft);color:var(--green)}
+    .empty{grid-column:1/-1;padding:48px 20px;border:1px dashed var(--line);border-radius:18px;text-align:center;color:var(--muted)}
+    .notice{margin-top:42px;border-top:1px solid var(--line);padding-top:20px;display:grid;grid-template-columns:1fr auto;gap:24px;color:var(--muted);font-size:12px}.notice strong{color:var(--ink)}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media(max-width:900px){.hero{grid-template-columns:1fr}.editorial{grid-template-columns:1fr}.lead-card{min-height:360px}.picks{grid-template-columns:1fr 1fr;grid-template-rows:none}.pick{grid-template-columns:1fr;min-height:0}.pick img,.pick-visual{height:140px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:620px){.page{padding:18px 16px 52px}.hero{padding:24px 0}.weekend-note{padding-top:14px}.toolbar{margin:0 -16px;padding:12px 16px}.toolbar-main{align-items:stretch;flex-direction:column}.segmented{display:grid;grid-template-columns:1fr 1fr;border-radius:18px}.search{max-width:none;min-width:0}.filters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.filter{padding:8px 4px;min-width:0}.day-head{align-items:flex-start;flex-direction:column;gap:6px}.day-head p{text-align:left}.lead-card{min-height:350px;border-radius:20px}.lead-copy{padding:22px}.lead-glyph{font-size:110px}.picks{display:none}.grid{grid-template-columns:1fr}.card.has-image .visual{aspect-ratio:2/1}.notice{grid-template-columns:1fr}.metric strong{font-size:25px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+<main class="page">
+  <section class="hero">
+    <div>
+      <div class="date">TWO WEEKENDS · OCT 24–25 &amp; OCT 31–NOV 1, 2026</div>
+      <h1>这个周末去海边，下个周末过万圣节</h1>
+      <p class="lede">本周末（10/24–25）是沙堡、饺子和丰收市集；下周末（10/31–11/1）万圣节正好落在周六，紧接着是亡灵节。先选周末和日子，再按区域收窄。</p>
+      <p class="refresh-line"><strong>每周一 05:00 自动刷新</strong>（America/Los_Angeles）· 本次为 2026年10月19日（周一）手动刷新，覆盖 10/24–25 与 10/31–11/1 两个周末。</p>
+    </div>
+    <div class="weekend-note" aria-label="两个周末活动概览">
+      <div class="metric"><strong>31</strong><span>个精选活动</span></div>
+      <div class="metric"><strong>16</strong><span>场免费入场</span></div>
+      <div class="metric"><strong>4</strong><span>个湾区有活动</span></div>
+    </div>
+  </section>
+
+  <section class="toolbar" aria-label="活动筛选">
+    <div class="toolbar-main">
+      <div class="segmented" role="tablist" aria-label="选择日期">
+        <button class="active" data-day="sat1" role="tab">本周六 10/24</button>
+        <button data-day="sun1" role="tab">本周日 10/25</button>
+        <button data-day="sat2" role="tab">下周六 10/31 🎃</button>
+        <button data-day="sun2" role="tab">下周日 11/1</button>
+      </div>
+      <label class="search"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="search" aria-label="搜索活动" placeholder="搜索活动、城市或类型" /></label>
+    </div>
+    <div class="filters" id="filters">
+      <button class="filter active" data-filter="all">全部</button>
+      <button class="filter" data-filter="SF">旧金山</button>
+      <button class="filter" data-filter="East Bay">东湾</button>
+      <button class="filter" data-filter="South Bay">南湾</button>
+      <button class="filter" data-filter="North Bay">北湾</button>
+      <button class="filter" data-filter="free">免费</button>
+      <button class="filter" data-filter="family">亲子友好</button>
+      <button class="filter" data-filter="outdoor">户外</button>
+    </div>
+  </section>
+
+  <section>
+    <div class="day-head"><h2 id="dayTitle">本周六 · 沙堡、文学与菲律宾之夜</h2><p id="dayIntro">白天在 Ocean Beach 看巨型沙堡，傍晚去 Mission 参加 Lit Crawl，晚上还有菲律宾街区派对和万圣节酒吧巡游预热。</p></div>
+    <div class="editorial" id="featured"></div>
+    <div class="section-row"><h2>完整活动清单</h2><div class="result-count" id="count"></div></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <footer class="notice">
+    <div><strong>活动快照：</strong>资料于 2026年10月19日核对，来源为 Funcheap、Eventbrite、场馆与主办方活动页。之后每周一 05:00 自动刷新当周末与下周末。户外活动、票价与余票可能临时变化，出发前请点击活动页复核；万圣节酒吧巡游均为 21+。</div>
+    <div>49人队 10/25 在亚特兰大客场、11/1 为休赛周，本站只列湾区本地活动。</div>
+  </footer>
+</main>
+<script>
+const events = [
+{id:'sandcastle',days:['sat1'],title:'第44届沙堡大赛',en:'44th Annual Sandcastle Classic',region:'SF',city:'San Francisco',time:'11:00 起',venue:'Ocean Beach',price:'免费观赛',free:true,family:true,outdoor:true,tags:['海滩','比赛','亲子'],desc:'湾区最经典的海滩活动之一：建筑师、学校与社区队伍在 Ocean Beach 堆出巨型沙雕，现场观赛免费，适合带相机慢慢逛。',url:'https://sf.funcheap.com/city-guide/october-street-fairs-festivals/'},
+{id:'chowder',days:['sat1'],title:'渔人码头海鲜浓汤节',en:"Fisherman's Wharf Chowder Fest",region:'SF',city:'San Francisco',time:'12:00 起',venue:"Little Embarcadero · Fisherman's Wharf",price:'免费入场',free:true,family:true,outdoor:true,tags:['美食','海鲜','街会'],desc:'在渔人码头边走边尝各家 clam chowder，入场免费、品尝另购。顺路逛 Pier 39，是最省心的周六午餐方案。',url:'https://sf.funcheap.com/city-guide/october-street-fairs-festivals/'},
+{id:'harvest',days:['sat1','sun1'],title:'Pleasanton 丰收手作节',en:'Harvest Festival Original Art & Craft Show',region:'East Bay',city:'Pleasanton',time:'周六 10:00–17:00 · 周日 10:00–16:00',venue:'Alameda County Fairgrounds',price:'$9 · 12岁以下免费',free:false,family:true,outdoor:false,tags:['手作','市集','假日购物'],desc:'超过 50 年历史的手作大展：数百位匠人带来首饰、陶瓷、木艺与特色食品，一张票三天通用，是提前淘节日礼物的好去处。',url:'https://alamedacountyfair.com/events/harvest-festival/'},
+{id:'litcrawl',days:['sat1'],title:'Lit Crawl 文学之夜',en:'Lit Crawl 2026 · Mission',region:'SF',city:'San Francisco',time:'傍晚起 · 约 4 小时',venue:'Mission District 多个场馆',price:'免费',free:true,family:false,outdoor:true,tags:['文学','朗读','夜游'],desc:'250+ 位作者在 Mission 的酒吧、画廊与小剧场轮番朗读，像酒吧巡游一样逛文学。Litquake 的招牌之夜，人气很高，建议早到。',url:'https://sf.funcheap.com/lit-crawl-sf-epic-4hour-roaming-literature-festival-mission/'},
+{id:'undiscovered',days:['sat1'],title:'UNDISCOVERED 菲律宾街区派对',en:'UNDSCVRD Filipino Block Party · SoMa',region:'SF',city:'San Francisco',time:'16:00 起',venue:'SoMa Pilipinas 文化区',price:'免费 · 建议 RSVP',free:true,family:true,outdoor:true,tags:['菲律宾文化','夜市','十周年'],desc:'UNDISCOVERED 十周年季的重头戏：SoMa 菲律宾文化区的美食、夜市摊位与舞台演出，同场还有 Golden Hour 菲律宾夜市。',url:'https://sf.funcheap.com/city-guide/october-street-fairs-festivals/'},
+{id:'fahm',days:['sat1'],title:'FAHM Fest 菲美历史月庆典',en:'Filipino American History Month Fest',region:'East Bay',city:'Oakland',time:'17:00–深夜（21:00 后 21+）',venue:'7th West · 1255 7th St, Oakland',price:'免费入场',free:true,family:true,outdoor:true,tags:['菲律宾文化','DJ','美食'],desc:"Baba's House 在 West Oakland 的 7th West 办整晚庆典：DJ、快闪纹身与菲律宾美食，庆祝菲裔美国人历史月。",url:'https://sf.funcheap.com/city-guide/october-street-fairs-festivals/'},
+{id:'sausalito',days:['sat1'],title:'Sausalito 艺术与海港日',en:'Sausalito Art & Harbor Days',region:'North Bay',city:'Sausalito',time:'10:00–15:00',venue:'Ferry Landing · Sausalito',price:'免费',free:true,family:true,outdoor:true,tags:['艺术','海港','市集'],desc:'渡轮码头边的月度市集：60+ 摊位、现场音乐，这个月还加了万圣节气氛的杂耍表演。坐渡轮过去最对味。',url:'https://sf.funcheap.com/city-guide/october-street-fairs-festivals/'},
+{id:'boozoo',days:['sat1','sun1','sat2','sun2'],title:'Boo at the Zoo 万圣节寻宝',en:'Boo at the Zoo · Oakland Zoo',region:'East Bay',city:'Oakland',time:'周末全天 · 服装赛周六 12:00',venue:'Oakland Zoo · 9777 Golf Links Rd',price:'含在门票内',free:false,family:true,outdoor:true,tags:['动物园','万圣节','寻宝'],desc:'全园万圣节寻宝集卡、周六中午的儿童服装比赛，还有爬虫与昆虫特别环节。注意：充气服装不允许入园，会吓到动物。需提前订票。',url:'https://www.travelrealizations.com/things-to-do-with-kids-for-halloween-in-bay-area/'},
+{id:'crawloween24',days:['sat1'],title:'Crawloween 万圣节巡游 · 预热场',en:'Crawloween 2026 · Day 1',region:'SF',city:'San Francisco',time:'16:00–22:00',venue:'Marina / Polk / Union Square 等 40+ 酒吧',price:'$15 起 · 21+',free:false,family:false,outdoor:true,tags:['万圣节','酒吧巡游','21+'],desc:'去年吸引 25,000+ 人的全城最大万圣节酒吧巡游，今年共四天。10/24 是预热场，人比正日少，想体验气氛又怕挤选这天。',url:'https://sf.funcheap.com/event-series/5-san-francisco-halloween-pub-crawl-crawloween-2026/'},
+{id:'dumplings',days:['sun1'],title:'世界饺子节',en:'World of Dumplings 2026',region:'SF',city:'San Francisco',time:'11:00–17:00',venue:'Ferry Building',price:'免费入场',free:true,family:true,outdoor:true,tags:['美食','饺子','社区'],desc:'第三年回归 Ferry Building：25+ 家餐厅端出世界各地的饺子，还有吃饺子比赛、烹饪演示、啤酒花园与亲子活动。去年来了 16,000+ 人，建议早到。',url:'https://sf.funcheap.com/2026/10/25/'},
+{id:'musicday',days:['sun1'],title:'SF Music Day 免费音乐日',en:'SF Music Day 2026',region:'SF',city:'San Francisco',time:'12:00–18:00',venue:'War Memorial & Performing Arts Center',price:'免费',free:true,family:true,outdoor:false,tags:['古典','爵士','现场音乐'],desc:'InterMusic SF 主办：20+ 个湾区乐团在 War Memorial 多个空间轮番演出，从古典到爵士一次听够，全天免费。',url:'https://sf.funcheap.com/2026/10/25/'},
+{id:'sfmoma',days:['sun1'],title:'SFMOMA 免费家庭日',en:'SFMOMA Free Family Day',region:'SF',city:'San Francisco',time:'10:00 起',venue:'SFMOMA',price:'免费*',free:true,family:true,outdoor:false,tags:['博物馆','亲子','免费日'],desc:'每位 18 岁以下访客可带最多四位成人免费入馆。适合把看展和饺子节排在同一天：两处相距不远。',url:'https://sf.funcheap.com/2026/10/25/'},
+{id:'wiggle',days:['sun1'],title:'Wiggle Fest 社区烧烤派对',en:'Wiggle Fest Fall 2026',region:'SF',city:'San Francisco',time:'12:00–16:00',venue:'Wiggle Plaza · Steiner & Hermann',price:'免费',free:true,family:true,outdoor:true,tags:['社区','烧烤','街区派对'],desc:'两个街区的邻里派对：免费 BBQ 与烤芝士、现场音乐、脸绘、充气城堡和肖像速写。最本地、最松弛的周日选项。',url:'https://sf.funcheap.com/wiggle-fest-fall-2026-free-bbq-grilled-cheese-block-party-sf/'},
+{id:'rockridge',days:['sun1'],title:'Rockridge 万圣节游行',en:'Rockridge Halloween Parade',region:'East Bay',city:'Oakland',time:'11:00 起',venue:'Rockridge · College Ave, Oakland',price:'免费',free:true,family:true,outdoor:true,tags:['万圣节','游行','讨糖'],desc:'第 34 届：沿街 40+ 个讨糖点，整个 Rockridge 商圈一起过节，是东湾带娃 trick-or-treat 的经典路线。',url:'https://sf.funcheap.com/2026/10/25/'},
+{id:'omca',days:['sun1'],title:'OMCA 亡灵节庆典',en:'Día de los Muertos Celebration · OMCA',region:'East Bay',city:'Oakland',time:'11:00–16:00',venue:'Oakland Museum of California',price:'查看活动页',free:false,family:true,outdoor:true,tags:['亡灵节','文化','博物馆'],desc:'奥克兰博物馆的年度亡灵节庆典：社区祭坛、音乐与舞蹈表演。下周末 Fruitvale 大游行之前，先在这里了解这个节日的脉络。',url:'https://www.510families.com/dia-de-los-muertos-east-bay/'},
+{id:'alamo',days:['sun1'],title:'Alamo Scare · 彩绘女士讨糖',en:'Alamo Scare 2026',region:'SF',city:'San Francisco',time:'16:00–18:00',venue:'Steiner St · Hayes–Grove · Alamo Square',price:'免费',free:true,family:true,outdoor:true,tags:['万圣节','讨糖','地标'],desc:'在明信片同款的 Painted Ladies 前讨糖，只有两小时。地方不大、人会很多，带娃建议提前占位。',url:'https://sf.funcheap.com/alamo-scare-2026-trickortreat-sfs-iconic-painted-ladies-alamo-square/'},
+{id:'daybreaker',days:['sun1'],title:'Daybreaker 万圣节晨间舞会',en:'Daybreaker Boo-tiful Morning Dance Party',region:'SF',city:'San Francisco',time:'10:00–13:00',venue:'Transamerica Pyramid · 600 Montgomery St',price:'约 $44',free:false,family:false,outdoor:false,tags:['晨间派对','舞蹈','无酒精'],desc:'在金字塔大厦里办万圣节主题晨间舞会：DJ、现场乐手、免费咖啡与无酒精饮品。先跳舞、再去吃饺子，行程刚好接得上。',url:'https://sf.funcheap.com/daybreaker-bootiful-morning-dance-party/'},
+{id:'chinatownhall',days:['sat2'],title:'华埠万圣节嘉年华',en:'Chinatown Halloween Festival & Block Party',region:'SF',city:'San Francisco',time:'11:00–15:00',venue:'Waverly Place · Chinatown',price:'免费',free:true,family:true,outdoor:true,tags:['万圣节','华埠','亲子'],desc:'第 12 届：天后庙街变身亲子万圣节乐园——南瓜园、手工、游戏与服装比赛。规模适中，适合低龄小朋友的第一场万圣节。',url:'https://sf.funcheap.com/city-guide/october-street-fairs-festivals/',image:'assets/moon-large.webp'},
+{id:'hoopla',days:['sat2'],title:'Halloween Hoopla 儿童万圣节',en:'Halloween Hoopla · Yerba Buena Gardens',region:'SF',city:'San Francisco',time:'12:00–15:00',venue:"Children's Garden · Yerba Buena Gardens",price:'免费',free:true,family:true,outdoor:true,tags:['万圣节','马戏','服装游行'],desc:'第 26 届，专为 10 岁以下孩子设计：Circus Bella 马戏表演、现场乐队、南瓜园，压轴是全场服装大游行。湾区免费万圣节活动的口碑之选。',url:'https://sf.funcheap.com/2026/10/31/'},
+{id:'cakepicnic',days:['sat2'],title:'SF Cake Picnic 万圣节场',en:'SF Cake Picnic Fall 2026',region:'SF',city:'San Francisco',time:'上午',venue:"Levi's Plaza",price:'需购票',free:false,family:true,outdoor:true,tags:['蛋糕','野餐','万圣节'],desc:'爆红的蛋糕野餐第一次做万圣节主题：几百款蛋糕在 Levi’s Plaza 树荫下排开，带一块、尝百块。票通常抢得很快。',url:'https://sf.funcheap.com/city-guide/october-street-fairs-festivals/'},
+{id:'sunnyvalefood',days:['sat2','sun2'],title:'Sunnyvale 秋季美食节',en:'Sunnyvale Autumn Food Festival',region:'South Bay',city:'Sunnyvale',time:'10:00 起（两日）',venue:'Cityline Sunnyvale',price:'免费入场',free:true,family:true,outdoor:true,tags:['美食','市集','宠物服装赛'],desc:'南湾家门口的秋季节：美食摊位、本地手作、舞台表演、万圣节活动，还有宠物服装比赛。不想进城的话选它。',url:'https://sf.funcheap.com/city-guide/october-street-fairs-festivals/'},
+{id:'micailhuitl',days:['sat2','sun2'],title:'圣何塞亡灵节 Micailhuitl',en:'22nd Annual Micailhuitl · Día de Muertos',region:'South Bay',city:'San Jose',time:'周六 14:00–22:00 · 周日 10:00–18:00',venue:'History Park · 635 Phelan Ave, San Jose',price:'查看活动页',free:false,family:true,outdoor:true,tags:['亡灵节','阿兹特克文化','祭坛'],desc:'第 22 届，由 Calpulli Tonalehqueh 主办：阿兹特克舞蹈仪式、社区祭坛、美食车与手工艺市集，是南湾最有分量的亡灵节活动，连办两天。',url:'https://www.aztecadancers.com/dia-de-muertos'},
+{id:'greenhall',days:['sat2'],title:'Green Halloween · Happy Hollow',en:'Green Halloween · Happy Hollow Park & Zoo',region:'South Bay',city:'San Jose',time:'全天（活动含在门票内）',venue:'Happy Hollow Park & Zoo · 748 Story Rd',price:'门票 · 10/24–31 着装优惠',free:false,family:true,outdoor:true,tags:['动物园','万圣节','亲子'],desc:'动物园版万圣节：动物特别见面、服装游行、手作与讨糖。10/24–31 穿万圣节服装入园有门票优惠。',url:'https://www.sanjose.org/events/green-halloween'},
+{id:'crawloween31',days:['sat2'],title:'Crawloween 正日 · 全城最大万圣节派对',en:'Crawloween 2026 · Halloween Night',region:'SF',city:'San Francisco',time:'14:00–22:00',venue:'Marina / Russian Hill / Polk 等 40+ 酒吧',price:'$15 起 · 21+',free:false,family:false,outdoor:true,tags:['万圣节','酒吧巡游','21+'],desc:'万圣节正日落在周六，今年最热闹的一晚：40+ 酒吧、免费接驳巴士、服装大赛。去年 25,000+ 人参加，建议提前买票并约好集合点。',url:'https://www.eventbrite.com/e/san-francisco-halloween-2026-tickets-2002600148954?aff=ebdssbdestsearch'},
+{id:'darkhallow',days:['sat2'],title:'DARK HALLOW 沉浸式万圣节秀',en:'DARK HALLOW · Oakland',region:'East Bay',city:'Oakland',time:'21:00–次日 01:45',venue:'Fluid510 · 1544 Broadway, Oakland',price:'$35–65',free:false,family:false,outdoor:false,tags:['沉浸式','综艺秀','服装赛'],desc:'吸血鬼 vs 狼人 vs 猎人的沉浸式综艺派对：主秀、服装比赛，结束后全场舞会。东湾万圣节夜里最有剧场感的一场。',url:'https://events.humanitix.com/darkeventssf-darkhallow'},
+{id:'fruitvale',days:['sun2'],title:'Fruitvale 亡灵节大游行',en:'31st Annual Día de los Muertos Festival · Fruitvale',region:'East Bay',city:'Oakland',time:'10:00–17:00',venue:'Fruitvale Village · International Ave, Oakland',price:'免费',free:true,family:true,outdoor:true,tags:['亡灵节','游行','社区'],desc:'第 31 届，全湾区最大的亡灵节庆典：巨型社区祭坛、阿兹特克舞蹈、音乐与美食，主题是「La Lucha Continúa」。建议坐 BART 到 Fruitvale 站，出站即到。',url:'https://www.eventsincalifornia.com/events/dia-de-los-muertos/day-of-the-dead-free-festival-fruitvale-village-oakland-ca-nov-1-2026/'},
+{id:'warriors',days:['sun2'],title:'勇士队 vs 快船队',en:'Warriors vs LA Clippers',region:'SF',city:'San Francisco',time:'17:30',venue:'Chase Center',price:'需购票',free:false,family:true,outdoor:false,tags:['NBA','勇士队','主场'],desc:'新赛季主场焦点战。看完 Fruitvale 亡灵节，过桥来看球，一天排满文化 + 体育。注意：11/1 起转冬令时，当天时间已按 PST 显示。',url:'https://www.ticketmaster.com/golden-state-warriors-tickets/artist/805946'},
+{id:'luna',days:['sun2'],title:'奥克兰芭蕾《Luna Mexicana》',en:'Oakland Ballet · Luna Mexicana',region:'East Bay',city:'Oakland',time:'下午场（见活动页）',venue:'Paramount Theatre · Oakland',price:'$35.55 起',free:false,family:true,outdoor:false,tags:['芭蕾','亡灵节','十周年'],desc:'亡灵节主题芭蕾十周年纪念演出：墨西哥传统音乐与舞蹈编排，今年还有旧金山芭蕾首席 Esteban Hernández 的新作。在派拉蒙剧院看，仪式感拉满。',url:'https://piedmontexedra.com/2026/10/oakland-ballet-company-to-present-luna-mexicana-a-celebration-of-dia-de-los-muertos'},
+{id:'crawloweendia',days:['sun2'],title:'Crawloween · 亡灵节收官场',en:'Crawloween · Día de los Muertos Day',region:'SF',city:'San Francisco',time:'16:00–22:00',venue:'全城 40+ 酒吧',price:'$15 起 · 21+',free:false,family:false,outdoor:true,tags:['亡灵节','酒吧巡游','21+'],desc:'Crawloween 四天巡游的收官日以亡灵节为主题。白天看完祭坛和游行，晚上还有力气的话，用这一场给万圣节周末收尾。',url:'https://sf.funcheap.com/event-series/5-san-francisco-halloween-pub-crawl-crawloween-2026/'},
+{id:'aquarium',days:['sat2','sun2'],title:'湾区水族馆水下雕南瓜',en:'Aquarium of the Bay · Fish or Treat',region:'SF',city:'San Francisco',time:'13:00–14:00 水下雕刻（两日）',venue:'Aquarium of the Bay · PIER 39',price:'含在门票内',free:false,family:true,outdoor:false,tags:['水族馆','万圣节','亲子'],desc:'潜水员在水下雕南瓜、水獭南瓜丰容、全天手作台，还有讨糖站。安排在 PIER 39 一带，正好和渔夫码头行程拼在一起。',url:'https://sf.funcheap.com/2026/10/31/'},
+{id:'latinofinale',days:['sun2'],title:'拉丁电影节闭幕周末',en:'SF Latino Film Festival · Closing Weekend',region:'SF',city:'San Francisco',time:'14:30 起',venue:'Apple Cinemas · 1000 Van Ness Ave',price:'约 $16.79',free:false,family:false,outdoor:false,tags:['电影节','拉丁文化'],desc:'第 18 届 Cine+Más 拉丁电影节（10/22–11/1）的最后一个周末：来自美国、拉丁美洲与西班牙的影片集中放映，亡灵节当天看一场拉丁电影很应景。',url:'https://sf.funcheap.com/2026-san-francisco-latino-film-festival-strawberry-lips-tucked-lucrecia-queer-film-showcase/'}
+];
+const featuredByDay={sat1:['sandcastle','litcrawl','undiscovered'],sun1:['dumplings','musicday','wiggle'],sat2:['chinatownhall','hoopla','crawloween31'],sun2:['fruitvale','warriors','luna']};
+const dayText={sat1:{title:'本周六 · 沙堡、文学与菲律宾之夜',intro:'白天在 Ocean Beach 看巨型沙堡，傍晚去 Mission 参加 Lit Crawl，晚上还有菲律宾街区派对和万圣节酒吧巡游预热。'},sun1:{title:'本周日 · 一百种饺子，一整天免费音乐',intro:'Ferry Building 饺子节打头阵，War Memorial 全天免费演出，社区烧烤、博物馆免费日和提前到来的万圣节游行收尾。'},sat2:{title:'下周六 · 万圣节正日',intro:'万圣节难得落在周六：白天带孩子去华埠和 Yerba Buena，晚上是全城 25,000 人的 Crawloween。亲子场和成人场都排满了。'},sun2:{title:'下周日 · 亡灵节与勇士主场',intro:'Fruitvale 第 31 届亡灵节是全湾区这一天的主角；傍晚回旧金山看勇士对快船。记得 11/1 凌晨转冬令时，多睡一小时。'}};
+let state={day:'sat1',filter:'all',query:''};
+const icons={clock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2"/></svg>'};
+function regionName(r){return r==='SF'?'旧金山':r==='East Bay'?'东湾':r==='South Bay'?'南湾':'北湾'}
+function match(e){if(!e.days.includes(state.day))return false;if(state.filter==='free'&&!e.free)return false;if(state.filter==='family'&&!e.family)return false;if(state.filter==='outdoor'&&!e.outdoor)return false;if(!['all','free','family','outdoor'].includes(state.filter)&&e.region!==state.filter)return false;const q=state.query.trim().toLowerCase();return !q||[e.title,e.en,e.city,e.venue,e.tags.join(' ')].join(' ').toLowerCase().includes(q)}
+function card(e){return `<article class="card ${e.image?'has-image':''}">${e.image?`<div class="visual"><img src="${e.image}" alt="${e.title}现场"></div>`:''}<div class="card-body"><div class="card-top"><span class="region">${regionName(e.region)} · ${e.city}</span><span class="price">${e.price}</span></div><h3>${e.title}</h3><div class="meta"><div class="meta-row">${icons.clock}<span>${e.time}</span></div><div class="meta-row">${icons.pin}<span>${e.venue}</span></div></div><p class="desc">${e.desc}</p><div class="tags">${e.tags.map(t=>`<span class="tag">${t}</span>`).join('')}${e.family?'<span class="tag">亲子友好</span>':''}</div><a class="card-link" href="${e.url}" target="_blank" rel="noopener">查看活动详情 <span>↗</span></a></div></article>`}
+function renderFeatured(){const picks=featuredByDay[state.day].map(id=>events.find(e=>e.id===id));const lead=picks[0];const leadVisual=lead.image?`<img src="${lead.image}" alt="${lead.title}现场">`:`<span class="lead-glyph" aria-hidden="true">${lead.title.slice(0,1)}</span>`;document.getElementById('featured').innerHTML=`<a class="lead-card ${lead.image?'':'no-img'}" href="${lead.url}" target="_blank" rel="noopener">${leadVisual}<div class="lead-copy"><div class="eyebrow">编辑首选 · ${lead.price}</div><h3>${lead.title}</h3><div class="lead-meta"><span>${lead.time}</span><span>${lead.venue}</span></div></div></a><div class="picks">${picks.slice(1).map(e=>`<a class="pick" href="${e.url}" target="_blank" rel="noopener">${e.image?`<img src="${e.image}" alt="${e.title}现场">`:`<span class="pick-visual" aria-hidden="true">${e.title.slice(0,1)}</span>`}<div class="pick-copy"><div class="eyebrow" style="color:var(--orange)">${regionName(e.region)} · ${e.price}</div><h3>${e.title}</h3><p>${e.time}<br>${e.venue}</p></div></a>`).join('')}</div>`}
+function render(){document.querySelectorAll('[data-day]').forEach(b=>b.classList.toggle('active',b.dataset.day===state.day));document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.dataset.filter===state.filter));document.getElementById('dayTitle').textContent=dayText[state.day].title;document.getElementById('dayIntro').textContent=dayText[state.day].intro;renderFeatured();const rows=events.filter(match);document.getElementById('count').textContent=`找到 ${rows.length} 场`;document.getElementById('grid').innerHTML=rows.length?rows.map(card).join(''):'<div class="empty">没有符合当前筛选的活动。换个区域或清空搜索试试。</div>'}
+document.querySelectorAll('[data-day]').forEach(b=>b.addEventListener('click',()=>{state.day=b.dataset.day;render()}));document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{state.filter=b.dataset.filter;render()}));document.getElementById('search').addEventListener('input',e=>{state.query=e.target.value;render()});render();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c1869bd5dea64c8a878c7be3162521fa"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
