@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>X Lists 精选 Digest — 2026-10-17 09:00</title>
+<title>AI Builders Digest — 2026-10-17</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232e3d4a'/%3E%3Ctext x='32' y='44' font-family='Helvetica, Arial, sans-serif' font-size='36' font-weight='500' fill='%23ffffff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
 <meta name="theme-color" content="#fafaf8" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0c0c0c" media="(prefers-color-scheme: dark)">
@@ -52,227 +52,63 @@
 <body>
 <div class="wrap">
   <div class="top"><a href="/">Home</a><a href="/digest-preview/">Digest</a></div>
-  <h1>X Lists 精选 Digest — 2026-10-17 09:00</h1>
-  <p class="meta"><b>X Lists 精选</b> · October 17, 2026 · 9:00 AM</p>
+  <h1>AI Builders Digest — 2026-10-17</h1>
+  <p class="meta"><b>AI Builders</b> · October 17, 2026 · 9:00 AM</p>
   <span class="redline" aria-hidden="true"></span>
-  <div class="text"><p>覆盖时段：2026-10-16 21:00–2026-10-17 09:00 America/Los_Angeles。6 个 List 全部成功打开，只读抓取，无失败来源。AI Research 本时段无窗口内新帖（扫到 51 条，最新一条为 10/16 17:24，在窗口开始之前）。</p>
+  <div class="text"><p>日期：2026-10-17（America/Los_Angeles）
+Feed 更新时间：X feed 生成于 2026-10-17T06:37:54Z（洛杉矶 10-16 23:37），博客与播客 feed 生成于 2026-10-17T06:38:30Z，均为本次运行前约 9.5 小时的新 feed，不是旧内容冒充今日新闻。X 窗口为最近 24 小时，以下条目均未在往期日报报告过。</p>
 
-<p><strong>1. DeepSeek 发布 V4.1-Flash-1017：开源权重、Search API 开放、成本再降</strong>
-DeepSeek 发布 V4.1-Flash-1017，称相比上一版基准更强、完成任务更快、输出更短，是性能与成本上的一次帕累托改进，已上线官网、App 和 API，并针对 DeepSeek Harness、Tencent CodeBuddy、WorkBuddy 等做了优化（建议升级 Harness v0.2.1-rc.1）。同一 thread 还宣布：用自研搜索引擎的 Search &amp; Fetch API 向所有人开放、每千次调用 0.75 美元，经 Harness、Claude Code、Codex 的服务端工具调用目前对 DeepSeek API 用户免费，2026-10-31 16:00 UTC 起计费；新模型用带自我反馈的强化学习提升从零搭建完整项目（游戏到 3D 建模）的能力；权重已开源，放在 Hugging Face 与 ModelScope。这是今早信息量最大的一条发布。
-DeepSeek @deepseek_ai · AI 御三家超级员工 / TimeAI 100 · 2026-10-17 01:35 PDT（thread 共 4 帖）
-<a href="https://x.com/deepseek_ai/status/2111375640717033777">原帖</a></p>
+<h2 id="x-开发者观点">X 开发者观点</h2>
 
-<p><strong>2. Thomas Wolf 解读 DeepSeek 新版：官方口径的「小更新」，基准跳得并不小</strong>
-Hugging Face 的 Thomas Wolf 指出，DeepSeek 把这次更新称作 minor update，但 Terminal-Bench 4.0 从 31.2 跳到 42.3；其自报 DeepSWE 77.0，高于 Opus 5 的 74.0 与 GPT-5.6 Sol 的 73.0。他认为最值得看的是「更快完成、输出更短」——用更少 token 本身就是成本曲线塌下去的实际路径；权重按 DeepSeek 传统是 MIT 许可。他同时提醒，这些数字能否在官方自测之外站住，还要再看。
-Thomas Wolf @Thom_Wolf · TimeAI 100 · 2026-10-17 03:17 PDT（引用 DeepSeek 主帖）
-<a href="https://x.com/Thom_Wolf/status/2111401132840890440">原帖</a></p>
+<p><strong>Aaron Levie（CEO @ Box）</strong>
+他认为行业已经越过一个门槛：AI 比人更擅长训练模型这件事正在变得现实可行。模型能力超过多数人类工程师、long-running agent 的 harness 与基础设施成熟、可并行调用的 agent 数量大增，三者叠加形成 recursive self-improvement 的飞轮——前沿进步的速度可能远超以往，低估 RSI 的后果是定价错误。
+<a href="https://x.com/levie/status/2111312141609586862">X 原帖</a></p>
 
-<p><strong>3. Nathan Lambert：DeepSeek 这步基准跳跃，可能强过带视觉的 GLM 5.3</strong>
-Nathan Lambert 吐槽这套命名（小版本号加日期标签）之余，认为基准的这一步跳得很大，可能证明它比内置视觉的 GLM 5.3 更强，并发问开源权重之王是否回来了。是对上一条的另一位专家侧证，先当热度与预期看，具体强弱等第三方评测。
-Nathan Lambert @natolambert · TimeAI 100 · 约 3 小时前（引用 DeepSeek 主帖）
-<a href="https://x.com/natolambert/status/2111440910257099072">原帖</a></p>
+<p><strong>Boris Cherny（Claude @ Anthropic）</strong>
+① 他说自己已经离不开 Claude Code Review：它跑在他所有的 PR 上，能在合入前抓到几乎每一个 bug，这是团队既能快速推进又能抬高质量门槛的“secret sauce”之一。② 他现在用 Claude Slides 做幻灯片，不再像过去那样到处搜 “iphone frame svg” 之类的素材——生成式工具正在把做 deck 这类杂活整段吞掉。
+<a href="https://x.com/bcherny/status/2111158313463525518">X 原帖</a>
+<a href="https://x.com/bcherny/status/2111158659971699136">X 原帖</a></p>
 
-<p><strong>4. Aaron Levie：RSI 飞轮已经转起来，没给递归自我改进定价是误判</strong>
-Levie 认为我们已经跨过一个门槛：AI 比人类更擅长训练模型这件事变得现实——前一天还觉得递归自我改进遥远，下一天就已看到雏形。他列的飞轮要素是：模型能力超过多数人类工程师、长时运行 agent 的 harness 与基础设施进步、数据持续变多、以及能把 agent 并行铺到远超单人能覆盖的任务与测试上；这会显著加速模型进展，至少会把前沿上限推得极快。被引帖还带了一个具体口径：Anthropic 全球事务负责人 Michael Sellitto 在 IMF 称，Anthropic 预计到明年 Claude 可主导 80–90% 的前沿模型训练，而今年 4 月这一比例还是 3%。
-Aaron Levie @levie · TimeAI 100 / Wall Street Influencers · 2026-10-16 21:23 PDT（引用 @MTSlive）
-<a href="https://x.com/levie/status/2111312141609586862">原帖</a></p>
+<p><strong>Thibault Sottiaux（Codex &amp; ChatGPT @ OpenAI）</strong>
+① ChatGPT 刚加上 slides 支持，目前先向 Pro、Business 和 Enterprise 开放，边收集反馈边迭代——文档生成之后，演示文稿成了各家必争的下一个产物形态。② 他介绍了 ChatGPT Space，并直接向用户征集“接下来想看到什么”，属于产品团队公开共创的信号。
+<a href="https://x.com/thsottiaux/status/2111249810502353152">X 原帖</a>
+<a href="https://x.com/thsottiaux/status/2111249534072529256">X 原帖</a></p>
 
-<p><strong>5. YC Paper Club 本周讲 AI 安全的「科学面」：形式化验证、航空标准与「AI 版 NTSB」</strong>
-Y Combinator 的 Paper Club 本期请 Stanford 的 Clark Barrett 与 Mykel Kochenderfer（Stanford Center for AI Safety 联合主任）拆 AI 安全：这个领域有几十年研究积累与自己的会议和方法，在飞机防撞系统里的标准是每十亿飞行小时至多一次灾难性失败。节目内容包括 OpenAI–Hugging Face 事件到底发生了什么、形式化验证如何用数学证明代码性质（如在 Lean 里用 CSLib 证明代码正确）、把航空的安全技术改用到语言模型上、自适应压力测试、验证神经网络、运行时监控，以及 AI 是否需要自己的 NTSB；完整视频约 1 小时 37 分。下一期 Paper Club 定在 10 月 21 日，主题是 Inference。
-Y Combinator @ycombinator · Venture Capital · 2026-10-17 08:01 PDT
-<a href="https://x.com/ycombinator/status/2111472682571374601">原帖</a></p>
+<p><strong>Amjad Masad（CEO @ Replit）</strong>
+① 数据主权成为卖点：Replit 可以部署到客户自己的云里，数据不出门，明确瞄准政府、金融、医疗等高风险环境——企业级 AI coding 的竞争点正从模型能力转向部署与合规。② 他观察到数学家群体对 AI 解题正在压缩经历否认、愤怒、讨价还价、沮丧到接受的完整过程，目前已接近接受阶段，与本周 AI 数学成果的舆论氛围互为印证。
+<a href="https://x.com/amasad/status/2111267314012496121">X 原帖</a>
+<a href="https://x.com/amasad/status/2111206044416500159">X 原帖</a></p>
 
-<p><strong>6. Ben Horowitz 用 LoudCloud 的教训看 AI neocloud：CoreWeave 现在吃的是供给短缺的顺风</strong>
-a16z 转的 All-In 片段里，Ben Horowitz 说他早年的云公司 LoudCloud 教会他这类生意可能是危险的套利：1999 年带宽每兆 1500 美元还拿不到、只能签三年长约，到 2001 年价格跌到 50 美元，借钱囤带宽的人就死了。但他认为 AI 的核心动态目前对 CoreWeave 有利：现在是严重的供给不足而非过剩，token 价格在跌、GPU 价格没跌，数据中心空间还在涨价（连建数据中心的劳动力都紧缺、政治因素也在抬高门槛），需求没有消退——尽管债务市场本身对这类公司并不友好，这些仍是很大的顺风。
-a16z @a16z · Venture Capital / Wall Street Influencers · 2026-10-17 08:03 PDT
-<a href="https://x.com/a16z/status/2111473277730513124">原帖</a></p>
+<p><strong>Dan Shipper（CEO @ Every）</strong>
+一句话点出能力瓶颈的迁移：generation 已经便宜且高质量，现在真正缺的大跃升是 editing 和 oversight——会生成不再稀缺，会审、会改、会把关才是。
+<a href="https://x.com/danshipper/status/2111174407637139668">X 原帖</a></p>
 
-<p><strong>7. Google AI Pro 用户现在能在 AI Studio 里用 Gemini 4 Argon 构建</strong>
-Dmitry Lyalin 提醒：Google AI Pro 订阅用户现在可以在 AI Studio 和 playground 里用 Gemini 4 Argon 做构建，并祝大家周六愉快。昨天 Argon 发布日的热度延续到可用范围扩大，用 Google AI Studio 的人可以直接去试。
-Dmitry Lyalin @LyalinDotCom · AI 御三家超级员工 · 约 2 小时前（引用 @GoogleAIStudio）
-<a href="https://x.com/LyalinDotCom/status/2111442098973258214">原帖</a></p>
+<p><strong>Guillermo Rauch（CEO @ Vercel）</strong>
+他转发并点评了一个 TypeScript 编译实验：经 scriptc 编译后，运行速度比 tsgo 快 2–4 倍，配文 “TypeScript is the new TypeScript”——语言生态的性能竞赛还在继续，编译路径本身成了变量。
+<a href="https://x.com/rauchg/status/2111274408706965898">X 原帖</a></p>
 
-<p><strong>8. David Sacks 质疑 Anthropic 对小模型的「恐吓宣传」时机</strong>
-一段 3 分钟视频里，David Sacks 称 Anthropic 近期针对小模型的安全宣传时机「非常可疑」：企业市场正往小模型走、小模型在抢份额，偏偏这时候 Anthropic 开始渲染小模型的危险。这是立场鲜明的市场竞争解读，当观点看、不要当定论，但它点出了大厂在小模型议题上的利益位置。
-Chief Nerd @TheChiefNerd · Venture Capital · 2026-10-17 07:08 PDT
-<a href="https://x.com/TheChiefNerd/status/2111459276732420495">原帖</a></p>
+<p><strong>Garry Tan（President &amp; CEO @ Y Combinator）</strong>
+他分享自己开新项目的工作流：用 Capy + Aside 让 agent 同时写出第一版代码并把 DevOps 一并搭好——在他看来，创始人起步阶段的“写代码 + 部署环境”已经可以打包交给 agent 一次完成。
+<a href="https://x.com/garrytan/status/2111235500568969451">X 原帖</a></p>
 
-<p><strong>9. Sacks 再谈 CoreWeave：债收益率飙升是波动，不是需求崩塌</strong>
-另一段视频里，David Sacks 反驳 CoreWeave 悲观叙事：其债券收益率急升与股价下挫，更多反映的是市场围绕数万亿美元 AI 结果与指数增长下注带来的波动，而非需求基本面崩塌；理解 CoreWeave 信用风险的关键，是它那些长期合同客户的信用质量。与第 6 条 Horowitz 的看法可以对照读。
-The AI Investor @The_AI_Investor · Venture Capital · 2026-10-16 23:20 PDT
-<a href="https://x.com/The_AI_Investor/status/2111341598693003398">原帖</a></p>
+<p><strong>Sam Altman（OpenAI）</strong>
+他晒出 Navier-Stokes 里程碑纪念衫的背面：印的是解题 chain-of-thought 的最后一行。用一件周边把“AI 解出经典数学难题”做成团队文化符号，也侧面确认 OpenAI 正把数学成果当作本阶段的标志性进展在传播（具体的解与验证细节以官方发布为准，本条只记其表态）。
+<a href="https://x.com/sama/status/2111139227761266699">X 原帖</a></p>
 
-<p><strong>10. Jack Clark 在 IMF 讲「奇点已经开始」</strong>
-Anthropic 联合创始人 Jack Clark 发帖称，他一小时后将在 IMF 演讲，主题是奇点、为什么他相信奇点已经开始、以及我们将要面对的选择，并附了直播链接。配合第 4 条里 Anthropic 在 IMF 的训练自动化口径看，Anthropic 高层这周在 IMF 的存在感不低。
-Jack Clark @jackclarkSF · TimeAI 100 · 约 9 小时前
-<a href="https://x.com/jackclarkSF/status/2111350983465095501">原帖</a></p>
+<p>其余 X 条目多为纯宣传、玩笑、无内容转发或私人动态（如 ASCII 艺术、诗、Roadster 演示、活动 RSVP），已按规则过滤。</p>
 
-<p><strong>11. Harj Taggar：给自己写软件从未这么便宜，发出来让别人的 agent 帮你适配</strong>
-YC 的 Harj Taggar 说，「为自己而建」比任何时候都更成立：做只适合自己用的个人软件成本极低，而只要把代码公开，别人各自的 agent 就能补上适配的差距，把它变成能为他们工作的版本。这是对个人软件与 agent 生态关系的一个简洁判断。
-Harj Taggar @harjtaggar · Venture Capital · 2026-10-17 08:08 PDT
-<a href="https://x.com/harjtaggar/status/2111474551607689325">原帖</a></p>
+<h2 id="官方博客">官方博客</h2>
 
-<p><strong>12. Dan Shipper 谈产品组织：善用「周末偷跑新模型」的早期采用者，别让他们扰乱全队</strong>
-Lenny Rachitsky 分享 Dan Shipper 的一段视频：组织里总有些人探索得比别人多得多，他们是早期采用者，周末在个人项目上跑 Astra、Fable 这类新模型，找能带回工作的东西；问题是他们也可能成为巨大的干扰源。所以产品组织负责人的关键问题是：如何 harness 这批人、又不分散所有人的注意力。帖尾附了完整演讲链接（主题是像经营研究实验室一样经营产品团队）。
-Lenny Rachitsky @lennysan · SuperIndividual · 2026-10-17 05:44 PDT
-<a href="https://x.com/lennysan/status/2111438155610034474">原帖</a></p>
+<p>本次 feed-blogs.json（generatedAt 2026-10-17T06:38:30Z，lookback 72 小时）条目为 0，没有新的官方博客公告可报告。</p>
 
-<p><strong>13. Packy 引 Doris Tsao 的意识神经科学 thread：人脑与机器心智同周都有进展</strong>
-Packy McCormick 转引神经科学家 Doris Tsao 的 thread（该 thread 称他们发现了关于意识神经结构的全新、意料之外的结果），感叹同一周里人类心智与机器心智的理解都取得大进展，是一个「奇迹时代」。原 thread 值得点进去看一手表述，这里只记 Packy 的转引这一层。
-Packy McCormick @packyM · SuperIndividual · 约 2 小时前（引用 @doristsao）
-<a href="https://x.com/packyM/status/2111443966390595907">原帖</a></p>
+<h2 id="播客">播客</h2>
 
-<p><strong>14. Vaibhav Domkundwar 给停滞创始人的四年不变建议：卖掉，现在就卖</strong>
-Better Capital 的 Vaibhav 说，过去四年每个问他「公司没起色该怎么办」的创始人（包括自家被投公司），他给的答案都一样简单：卖、卖、卖，立刻卖。回头看每次都对：行动了的找到了收购方，拖太久的多半关门。他举了一个案例——本可谈成让投资人拿回 1.4 倍、创始人也有可观现金的收购，创始人却因幻想再融一轮而在签约前夜犹豫。他还判断，AI 是压垮很多这类公司的最后一根稻草：对本就没有存在理由的业务来说，「加上 AI」几乎注定是死路；很少有 pre-AI 时代没找到强生意的公司能活进 post-AI 世界。
-Vaibhav Domkundwar @vaibhavbetter · Venture Capital · 2026-10-17 01:39 PDT
-<a href="https://x.com/vaibhavbetter/status/2111376556224295416">原帖</a></p>
-
-<p><strong>15. Vaibhav：早期唯一重要的镜头，是多快找到一门「真正的生意」</strong>
-同一位作者的另一条长帖说，他们投过的公司里，有的 12–24 个月烧掉几千万美元，有的四五年只花个位数百万，但烧多少、花多快都不重要，重要的是在你给自己设定的时间窗里有没有找到一门「真正的生意」——有明确的大市场证据、强客户需求、可重复增长、有潜力长成大公司，不必当下盈利、也不必当下资本高效。他提醒，烧钱高的公司最容易被写出来，但慢吞吞多年找不到方向的公司同样该被警惕，只是很少被报道。
-Vaibhav Domkundwar @vaibhavbetter · Venture Capital · 2026-10-17 01:08 PDT
-<a href="https://x.com/vaibhavbetter/status/2111368784800043349">原帖</a></p>
-
-<p><strong>16. Vaibhav：大厂简历可能比藤校申请文书还会包装，别把品牌关联当个人贡献</strong>
-Vaibhav 说，在 Meta、X、Snap、Amazon 这类顶级公司各待两到四年的简历，因为雇主筛选极严，品牌关联本身就成了能力信号；但「进得去一家好公司」「在那里做出好工作」「会讲清楚自己做了什么」是三件完全不同的事。他见过一些人营销简历的能力甚至超过真正创过业的人，而在大组织里把个人贡献从组织成就中分离出来极难；他看过最差的招聘决定，多来自没分清这两者。
-Vaibhav Domkundwar @vaibhavbetter · Venture Capital · 2026-10-17 02:00 PDT
-<a href="https://x.com/vaibhavbetter/status/2111381840368144548">原帖</a></p>
-
-<p><strong>17. Vaibhav：想拿到钱，先让自己对资本「可读」</strong>
-Vaibhav 讨论印度 deeptech 与 quick commerce 之争时说，两个看似对立的判断可以同时为真，这场争论本身没产出：资本必须交付 IRR，它会自己找最优路径、试错迭代；不理解这一点的创始人——不管做不做 deeptech——都走不远。他承认 deeptech 里现在确实有大量 grift（全球皆然），但也认为印度的 quick commerce 看起来能交付 IRR；deeptech 需要更多资本，不是因为它「应得」，而是只有当它在各方面对资本可读时，钱才会来。
-Vaibhav Domkundwar @vaibhavbetter · Venture Capital · 2026-10-17 03:43 PDT
-<a href="https://x.com/vaibhavbetter/status/2111407803168612454">原帖</a></p>
-
-<p><strong>18. Pompliano 新一期：Jordi Visser 谈对冲基金之死、代币化与 Anthropic 增长之辩</strong>
-Anthony Pompliano 的新一期播客请 Jordi Visser，议题包括对冲基金为何接连爆掉与 LTCM 的教训、为什么 CPI 不再重要、Anthropic 增长是否在放缓的辩论、比特币为何坚挺、代币化如何重塑华尔街，以及 AI 的资本需求与市场流动性。完整节目约 1 小时，帖里给了 YouTube、Spotify 与 Apple Podcasts 三个入口和全时间戳。
-Anthony Pompliano @APompliano · Venture Capital · 2026-10-17 06:10 PDT
-<a href="https://x.com/APompliano/status/2111444714364842175">原帖</a></p>
-
-<p><strong>19. 一则轶事：去年 12 月按 3000 亿美元估值拿的 Anthropic offer，RSU 不到十个月约涨 6 倍</strong>
-Aviral Bhatnagar 说，他朋友去年 12 月拿到 Anthropic 的 offer，当时公司估值约 3000 亿美元，朋友当时觉得股票能按同估值卖掉就满足了；如今其 RSU 在不到十个月里大约值 6 倍，且可能很快能变现。这只是单则轶事、估值口径未经证实，但反映了头部 AI 公司员工股权的涨幅感受。
-Aviral Bhatnagar @aviralbhat · Venture Capital · 2026-10-17 03:57 PDT
-<a href="https://x.com/aviralbhat/status/2111411259837198712">原帖</a></p>
-
-<p><strong>20. Goldman Sachs 的 The Markets：AI 信用波动是否给投资者留了机会</strong>
-Goldman Sachs 的短视频预告里，美国与亚洲信用交易联席主管 Alex Finston 在 The Markets 节目讨论：AI 相关的信用波动，是否反而为投资者创造了机会。27 秒只是预告，具体观点要去节目里听；但「AI 信用」成为大行交易台的公开议题，本身值得记一笔。
-Goldman Sachs @GoldmanSachs · Wall Street Influencers · 约 2 小时前
-<a href="https://x.com/GoldmanSachs/status/2111457202074489325">原帖</a></p>
-
-<p><strong>21. ECB 的 Lagarde：全球经济对不确定性的韧性出乎意料</strong>
-欧洲央行转述行长 Lagarde 在 IMFC 的表态：全球经济对不确定性展现出出乎意料的韧性；若能回到以开放、可预测与法治为基础的国际经济秩序，将有助于贸易与投资。帖里附了 IMFC 声明链接，是本周末官方口径的一条样本。
-European Central Bank @ecb · Wall Street Influencers · 约 10 小时前
-<a href="https://x.com/ecb/status/2111336406672900429">原帖</a></p>
-
-<p><strong>22. 3one4 Capital 九月月报：退出 Yulu、Cradlewise 1200 万美元 A 轮等印度组合动态</strong>
-3one4 Capital 的九月汇总给了几笔具体数字：它在 Yulu 的 9300 万美元 C 轮 alongside 通过二次出售完成全部退出；AI 婴儿睡眠系统 Cradlewise 完成 1200 万美元 A 轮；水务自动化公司 DigitalPaani 募资 2.2 亿卢比；室内材料平台 Gravity Design 募资 1500 万美元。同一内容还有一篇 X Article 版月报，内容相同、只记一次。
-3one4 Capital @3one4Capital · Venture Capital · 2026-10-17 00:29 PDT
-<a href="https://x.com/3one4Capital/status/2111358833172025349">原帖</a></p>
-
-<p><strong>23. Aviral：印度 deeptech 的风险资本，很多来自先做成互联网公司的人</strong>
-Aviral 列了几组对应关系：Flipkart 的 Sachin 与 Binny 后来出资支持了 Ather，Myntra 的 Mukesh 支持了 Skyroot，Zomato 的 Deepinder 支持了 LAT——印度 deeptech 的早期风险资本有相当部分来自先前的互联网创业者。他给的结论是：一个国家需要先有「杂货」级的生意，才有余力梦想太空。
-Aviral Bhatnagar @aviralbhat · Venture Capital · 2026-10-17 04:48 PDT
-<a href="https://x.com/aviralbhat/status/2111424036089774479">原帖</a></p>
-
-<p><strong>24. Aviral：消费生意也是资产负债表生意，应收账期就是现金</strong>
-Aviral 说，早期消费品牌创始人盯利润表和毛利，上规模后盯的是现金流转速度：对一家 1 亿卢比级的生意，把应收账期从 90 天压到 60 天，就等于多出 800 万卢比现金。是一个具体、可直接对照自家生意的财务口径。
-Aviral Bhatnagar @aviralbhat · Venture Capital · 约 7 小时前
-<a href="https://x.com/aviralbhat/status/2111376980436512982">原帖</a></p>
-
-<p><strong>25. Vaibhav 的一个创业设想：把慢病医院「搬进」住宅小区，每周两小时</strong>
-Vaibhav 提问：如果一家慢病医院每周末到小区里坐诊两小时，带齐工具、诊断设备和专科医生，步行可达，慢病管理会不会容易得多？他认为慢病在规律随访下本可好管理得多，真正的障碍往往不是医疗可及性，而是定期就医所需的时间与精力成本，尤其还要照顾患慢病的父母时。他说他们正在认真看「垂直上门服务」这个品类，后续会有正式发布。
-Vaibhav Domkundwar @vaibhavbetter · Venture Capital · 2026-10-17 00:31 PDT
-<a href="https://x.com/vaibhavbetter/status/2111359355681710101">原帖</a></p>
-
-<p><strong>26. Ayr Energy 向密歇根发出 175 MVA、345 kV 变压器，支撑公用事业级光伏</strong>
-3one4 Capital 称其组合公司 Ayr Energy 已把一台 175 MVA、345 kV 变压器发往密歇根，用于支持公用事业级太阳能发电与区域电网基础设施。它的论点是：重型电网设备的交付速度，正是解锁光伏装机容量的瓶颈之一。
-3one4 Capital @3one4Capital · Venture Capital · 2026-10-16 23:38 PDT
-<a href="https://x.com/3one4Capital/status/2111345968755224946">原帖</a></p>
-
-<p><strong>27. OpenRouter 一次挂出 28 个岗位，全团队招聘</strong>
-Glenn 转发 OpenRouter 的招聘信息：共 28 个开放岗位，覆盖所有团队，链接是 Ashby 上的职位页。在找 AI 基础设施方向机会的人可以直接去职位页看明细。
-Glenn @Glennmon · AI 御三家超级员工 · 约 2 小时前
-<a href="https://x.com/Glennmon/status/2111442827523535188">原帖</a></p>
-
-<p><strong>28. dot 的「真管家时刻」：知道你在哪、行程是什么，随时给最优路线</strong>
-Thomas Ricouard 说他这个周末和下周都在旅行，而他的 dot 因为连接了他所有的东西，时刻知道他的位置和行程，能随时给出完美路线——他称这是真正的 concierge 时刻。是个人 AI 助手类产品的一个具体使用感受样本。
-Thomas Ricouard @Dimillian · AI 御三家超级员工 · 2026-10-16 21:15 PDT
-<a href="https://x.com/Dimillian/status/2111310170047553618">原帖</a></p>
-
-<p><strong>29. 圣路易斯联储两条科普帖：商品价格的供需逻辑，与国家收入差距的成因</strong>
-圣路易斯联储一条帖（44 秒视频配博客）讲商品价格：从万圣节糖里的可可到牛仔裤的棉花，商品是可用商品与服务的基本构成，价格主要由供需因素驱动，理解这点有助于看懂消费者面对的价格。另一条帖推了一篇讨论「什么经济因素造成各国国民收入巨大差异」的文章，附 FRED 相关链接。两条都是官方科普口径，适合当地图索引点进去查数据。
-St. Louis Fed @stlouisfed · Wall Street Influencers · 2026-10-16 21:57 PDT 及约 1 小时前
-<a href="https://x.com/stlouisfed/status/2111320585850532069">原帖</a></p>
-
-<p><strong>30. 世界银行孟加拉项目数据：目标 6 万个岗位，结果近 18 万</strong>
-世界银行称，一个 IDA 项目帮助 570 家孟加拉企业打入 22 个新市场、实现年出口增长 83%，岗位目标原本是 6 万个、实际结果接近 18 万个，同时撬动了 1800 万美元私人资本。这是世行 EndPoverty 系列里数据最扎实的一条。
-World Bank Group @WorldBankGroup · Wall Street Influencers · 约 6 小时前
-<a href="https://x.com/WorldBankGroup/status/2111396987463671945">原帖</a></p>
-
-<p><strong>31. 世界银行 SP500：已触达 2.59 亿人，尼日利亚 160 万女性获得更好的金融可及性</strong>
-世界银行称其 SP500 计划已触达 2.59 亿人，帮助各国保护家庭免受冲击、把更多人连接到更好的工作上。另一条同系列帖给了尼日利亚的数字：160 万女性获得更好的融资渠道，5600 多万人收到现金转移以抵御冲击、建立韧性。两条同属一个计划，合并记一次。
-World Bank Group @WorldBankGroup · Wall Street Influencers · 约 8–9 小时前
-<a href="https://x.com/WorldBankGroup/status/2111366772154884151">原帖</a></p>
-
-<p><strong>32. 世界银行：卢旺达一家酒店靠 2060 万美元 MIGA 担保重开，创造 170 个岗位</strong>
-世界银行称，在卢旺达，一笔 2060 万美元的 MIGA 担保帮助基加利一家历史酒店完成重建并重新开业，支持了 170 个本地旅游岗位。金额不大，但展示了担保工具如何把政治风险从私营投资里剥离。
-World Bank Group @WorldBankGroup · Wall Street Influencers · 约 2 小时前
-<a href="https://x.com/WorldBankGroup/status/2111457400989573476">原帖</a></p>
-
-<p><strong>33. 世界银行埃塞俄比亚项目：2700 公里道路、117 座城市、115 万个岗位</strong>
-世界银行非洲账号称，一个 IDA 支持的基础设施计划在埃塞俄比亚 117 座城市修建了 2700 公里道路，创造了 115 万个岗位，把城市增长转化为共享机会。这条帖恰好发在覆盖窗口开始的 21:00 整点，计入本期。
-World Bank Africa @WorldBankAfrica · Wall Street Influencers · 2026-10-16 21:00 PDT
-<a href="https://x.com/WorldBankAfrica/status/2111306253230387410">原帖</a></p>
-
-<p><strong>34. Anand Mahindra 在 Bloomberg 新经济论坛的最大收获：新加坡的国家 AI 战略</strong>
-Mahindra 集团的 Anand Mahindra 说，他加入了 Bloomberg New Economy Forum（新德里）的顾问委员会，而此行最大的收获不来自主会场，而是与新加坡副总理颜金勇的对话——对方阐述了他听过最清晰、最连贯的「把 AI 变成国家竞争优势」的战略。他感慨，国家之间无论体量大小都能互相学习，论坛真正的价值常在台下。
-anand mahindra @anandmahindra · Wall Street Influencers · 2026-10-17 05:50 PDT
-<a href="https://x.com/anandmahindra/status/2111439660648214926">原帖</a></p>
-
-<p><strong>35. 「Bloomscrolling」：用积极内容替代 doomscrolling，Pinterest 上「线下爱好」搜索同比涨 551%</strong>
-Arianna Huffington 写道，越来越多人在主动放下「锤子」：她把刷令人振奋的内容称作 bloomscrolling，与之相对的是 doomscrolling。她引的数据是 Pinterest 上「offline hobbies」搜索量同比上涨 551%、「no phone ideas」搜索也在爬升；同时引 Harvard 专家的说法称，大量消费负面新闻与焦虑、抑郁、头痛、睡眠差、食欲低和血压高相关。她的建议很小：关 feed 前，关注一个让你振奋的账号、取关一个让你耗竭的账号。
-Arianna Huffington @ariannahuff · Wall Street Influencers · 2026-10-17 06:55 PDT
-<a href="https://x.com/ariannahuff/status/2111456184410443812">原帖</a></p>
-
-<p><strong>36. Lockheed Martin 的 MORFIUS X-Rotor：一次飞行可压制 50 多架无人机</strong>
-Lockheed Martin 宣传其 MORFIUS X-Rotor 反无人机系统：用高功率微波技术，单次飞行可中和 50 多架无人机，且可回收重复使用、压低单次拦截成本。10 秒视频只有产品宣发口径，具体效能未经独立验证，但这是大厂在「低成本反无人机」方向的一个明确产品信号。
-Lockheed Martin @LockheedMartin · Wall Street Influencers · 约 4 小时前
-<a href="https://x.com/LockheedMartin/status/2111427006017515888">原帖</a></p>
-
-<p><strong>37. Paul Graham 一句话：财富创造出现之前，致富靠站在军事或政治争端的赢家一边</strong>
-Paul Graham 转引评论时写了这一句——在「通过创造财富致富」成为可能之前，致富的方式是站在军事或政治争端的获胜方。一句可以当引子的历史判断，没有展开论证。
-Paul Graham @paulg · Venture Capital · 2026-10-17 04:44 PDT
-<a href="https://x.com/paulg/status/2111423024163586403">原帖</a></p>
-
-<p><strong>38. Peter Livingston：学校会剥夺孩子的三样东西——能动性、好奇心与对学习的热爱</strong>
-Peter Livingston 转引时列出，学校会从孩子身上剥夺三样他们日后要么努力保留、要么重新找回的东西：agency（能动性）、curiosity（好奇心）和 love of learning（对学习的热爱）；他认为这三样恰是现实世界成功最重要的特质。
-Peter Livingston @unpopularvc · Venture Capital · 2026-10-17 08:25 PDT
-<a href="https://x.com/unpopularvc/status/2111478764521529365">原帖</a></p>
-
-<p><strong>39. Tejeshwi Sharma：AI agent 真正的礼物不是想法，是时间</strong>
-Tejeshwi Sharma 说，AI agent 真正的礼物不是点子而是时间：想法到做完之间的鸿沟已经塌掉，用他的 bot 干活有种心灵感应的感觉——同样是 24 小时，产出翻倍，日子像是变长了。
-Tejeshwi Sharma @tejeshwi_sharma · Venture Capital · 2026-10-16 22:38 PDT
-<a href="https://x.com/tejeshwi_sharma/status/2111330892719485188">原帖</a></p>
-
-<p><strong>40. 工具更新：AviUtl2 的视频生成插件 Nz-Videomni 支持 LTX 2.5 AlphaGen 背景透明</strong>
-Rootport 宣布，AviUtl2 里调用视频生成 AI 的插件 Nz-Videomni 已支持 LTX 2.5 的 AlphaGen 背景透明功能，抠像效果干净；他随后发了给现有用户的升级安装步骤（拉取更新、跑两个安装脚本、替换 aux2 文件、改一行配置再重启），并贴了 nicovideo 上的介绍视频。受众很窄，但在用这套日本视频工具体系的人值得知道。
-Rootport @rootport · TimeAI 100 · 2026-10-17 03:38 PDT 等（三帖合并）
-<a href="https://x.com/rootport/status/2111404439135482111">原帖</a></p>
-
-<p><strong>41. Packy 用 Runway 现场「拍」了一部 80 年代高中电影的梗</strong>
-Packy McCormick 说，他几分钟前突然想到一个 80 年代高中电影的台词梗（端着披萨进派对的人说一句双关），转头就意识到自己可以直接把它做出来——他用 Runway app 一个 prompt 生成了 12 秒视频，并感叹好莱坞要成「肉馅」了。内容是玩笑，但它是「念头到成片只隔一个 prompt」的又一个随手样本；同账号另一条只是配图回复、无正文，未收。
-Packy McCormick @packyM · SuperIndividual · 约 1 小时前
-<a href="https://x.com/packyM/status/2111470520235708730">原帖</a></p>
+<p><strong>No Priors — The Changing Physics of Cybersecurity and Drug Development with OpenAI President Greg Brockman（2026-10-15 发布）</strong>
+Brockman 的核心判断有三层。一是 AI 已能产出真正的新知识：约 400 个百年数学开放问题被解出，关键不在给出答案，而在证明里出现了专家认为有启发的思路连接；把同一套方法迁向生物与药物时，瓶颈不在模型，而在数据、湿实验室与监管申报等流程环节。二是网络安全正处在 “defender’s window”：前沿能力先握在防御方手里，应趁其扩散前用模型查漏、做形式化验证、偿还技术债；他由此断言 security spend 终将远超 software spend，并透露 OpenAI 内部曾抽调约 25 名工程师专职用峰值模型自查基础设施，直到该模型能发现的问题饱和为止。三是产品形态上 “best UI is no UI”：主动型 agent（如内部工具 DOTS）常驻后台，跨 inbox、Slack 与日历替人盯待办和日程冲突；consumer 与 enterprise 的区别主要只剩算力成本，而非物种之分。贯穿全程的前提是 human agency——能力再强，人也要坐在驾驶座上。
+节目页：<a href="https://www.youtube.com/@NoPriorsPodcast">节目页</a></p>
 
 <hr />
-<p>覆盖与计数（候选 / 入选）：</p>
-<ul>
-  <li>AI Research：扫描 51 / 窗口内候选 0 / 入选 0（最新一条 2026-10-16 17:24，在窗口开始前）</li>
-  <li>AI 御三家超级员工：扫描约 90 / 候选 17 / 入选 4（DeepSeek 主帖与 TimeAI 100 合并计入第 1 条；其余多为无实质内容的一行回复、表情与政治表态，已过滤）</li>
-  <li>SuperIndividual：扫描约 47 / 候选 8 / 入选 3 条（覆盖 4 帖；Lenny 的演讲引言与完整演讲链接两帖合并为第 12 条；acquire.com 两条广告帖已按纯广告过滤）</li>
-  <li>TimeAI 100：候选 32 / 入选 6 条（DeepSeek 完整 thread 4 帖合并为第 1 条；Nz-Videomni 三帖合并为第 40 条；Aaron Levie 与 Wall Street Influencers 重复、合并计入第 4 条）</li>
-  <li>Venture Capital：扫描 70+ / 候选 42 / 入选 19 条（YC Paper Club 三帖合并为第 5 条；3one4 月报的 Article 版与正文版内容相同、只记一次）</li>
-  <li>Wall Street Influencers：候选 41 / 入选 12（St. Louis Fed 两帖合并为第 29 条、世界银行 SP500 两帖合并为第 31 条；a16z 与 Aaron Levie 两帖与 Venture Capital / TimeAI 100 重复、已合并）
-合计精选：41 条（覆盖 52 个 status ID）。跨 List 重复：DeepSeek 主帖同时出现在 AI 御三家超级员工与 TimeAI 100；a16z Horowitz 帖同时出现在 Venture Capital 与 Wall Street Influencers；Aaron Levie 帖同时出现在 TimeAI 100 与 Wall Street Influencers，均只报一次。</li>
-</ul>
+<p>内容来源：Follow Builders — <a href="https://github.com/zarazhangrui/follow-builders">Follow Builders</a></p>
 </div>
   <div class="back"><a href="/digest-preview/">← All digests</a></div>
 </div>
