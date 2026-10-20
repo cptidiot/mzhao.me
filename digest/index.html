@@ -114,7 +114,6 @@ a { color: inherit; }
 .mast h1 em { font-style: italic; }
 .rule { position: relative; height: 1px; background: var(--line); }
 .rule::before { content: ""; position: absolute; left: 0; top: -1px; width: 72px; height: 3px; background: var(--accent); }
-.dek { margin: 14px 0 0; max-width: 62ch; font-size: 14px; color: var(--text); }
 
 /* ── Section nav + date filter (sticky) ───── */
 .secnav {
@@ -125,9 +124,8 @@ a { color: inherit; }
   border-bottom: 1px solid var(--line);
 }
 .secnav-inner {
-  display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none;
+  display: flex; flex-wrap: wrap; gap: 0 2px;
 }
-.secnav-inner::-webkit-scrollbar { display: none; }
 .secnav a {
   display: inline-flex; align-items: baseline; gap: 6px;
   padding: 13px 10px 11px; white-space: nowrap;
@@ -155,7 +153,7 @@ a { color: inherit; }
 
 /* ── Sections ─────────────────────────────── */
 main.wrap { padding-block: 34px 72px; display: flex; flex-direction: column; gap: 52px; }
-.sec { scroll-margin-top: 130px; }
+.sec { scroll-margin-top: 172px; }
 .sec-head {
   display: flex; justify-content: space-between; align-items: baseline; gap: 4px 16px; flex-wrap: wrap;
   padding-top: 12px; margin-bottom: 16px;
@@ -279,7 +277,6 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
     </div>
     <h1><em>Daily</em> Digest</h1>
     <div class="rule" role="presentation"></div>
-    <p class="dek">每天定时汇总 9 个来源。每张卡片是一条完整条目，直接读完即可；按来源分组，新的一期在前。顶部下拉按日期筛选，默认只看最新一天。</p>
   </div>
 </header>
 
