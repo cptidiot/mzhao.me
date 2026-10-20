@@ -7,6 +7,7 @@ title: Daily Digest
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script>try{var t=localStorage.getItem('digest-theme');if(t){document.documentElement.dataset.theme=t;}}catch(e){}</script>
 <title>Daily Digest</title>
 <meta name="description" content="Daily digests — AI Builders, Zara AI Digest, X Lists, Consensus, Hacker News, 段永平晚报, Newsletter 精选, Reddit 精选, Lex 中文精读.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232e3d4a'/%3E%3Ctext x='32' y='44' font-family='Helvetica, Arial, sans-serif' font-size='36' font-weight='500' fill='%23ffffff' text-anchor='middle'%3E%4D%3C/text%3E%3C/svg%3E">
@@ -87,7 +88,19 @@ a { color: inherit; }
 }
 .topbar a { text-decoration: none; color: var(--ink); font-weight: 500; }
 .topbar a:hover { color: var(--accent); }
-.topbar .stats { font-variant-numeric: tabular-nums; }
+.themebtn {
+  appearance: none; cursor: pointer; font: inherit; font-size: 14px; line-height: 1;
+  color: var(--text); background: transparent;
+  border: 1px solid var(--line); border-radius: 999px; padding: 6px 13px;
+}
+.themebtn:hover { border-color: var(--line-hover); color: var(--ink); }
+.themebtn .ico-sun { display: none; }
+:root[data-theme="dark"] .themebtn .ico-sun { display: inline; }
+:root[data-theme="dark"] .themebtn .ico-moon { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .themebtn .ico-sun { display: inline; }
+  :root:not([data-theme="light"]) .themebtn .ico-moon { display: none; }
+}
 .mast h1 {
   margin: 40px 0 18px;
   font-family: var(--f-display);
@@ -262,7 +275,7 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
   <div class="wrap">
     <div class="topbar">
       <a href="/">← Home</a>
-      <span class="stats">9 个来源 · 更新于 {{ latest.date | date: "%b %-d, %-I:%M %p" }}</span>
+      <button type="button" class="themebtn" id="theme-toggle" aria-label="切换日间 / 夜间主题" title="切换日间 / 夜间主题"><span class="ico-moon" aria-hidden="true">☾</span><span class="ico-sun" aria-hidden="true">☀</span></button>
     </div>
     <h1><em>Daily</em> Digest</h1>
     <div class="rule" role="presentation"></div>
@@ -351,6 +364,20 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
 
 <script>
 (function () {
+  /* Theme toggle: flips data-theme between light/dark and remembers the choice.
+     With no stored choice the page follows the system preference. */
+  var themeBtn = document.getElementById('theme-toggle');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function () {
+      var root = document.documentElement;
+      var isDark = root.dataset.theme === 'dark' ||
+        (!root.dataset.theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      var next = isDark ? 'light' : 'dark';
+      root.dataset.theme = next;
+      try { localStorage.setItem('digest-theme', next); } catch (e) {}
+    });
+  }
+
   /* Masonry: fine 2px row tracks + per-item row span. Grid auto-placement then drops
      each item into the column that frees up first, so reading order stays left-to-right. */
   var ROW = 2;
