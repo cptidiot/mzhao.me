@@ -18,7 +18,7 @@ title: Daily Digest
 <meta name="theme-color" content="#0c0c0c" media="(prefers-color-scheme: dark)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=Inter:wght@400;500;600&display=swap">
 <style>
 /* Layout: masthead → sticky source nav + date filter → one section per source; each section is a 4-col (2-col on phones) masonry grid of entry cards, newest issue first. */
 :root {
@@ -26,30 +26,31 @@ title: Daily Digest
   --card: #ffffff;
   --ink: #111111;
   --text: #3a3a38;
-  --muted: #8b8a84;
+  --muted: #7d7c76;
   --line: #e6e5df;
   --line-hover: #cfcec7;
   --accent: #e8261c;
   --accent-soft: rgba(232, 38, 28, .38);
   --track: #efeee9;
 
-  --f-display: "Instrument Serif", "Songti SC", "Noto Serif SC", "Source Han Serif SC", Georgia, serif;
-  --f-body: "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  /* Display serif for masthead + section heads only; everything you actually read is set in Inter / PingFang. */
+  --f-display: "Newsreader", "Songti SC", "Noto Serif SC", "Source Han Serif SC", Georgia, serif;
+  --f-body: "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
 
-  --gap: 14px;
+  --gap: 16px;
   --radius: 6px;
   --maxw: 1200px;
   --nav-h: 46px;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #0c0c0c; --card: #161616; --ink: #f1f0ec; --text: #b7b6b0; --muted: #77766f;
+    --bg: #0c0c0c; --card: #161616; --ink: #f1f0ec; --text: #c2c1bb; --muted: #8a8983;
     --line: #262624; --line-hover: #3a3a37; --accent: #ff4a3d; --accent-soft: rgba(255, 74, 61, .45); --track: #232321;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #0c0c0c; --card: #161616; --ink: #f1f0ec; --text: #b7b6b0; --muted: #77766f;
+  --bg: #0c0c0c; --card: #161616; --ink: #f1f0ec; --text: #c2c1bb; --muted: #8a8983;
   --line: #262624; --line-hover: #3a3a37; --accent: #ff4a3d; --accent-soft: rgba(255, 74, 61, .45); --track: #232321;
   color-scheme: dark;
 }
@@ -62,9 +63,10 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--f-body);
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  font-optical-sizing: auto;
 }
 body::before {
   content: ""; position: fixed; inset: 0 0 auto; z-index: 10;
@@ -84,7 +86,7 @@ a { color: inherit; }
 .mast { padding-block: 28px 22px; }
 .topbar {
   display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap;
-  font-size: 12.5px; color: var(--muted);
+  font-size: 13px; color: var(--muted);
 }
 .topbar a { text-decoration: none; color: var(--ink); font-weight: 500; }
 .topbar a:hover { color: var(--accent); }
@@ -102,16 +104,16 @@ a { color: inherit; }
   :root:not([data-theme="light"]) .themebtn .ico-moon { display: none; }
 }
 .mast h1 {
-  margin: 40px 0 18px;
+  margin: 40px 0 20px;
   font-family: var(--f-display);
-  font-weight: 400;
-  font-size: clamp(52px, 9vw, 96px);
-  line-height: .92;
-  letter-spacing: -.015em;
+  font-weight: 500;
+  font-size: clamp(48px, 8vw, 88px);
+  line-height: 1;
+  letter-spacing: -.025em;
   color: var(--ink);
   text-wrap: balance;
 }
-.mast h1 em { font-style: italic; }
+.mast h1 em { font-style: italic; font-weight: 400; }
 .rule { position: relative; height: 1px; background: var(--line); }
 .rule::before { content: ""; position: absolute; left: 0; top: -1px; width: 72px; height: 3px; background: var(--accent); }
 
@@ -129,19 +131,18 @@ a { color: inherit; }
 .secnav a {
   display: inline-flex; align-items: baseline; gap: 6px;
   padding: 13px 10px 11px; white-space: nowrap;
-  font-size: 13px; font-weight: 500; text-decoration: none; color: var(--text);
+  font-size: 13.5px; font-weight: 500; text-decoration: none; color: var(--text);
   border-bottom: 2px solid transparent;
 }
-.secnav a span { font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
 .secnav a:hover { color: var(--ink); }
 .secnav a[aria-current="true"] { color: var(--ink); border-bottom-color: var(--accent); }
 .filterbar {
   display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
   padding-block: 0 10px;
 }
-.filterbar .flabel { font-size: 12px; color: var(--muted); margin-right: 2px; }
+.filterbar .flabel { font-size: 12.5px; color: var(--muted); margin-right: 2px; }
 .dateselect {
-  font: inherit; font-size: 12.5px; line-height: 1.3; color: var(--text);
+  font: inherit; font-size: 13px; line-height: 1.3; color: var(--text);
   background: transparent; border: 1px solid var(--line); border-radius: 999px;
   padding: 5px 11px; cursor: pointer; font-variant-numeric: tabular-nums;
   max-width: 190px;
@@ -159,10 +160,9 @@ main.wrap { padding-block: 34px 72px; display: flex; flex-direction: column; gap
   border-top: 1px solid var(--ink);
 }
 .sec-head h2 {
-  margin: 0; font-family: var(--f-display); font-weight: 400;
-  font-size: clamp(26px, 3.4vw, 34px); line-height: 1.1; color: var(--ink); letter-spacing: -.005em;
+  margin: 0; font-family: var(--f-display); font-weight: 500;
+  font-size: clamp(26px, 3vw, 32px); line-height: 1.15; color: var(--ink); letter-spacing: -.015em;
 }
-.sec-meta { margin: 0; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
 .sec-toggle {
   flex: none; width: 30px; height: 30px; padding: 0;
   background: none; border: 1px solid var(--line); border-radius: 999px;
@@ -193,13 +193,13 @@ main.wrap { padding-block: 34px 72px; display: flex; flex-direction: column; gap
   display: flex; justify-content: space-between; align-items: baseline; gap: 4px 14px; flex-wrap: wrap;
   margin-top: 30px; padding: 9px 2px 0;
   border-top: 1px dashed var(--line-hover);
-  font-size: 11px; line-height: 1.5; color: var(--muted);
+  font-size: 12px; line-height: 1.5; color: var(--muted);
   font-variant-numeric: tabular-nums;
 }
 .sec .issue:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
-.issue + .grid { margin-top: 12px; }
+.issue + .grid { margin-top: 14px; }
 .issue b {
-  font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink);
+  font-size: 11.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink);
 }
 .issue a { color: var(--muted); text-underline-offset: 2px; text-decoration-color: var(--line-hover); }
 .issue a:hover { color: var(--accent); text-decoration-color: var(--accent); }
@@ -207,8 +207,8 @@ main.wrap { padding-block: 34px 72px; display: flex; flex-direction: column; gap
 /* ── Card ─────────────────────────────────── */
 .card {
   min-width: 0;
-  display: flex; flex-direction: column; gap: 7px;
-  padding: 14px 16px 13px;
+  display: flex; flex-direction: column; gap: 8px;
+  padding: 16px 18px 15px;
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -217,21 +217,22 @@ main.wrap { padding-block: 34px 72px; display: flex; flex-direction: column; gap
 .card:hover { border-color: var(--line-hover); }
 .card-title {
   margin: 0;
-  font-family: var(--f-display); font-weight: 400;
-  font-size: 21px; line-height: 1.22; color: var(--ink);
+  font-family: var(--f-body); font-weight: 600;
+  font-size: 15.5px; line-height: 1.42; letter-spacing: -.008em; color: var(--ink);
   overflow-wrap: anywhere; text-wrap: pretty;
 }
-.card-role {
-  display: block; width: fit-content; max-width: 100%;
-  margin-top: 5px; padding: 2px 9px;
-  font-size: 11px; font-weight: 500; line-height: 1.5;
-  color: var(--text); background: var(--track); border-radius: 999px;
+/* Meta line under the title: source / role, then time, as quiet text rather than a pill. */
+.card-meta {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0 10px;
+  margin: -3px 0 0; font-size: 12px; line-height: 1.45; color: var(--muted);
+  font-variant-numeric: tabular-nums;
 }
-.card-time { margin: 0; font-size: 11px; line-height: 1.4; color: var(--muted); font-variant-numeric: tabular-nums; }
-.card-body { margin: 0; font-size: 13.5px; line-height: 1.62; color: var(--text); overflow-wrap: anywhere; }
+.card-role { min-width: 0; color: var(--text); font-weight: 500; overflow-wrap: anywhere; }
+.card-meta time { white-space: nowrap; }
+.card-body { margin: 0; font-size: 14px; line-height: 1.7; color: var(--text); overflow-wrap: anywhere; }
 .card-foot {
   display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 10px;
-  margin-top: 2px; font-size: 12px;
+  margin-top: 2px; font-size: 12.5px;
 }
 .stat { color: var(--muted); font-variant-numeric: tabular-nums; }
 .src-link {
@@ -242,20 +243,21 @@ main.wrap { padding-block: 34px 72px; display: flex; flex-direction: column; gap
 .src-link:hover { text-decoration-color: var(--accent); }
 
 /* Consensus: lead-answer bar */
-.poll { display: flex; align-items: center; gap: 8px; font-size: 11.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.poll { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
 .poll-track { flex: 1; height: 3px; border-radius: 2px; background: var(--track); overflow: hidden; }
 .poll-track i { display: block; height: 100%; width: var(--p); background: var(--accent); }
 .poll b { color: var(--ink); font-weight: 600; }
 
 @media (max-width: 640px) {
-  .card { padding: 11px 12px 11px; gap: 6px; }
-  .card-title { font-size: 17.5px; }
-  .card-body { font-size: 13px; line-height: 1.58; }
-  .card-foot { font-size: 11.5px; }
+  .card { padding: 12px 13px 12px; gap: 7px; }
+  .card-title { font-size: 14.5px; line-height: 1.4; }
+  .card-meta { font-size: 11.5px; }
+  .card-body { font-size: 13.5px; line-height: 1.65; }
+  .card-foot { font-size: 12px; }
   .mast h1 { margin-top: 30px; }
 }
 
-footer.site-foot { padding-block: 0 40px; font-size: 12px; color: var(--muted); }
+footer.site-foot { padding-block: 0 40px; font-size: 12.5px; color: var(--muted); }
 footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
 </style>
 </head>
@@ -279,7 +281,8 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
 </header>
 
 <div class="secnav">
-  <nav class="secnav-inner wrap" aria-label="来源">
+  <div class="wrap">
+  <nav class="secnav-inner" aria-label="来源">
     {% for sid in section_ids %}
     {% assign docs = site.digests | where: "section", sid | sort: "date" | reverse %}
     {% assign sec_items = 0 %}
@@ -299,7 +302,7 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
     <a href="#sec-{{ sid }}" data-navsec="sec-{{ sid }}">{{ sname }}</a>
     {% endfor %}
   </nav>
-  <div class="filterbar wrap" role="group" aria-label="按日期筛选">
+  <div class="filterbar" role="group" aria-label="按日期筛选">
     <span class="flabel">日期</span>
     <select class="dateselect" id="date-select" aria-label="选择日期">
       <option value="all">全部日期</option>
@@ -310,6 +313,7 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
       <option value="{{ d }}"{% if first_date %} selected{% assign first_date = false %}{% endif %}>{{ d | date: "%m-%d %a" }} · {{ dcount }} 条</option>
       {% endif %}{% endfor %}
     </select>
+  </div>
   </div>
 </div>
 
@@ -341,8 +345,8 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
     <div class="grid" data-masonry>
       {% for item in doc.items %}
       <article class="card" data-date="{{ doc.date | date: "%Y-%m-%d" }}">
-        <h3 class="card-title">{{ item.title | escape }}{% if item.role %}<span class="card-role">{{ item.role | escape }}</span>{% endif %}</h3>
-        {% if item.time %}<p class="card-time"><time>{{ item.time | escape }}</time></p>{% endif %}
+        <h3 class="card-title">{{ item.title | escape }}</h3>
+        {% if item.role or item.time %}<p class="card-meta">{% if item.role %}<span class="card-role">{{ item.role | escape }}</span>{% endif %}{% if item.time %}<time>{{ item.time | escape }}</time>{% endif %}</p>{% endif %}
         <p class="card-body">{{ item.summary | escape }}</p>
         {% if item.poll %}<div class="poll"><span class="poll-track"><i style="--p:{{ item.poll }}%"></i></span><span>{{ item.poll_label | escape }} <b>{{ item.poll }}%</b></span></div>{% endif %}
         <footer class="card-foot">{% if item.stat %}<span class="stat">{{ item.stat | escape }}</span>{% endif %}<a class="src-link" href="{{ item.url | escape }}" target="_blank" rel="noopener">{{ item.link_label | escape }} ↗</a></footer>
