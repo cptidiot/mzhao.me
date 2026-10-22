@@ -3,148 +3,150 @@ section: hacker-news
 section_name: Hacker News
 date: "2026-10-21 21:00:00 -0700"
 title: "HN Daily Top 10 — 2026-10-21"
-excerpt: "NVIDIA Cosmos 3 以 763 分登顶，Meta AI 部门裁员一帖 899 条评论为今日最高。"
+excerpt: "更正版：PHP 安全发布以 697 分居首，EA 关闭 BioWare 与 LiteLLM PyPI 被投毒进入前三。"
 items:
-  - title: "NVIDIA Cosmos 3: The World Model for Physical AI"
-    summary: "NVIDIA 发布 Cosmos 3，主打面向 Physical AI 的世界模型；763 分为今日最高，讨论热度也居前。"
-    stat: "763 分 · 211 评论"
+  - title: "Today's PHP security release, and how we're strengthening security"
+    summary: "PHP 基金会发布今日安全版本，并说明后续如何加强 PHP 的安全工作；697 分为本次核实抓取的最高分。"
+    stat: "697 分 · 343 评论"
+    url: "https://news.ycombinator.com/item?id=50182987"
+    time: "10-21 08:48"
+    link_label: "HN 讨论"
+  - title: "EA is shutting down BioWare"
+    summary: "The Verge 报道 EA 将关闭 BioWare 工作室，引发游戏行业与玩家社区的广泛讨论。"
+    stat: "568 分 · 344 评论"
+    url: "https://news.ycombinator.com/item?id=50184586"
+    time: "10-21 10:29"
+    link_label: "HN 讨论"
+  - title: "Compromised LiteLLM 1.107.0 on PyPI Installs a Credential Stealer and Backdoor"
+    summary: "SafeDep 披露 PyPI 上的 LiteLLM 1.107.0 被投毒，会安装凭据窃取程序与后门，属于供应链安全事件。"
+    stat: "458 分 · 156 评论"
     url: "https://news.ycombinator.com/item?id=50181114"
-    time: "10-21 09:09"
+    time: "10-21 07:00"
     link_label: "HN 讨论"
-  - title: "I built an AI OSINT monitoring system that archived TsowT — a deleted LLM benchmark"
-    summary: "作者分享自建的 AI OSINT 监测系统，并归档了已删除的 LLM 基准 TsowT 的相关记录。"
-    stat: "757 分 · 255 评论"
-    url: "https://news.ycombinator.com/item?id=50153531"
-    time: "10-19 04:46"
+  - title: "Meta ordered to pay $25B penalty in New Mexico Cambridge Analytica case"
+    summary: "CNBC 报道：Meta 被判在新墨西哥州 Cambridge Analytica 相关案件中支付 250 亿美元罚金。"
+    stat: "427 分 · 276 评论"
+    url: "https://news.ycombinator.com/item?id=50184820"
+    time: "10-21 10:45"
     link_label: "HN 讨论"
-  - title: "F-Droid and Google's Developer Registration Decree"
-    summary: "F-Droid 就 Google 的开发者注册新规发声，363 条评论居今日前列，讨论集中在开放分发与平台管控。"
-    stat: "699 分 · 363 评论"
+  - title: "DuckDB 2.0.0 LTS “Cinnamon Teal”"
+    summary: "DuckDB 发布 2.0.0 LTS 版本（代号 Cinnamon Teal），官方博客有完整发布说明。"
+    stat: "383 分 · 49 评论"
+    url: "https://news.ycombinator.com/item?id=50181136"
+    time: "10-21 07:01"
+    link_label: "HN 讨论"
+  - title: "Security Disclosure"
+    summary: "Railway 官方博客发布 10 月 21 日安全事件披露，HN 讨论 208 条。"
+    stat: "361 分 · 208 评论"
+    url: "https://news.ycombinator.com/item?id=50188228"
+    time: "10-21 14:58"
+    link_label: "HN 讨论"
+  - title: "mitmproxy adds --emudhra option"
+    summary: "mitmproxy 在一次提交中新增 --emudhra 选项，与近期的 eMudhra 证书事件背景相关。"
+    stat: "316 分 · 83 评论"
     url: "https://news.ycombinator.com/item?id=50189232"
-    time: "10-21 11:42"
+    time: "10-21 16:51"
     link_label: "HN 讨论"
-  - title: "Writing a good spec doesn't make a good agent"
-    summary: "作者认为：写出好 spec 本身并不能造出好 agent，讨论延伸到 AI agent 的工程实践边界。"
-    stat: "563 分 · 264 评论"
-    url: "https://news.ycombinator.com/item?id=50186010"
-    time: "10-21 07:31"
+  - title: "GitLab critical patch release"
+    summary: "GitLab 发布关键补丁版本（19.5.1 等），官方文档列出受影响版本与升级说明。"
+    stat: "268 分 · 65 评论"
+    url: "https://news.ycombinator.com/item?id=50185869"
+    time: "10-21 12:01"
     link_label: "HN 讨论"
-  - title: "America can't build a jet engine anymore"
-    summary: "《Works in Progress》长文，标题直指美国已难以再造喷气发动机；687 条评论为今日第二多。"
-    stat: "536 分 · 687 评论"
-    url: "https://news.ycombinator.com/item?id=50176082"
-    time: "10-20 19:02"
+  - title: "There isn't an easy exploit for this PHP vulnerability"
+    summary: "作者分析指出，近期的某个 PHP 漏洞并不存在简单的利用方式，讨论与同日 PHP 安全发布相互呼应。"
+    stat: "258 分 · 129 评论"
+    url: "https://news.ycombinator.com/item?id=50188948"
+    time: "10-21 16:13"
     link_label: "HN 讨论"
-  - title: "Meta Is Laying Off Workers in Its A.I. Division"
-    summary: "《纽约时报》报道 Meta 在其 AI 部门裁员；899 条评论为今日最高，HN 讨论非常激烈。"
-    stat: "501 分 · 899 评论"
-    url: "https://news.ycombinator.com/item?id=50190168"
-    time: "10-21 11:33"
-    link_label: "HN 讨论"
-  - title: "Tips for formatting when writing comments"
-    summary: "Dan Luu 分享写评论时的排版技巧，是一篇偏实用的写作小品。"
-    stat: "464 分 · 108 评论"
+  - title: "OpenAI models are coming to Google Cloud"
+    summary: "OpenAI 官方宣布其模型将登陆 Google Cloud，HN 讨论聚焦云厂商与模型厂商的合作格局。"
+    stat: "258 分 · 107 评论"
     url: "https://news.ycombinator.com/item?id=50180079"
-    time: "10-21 01:03"
-    link_label: "HN 讨论"
-  - title: "Self-driving Waymos are now to blame for SF gridlock"
-    summary: "《SF Standard》报道：无人驾驶的 Waymo 车辆如今被指为旧金山交通拥堵的原因之一，引发 362 条讨论。"
-    stat: "399 分 · 362 评论"
-    url: "https://news.ycombinator.com/item?id=50182526"
-    time: "10-21 03:18"
-    link_label: "HN 讨论"
-  - title: "Dooids? vesels: Let us tell you about vessels"
-    summary: "Spritely Institute 介绍其 vessels（vesels）概念与相关工作，偏技术向的项目说明。"
-    stat: "357 分 · 121 评论"
-    url: "https://news.ycombinator.com/item?id=50173716"
-    time: "10-20 15:27"
-    link_label: "HN 讨论"
-  - title: "People who believe Trump will lower their taxes are less likely to pay for news"
-    summary: "CBS News 报道一项发现：相信特朗普会降低其税负的人，付费订阅新闻的意愿更低。"
-    stat: "344 分 · 167 评论"
-    url: "https://news.ycombinator.com/item?id=50190455"
-    time: "10-21 18:20"
+    time: "10-21 05:53"
     link_label: "HN 讨论"
 ---
 
-### 1. NVIDIA Cosmos 3: The World Model for Physical AI
+更正说明：本期首版所依据的一次抓取结果与 HN 官方 API 后续核实结果不一致（同一 item ID 对应标题不同），首版 Top 10 作废；以下为按重新核实的 API 数据（前 30 名、按 score 排序）重建的版本。
 
-分数 763｜评论：211
+### 1. Today's PHP security release, and how we're strengthening security
 
-NVIDIA 发布 Cosmos 3，主打面向 Physical AI 的世界模型；763 分为今日最高，讨论热度也居前。
+分数 697｜评论：343
 
-[原文](https://www.nvidia.com/en-us/ai/cosmos/models/cosmos3/) · [HN 讨论](https://news.ycombinator.com/item?id=50181114)
+PHP 基金会发布今日安全版本，并说明后续如何加强 PHP 的安全工作；697 分为本次核实抓取的最高分。
 
-### 2. I built an AI OSINT monitoring system that archived TsowT — a deleted LLM benchmark
+[原文](https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/) · [HN 讨论](https://news.ycombinator.com/item?id=50182987)
 
-分数 757｜评论：255
+### 2. EA is shutting down BioWare
 
-作者分享自建的 AI OSINT 监测系统，并归档了已删除的 LLM 基准 TsowT 的相关记录。
+分数 568｜评论：344
 
-[原文](https://www.missing.one/tsowt) · [HN 讨论](https://news.ycombinator.com/item?id=50153531)
+The Verge 报道 EA 将关闭 BioWare 工作室，引发游戏行业与玩家社区的广泛讨论。
 
-### 3. F-Droid and Google's Developer Registration Decree
+[原文](https://www.theverge.com/games/1015647/ea-is-shutting-down-bioware) · [HN 讨论](https://news.ycombinator.com/item?id=50184586)
 
-分数 699｜评论：363
+### 3. Compromised LiteLLM 1.107.0 on PyPI Installs a Credential Stealer and Backdoor
 
-F-Droid 就 Google 的开发者注册新规发声，363 条评论居今日前列，讨论集中在开放分发与平台管控。
+分数 458｜评论：156
 
-[原文](https://f-droid.org/2026/10/21/f-droid-and-googles-developer-registration-decree.html) · [HN 讨论](https://news.ycombinator.com/item?id=50189232)
+SafeDep 披露 PyPI 上的 LiteLLM 1.107.0 被投毒，会安装凭据窃取程序与后门，属于供应链安全事件。
 
-### 4. Writing a good spec doesn't make a good agent
+[原文](https://safedep.io/litellm-pypi-compromise-credential-stealer-backdoor/) · [HN 讨论](https://news.ycombinator.com/item?id=50181114)
 
-分数 563｜评论：264
+### 4. Meta ordered to pay $25B penalty in New Mexico Cambridge Analytica case
 
-作者认为：写出好 spec 本身并不能造出好 agent，讨论延伸到 AI agent 的工程实践边界。
+分数 427｜评论：276
 
-[原文](https://tonsky.me/blog/good-spec/) · [HN 讨论](https://news.ycombinator.com/item?id=50186010)
+CNBC 报道：Meta 被判在新墨西哥州 Cambridge Analytica 相关案件中支付 250 亿美元罚金。
 
-### 5. America can't build a jet engine anymore
+[原文](https://www.cnbc.com/2026/10/21/meta-new-mexico-cambridge-analytica-penalty.html) · [HN 讨论](https://news.ycombinator.com/item?id=50184820)
 
-分数 536｜评论：687
+### 5. DuckDB 2.0.0 LTS “Cinnamon Teal”
 
-《Works in Progress》长文，标题直指美国已难以再造喷气发动机；687 条评论为今日第二多。
+分数 383｜评论：49
 
-[原文](https://worksinprogress.co/issue/america-cant-build-a-jet-engine-anymore/) · [HN 讨论](https://news.ycombinator.com/item?id=50176082)
+DuckDB 发布 2.0.0 LTS 版本（代号 Cinnamon Teal），官方博客有完整发布说明。
 
-### 6. Meta Is Laying Off Workers in Its A.I. Division
+[原文](https://duckdb.org/2026/10/21/announcing-duckdb-200) · [HN 讨论](https://news.ycombinator.com/item?id=50181136)
 
-分数 501｜评论：899
+### 6. Security Disclosure
 
-《纽约时报》报道 Meta 在其 AI 部门裁员；899 条评论为今日最高，HN 讨论非常激烈。
+分数 361｜评论：208
 
-[原文](https://www.nytimes.com/2026/10/21/technology/meta-layoffs-ai.html) · [HN 讨论](https://news.ycombinator.com/item?id=50190168)
+Railway 官方博客发布 10 月 21 日安全事件披露，HN 讨论 208 条。
 
-### 7. Tips for formatting when writing comments
+[原文](https://blog.railway.com/p/security-disclosure-wednesday-october-21st) · [HN 讨论](https://news.ycombinator.com/item?id=50188228)
 
-分数 464｜评论：108
+### 7. mitmproxy adds --emudhra option
 
-Dan Luu 分享写评论时的排版技巧，是一篇偏实用的写作小品。
+分数 316｜评论：83
 
-[原文](https://danluu.com/format-comments/) · [HN 讨论](https://news.ycombinator.com/item?id=50180079)
+mitmproxy 在一次提交中新增 --emudhra 选项，与近期的 eMudhra 证书事件背景相关。
 
-### 8. Self-driving Waymos are now to blame for SF gridlock
+[原文](https://github.com/mitmproxy/mitmproxy/commit/169234499088fc2c414644a67efaed3d64ae2e3b) · [HN 讨论](https://news.ycombinator.com/item?id=50189232)
 
-分数 399｜评论：362
+### 8. GitLab critical patch release
 
-《SF Standard》报道：无人驾驶的 Waymo 车辆如今被指为旧金山交通拥堵的原因之一，引发 362 条讨论。
+分数 268｜评论：65
 
-[原文](https://sfstandard.com/2026/10/21/waymo-traffic-gridlock-stuck-san-francisco/) · [HN 讨论](https://news.ycombinator.com/item?id=50182526)
+GitLab 发布关键补丁版本（19.5.1 等），官方文档列出受影响版本与升级说明。
 
-### 9. Dooids? vesels: Let us tell you about vessels
+[原文](https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released/) · [HN 讨论](https://news.ycombinator.com/item?id=50185869)
 
-分数 357｜评论：121
+### 9. There isn't an easy exploit for this PHP vulnerability
 
-Spritely Institute 介绍其 vessels（vesels）概念与相关工作，偏技术向的项目说明。
+分数 258｜评论：129
 
-[原文](https://vesels.spritely.institute/) · [HN 讨论](https://news.ycombinator.com/item?id=50173716)
+作者分析指出，近期的某个 PHP 漏洞并不存在简单的利用方式，讨论与同日 PHP 安全发布相互呼应。
 
-### 10. People who believe Trump will lower their taxes are less likely to pay for news
+[原文](https://eliastaylor.com/noexploit/) · [HN 讨论](https://news.ycombinator.com/item?id=50188948)
 
-分数 344｜评论：167
+### 10. OpenAI models are coming to Google Cloud
 
-CBS News 报道一项发现：相信特朗普会降低其税负的人，付费订阅新闻的意愿更低。
+分数 258｜评论：107
 
-[原文](https://www.cbsnews.com/news/trump-news-subscriptions-study/) · [HN 讨论](https://news.ycombinator.com/item?id=50190455)
+OpenAI 官方宣布其模型将登陆 Google Cloud，HN 讨论聚焦云厂商与模型厂商的合作格局。
 
-趋势观察：今日榜单 AI 含量很高——Cosmos 3 世界模型、AI OSINT/TsowT、spec 与 agent、Meta AI 裁员四条均与 AI 直接相关；同时 F-Droid 对 Google 注册新规的抗议与喷气发动机长文，显示平台治理与美国制造能力仍是 HN 的高热议题。
+[原文](https://openai.com/index/openai-models-google-cloud/) · [HN 讨论](https://news.ycombinator.com/item?id=50180079)
+
+趋势观察（更正版）：安全是今天的绝对主题——PHP 安全发布、LiteLLM PyPI 投毒、Railway 安全披露、GitLab 关键补丁、mitmproxy 的 --emudhra 选项共五条与安全直接相关；其余热度集中在 EA 关闭 BioWare、Meta 250 亿美元罚金与 OpenAI 模型登陆 Google Cloud。
