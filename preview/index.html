@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marshall — homepage redesign preview</title>
+<style>
+  :root, html[data-theme="dark"] {
+    --bg:#0d0d0b; --ink:#ece9df; --muted:#8f8c80; --line:#26261f;
+    --hover:#161613; --dud:#5c5a50;
+  }
+  html[data-theme="light"] {
+    --bg:#fafaf7; --ink:#14140f; --muted:#8a897c; --line:#e4e3d8;
+    --hover:#f1f0e8; --dud:#c3c2b4;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    background:var(--bg); color:var(--ink);
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+    transition: background .35s ease, color .35s ease;
+  }
+  .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+  /* ── top bar ─────────────────────────── */
+  header {
+    display:flex; justify-content:space-between; align-items:center;
+    padding:22px clamp(20px, 4vw, 56px);
+  }
+  .wordmark { font-size:12.5px; letter-spacing:.22em; font-weight:600; }
+  nav { display:flex; gap:clamp(14px, 3vw, 34px); align-items:center; }
+  nav a {
+    color:var(--muted); text-decoration:none; font-size:12.5px; letter-spacing:.18em;
+    text-transform:uppercase; transition:color .2s;
+  }
+  nav a:hover { color:var(--ink); }
+  #themeBtn {
+    border:1px solid var(--line); background:transparent; color:var(--muted);
+    width:30px; height:30px; border-radius:999px; cursor:pointer; font-size:14px; line-height:1;
+  }
+  #themeBtn:hover { color:var(--ink); border-color:var(--muted); }
+  /* ── hero ────────────────────────────── */
+  .hero {
+    position:relative; padding: clamp(28px, 6vh, 84px) clamp(20px, 4vw, 56px) clamp(40px, 7vh, 90px);
+    min-height: 68vh;
+  }
+  #portrait {
+    position:absolute; top:50%; right:-7vw; transform:translateY(-54%);
+    width:min(60vw, 660px); height:min(60vw, 660px);
+    z-index:1; touch-action:none; animation: fadein 1s ease both;
+  }
+  @keyframes fadein { from { opacity:0 } to { opacity:1 } }
+  .hero h1 {
+    position:relative; z-index:2;
+    font-size:clamp(42px, 7vw, 88px); font-weight:700;
+    letter-spacing:-0.03em; line-height:1.0; text-transform:none;
+  }
+  .hero h1 .dud { color:var(--dud); }
+  .hero .tagline {
+    position:relative; z-index:2; margin-top:26px;
+    font-size:13px; letter-spacing:.20em; text-transform:uppercase; color:var(--muted);
+  }
+  .hero .tagline b { color:var(--ink); font-weight:600; }
+  /* ── sections ────────────────────────── */
+  main { padding: 0 clamp(20px, 4vw, 56px) 30px; }
+  .label { font-size:11.5px; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); margin-bottom:16px; }
+  section.about { border-top:1px solid var(--line); padding-top:30px; max-width:44em; }
+  section.about p { font-size:clamp(17px, 2vw, 20px); line-height:1.62; }
+  section.things { border-top:1px solid var(--line); margin-top:56px; padding-top:30px; }
+  .row {
+    display:flex; align-items:baseline; gap:clamp(14px, 3vw, 30px);
+    padding:20px 10px; border-bottom:1px solid var(--line);
+    text-decoration:none; color:var(--ink);
+    transition: background .2s ease, padding-left .25s ease;
+  }
+  .row:hover { background:var(--hover); padding-left:22px; }
+  .row .idx { font-size:12px; color:var(--muted); letter-spacing:.1em; }
+  .row .ttl { font-size:clamp(24px, 4.4vw, 40px); font-weight:600; letter-spacing:-0.02em; white-space:nowrap; }
+  .row .dsc { color:var(--muted); font-size:14.5px; line-height:1.45; flex:1; }
+  .row .arr { font-size:clamp(20px, 3vw, 30px); color:var(--muted); transition: transform .25s ease, color .2s; }
+  .row:hover .arr { transform:translateX(6px); color:var(--ink); }
+  footer {
+    display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    padding:26px clamp(20px, 4vw, 56px) 34px; color:var(--muted);
+    font-size:12px; letter-spacing:.16em; text-transform:uppercase;
+  }
+  @media (max-width: 720px) {
+    #portrait { position:relative; top:auto; right:auto; transform:none; width:min(92vw, 460px); height:min(92vw, 460px); margin: 6px auto 0; display:block; }
+    .hero { min-height:0; display:flex; flex-direction:column; }
+    .hero h1 { order:2; margin-top:10px; }
+    .hero .tagline { order:3; }
+    #portrait { order:1; }
+    .row { flex-wrap:wrap; }
+    .row .dsc { flex-basis:100%; }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="wordmark mono">MARSHALL</div>
+    <nav>
+      <a href="https://mzhao.me/eat/">Eat</a>
+      <a href="https://mzhao.me/flying/">Flying</a>
+      <a href="https://mzhao.me/thoughts/">Thoughts</a>
+      <a href="https://mzhao.me/digest/">Digest</a>
+      <button id="themeBtn" title="切换日夜">☀</button>
+    </nav>
+  </header>
+
+  <div class="hero" id="hero">
+    <canvas id="portrait" aria-label="Character portrait"></canvas>
+    <h1 id="bigName"><span class="line">Marshall</span></h1>
+    <p class="tagline">Engineer · <b>Pilot</b> · Foodie — San Francisco Bay Area</p>
+  </div>
+
+  <main>
+    <section class="about">
+      <div class="label mono">About</div>
+      <p>Hi, I'm Marshall. I fly Cessna 182s out of the Bay Area whenever the weather behaves, and spend the rest of my time on photography, tennis, and good coffee. I'm a foodie at heart, happiest when the grill is lit and something is sizzling. This page is my small corner of the internet.</p>
+    </section>
+
+    <section class="things">
+      <div class="label mono">Little Things</div>
+      <a class="row" href="https://mzhao.me/eat/">
+        <span class="idx mono">01</span><span class="ttl">What to Eat</span>
+        <span class="dsc">334 restaurants I keep coming back to — spin the wheel when you can't decide.</span>
+        <span class="arr">→</span>
+      </a>
+      <a class="row" href="https://mzhao.me/flying/">
+        <span class="idx mono">02</span><span class="ttl">Flying</span>
+        <span class="dsc">Notes from flying Cessna 182s around the Bay, and the club fleet I rent.</span>
+        <span class="arr">→</span>
+      </a>
+      <a class="row" href="https://mzhao.me/thoughts/">
+        <span class="idx mono">03</span><span class="ttl">Thoughts</span>
+        <span class="dsc">Random thoughts — small notes, posted as they come.</span>
+        <span class="arr">→</span>
+      </a>
+      <a class="row" href="https://mzhao.me/digest/">
+        <span class="idx mono">04</span><span class="ttl">Digest</span>
+        <span class="dsc">A daily digest of AI, markets, and the internet — read so I don't have to.</span>
+        <span class="arr">→</span>
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Marshall</span>
+    <span>37.37° N, 122.00° W</span>
+  </footer>
+
+<script>
+/* ── theme ─────────────────────────────────────────── */
+const rootEl = document.documentElement;
+const themeBtn = document.getElementById('themeBtn');
+let theme = 'light';
+themeBtn.addEventListener('click', () => {
+  theme = theme === 'dark' ? 'light' : 'dark';
+  rootEl.dataset.theme = theme;
+  themeBtn.textContent = theme === 'dark' ? '☾' : '☀';
+  buildPortrait();   // re-sample: ink flips with theme
+});
+
+/* ── character portrait (sampled from the photo) ───── */
+const IMG_SRC = 'data:image/jpeg;base64,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';
+const canvas = document.getElementById('portrait');
+const ctx = canvas.getContext('2d');
+const COLS = 132;
+const RAMP = ' .:-=+*#%@';
+let dots = [], cell = 0, CW = 0, CH = 0, pointer = null;
+const REPEL_R = 62;
+
+function buildPortrait() {
+  const img = buildPortrait.img;
+  if (!img) return;
+  const size = canvas.clientWidth || Math.min(window.innerWidth * 0.6, 660);
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  CW = CH = size; cell = size / COLS;
+  canvas.width = size * dpr; canvas.height = size * dpr;
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  const rows = COLS;
+  const c = document.createElement('canvas');
+  c.width = COLS; c.height = rows;
+  const g = c.getContext('2d', { willReadFrequently: true });
+  g.drawImage(img, 0, 0, COLS, rows);
+  const px = g.getImageData(0, 0, COLS, rows).data;
+  const raw = new Float32Array(COLS * rows);
+  for (let i = 0; i < COLS * rows; i++) {
+    const lum = (0.2126*px[i*4] + 0.7152*px[i*4+1] + 0.0722*px[i*4+2]) / 255;
+    raw[i] = theme === 'dark' ? lum : 1 - lum;
+  }
+  const sorted = [...raw].sort((a, b) => a - b);
+  const lo = sorted[Math.floor(sorted.length * 0.05)];
+  const hi = sorted[Math.floor(sorted.length * 0.95)];
+  dots = [];
+  for (let y = 0; y < rows; y++) {
+    for (let x = 0; x < COLS; x++) {
+      let d = (raw[y*COLS+x] - lo) / Math.max(hi - lo, 0.001);
+      d = Math.pow(Math.min(1, Math.max(0, d)), 1.1);
+      if (d < 0.05) continue;             // irregular: empty cells simply don't exist
+      const hx = (x + 0.5) * cell, hy = (y + 0.5) * cell;
+      dots.push({ hx, hy, x: hx, y: hy, vx: 0, vy: 0, d });
+    }
+  }
+}
+
+function inkRGB() { return theme === 'dark' ? '236,233,223' : '20,20,15'; }
+
+function frame() {
+  ctx.clearRect(0, 0, CW, CH);
+  const ink = inkRGB();
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.font = '600 ' + (cell * 1.3) + 'px ui-monospace, Menlo, Consolas, monospace';
+  for (const p of dots) {
+    p.vx += (p.hx - p.x) * 0.045;
+    p.vy += (p.hy - p.y) * 0.045;
+    if (pointer) {
+      const dx = p.x - pointer.x, dy = p.y - pointer.y;
+      const d2 = dx*dx + dy*dy;
+      if (d2 < REPEL_R * REPEL_R && d2 > 0.01) {
+        const dist = Math.sqrt(d2);
+        const f = (1 - dist / REPEL_R) * 2.4;
+        p.vx += (dx / dist) * f; p.vy += (dy / dist) * f;
+      }
+    }
+    p.vx *= 0.84; p.vy *= 0.84;
+    p.x += p.vx; p.y += p.vy;
+    const ch = RAMP[Math.round(p.d * (RAMP.length - 1))];
+    if (ch === ' ') continue;
+    ctx.fillStyle = 'rgba(' + ink + ',' + (0.16 + 0.84 * p.d).toFixed(3) + ')';
+    ctx.fillText(ch, p.x, p.y);
+  }
+  requestAnimationFrame(frame);
+}
+
+/* pointer: one handler on the hero drives both the portrait and the name */
+const hero = document.getElementById('hero');
+hero.addEventListener('pointermove', e => {
+  const r = canvas.getBoundingClientRect();
+  const x = e.clientX - r.left, y = e.clientY - r.top;
+  pointer = (x >= -10 && y >= -10 && x <= r.width + 10 && y <= r.height + 10) ? { x, y } : null;
+  maybeScramble(e);
+});
+hero.addEventListener('pointerleave', () => { pointer = null; });
+hero.addEventListener('pointerdown', e => { maybeScramble(e, true); });
+
+/* ── name scramble (bonus, from the earlier preview) ── */
+class TextScramble {
+  constructor(el) { this.el = el; this.chars = '!<>-_\\/[]{}=+*^?#'; this.update = this.update.bind(this); }
+  setText(newText) {
+    const oldText = this.el.textContent;
+    const length = Math.max(oldText.length, newText.length);
+    const promise = new Promise(r => (this.resolve = r));
+    this.queue = [];
+    for (let i = 0; i < length; i++) {
+      const from = oldText[i] || '', to = newText[i] || '';
+      const start = Math.floor(Math.random() * 22);
+      const end = start + Math.floor(Math.random() * 22) + 4;
+      this.queue.push({ from, to, start, end });
+    }
+    cancelAnimationFrame(this.frameRequest);
+    this.frame = 0; this.update();
+    return promise;
+  }
+  update() {
+    let output = '', complete = 0;
+    for (const q of this.queue) {
+      if (this.frame >= q.end) { complete++; output += q.to === ' ' ? ' ' : q.to; }
+      else if (this.frame >= q.start) {
+        if (!q.char || Math.random() < 0.28) q.char = q.to === ' ' ? ' ' : this.chars[Math.floor(Math.random() * this.chars.length)];
+        output += q.to === ' ' ? ' ' : '<span class="dud">' + q.char + '</span>';
+      } else output += q.from === ' ' ? ' ' : q.from;
+    }
+    this.el.innerHTML = output;
+    if (complete === this.queue.length) this.resolve();
+    else { this.frameRequest = requestAnimationFrame(this.update); this.frame++; }
+  }
+}
+const lineEls = [...document.querySelectorAll('#bigName .line')];
+const fxs = lineEls.map(el => new TextScramble(el));
+let scrambleBusy = false, lastScramble = 0;
+function playScramble() {
+  if (scrambleBusy) return;
+  scrambleBusy = true; lastScramble = Date.now();
+  Promise.all(lineEls.map((el, i) => fxs[i].setText(el.dataset.text))).then(() => { scrambleBusy = false; });
+}
+lineEls.forEach(el => { el.dataset.text = el.textContent; });
+function maybeScramble(e, force) {
+  const h = document.getElementById('bigName').getBoundingClientRect();
+  const inside = e.clientX >= h.left && e.clientX <= h.right && e.clientY >= h.top && e.clientY <= h.bottom;
+  if ((inside || force) && Date.now() - lastScramble > 1600) playScramble();
+}
+
+/* ── boot ──────────────────────────────────────────── */
+const img = new Image();
+img.onload = () => { buildPortrait.img = img; buildPortrait(); requestAnimationFrame(frame); };
+img.src = IMG_SRC;
+let rto;
+window.addEventListener('resize', () => { clearTimeout(rto); rto = setTimeout(buildPortrait, 200); });
+</script>
+</body>
+</html>
