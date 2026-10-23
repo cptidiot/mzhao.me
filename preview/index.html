@@ -183,7 +183,7 @@ function smoothstep(a, b, x) {
 function buildPortrait() {
   const img = buildPortrait.img;
   if (!img) return;
-  const displayW = Math.min(window.innerWidth * 0.30, 360);
+  const displayW = Math.min(window.innerWidth * (window.innerWidth <= 900 ? 0.62 : 0.30), 360);
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
   cellW = displayW / COLS;
   CW = displayW; CH = displayW * (ROWS / COLS);
