@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>今天吃什么</title>
-<meta name="description" content="别纠结，交给运气 — 334 家餐厅的大转盘">
+<meta name="description" content="别纠结，交给运气 — 餐厅收藏大转盘">
 <style>
   :root{
     --bg:#fff7e8; --surface:#fffdf7; --text:#2b211b; --muted:#8a7a6a;
@@ -113,6 +113,18 @@
   }
   .ticket a.maps{ background:var(--jade); color:#fff; box-shadow:3px 3px 0 rgba(43,33,27,.9); }
   .ticket button.again{ background:var(--surface); color:var(--text); box-shadow:3px 3px 0 rgba(43,33,27,.9); font-family:inherit; }
+  #q{ width:100%; padding:10px 14px; font-size:15px; font-weight:600; font-family:inherit;
+    border:2px solid var(--border); border-radius:12px; background:var(--surface); color:var(--text); margin-bottom:10px; }
+  #poolList{ max-height:330px; overflow:auto; }
+  .prow{ display:flex; align-items:baseline; gap:10px; padding:8px 6px; border-bottom:1px dashed var(--dot); cursor:pointer; }
+  .prow:hover{ background:var(--bg); }
+  .prow .pn{ font-weight:800; font-size:15px; }
+  .prow .pl{ color:var(--muted); font-weight:600; font-size:13px; white-space:nowrap; }
+  .prow .ps{ margin-left:auto; display:flex; gap:4px; flex-wrap:wrap; justify-content:flex-end; }
+  .prow .pb{ font-size:11px; font-weight:800; border:1.5px solid var(--border); border-radius:999px; padding:1px 7px; background:var(--accent-2); }
+  .prow .pb.jade{ background:var(--jade); color:#fff; }
+  .prow .pb.plain{ background:var(--surface); }
+  .pmore{ padding:10px 6px; color:var(--muted); font-weight:600; font-size:13px; }
   footer{ max-width:1040px; margin:22px auto 0; text-align:center; color:var(--muted); font-size:13px; font-weight:600; line-height:1.7; }
 </style>
 </head>
@@ -123,6 +135,14 @@
     <h1>别想了，<span class="hl">转！</span></h1>
     <p>别纠结，交给运气 🍜</p>
   </header>
+
+  <div class="card">
+    <div class="flabel">快 捷 入 口</div>
+    <div class="pills">
+      <div class="pill" id="presetFresh">🌉 湾区尝鲜 · Want to go</div>
+      <div class="pill" id="presetReturn">⭐ 湾区回锅 · 有星级</div>
+    </div>
+  </div>
 
   <div class="card">
     <div class="flabel">菜 系</div>
@@ -166,6 +186,12 @@
     </div>
   </div>
 
+  <div class="card">
+    <div class="flabel">当 前 池 名 单</div>
+    <input id="q" type="search" placeholder="搜店名 / 城市…" autocomplete="off">
+    <div id="poolList"></div>
+  </div>
+
   <footer>
     <span id="footCount">…</span>
   </footer>
@@ -175,13 +201,23 @@
 let DATA = [];
 const CATS = [ ['all','全部','全'], ['chinese','中餐','中'], ['asian','亚洲','亚'], ['other','其他','其'], ['desserts','甜品饮品','甜'] ];
 const CATNAME = { chinese:'中餐', asian:'亚洲', other:'其他', desserts:'甜品饮品' };
-const SRCS = [ ['all','全部来源'], ['5star','5★ 收藏'], ['4star','4★ 收藏'], ['want_to_go','Want to go'], ['been','去过'], ['favorites','Favorites'], ['manual','自选'] ];
-const SRCNAME = { '5star':'5★ 收藏', '4star':'4★ 收藏', 'want_to_go':'Want to go', 'been':'去过', 'favorites':'Favorites', 'manual':'自选' };
-const REGS = [ ['all','全部地区'], ['south_bay','南湾'], ['peninsula','半岛'], ['san_francisco','旧金山'], ['east_bay','东湾'], ['new_york','纽约'], ['other','其他地区'] ];
-const REGNAME = { south_bay:'南湾', peninsula:'半岛', san_francisco:'旧金山', east_bay:'东湾', new_york:'纽约', other:'其他地区' };
+const SRCS = [ ['all','全部来源'], ['want_to_go','Want to go'], ['been','去过'], ['fresh','没去过'], ['starred','有星级'], ['5star','5★ 收藏'], ['4star','4★ 收藏'], ['favorites','Favorites'], ['manual','自选'] ];
+const SRCNAME = { '5star':'5★ 收藏', '4star':'4★ 收藏', 'want_to_go':'Want to go', 'been':'去过', 'favorites':'♥ Favorites', 'manual':'自选' };
+const REGS = [ ['all','全部地区'], ['bay_area','湾区'], ['south_bay','南湾'], ['peninsula','半岛'], ['san_francisco','旧金山'], ['east_bay','东湾'], ['new_york','纽约'], ['other','其他地区'] ];
+const REGNAME = { bay_area:'湾区', south_bay:'南湾', peninsula:'半岛', san_francisco:'旧金山', east_bay:'东湾', new_york:'纽约', other:'其他地区' };
 const COLORS = ['#F4B83E','#E84A36','#2C9B72','#F07A4E','#F1CE70','#5CB894','#D94C39','#E8A940'];
 
-let fCat='all', fSrc='all', fReg='all', fArea='all';
+let fCat='all', fSrc='all', fReg='bay_area', fArea='all';
+const BAY = ['south_bay','peninsula','san_francisco','east_bay'];
+const excluded = new Set();
+function srcMatch(x,k){
+  if(k==='been') return x.s.some(s=>s==='been'||s==='5star'||s==='4star');
+  if(k==='fresh') return !x.s.some(s=>s==='been'||s==='5star'||s==='4star');
+  if(k==='starred') return x.s.some(s=>s==='5star'||s==='4star');
+  return x.s.includes(k);
+}
+function regMatch(x){ return fReg==='all' ? true : (fReg==='bay_area' ? BAY.includes(x.r) : x.r===fReg); }
+function keyOf(x){ return x.n+'\u0001'+x.u; }
 let angle=0, spinning=false, slices=[], winnerIdx=-1, winner=null;
 
 const $=id=>document.getElementById(id);
@@ -189,9 +225,10 @@ const $=id=>document.getElementById(id);
 function pool(){
   return DATA.filter(x =>
     (fCat==='all'||x.c===fCat) &&
-    (fSrc==='all'||x.s.includes(fSrc)) &&
-    (fReg==='all'||x.r===fReg) &&
-    (fArea==='all'||x.a===fArea));
+    (fSrc==='all'||srcMatch(x,fSrc)) &&
+    regMatch(x) &&
+    (fArea==='all'||x.a===fArea) &&
+    !excluded.has(keyOf(x)));
 }
 function countBy(fn, list){ const m={}; list.forEach(x=>{ const k=fn(x); m[k]=(m[k]||0)+1; }); return m; }
 
@@ -205,20 +242,20 @@ function renderFilters(){
 
   const srcInCat = DATA.filter(x=>fCat==='all'||x.c===fCat);
   $('srcPills').innerHTML = SRCS.map(([k,name])=>{
-    const n = k==='all'?srcInCat.length:srcInCat.filter(x=>x.s.includes(k)).length;
+    const n = k==='all'?srcInCat.length:srcInCat.filter(x=>srcMatch(x,k)).length;
     return `<div class="pill ${fSrc===k?'active':''}" data-src="${k}">${name}<span class="cnt">${n}</span></div>`;
   }).join('');
   document.querySelectorAll('[data-src]').forEach(el=>el.onclick=()=>{ fSrc=el.dataset.src; reset(); });
 
-  const regBase = DATA.filter(x=>(fCat==='all'||x.c===fCat)&&(fSrc==='all'||x.s.includes(fSrc)));
+  const regBase = DATA.filter(x=>(fCat==='all'||x.c===fCat)&&(fSrc==='all'||srcMatch(x,fSrc)));
   const regCounts = countBy(x=>x.r||'none', regBase);
   $('regChips').innerHTML = REGS.map(([k,name])=>{
-    const n = k==='all'?regBase.length:(regCounts[k]||0);
+    const n = k==='all'?regBase.length:(k==='bay_area'?BAY.reduce((a,r)=>a+(regCounts[r]||0),0):(regCounts[k]||0));
     return `<div class="chip ${fReg===k?'active':''}" data-reg="${k}">${name}<span class="cnt">${n}</span></div>`;
   }).join('');
   document.querySelectorAll('[data-reg]').forEach(el=>el.onclick=()=>{ fReg=el.dataset.reg; fArea='all'; reset(); });
 
-  if(fReg!=='all'){
+  if(fReg!=='all'&&fReg!=='bay_area'){
     const areas = [...new Set(regBase.filter(x=>x.r===fReg&&x.a).map(x=>x.a))].sort();
     const areaCounts = countBy(x=>x.a, regBase.filter(x=>x.r===fReg));
     $('areaRow').style.display='block';
@@ -228,7 +265,8 @@ function renderFilters(){
   } else {
     $('areaRow').style.display='none';
   }
-  $('rangeText').textContent = `当前范围：${pool().length} 家`;
+  $('rangeText').textContent = `当前范围：${pool().length} 家` + (excluded.size?`（本次已排除 ${excluded.size} 家）`:'');
+  renderList();
 }
 
 function buildSlices(){
@@ -288,7 +326,9 @@ function bezier(t){ // cubic-bezier(0.12,0.72,0.1,1) approx via standard easing 
 }
 
 function spin(){
-  const p = pool();
+  if(winner && $('ticket').classList.contains('show')) excluded.add(keyOf(winner));
+  let p = pool();
+  if(!p.length && excluded.size){ excluded.clear(); renderFilters(); p = pool(); }
   if(spinning||!p.length) return;
   buildSlices(); drawWheel();
   spinning=true; $('spinBtn').disabled=true; $('bigSpin').disabled=true;
@@ -299,7 +339,7 @@ function spin(){
   let delta = (target - startMod + Math.PI*2) % (Math.PI*2);
   const total = Math.PI*2*6 + delta;
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const dur = reduced?80:4000, t0=performance.now(), a0=angle;
+  const dur = reduced?80:2400, t0=performance.now(), a0=angle;
   function frame(t){
     const k=Math.min(1,(t-t0)/dur);
     angle = a0 + total*bezier(k);
@@ -314,7 +354,7 @@ function showTicket(){
   if(!winner) return;
   $('tName').textContent = winner.n;
   const badges = [`<span class="badge plain">${CATNAME[winner.c]}</span>`]
-    .concat(winner.s.map(s=>`<span class="badge ${s==='want_to_go'?'jade':''}">${SRCNAME[s]||s}</span>`));
+    .concat(winner.s.filter(s=>s!=='manual').map(s=>`<span class="badge ${s==='want_to_go'?'jade':''}">${SRCNAME[s]||s}</span>`));
   $('tBadges').innerHTML = badges.join('');
   const loc = winner.r ? (REGNAME[winner.r] + (winner.a? ' · '+winner.a : '')) : (winner.a||'');
   $('tLoc').textContent = loc? '📍 '+loc : '';
@@ -323,7 +363,30 @@ function showTicket(){
   $('ticket').classList.add('show');
 }
 
-function reset(){ angle=0; winner=null; $('ticket').classList.remove('show'); renderFilters(); buildSlices(); drawWheel(); }
+function reset(){ angle=0; winner=null; excluded.clear(); $('ticket').classList.remove('show'); renderFilters(); buildSlices(); drawWheel(); }
+
+function renderList(){
+  const box = $('poolList'); if(!box) return;
+  const q = ($('q').value||'').trim().toLowerCase();
+  let items = pool();
+  if(q) items = items.filter(x => x.n.toLowerCase().includes(q) || (x.a||'').toLowerCase().includes(q));
+  const MAX = 300;
+  const rows = items.slice(0, MAX).map(x=>{
+    const loc = x.r ? (REGNAME[x.r] + (x.a? ' · '+x.a : '')) : (x.a||'');
+    const bs = x.s.filter(s=>s!=='manual').map(s=>`<span class="pb ${s==='want_to_go'?'jade':''}">${SRCNAME[s]||s}</span>`).join('');
+    return `<div class="prow" data-i="${DATA.indexOf(x)}"><span class="pn">${x.n}</span><span class="pl">${loc}</span><span class="ps"><span class="pb plain">${CATNAME[x.c]}</span>${bs}</span></div>`;
+  }).join('');
+  box.innerHTML = rows + (items.length>MAX ? `<div class="pmore">仅显示前 ${MAX} 家（共 ${items.length} 家），缩小筛选或搜索查看更多</div>` : '')
+    + (!items.length ? '<div class="pmore">当前筛选下没有店</div>' : '');
+  box.querySelectorAll('.prow').forEach(el=>el.onclick=()=>{
+    winner = DATA[+el.dataset.i];
+    showTicket();
+    $('ticket').scrollIntoView({behavior:'smooth', block:'center'});
+  });
+}
+$('q').addEventListener('input', renderList);
+$('presetFresh').onclick=()=>{ fCat='all'; fSrc='want_to_go'; fReg='bay_area'; fArea='all'; reset(); };
+$('presetReturn').onclick=()=>{ fCat='all'; fSrc='starred'; fReg='bay_area'; fArea='all'; reset(); };
 
 $('spinBtn').onclick=spin; $('bigSpin').onclick=spin; $('tAgain').onclick=spin;
 $('rangeText').textContent='数据加载中…';
