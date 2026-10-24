@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marshall</title>
 <meta name="description" content="Marshall Zhao — private pilot based in the San Francisco Bay Area.">
+<meta name="theme-color" content="#f2f2f4">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232e3d4a'/%3E%3Ctext x='32' y='44' font-family='Helvetica, Arial, sans-serif' font-size='36' font-weight='500' fill='%23ffffff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mzhao.me/">
@@ -13,127 +14,208 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Marshall Zhao">
 <meta name="twitter:description" content="Private pilot based in the San Francisco Bay Area.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
 <style>
   :root {
-    --bg: #f6f8fa;
-    --ink: #131a22;
-    --body: #3d4a57;
-    --muted: #8593a1;
-    --accent: #2f6db3;
-    --line: rgba(19, 26, 34, .09);
+    --bg: #f2f2f4;
+    --card: #ffffff;
+    --ink: #1d1d1f;
+    --body: #55555a;
+    --sky: #dcebff;
+    --sky-ink: #3d5170;
+    --peach: #ffe7d6;
+    --peach-ink: #6b4a33;
+    --lilac: #ece8ff;
+    --lilac-ink: #4f4778;
+    --night: #1d1d1f;
+    --radius: 28px;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .04);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  ::selection { background: rgba(47, 109, 179, .20); }
+  ::selection { background: rgba(47, 109, 179, .18); }
+  body {
+    font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  .wrap {
+    max-width: 1120px; margin: 0 auto;
+    padding: 48px 24px 64px;
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .row-top { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; }
+  .row-tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+
+  .card {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+
+  /* intro */
+  .intro {
+    background: var(--card);
+    padding: 40px;
+    display: flex; flex-direction: column; justify-content: center; gap: 20px;
+    min-height: 340px;
+  }
+  .intro h1 {
+    font-size: clamp(32px, 4.4vw, 52px); font-weight: 800;
+    letter-spacing: -0.035em; line-height: 1.05;
+  }
+  .intro p { max-width: 560px; font-size: 17px; line-height: 1.65; color: var(--body); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+  .chips span {
+    padding: 8px 14px; border-radius: 999px;
+    background: var(--bg); font-size: 14px; font-weight: 600;
+  }
+
+  /* tiles */
+  .tile {
+    display: flex; flex-direction: column; justify-content: space-between; gap: 16px;
+    padding: 24px; min-height: 280px;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .tile img { display: block; object-fit: contain; transition: transform .3s ease; }
+  .tile-name { display: block; font-size: 20px; font-weight: 800; letter-spacing: -0.02em; }
+  .tile-desc { display: block; font-size: 14px; margin-top: 4px; }
+  @media (hover: hover) {
+    a.tile:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0, 0, 0, .08); }
+    a.tile:hover img { transform: scale(1.06) rotate(-2deg); }
+  }
+  a.tile:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+  .flying { background: var(--sky); padding: 28px; }
+  .flying .tile-name { font-size: 24px; }
+  .flying .tile-desc { font-size: 15px; color: var(--sky-ink); }
+  .flying-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+  .go {
+    width: 40px; height: 40px; flex-shrink: 0; border-radius: 50%;
+    background: var(--card); display: flex; align-items: center; justify-content: center;
+  }
+  .flying img { width: 180px; height: 160px; align-self: center; }
+
+  .eat { background: var(--peach); }
+  .eat .tile-desc { color: var(--peach-ink); }
+  .eat img { width: 112px; height: 112px; }
+  .thoughts { background: var(--lilac); }
+  .thoughts .tile-desc { color: var(--lilac-ink); }
+  .digest { background: var(--card); }
+  .digest .tile-desc { color: var(--body); }
+  .thoughts img, .digest img { width: 120px; height: 120px; }
+
+  .base { background: var(--night); color: #f5f5f7; box-shadow: none; }
+  .base .label { display: block; font-size: 13px; letter-spacing: .04em; color: #a1a1a6; }
+  .base .place { display: block; font-size: 22px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; margin-top: 4px; }
+
+  /* entrance */
   @keyframes rise {
     from { opacity: 0; transform: translateY(14px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-  .about, .apps { animation: rise .8s cubic-bezier(.22, .61, .36, 1) both; }
-  .apps { animation-delay: .15s; }
+  .row-top > *, .row-tiles > * { animation: rise .7s cubic-bezier(.22, .61, .36, 1) both; }
+  .row-top > :nth-child(2) { animation-delay: .06s; }
+  .row-tiles > :nth-child(1) { animation-delay: .12s; }
+  .row-tiles > :nth-child(2) { animation-delay: .18s; }
+  .row-tiles > :nth-child(3) { animation-delay: .24s; }
+  .row-tiles > :nth-child(4) { animation-delay: .30s; }
   @media (prefers-reduced-motion: reduce) {
-    .about, .apps { animation: none; }
+    .row-top > *, .row-tiles > * { animation: none; }
+    .tile, .tile img { transition: none; }
   }
-  body {
-    font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-    background: var(--bg);
-    color: var(--ink);
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-    min-height: 100vh;
-    position: relative;
-    overflow-x: hidden;
+
+  /* tablet: intro and Flying stack, tiles go 2 x 2 */
+  @media (max-width: 900px) {
+    .row-top { grid-template-columns: 1fr; }
+    .row-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .intro { min-height: 0; }
+    .flying { flex-direction: row; min-height: 220px; }
+    .flying-head { flex-direction: column; justify-content: space-between; }
+    .flying img { align-self: flex-end; }
   }
-  /* soft ambient glows */
-  body::before, body::after {
-    content: ""; position: fixed; border-radius: 50%;
-    filter: blur(110px); pointer-events: none; z-index: 0;
-  }
-  body::before {
-    width: 560px; height: 560px; top: -220px; right: -140px;
-    background: radial-gradient(circle, rgba(88, 152, 224, .30), transparent 65%);
-  }
-  body::after {
-    width: 480px; height: 480px; bottom: -240px; left: -160px;
-    background: radial-gradient(circle, rgba(150, 120, 230, .22), transparent 65%);
-  }
-  .wrap {
-    position: relative; z-index: 1;
-    max-width: 640px; margin: 0 auto;
-    padding: 15vh 24px 64px;
-  }
-  .label {
-    font-size: 12px; font-weight: 600;
-    letter-spacing: .22em; text-transform: uppercase;
-    color: var(--accent);
-    display: flex; align-items: center; gap: 12px;
-    margin-bottom: 18px;
-  }
-  .label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
-  .about p { font-size: 17px; color: var(--body); font-weight: 400; }
-  .apps { margin-top: 56px; }
-  a.app {
-    display: flex; align-items: center; gap: 15px;
-    text-decoration: none;
-    padding: 6px 0 18px;
-  }
-  .app-logo { height: 58px; width: 66px; object-fit: contain; display: block; flex-shrink: 0; }
-  .app-text { flex: 1; }
-  .app-name {
-    display: block;
-    font-size: 19px; font-weight: 500; color: #2e3d4a;
-    transition: color .15s;
-  }
-  a.app:hover .app-name { color: var(--accent); }
-  footer {
-    margin-top: 72px; padding-top: 22px;
-    border-top: 1px solid var(--line);
-    color: var(--muted); font-size: 13px;
-    display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
-  }
+
+  /* phone */
   @media (max-width: 560px) {
-    .wrap { padding: 10vh 20px 48px; }
-    .about p { font-size: 16px; }
+    :root { --radius: 24px; }
+    .wrap { padding: 20px 16px 40px; gap: 12px; }
+    .row-top, .row-tiles { gap: 12px; }
+    .intro { padding: 24px; gap: 16px; }
+    .intro p { font-size: 16px; line-height: 1.6; }
+    .chips span { padding: 7px 12px; font-size: 13px; }
+    .tile { padding: 18px; min-height: 196px; }
+    .flying { padding: 22px; }
+    .flying .tile-name { font-size: 22px; }
+    .flying .tile-desc { font-size: 14px; }
+    .flying img { width: 150px; height: 140px; }
+    .tile-name { font-size: 17px; }
+    .tile-desc { font-size: 12px; }
+    .eat img { width: 84px; height: 84px; }
+    .thoughts img, .digest img { width: 92px; height: 92px; }
+    .base .place { font-size: 18px; }
+    .base .label { font-size: 11px; }
   }
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="about">
-      <div class="label">About</div>
-      <p>Hi, I'm Marshall. I fly Cessna 182s out of the Bay Area whenever the weather
-      behaves, and spend the rest of my time on photography, tennis, and good coffee. I'm a foodie at heart,
-      happiest when the grill is lit and something is sizzling. This page is my small
-      corner of the internet.</p>
+  <main class="wrap">
+    <div class="row-top">
+      <section class="card intro">
+        <h1>Hi, I'm Marshall.</h1>
+        <p>I fly Cessna 182s out of the Bay Area whenever the weather behaves, and spend the rest of my time on photography, tennis, and good coffee. A foodie at heart — happiest when the grill is lit and something is sizzling.</p>
+        <div class="chips">
+          <span>Pilot</span><span>Photography</span><span>Tennis</span><span>Coffee</span><span>Grill</span>
+        </div>
+      </section>
+
+      <a class="card tile flying" href="/flying/">
+        <span class="flying-head">
+          <span>
+            <span class="tile-name">Flying</span>
+            <span class="tile-desc">Photographs from the air</span>
+          </span>
+          <span class="go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></span>
+        </span>
+        <img src="assets/flying.png" alt="">
+      </a>
     </div>
 
-    <div class="apps">
-      <div class="label">Little Things</div>
-      <a class="app" href="/eat">
-        <img class="app-logo" src="assets/what-to-eat.png" alt="What to Eat">
-        <span class="app-text">
-          <span class="app-name">What to Eat</span>
+    <div class="row-tiles">
+      <a class="card tile eat" href="/eat">
+        <img src="assets/what-to-eat.png" alt="">
+        <span>
+          <span class="tile-name">What to Eat</span>
+          <span class="tile-desc">334 restaurants, one wheel</span>
         </span>
       </a>
-      <a class="app" href="/flying/">
-        <img class="app-logo" src="assets/flying.png" alt="Flying">
-        <span class="app-text">
-          <span class="app-name">Flying</span>
+      <a class="card tile thoughts" href="/thoughts/">
+        <img src="assets/thoughts.png" alt="">
+        <span>
+          <span class="tile-name">Thoughts</span>
+          <span class="tile-desc">Short notes, now and then</span>
         </span>
       </a>
-      <a class="app" href="/thoughts/">
-        <img class="app-logo" src="assets/thoughts.png" alt="Thoughts">
-        <span class="app-text">
-          <span class="app-name">Thoughts</span>
+      <a class="card tile digest" href="/digest/">
+        <img src="assets/digest.png" alt="">
+        <span>
+          <span class="tile-name">Digest</span>
+          <span class="tile-desc">The daily read, filtered</span>
         </span>
       </a>
-      <a class="app" href="/digest/">
-        <img class="app-logo" src="assets/digest.png" alt="Digest">
-        <span class="app-text">
-          <span class="app-name">Digest</span>
+      <div class="card tile base">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        <span>
+          <span class="label">BASED IN</span>
+          <span class="place">San Francisco Bay Area</span>
         </span>
-      </a>
+      </div>
     </div>
-  </div>
+  </main>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c1869bd5dea64c8a878c7be3162521fa"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
