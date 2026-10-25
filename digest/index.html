@@ -9,7 +9,7 @@ title: Daily Digest
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <script>try{var t=localStorage.getItem('digest-theme');if(t){document.documentElement.dataset.theme=t;}}catch(e){}</script>
 <title>Daily Digest</title>
-<meta name="description" content="Daily digests — AI Builders, X Lists, Consensus, Hacker News, 段永平晚报, Newsletter 精选, The Hustle, Medium 精选, Reddit 精选, Lex 中文精读.">
+<meta name="description" content="Daily digests — AI Builders, X Lists, Consensus, Hacker News, 段永平晚报, Newsletter 精选, The Hustle, Medium 精选, Reddit 精选, Podcast 精读.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232e3d4a'/%3E%3Ctext x='32' y='44' font-family='Helvetica, Arial, sans-serif' font-size='36' font-weight='500' fill='%23ffffff' text-anchor='middle'%3E%4D%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mzhao.me/digest/">
@@ -262,7 +262,7 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
 </style>
 </head>
 <body>
-{% assign section_ids = "ai-builders,x-lists,consensus,hacker-news,duan,newsletter,hustle,medium,reddit,lex" | split: "," %}
+{% assign section_ids = "ai-builders,x-lists,consensus,hacker-news,duan,newsletter,hustle,medium,reddit,podcast" | split: "," %}
 {% assign total_items = 0 %}
 {% for doc in site.digests %}{% assign total_items = total_items | plus: doc.items.size %}{% endfor %}
 {% assign latest = site.digests | sort: "date" | last %}
@@ -297,7 +297,7 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
       {% when "hustle" %}{% assign sname = "The Hustle" %}
       {% when "medium" %}{% assign sname = "Medium 精选" %}
       {% when "reddit" %}{% assign sname = "Reddit 精选" %}
-      {% when "lex" %}{% assign sname = "Lex 中文精读" %}
+      {% when "podcast" %}{% assign sname = "Podcast 精读" %}
     {% endcase %}
     <a href="#sec-{{ sid }}" data-navsec="sec-{{ sid }}">{{ sname }}</a>
     {% endfor %}
@@ -332,7 +332,7 @@ footer.site-foot .wrap { border-top: 1px solid var(--line); padding-top: 16px; }
     {% when "hustle" %}{% assign sname = "The Hustle" %}{% assign ssched = "每日约 09:20" %}
     {% when "medium" %}{% assign sname = "Medium 精选" %}{% assign ssched = "每日约 09:20" %}
     {% when "reddit" %}{% assign sname = "Reddit 精选" %}{% assign ssched = "每日 09:00 / 21:00" %}
-    {% when "lex" %}{% assign sname = "Lex 中文精读" %}{% assign ssched = "每日 09:30" %}
+    {% when "podcast" %}{% assign sname = "Podcast 精读" %}{% assign ssched = "每日 09:30" %}
   {% endcase %}
   <section id="sec-{{ sid }}" class="sec">
     <header class="sec-head">
