@@ -125,6 +125,13 @@
   .prow .pb.jade{ background:var(--jade); color:#fff; }
   .prow .pb.plain{ background:var(--surface); }
   .pmore{ padding:10px 6px; color:var(--muted); font-weight:600; font-size:13px; }
+  .filter-bar{ display:none; }
+  @media (max-width: 759px){
+    .filter-bar{ display:flex; align-items:center; justify-content:space-between; gap:12px; width:100%; padding:12px 16px; margin-bottom:18px; font:inherit; font-size:15px; font-weight:700; text-align:left; color:var(--text); cursor:pointer; }
+    #filterSummary{ min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .filter-bar-action{ flex-shrink:0; color:var(--accent); font-weight:900; }
+    #filters:not(.open){ display:none; }
+  }
   footer{ max-width:1040px; margin:22px auto 0; text-align:center; color:var(--muted); font-size:13px; font-weight:600; line-height:1.7; }
 </style>
 </head>
@@ -136,6 +143,9 @@
     <p>别纠结，交给运气 🍜</p>
   </header>
 
+  <button id="filterToggle" class="card filter-bar" type="button" aria-expanded="false" aria-controls="filters"><span id="filterSummary">湾区 · 全部菜系 · 全部来源</span><span class="filter-bar-action">筛选</span></button>
+
+  <div id="filters">
   <div class="card">
     <div class="flabel">快 捷 入 口</div>
     <div class="pills">
@@ -158,6 +168,7 @@
       <div class="flabel" style="margin-top:16px">区 域</div>
       <div class="chips" id="areaChips"></div>
     </div>
+  </div>
   </div>
 
   <div class="main">
@@ -361,9 +372,16 @@ function showTicket(){
   $('tDesc').textContent = winner.d||'';
   $('tMaps').href = winner.u;
   $('ticket').classList.add('show');
+  if (window.matchMedia('(max-width: 759px)').matches) {
+    const r = $('ticket').getBoundingClientRect();
+    if (r.bottom > window.innerHeight) {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      $('ticket').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'nearest' });
+    }
+  }
 }
 
-function reset(){ angle=0; winner=null; excluded.clear(); $('ticket').classList.remove('show'); renderFilters(); buildSlices(); drawWheel(); }
+function reset(){ angle=0; winner=null; excluded.clear(); $('ticket').classList.remove('show'); renderFilters(); buildSlices(); drawWheel(); updateFilterSummary(); }
 
 function renderList(){
   const box = $('poolList'); if(!box) return;
@@ -387,6 +405,25 @@ function renderList(){
 $('q').addEventListener('input', renderList);
 $('presetFresh').onclick=()=>{ fCat='all'; fSrc='want_to_go'; fReg='bay_area'; fArea='all'; reset(); };
 $('presetReturn').onclick=()=>{ fCat='all'; fSrc='starred'; fReg='bay_area'; fArea='all'; reset(); };
+
+function labelOf(el){
+  if(!el) return '';
+  const c = el.cloneNode(true);
+  c.querySelectorAll('.cnt, .stamp').forEach(n => n.remove());
+  return c.textContent.trim();
+}
+function updateFilterSummary(){
+  let reg = labelOf(document.querySelector('#regChips .active'));
+  if (fArea !== 'all') reg += ' ' + labelOf(document.querySelector('#areaChips .active'));
+  const cat = fCat === 'all' ? '全部菜系' : labelOf(document.querySelector('#catTabs .active'));
+  const src = labelOf(document.querySelector('#srcPills .active'));
+  $('filterSummary').textContent = [reg, cat, src].join(' · ');
+}
+$('filterToggle').onclick = () => {
+  const open = $('filters').classList.toggle('open');
+  $('filterToggle').setAttribute('aria-expanded', String(open));
+  document.querySelector('.filter-bar-action').textContent = open ? '收起' : '筛选';
+};
 
 $('spinBtn').onclick=spin; $('bigSpin').onclick=spin; $('tAgain').onclick=spin;
 $('rangeText').textContent='数据加载中…';
