@@ -160,6 +160,30 @@
     .base .place { font-size: 18px; }
     .base .label { font-size: 11px; }
   }
+
+  /* mobile revision: new elements hidden on desktop by default */
+  .row-tiles .go { display: none; }
+  .intro-loc { display: none; }
+
+  /* touch press feedback */
+  @media (hover: none) {
+    a.tile:active { filter: brightness(0.95); }
+  }
+
+  @media (max-width: 560px) {
+    .chips { display: none; }
+    .base { display: none; }
+    .intro-loc { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--body); }
+    .row-tiles { grid-template-columns: 1fr; }
+    .row-tiles a.tile { flex-direction: row; justify-content: flex-start; align-items: center; gap: 16px; min-height: 0; padding: 16px 18px; }
+    .row-tiles a.tile img { width: 56px; height: 56px; flex-shrink: 0; }
+    .row-tiles a.tile > span:not(.go) { flex: 1; min-width: 0; }
+    .row-tiles .tile-name { font-size: 17px; }
+    .row-tiles .tile-desc { font-size: 14px; }
+    .row-tiles .go { display: flex; width: 32px; height: 32px; margin-left: auto; }
+    .row-tiles .digest { order: -1; }
+    .row-tiles .digest .go { background: var(--bg); }
+  }
 </style>
 </head>
 <body>
@@ -171,6 +195,7 @@
         <div class="chips">
           <span>Pilot</span><span>Photography</span><span>Tennis</span><span>Coffee</span><span>Grill</span>
         </div>
+        <span class="intro-loc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>San Francisco Bay Area</span>
       </section>
 
       <a class="card tile flying" href="/flying/">
@@ -192,6 +217,7 @@
           <span class="tile-name">What to Eat</span>
           <span class="tile-desc">334 restaurants, one wheel</span>
         </span>
+        <span class="go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></span>
       </a>
       <a class="card tile thoughts" href="/thoughts/">
         <img src="assets/thoughts.png" alt="">
@@ -199,6 +225,7 @@
           <span class="tile-name">Thoughts</span>
           <span class="tile-desc">Short notes, now and then</span>
         </span>
+        <span class="go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></span>
       </a>
       <a class="card tile digest" href="/digest/">
         <img src="assets/digest.png" alt="">
@@ -206,6 +233,7 @@
           <span class="tile-name">Digest</span>
           <span class="tile-desc">The daily read, filtered</span>
         </span>
+        <span class="go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></span>
       </a>
       <div class="card tile base">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
