@@ -1,0 +1,38 @@
+---
+section: newsletter
+section_name: Newsletter 精选
+date: 2026-10-26 08:30:00 -0700
+title: "Newsletter 精选 — 2026-10-26"
+excerpt: "NYT 只推 Friedman 一篇观点专栏、Lenny 双集：Reddit 自建 AI 原型工具 Proto + Claude Duet 诚实测评、Opening Bell 用互联网泡沫史看等权指数、Morning Brew 头条是银行为 AI agent 闯祸做预案、Dealroom：Musk 预言 200 多家 neocloud 迎来大批死亡。"
+items:
+  - title: "Global Update: Thomas L. Friedman: We Just Set Off the Second Big Bang"
+    role: "The New York Times"
+    summary: "本期只有一条关注地新闻（因关注 China 而推送），且是观点栏目：Thomas L. Friedman 的专栏《We Just Set Off the Second Big Bang》（我们刚刚引爆了第二次大爆炸）。邮件给出的唯一导语是：人类正在进入其迄今最危险的时代。说明：本期邮件正文只含标题与这一句导语，未提供专栏正文、论据或更多细节，无法再展开。"
+    url: "https://www.nytimes.com"
+    link_label: "在线版"
+    time: "10-25 11:11"
+  - title: "How I AI: Claude Duet honest review + Why Reddit built its own AI prototyping tool"
+    role: "Lenny Rachitsky"
+    summary: "本期 How I AI 是双集。其一，Reddit 为什么自建 AI 原型工具 Reddit Proto（嘉宾 Blair Metcalf）：Proto 让设计师和 PM 完全不碰 GitHub 就能做出接近生产形态的原型，桌面端在后台处理仓库、分支与脚手架；已做出约 700 个原型，UX 与产品团队 100% 采用。关键设计：用真实账号数据而非 mock 数据；批注自动附上对应组件、设计系统指引与用户意图再发给 Cursor；自研设计系统 MCP 把 tokens、组件与工作流映射到生产代码；feature capsule 把 Figma 链接变成带验收标准的结构化 PRD。最好的 AI 原型师未必最技术，产品上下文与愿景更重要。其二，Claude Duet 诚实测评（Claire）：Duet 是 Anthropic 的个人 agent，设计极精致、agent primitives（plugins、connectors、artifacts、channels）齐全，定位中端市场；但实测后她还是忘了用它——主动触达太安静、并行任务常需 10 分钟以上且无进度反馈、收件箱与 Slack 分诊会漏关键上下文、上下文不能从本地 Claude skills 迁移、无桌面端与多人协作。结论：值得一试，但还没赢得常驻位置；要赢需更快、更主动、上桌面、能团队共享。"
+    url: "https://www.lennysnewsletter.com/p/how-i-ai-claude-duet-honest-review"
+    link_label: "在线版"
+    time: "10-26 08:00"
+  - title: "Opening Bell Daily: The average stock survives tech busts"
+    role: "Phil Rosen"
+    summary: "当天主线：科技泡沫破裂时普通股能活下来。Bespoke 数据：1999 年底到 2001 年底标普 500 等权指数含股息回报 +5.6%，市值加权指数跌约 20%。上周重演小号版本：标普跌 0.47%、成分股平均涨约 1%，Meta 跌 9.4%、Alphabet 跌约 6% 拖低指数；年初至今等权 RSP 涨 13%、反超标普的 11.4%。Rosen 判断：这不是财报前抛售巨头的理由，但持有其余市场能缓冲科技股的冲击；不过 2002 年熊市扩散时等权也跌了约 19%。本周周三 Alphabet 与微软财报加美联储决定、周四 Amazon 财报。其他：Jassy 称 AWS 产能大体售罄到 2027 年；三季度已公布公司 83% 盈利超预期，但合计超预期幅度仅 2.1%、低于五年均值 7.5%；高盛把 Kospi 目标下调 25% 至 9000 点。周五标普跌 0.52% 至 7623.68，布伦特原油涨 3.14% 至 116.72 美元，10 年期美债收益率升至 5.00%。"
+    url: "https://www.openingbelldailynews.com/p/equal-weight-sp500-dot-com-bust-ai-crash-big-tech-earnings"
+    link_label: "在线版"
+    time: "10-26 02:52"
+  - title: "Morning Brew: Money loses sleep"
+    role: "Morning Brew"
+    summary: "市场年初至今：纳指 25955.34（+11.67%）、标普 7623.68（+11.37%）、道指 52215.16（+8.64%）、10 年期美债 4.988%、比特币 79308.91 美元（-9.37%）、苹果 347.73 美元（+28.26%）；苹果周三将发布首款触屏 MacBook Pro。头条：银行正为 AI agent 搞砸系统做预案——Axios 称大行注意到未授权第三方 AI agent 访问客户账户明显增加，多数是用户主动把账户交给 agent；摩根大通、美国银行、花旗、摩根士丹利等已限制访问，部分转向只读加交易须真人批准，责任归属与可撤销性仍不清。世界：巴西决选 Lula 以 51.8% 对 48.2% 击败 Flávio Bolsonaro 赢得第四个任期，对手要求废除结果；诺奖得主 Machado 流亡后首次返回委内瑞拉、呼吁 2027 年 7 月前新选举；猫王权利方起诉 Anthropic 指其以 274 首歌曲侵权训练 Claude。Starlink 乌克兰服务已恢复，但 Musk 与乌方对降速原因各说各话。本周：美联储周三料按兵不动、周四 PCE 料加速，约三分之一标普公司发财报；万圣节宠物服装预计花 9.2 亿美元。其他：纽约总教区达成 8 亿美元性侵和解；Apollo 称 AI 在科技业之外零财务回报。"
+    url: "https://www.morningbrew.com"
+    link_label: "在线版"
+    time: "10-26 02:17"
+  - title: "Dealroom Daily Deal: Elon predicts ‘guppy-level death’ for 200+ neoclouds — Fuse’s Alan Chang tells his team to get ready to buy the distressed data centres"
+    role: "Dealroom"
+    summary: "头条：Elon Musk 预言 200 多家 neocloud（新兴云厂商）将迎来孔雀鱼级别的死亡，Fuse 的 Alan Chang 已让团队准备收购陷入困境的数据中心（本期正文对该条只给标题）。In the news：Amazon CEO Andy Jassy 在 a16z Show 上称 AWS 产能 2026 年已售罄、2027 年大体售罄、2028 年也已有相当大一块被订走。Chart of the day：英格兰北部大学衍生公司 503 家，多于剑桥 432 家与牛津 351 家，仅次于伦敦 583 家，曼彻斯特以 141 家领先。Just raised 最大三笔：纽约 Amogy 2 亿美元 C 轮（氨燃料清洁能源，韩国进出口银行与韩国花旗银行支持）；北京 Qujing Technology 1.79 亿美元 B 轮（AI 基础设施与大模型应用部署，浙江金控与萧山资本领投）；伦敦 Nous 1700 万美元 B 轮。背景：10 月至今全球融资 1260 亿美元、1114 轮，美国以 980 亿美元居首，企业级赛道 1020 亿美元最大。本期未列 Just founded 栏目。"
+    url: "https://dealroom.co/briefing/2026-10-26/"
+    link_label: "在线版"
+    time: "10-26 00:20"
+---
