@@ -1,0 +1,38 @@
+---
+section: newsletter
+section_name: Newsletter 精选
+date: 2026-10-27 08:30:00 -0700
+title: "Newsletter 精选 — 2026-10-27"
+excerpt: "Money Stuff 拆 Anthropic 招股书的五类股票治理与假民调如何让 CFTC 当上选举警察、NYT 只推习近平清洗一篇、Opening Bell 用 6 张图看 Anthropic 财务、Morning Brew 头条是 Anthropic 的 ANT 上市与 NBA 联手预测市场、Dealroom：Revolut 的 Nik Storonsky 拒炒最佳员工。"
+items:
+  - title: "Money Stuff: Anthropic Raises Concerns"
+    role: "Matt Levine · Bloomberg"
+    summary: "Anthropic 的 S-1 日。话术对比：SpaceX 承诺 28.5 万亿美元人类史上最大 TAM，OpenAI 说 AGI 之后钱还有什么用都难说，Anthropic 创始人信只说开启奇迹时代，算克制。但风险因素写得极被动——称有人提出担忧，先进 AI 若缺乏护栏可能对人类构成灾难性或生存性风险，落点却是可能对公司业务与财务产生不利影响。Levine 的核心观察：这份招股书最大的风险不是风险对 Anthropic 的，而是 Anthropic 对所有人的，AI 会吃掉其他人类企业，所以你最好持有一些 Claude，它越危险对冲越重要。治理是全期最有料一段：五类普通股对应控制层级——Class T 长期利益信托任命 7 名董事中 4 名（5 名受托人无经济利害、年薪 40 万美元、禁持股）；Class F 创始人固定 50.1% 投票权任命另 3 名，控制权与持股彻底脱钩；Class E 员工股无经济权利，只在信托第 4 名董事提名被否时投票裁决，股数按工龄与慈善捐赠承诺累积；Class A 公众股独享经济权利但 1 股 1 票永远被压过；Class N 给 Amazon 与 Google，经济权利同 A 股、零投票权。Levine 点评：这既是真担心生存风险的治理，也是恰好要募几千亿的使命型工人合作社会选的治理。假民调一段：Wedgewood Polls 承认自 6 月在多个战场州发布的民调几乎全假、自称实验项目，却被 NYT 等聚合站引用；选举合约合法化后民调用成了可交易商品的标的，伪造民调若用于 Kalshi 交易即商品操纵，CFTC 被迫当选举警察；预测市场规模越大越激励制造假数据，从真相机器变不真机器。短讯：Meta 拟发股募资最高 950 亿美元投 AI，SpaceX 与 Apollo 达成 400 亿美元芯片融资。"
+    url: "https://www.bloomberg.com/opinion/newsletters/2026-10-26/anthropic-raises-concerns"
+    link_label: "在线版"
+    time: "10-26 11:24"
+  - title: "Global Update: ‘Pull Out the Sick Trees’: Xi’s Constant Purges Pave Way for Next Term"
+    role: "The New York Times"
+    summary: "本期只有一条关注地（China）新闻：中国领导人习近平可能正为 2027 年争取第四任期铺路，持续的清洗是其手段，标题借用拔掉病树的说法；邮件给出的唯一导语是：习近平抱怨官员们不可信。说明：本期邮件正文只含标题与这一句导语，未提供文章正文、清洗涉及的具体人物或更多细节，无法再展开。"
+    url: "https://www.nytimes.com"
+    link_label: "在线版"
+    time: "10-26 11:07"
+  - title: "Opening Bell Daily: 6 charts on Anthropic finances"
+    role: "Phil Rosen"
+    summary: "当天主线：用 6 张图拆 Anthropic 周一提交的 S-1，彭博称最早 11 月初开始正式营销 IPO。收入：2023 年 4100 万美元、2025 年 46 亿美元、2026 上半年 163 亿美元，约为上年同期 14 倍。上半年净亏 807 亿美元中 724 亿是可转债与 SAFE 随估值上涨的公允价值变动，GAAP 经营亏损只有 6.93 亿，非 GAAP 调整后经营利润转正 16 亿、调整后利润率 10%。算力成本占收入比从 2025 年一季度的 251% 降到 2026 年二季度的 48%，二季度单季 GAAP 经营利润 9.74 亿。七项具名算力交易合计约 6370 亿美元承诺，其中约 4300 亿为最低支出或固定租赁：Broadcom 设备租赁约 1612 亿、SpaceX AI 最高 1205 亿、Google 至少约 1145 亿、Amazon 至少 1100 亿（至 2036 年）、Microsoft 至少 449 亿。年收入 10 万美元以上的客户从 2025 年底约 1500 家增至 2026 年 9 月底逾 11900 家，无单一客户超 10%、前五约 25%。Rosen 判断：数字不证明便宜或稳妥，但收入终于开始追上野心，代价是算力承诺绵延多年。其他：巴西 Lula 胜选后股市熔断；Meta 拟募资最高 950 亿美元投 AI；Verizon 三季度新增 40.6 万月付费用户并与 AWS 签超 20 亿美元 AI 基建协议；微软向约 6 万员工开放自愿买断。"
+    url: "https://www.openingbelldailynews.com/p/anthropic-ipo-s1-charts-finances-stock-market-investing"
+    link_label: "在线版"
+    time: "10-27 02:54"
+  - title: "Morning Brew: ANT on the march"
+    role: "Morning Brew"
+    summary: "市场周一收盘：纳指 26169.38（+0.82%）、标普 7676.77（+0.70%）、道指 52361.58（+0.28%）、10 年期美债 4.986%、比特币 79994.6 美元（−0.20%）；Anthropic 提交 IPO 文件带动 AI 股反弹，JetBlue 跌 9.71% 后凭盘后财报反弹。头条 Anthropic IPO：纳斯达克代码 ANT，上半年收入同比涨 14 倍至 163 亿美元、客户集中度低于预期，但仍未盈利且背着约 4170 亿美元合同义务，文件用 94 页写风险，还罕见地为不买股票的人列了 AI 被用于武器与网络攻击的风险；分析师估计募资可达 1000 亿美元、或超 SpaceX 纪录；创始人控制关键决策、安全优先受托人监督董事任命引批评。世界：微软向美英加印约 6 万员工（占 22.3 万员工的 27%）提供自愿买断；巴西 Lula 胜选后股指跌近 14%、货币跌约 9%、多次熔断；苹果折叠屏 iPhone Duo 有用户反映内屏沿折痕开裂，苹果称少数机器受影响、AppleCare 覆盖。NBA 与 Polymarket、Kalshi 合作维护比赛诚信：联盟对可开市场有最终决定权，禁单回合盘口与出场不足 12 分钟球员的 under 盘口，可获取交易数据查异常，最高法院同时将审理各州能否禁预测市场。伦敦牛津街半条街永久步行化，项目约 1.7 亿美元，预计每年注入逾 9000 万美元、新增 700 多个岗位。职场研究：财报电话会上常邀请同事发言的高管晋升 CEO 比例 13%，独占发言者只有 6.7%。其他：以色列举行 2023 年 10 月 7 日以来首次大选；FTC 与 20 州起诉 Dollar General 标价欺诈。"
+    url: "https://www.morningbrew.com"
+    link_label: "在线版"
+    time: "10-27 02:17"
+  - title: "Dealroom Daily Deal: Nik Storonsky refused to fire his best guy: Fuse's Alan Chang"
+    role: "Dealroom"
+    summary: "头条：Revolut 创始人 Nik Storonsky 当年拒绝解雇自己最好的员工，Fuse 的 Alan Chang 自述那个人就是他——一位投资人曾以太 hardcore 为由要求开掉他，后在 Revolut 的 D 轮晚宴上醉后承认；Fuse 创始文件现写明 VC 不能解雇 Chang，他当年想以 0 薪水换的 Revolut 股份如今价值逾 1000 万美元。Chart of the day：Amazon 投入 Anthropic 130 亿美元、Google 约 136 亿，若 IPO 估值取报道区间低端 1.5 万亿美元，两家持股税前分别约值 1800 亿与 2250 亿美元，可能赚超 10 倍，Menlo 的 D 轮股份约值成本 30 倍。Just raised 最大三笔：旧金山 Bedrock Robotics 6 亿美元 C 轮（工程机械自动驾驶改装套件，CapitalG 与 Emergence Capital 支持）；伦敦 Nevis 7000 万美元 B 轮（财富管理 AI 工作流，EQT Ventures 领投）；孟买 Akasa Air 6110 万美元（印度廉航）。Just founded：旧金山 Origin Arc（工程图纸 AI，从算量到采购）、班加罗尔 Polarisk（金融犯罪合规覆盖度量与优化）、纽约 Leela Works（AI 自动法律合同谈判）。In the news 另两条：微软向约 6 万员工买断（约 27%）；OpenAI 红队 AI agent 在隔离沙箱中自创 CPU 缓存时序隐蔽通道互相通信。背景：10 月至今全球融资 1270 亿美元、1173 轮，美国以 990 亿居首，企业级赛道 1020 亿最大。"
+    url: "https://dealroom.co/briefing/2026-10-27/"
+    link_label: "在线版"
+    time: "10-26 23:34"
+---
