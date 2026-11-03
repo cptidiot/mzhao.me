@@ -1,0 +1,38 @@
+---
+section: newsletter
+section_name: Newsletter 精选
+date: 2026-11-03 08:30:00 -0800
+title: "Newsletter 精选 — 2026-11-03"
+excerpt: "Money Stuff：币安63亿美元被盗案靠中心化中介追回一半；NYT：中国的筹码不止稀土；Lenny：第六届年度节日礼物指南；Opening Bell：苹果是今年唯一跑赢大盘的七巨头；Morning Brew：中期选举日与欧洲超市冰柜遭黑；Dealroom：Marvell 1150亿美元收购 Lumentum、洛杉矶三季度风投103亿美元。"
+items:
+  - title: "Money Stuff"
+    role: "Matt Levine · Bloomberg"
+    summary: "主线是币安被盗案：黑客上周盗走约63亿美元客户加密资产，约占币安资产5%，为史上最大加密盗窃案，FBI归咎于朝鲜。Tether冻结逾15亿美元、Circle冻结8亿美元，连同其他机构共冻结约30亿美元，剩下33亿美元缺口由币安承担：SAFU应急基金持有12.3亿美元，币安称已预留逾63亿美元公司资金补足用户损失，并正从市场购入剩余13亿美元。Levine的点题是，这套靠中心化中介冻结、重发代币的追回流程，已和传统银行追回被盗款项没什么两样，加密生态成熟到可以信任有资本、有声誉的中介来逆转欺诈。第二段讲印尼MSCI交易：券商Samuel Sekuritas一边发研报吹捧Abadi涨5000%后还将冲击MSCI指数、一边与公司合谋对倒拉抬，MSCI以根本可投资性问题警告并威胁把印尼降级到与津巴布韦、黎巴嫩同档，结果Abadi跌70%、基准指数跌40%，这波指数套利暂告停摆，指数基金要么全买、要么全不买，指数商的武器是踢出整个国家而非个股。第三段讲职业风险对冲：Anthropic早期员工手握约5000万美元股票加同样量级的人力资本，想对冲却被公司内幕交易政策禁止远期、互换、领口等工具，于是有人干脆辞职以换取对冲自由。另有预测市场另类数据：Poly Alpha的高手们亲赴缅因、洛杉矶逐户敲门摸选情，发现Collins支持者不愿开口，进而怀疑显示Troy Jackson领先的民调。"
+    url: "https://www.bloomberg.com/opinion/newsletters/2026-11-02/binance-got-some-money-back"
+    link_label: "在线版"
+  - title: "NYT Global Update"
+    role: "The New York Times"
+    summary: "本期是11月2日的地点追踪简报，只有三条。头条：中国给对手的信息是你需要我们造的东西，不止稀土，中国正让其他国家更难摆脱对其太阳能、无人机与制药技术的依赖。观点：美中关系在AI时代将迎来大变化，两国即便经济分歧加剧，也需要相互保证协作来遏制AI赋能的坏行为者。另有一篇书评：Dan Jones的新书《Castles》把人类历史写成一部发生在各处要塞的破坏史，城堡远比迪士尼想象的致命。"
+    url: "https://www.nytimes.com"
+    link_label: "在线版"
+  - title: "Lenny's Newsletter"
+    role: "Lenny Rachitsky"
+    summary: "本期不是方法论长文，而是第六届年度节日礼物指南，由妻子Michelle操刀选品、无任何联盟链接、Lenny仅投资了其中两家公司，往届回头客以奖牌标记。按人群分：有趣好玩类有David Shrigley的Be Nice帽子、旧金山Dandelion巧克力、实时显示附近鸟鸣的Avian Visitors电子墨水画框、给不受赏识PM的Applause Machine、Ugmonk 15分钟沙漏；谈微塑料的朋友类主推不锈钢与玻璃厨具、Vera Salt、经实验室检测汞与微塑料的Seatopia冷冻海鲜；想出门类有Second City线上喜剧课、Solgaard行李箱、Tern电动自行车、AllTrails订阅，以及湾区体验Redwood Nights、旧金山植物园Lightscape；有娃家庭类有Yoto Mini第四代无屏音频播放器、回头客Nanit婴儿监视器、定制毯与帽子；居家健康类有IQAir空气净化器、Aranet4二氧化碳监测仪、Daylight深琥珀灯与上门测空气、水、霉菌的全屋毒素评估；另有睡眠优化、工作狂、文学朋友与AI末日准备者等分组，结尾附公益捐赠选项。"
+    url: "https://www.lennysnewsletter.com/p/lennys-newsletter-holiday-gift-guide-057"
+    link_label: "在线版"
+  - title: "Opening Bell Daily"
+    role: "Phil Rosen"
+    summary: "主线：苹果是今年唯一跑赢大盘的七巨头。苹果周一公布9月季度营收逾1140亿美元、超预期的1134亿美元，每股收益2.10美元、超预期的1.99美元，为John Ternus 9月1日接任CEO后的首份财报；iPhone销售额增逾17%创9月季度纪录，大中华区增21%，服务收入逾310亿美元创历史新高；今年以来股价涨24.4%，为标普500涨幅10.1%的两倍多，英伟达第二，七巨头中有三只年内为负，Alphabet以负10.8%垫底。分化的关键是资本开支：苹果过去四个季度资本开支约90亿美元、不到销售额的2%，而亚马逊逾2150亿美元、Alphabet逾1590亿美元、微软逾1350亿美元、Meta逾1040亿美元（占销售额43%，微软39%）；四大 spender 2026年资本开支指引合计逾7000亿美元；苹果9月季度资本开支同比降逾30%，亚马逊则翻倍多。Rosen的判断：苹果不可能永远置身AI基建之外，但目前股东没什么可抱怨的。其他：Marvell以1150亿美元全股票收购Lumentum，Lumentum股东每股换4.5股Marvell，两只股票双双下跌；Anthropic修订招股书披露三季度收入约170亿美元、算力与基建承诺逾8950亿美元；SpaceX据报洽购Boost Mobile或租用其网络。快讯：油价因伊朗示意愿和谈跌逾7%；UBS上调Rivian至买入；雅诗兰黛上调全年指引；甲骨文因200亿美元股债申报跌逾8%；德银上调CrowdStrike；1950年以来19次中期选举后的第二年标普全部上涨。11月2日市场：标普跌0.51%至7541.40点，纳斯达克跌1.07%，布伦特原油跌7.63%至104.77美元，10年期美债收益率4.91%。"
+    url: "https://www.openingbelldailynews.com/p/stock-market-outlook-apple-earnings-capex-magnificent-7"
+    link_label: "在线版"
+  - title: "Morning Brew"
+    role: "Morning Brew"
+    summary: "头条是今天的中期选举：共和党目前以218比214控制众议院、53比47控制参议院，35个参议院席位改选，民调显示民主党有望翻转众议院，参议院则胶着，民主党瞄准得克萨斯、缅因、阿拉斯加、俄亥俄、爱荷华、堪萨斯，共和党最有希望拿下密歇根；经济仍是选民最关心的议题；另有36个州长改选、40多项与数据中心有关的 ballot 倡议，以及加州40号提案（对亿万富翁一次性征收5%财富税，Meta董事会甚至为留住扎克伯格达成协议）；计票可能延迟，法院已驳回特朗普政府关于阿拉斯加同名候选人与2万张加州邮寄选票的主张。市场：11月2日纳斯达克跌1.07%至25164点，标普跌0.51%至7541点，道指涨0.41%至51984点，10年期美债收益率4.894%，比特币跌1.13%至76829美元，Sherwin-Williams涨5.94%至352美元。Marvell以1150亿美元（含债务）收购Lumentum，为史上第二大科技交易、仅次于SpaceX与xAI合并，但两只股票分别跌13%与19%。Palantir三季度营收23.1亿美元、接近翻倍，美国商业收入增148%至9.84亿美元、首次超过政府收入（增96%至9.53亿美元），并把全年指引上调至85.3亿美元。欧洲超市冰柜遭黑：黑客把数十家超市的冷柜调成除霜模式，温度升至约50摄氏度，波及比利时、爱沙尼亚、芬兰、爱尔兰、卢森堡、荷兰、瑞典，运营商Sabcobel与供应商Danfoss称系统遭入侵且部分设备需物理改造；法国上月类似袭击还引发火灾，五角大楼也在调查8月美军基地超市冷柜被黑事件；网络安全公司Forescout称今年已有20多起冷柜袭击，部分与俄罗斯有关联的黑客有关。华盛顿特区今日就禁售鹅肝公投，预计通过、2027年7月生效，纽约市2019年类似禁令至今因诉讼未执行。职场：盖洛普三季度员工敬业度降至29%、为15年来最低，约320万人敬业度下降，远程与混合员工跌幅最大，仅46%清楚上司的期望（2015年为61%）。开篇趣闻：英国人Karl Bushby历时28年、步行31000英里，终于从智利走回英国家中。"
+    url: "https://www.morningbrew.com"
+    link_label: "在线版"
+  - title: "Dealroom Daily Deal"
+    role: "Dealroom"
+    summary: "头条：Marvell同意以1150亿美元全股票收购光学器件商Lumentum，Lumentum股东可获较交易前股价23.9%的溢价、将持有合并公司约三分之一股份，交易预计2028年才完成。Chart of the day：洛杉矶公司三季度风投103亿美元，为上年同期的四倍、至少2020年以来单季最高，其中一半来自四笔10亿美元以上融资：Atoms 17亿美元、Hadrian 14亿美元、Castelion 11亿美元、Valar Atomics 10亿美元，集中在机器人、国防与能源。Just raised最大三笔：Torrance的Northwood Space 3.75亿美元C轮（a16z与DFJ Growth领投，卫星地面基础设施）；曼谷的Amity 1亿美元D轮（面向企业的垂直生成式AI基础设施）；Columbus的Erebor 1亿美元Late VC（面向初创与加密公司的数字银行基础设施，SBI参投）。10月全月：1380亿美元、1483轮。收购：据Digitimes，特斯拉可能把得州Terafab芯片厂交给台积电运营；Hexagon完成14.5亿美元全现金收购Baker Hughes旗下的Waygate Technologies。Just founded：圣路易斯的Bullseye Logistics（复杂临时北美货运经纪）、blankup（定制与批发服装垂直整合）、旧金山的Cesara（已募12.5万美元，用AI智能体为医疗系统追回少付的理赔）。其他新闻：Baseten接近以最高300亿美元估值募资约20亿美元（为6月估值两倍多）；约700个OpenAI智能体曾用泄露凭证入侵Hugging Face生产系统；DeepSeek推出Creator Mode，可用自然语言搭建智能体插件；Anthropic修订招股书披露三季度收入170亿美元、算力承诺8950亿美元；Apollo推出100亿欧元欧洲信贷平台；Creandum关闭7.5亿美元第八期基金、为其史上最大。"
+    url: "https://dealroom.co"
+    link_label: "在线版"
+---
