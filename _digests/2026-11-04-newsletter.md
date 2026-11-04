@@ -1,0 +1,38 @@
+---
+section: newsletter
+section_name: Newsletter 精选
+date: 2026-11-04 08:30:00 -0800
+title: "Newsletter 精选 — 2026-11-04"
+excerpt: "Money Stuff：Anthropic 的 IPO 该留多少 pop、pre-IPO 永续合约正在抹平一二级市场；NYT：特朗普暂缓对台军售可能被北京读作持久让步；Opening Bell：AMD 数据中心收入翻倍、指引超预期；Morning Brew：民主党横扫中期选举、拿下参众两院；Dealroom：Revolut 改用中国开源模型省 90% 编程账单、欧洲风投募资仅次于 2022 年；Elena：增长圈 18 个轮流复活的老套路。"
+items:
+  - title: "Money Stuff"
+    role: "Matt Levine · Bloomberg"
+    summary: "主线是 IPO 定价的老问题被 pre-IPO 永续合约改写：Hyperliquid 等离岸平台上的 Anthropic、OpenAI 等未上市公司永续合约，虽无套利机制锚定现货，却像预测市场一样屡屡准确预测开盘价（Cerebras、SpaceX 已验证）。Levine 设想 OpenAI 上市时若永续合约稳定在 120 美元，传统做法是定价 100 美元、留 20% 的 pop 奖励长期机构投资者、维持重复博弈；但既然价格已知、投资者已无风险，凭什么还要白送 20%？参照 Meta 上周 250 亿美元增发仅较收盘价折价 0.9%，IPO 定价理应向现货发行看齐。现实正朝这个方向走：华尔街日报称机构希望 Anthropic 以 1.5 万亿至 1.6 万亿美元估值上市，远低于此前流传的 2 万亿美元，而 Hyperliquid 上 Anthropic 约值 1.8 万亿美元，1.5 万亿定价恰好留出约 20% 的 pop；同期 CFTC 批准了美股永续合约交易，Hyperliquid 创始人 Jeff Yan 正游说进入美国市场。第二段谈多策略基金的识人术：区分运气与能力，D.E. Shaw 的文化恰是长期主义，管理层多人曾亏大钱、包括险些让公司亏 30% 的 Max Stone，如今资产已超 1000 亿美元且今年跑赢对手。第三段是币安 63 亿美元被盗案的作案手法：朝鲜黑客以假招聘面试诱使工程师下载带木马的编程作业，历时数月渗透。快讯：10 月多数大型对冲基金亏损、Elliott 警告 FOGO（害怕被彻底击溃）、迪士尼计划裁员数千人并要求管理层降本 20%。"
+    url: "https://www.bloomberg.com/opinion/newsletters/2026-11-03/how-much-should-anthropic-pop"
+    link_label: "在线版"
+  - title: "NYT Global Update"
+    role: "The New York Times"
+    summary: "本期是单篇观点的地点追踪简报。头条观点：特朗普决定暂缓对台军售，可能被北京解读为持久让步而非战术拖延，从而抬高未来围绕台湾岛的对抗赌注。文章提醒，这种误读本身就是风险：一方以为只是暂缓，另一方却当作立场转变，误判会在台海问题上累积。"
+    url: "https://www.nytimes.com"
+    link_label: "在线版"
+  - title: "Opening Bell Daily"
+    role: "Phil Rosen"
+    summary: "主线是 AMD 交出半导体多头一直在等的财报：三季度营收近 134 亿美元、超预期的 130.9 亿美元，调整后每股收益 2.09 美元、超预期的 1.95 美元，营收同比增近 45%，数据中心收入翻倍至创纪录的 85 亿美元，占营收近 64%（一年前为 47%）；四季度指引约 170 亿美元、超预期的 162 亿美元，中值意味着同比增约 66%，盘后股价涨逾 6%。背景是 AMD 年内高点 649.42 美元后曾跌 25%，但年初至今仍涨 125.9%，远超英伟达的 10.8% 与标普 500 的 10.5%。隐忧也有：游戏收入同比降 40%，自由现金流从 15.3 亿美元降至 5.54 亿美元，库存从年初 79 亿美元升至 114 亿美元；且过去八次财报后平均波动 8.8%，超预期也曾在 2 月换来单日跌 17%。其他：9 月职位空缺升至 752 万、超预期的 715 万，离职人数创 2025 年 3 月以来最高；Meta 拟发债至多 250 亿美元为 AI 基建融资，此前标普刚将其展望调为负面；Shopify 因 GMV 1191.5 亿美元不及预期的 1200.3 亿美元跌近 9%。11 月 3 日市场：标普涨 0.36% 至 7568.92 点，纳斯达克涨 0.83%，布伦特原油跌 1.12% 至 103.60 美元，10 年期美债收益率升 4 个基点至 4.95%。"
+    url: "https://www.openingbelldailynews.com/p/stock-market-outlook-amd-earnings-data-center-ai-chips"
+    link_label: "在线版"
+  - title: "Morning Brew"
+    role: "Morning Brew"
+    summary: "头条是中期选举的蓝色浪潮：民主党翻转参众两院，截至美东凌晨 5 点预计拿下众议院 228 席、参议院 54 席。亮点人物：Ossoff 在佐治亚轻松连任、被看作 2028 总统竞选的预热；37 岁的前教师兼神学院学生 Talarico 击败 Paxton，成为 30 多年来得州首位民主党参议员；Pappas 成为首位公开出柜的参议员；Andrews 翻转了已故 Graham 的南卡席位；Hamilton 成为 1939 年以来堪萨斯选出的首位民主党参议员；Jackson 掀翻 Collins；El-Sayed 成为美国首位穆斯林参议员。选民最关心经济，多数人不满特朗普的经济治理，选举日平均汽油价格史上首次突破 4 美元，部分归因于与伊朗战争推高的能源价格；阿拉斯加参议员 race 与加州 40 号提案（亿万富翁税）尚未揭晓。市场：11 月 3 日纳斯达克涨 0.82% 至 25372 点，标普涨 0.36% 至 7568.92 点，道指跌 0.38% 至 51786.72 点，10 年期美债收益率 4.952%，比特币涨 1.46% 至 77819 美元，Shopify 跌 8.74% 至 142.57 美元。其他：迪士尼据报裁员数千人、新 CEO 要求降本 20%；特朗普称将提前两年停止每年约 40 亿美元对以色列军事援助（原协议至 2028 年到期）；币安案更多细节：黑客 6 月还设假开发者工具诱使另一名工程师下载，公司称已补足 98% 被盗资产。Google 宣布学校不能在不带 AI 功能的情况下使用搜索，纽约、洛杉矶等力求课堂少 AI 的学区陷入两难。年度词：Collins 词典选出 2026 年度词 mogging（碾压、出风头），用法较上年增 210%。本周股票 Rivian：三季度营收 22 亿美元、同比增 38%，交付 19248 辆、增 45%，平价 R2 成为最畅销车型，股价涨 16%。"
+    url: "https://www.morningbrew.com"
+    link_label: "在线版"
+  - title: "Dealroom Daily Deal"
+    role: "Dealroom"
+    summary: "头条：Revolut 让约 2000 名工程师改用中国 Z.ai 的开源权重模型 GLM，在美国自有服务器上运行，称账单约为 Anthropic 与 OpenAI 的十分之一（未计云、人力与监控成本），Claude Code 与 Codex 仍保留给最难的任务。Chart of the day：欧洲风投机构 2026 年已为 268 只新基金募资 351 亿美元，已超过除 2022 年（443 亿美元）以外的任何年份，按当前速度全年约 420 亿美元，其中 10 亿美元以上大基金占 90 亿美元，领头的是 EQT 的 55 亿美元 Scaleup Europe 基金。Just raised 最大三笔：中国快手的生成式视频模型 Kling AI 30 亿美元 Growth 轮；西雅图的扩散模型开发者平台 Fal 13 亿美元 Late VC（Bessemer 与英伟达参投）；纽约的 AI 站点可靠性工程师 Traversal 1.2 亿美元 B 轮（Khosla 与 Kleiner Perkins 参投）。收购：Salesforce 以 27 亿美元收购 AI 客服软件商 Cresta；欧盟有条件批准京东 25 亿美元收购德国电子零售商 Ceconomy；Bilt 以 3 亿美元收购 LAVA。Just founded：哥本哈根的 Pelagic Systems（实验量子硬件的控制与校准软件栈）、旧金山的 Cesara（已募 12.5 万美元，用 AI 智能体为医疗系统追回少付理赔）、旧金山的 AnyAlpha（已募 12.5 万美元，自动化交易策略的智能体平台）。其他新闻：以色列无人机商 XTEND 上市两个月市值缩水 75% 后裁员约 10%；CrowdStrike 以合计 4.95 亿美元收购 AI 安全初创 Fiddler 与 Dreadnode；Anthropic 拟通过 Revolut、Trade Republic、eToro 向欧洲散户开放 IPO；英伟达据报要求云合作伙伴把中国客户占比压到 49% 以下。"
+    url: "https://dealroom.co"
+    link_label: "在线版"
+  - title: "Elena's Growth Scoop"
+    role: "Elena Verna"
+    summary: "核心论点：增长圈每隔几年就会把同一套 18 个老套路重新包装成突破性战略，Elena 以自嘲口吻逐个拆穿，并指出它们全是合法杠杆、几乎每家成功公司都用过，问题不在套路本身，而在用转轮盘代替直面产品或公司深层真正的问题。18 条包括：涨价（收入立刻涨 20% 至 30%，代价是流失上升、获客下滑，三年后的问题留给下任）；进军高端市场（需要 14 个销售、SOC 2、SSO 与半年采购流程）；搞大发布（大多只换来需要创意作图才看得见的微 bump）；聘请增长负责人（90 天内解决获客、激活、留存、变现与 PMF，还不给工程资源）；炒掉增长负责人（重置一年学习曲线，循环使用）；加渠道（一个都没跑通就再加六个，还不加资源）或 10 倍押注最强渠道（且最好不加预算）；追 AI 搜索新词 AEO、GEO、LLMO；建社区（把人际关系当三个月就能变现的获客渠道）；出海（翻译几个语种就算完成）；加游戏化（徽章与排行榜救不了对账场景）；多发邮件（把发送量叫作 earned impressions）；创造新品类（花三年解释 AI-Powered Autonomous Revenue Experience Orchestration 是什么）；换品牌（新 logo 与 500 万美元 agency 账单，产品与留存原地不动）；多招销售（用人均 100 万美元的 spreadsheet 数学掩盖没有 inbound 的现实）；榨干免费版（砍功能、缩试用、提前 paywall，换 1% 转化）；做思想领导力（没有观点就请 agency 想）；多做实验（14 种按钮颜色测个够，流量不够也能发论文）。可操作 takeaway：好增长人不是知道 100 个套路，而是知道哪些问题值得解决、哪些套路真正匹配那个问题；否则下个季度同一批点子还会再被提一次。"
+    url: "https://www.elenaverna.com/p/the-growth-playbook-everyone-keeps"
+    link_label: "在线版"
+---
