@@ -1,0 +1,19 @@
+{%- comment -%}
+  Search index for one month of Digest issues. Used by /digest/search/YYYY-MM.json.
+  Shape: [[issue_datetime, section_id, section_name, issue_url, [[title, summary, url, role, stat], ...]], ...]
+{%- endcomment -%}
+{%- assign first_doc = true -%}
+[
+{%- for doc in site.digests -%}
+{%- assign doc_month = doc.date | date: "%Y-%m" -%}
+{%- if doc_month == include.month -%}
+{%- unless first_doc -%},{%- endunless -%}
+{%- assign first_doc = false %}
+[{{ doc.date | date: "%Y-%m-%d %H:%M" | jsonify }},{{ doc.section | jsonify }},{{ doc.section_name | jsonify }},{{ doc.url | jsonify }},[
+{%- for it in doc.items -%}
+[{{ it.title | jsonify }},{{ it.summary | jsonify }},{{ it.url | jsonify }},{{ it.role | jsonify }},{{ it.stat | jsonify }}]{%- unless forloop.last -%},{%- endunless -%}
+{%- endfor -%}
+]]
+{%- endif -%}
+{%- endfor %}
+]

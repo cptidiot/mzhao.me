@@ -1,0 +1,7 @@
+---
+layout: null
+---
+{%- assign month_str = "" -%}
+{%- for doc in site.digests -%}{%- assign m = doc.date | date: "%Y-%m" -%}{%- assign month_str = month_str | append: m | append: "," -%}{%- endfor -%}
+{%- assign months = month_str | split: "," | uniq | sort | reverse -%}
+{"months":{{ months | jsonify }}}

@@ -104,7 +104,10 @@ layout: null
     line-height: .9; letter-spacing: -.025em;
     margin-left: -.04em;
     overflow: hidden; padding-bottom: .14em; margin-bottom: -.14em;
+    /* The title is display type, not text to copy. At this size the inverted selection colors turn it into a solid block. */
+    -webkit-user-select: none; user-select: none;
   }
+  .title::selection, .title span::selection { background: transparent; color: inherit; }
   .title span {
     display: inline-block;
     animation: rise 1.3s var(--ease-out) both;
