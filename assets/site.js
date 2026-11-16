@@ -1,7 +1,7 @@
 // Site-wide theme toggle. The stored choice wins; with none, the page follows the system.
 (function () {
   var KEY = 'theme';
-  function stored() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  function stored() { try { return localStorage.getItem(KEY) || localStorage.getItem('digest-theme'); } catch (e) { return null; } }
   function current() {
     var s = document.documentElement.getAttribute('data-theme');
     if (s) return s;
