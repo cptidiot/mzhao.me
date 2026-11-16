@@ -1,0 +1,5 @@
+---
+layout: null
+month: "2027-02"
+---
+{% include digest-search-index.json month=page.month %}
