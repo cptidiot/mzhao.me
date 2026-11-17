@@ -1,7 +1,7 @@
 ---
 section: ai-builders
 section_name: AI Builders
-date: 2026-11-17 09:55:00 -0800
+date: 2026-11-17 09:57:28 -0800
 title: "AI Builders Digest — 2026-11-17"
 excerpt: "Levie 预言每位员工的 token 花费仍看不到天花板，Rauch 给出自有智能路线图与 evals 驱动开发，Nikunj 复盘 2026 基建之战；另有 NotebookLM 交互网站、GBrain Rust 引擎与 BharatSemi 种子轮的消息。"
 items:
