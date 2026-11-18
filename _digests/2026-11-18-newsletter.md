@@ -1,0 +1,38 @@
+---
+section: newsletter
+section_name: Newsletter 精选
+date: 2026-11-18 08:30:00 -0800
+title: "Newsletter 精选 — 2026-11-18"
+excerpt: "英伟达首份无黄仁勋财报大超预期、Anthropic 今日定价；AI 代理谈成首笔国债交易；OpenAI 以 GPT-6.2 Astra 在 Anthropic IPO 当周抢风头；Isomorphic Labs 50 亿美元 C 轮。"
+items:
+  - title: "Money Stuff"
+    role: "Matt Levine · Bloomberg"
+    summary: "主段「AI 代理来谈债券」：BNY 与微软用各自的 AI 代理谈成了首笔美国国债交易（Agentic Negotiation Protocol），机器人讨价还价、人类最后放行。Levine 认为三年后基金经理只需用自然语言描述想要的债券组合特征，机器人就会去找券、议价、成交；但谈判大概率就是最原始的对半砍价。BNY 计划把这套系统扩展到回购、外汇支付、抵押品条款等谈判场景。三明治欺诈案：Peraire-Bueno 兄弟用诱饵订单反杀三明治机器人、卷走约 2500 万美元，法官昨日判无罪——检方未能证明诱饵交易构成实质性虚假陈述，mempool 里的交易不等于「同意被夹」的承诺。Levine 认为判得合理：政府一边在传统金融里起诉抢跑，一边在加密市场里保护抢跑机器人，逻辑自相矛盾。SBF 与 Anthropic：2021 年底 SBF 花 5 亿美元买了 Anthropic 13.5% 股份；本周 Anthropic IPO 估值预计 1.4 万亿美元，该笔股份稀释后仍值约 350 亿美元——但股份已在破产程序中，2024 年 FTX 清算人以 13.4 亿美元卖掉。Levine 点评：用客户短期存款投长期 AI 安全股权，事前看是「期限转换的魔法」，事后看是灾难。预测市场：Kalshi 请 Martha Stewart 拍广告强调禁止内幕交易——她「从未被判内幕交易罪」的梗本身就是个笑话（她曾因内幕交易调查相关指控入狱）。Levine 指出预测市场的内在矛盾：作为「真相机器」本该欢迎内幕信息，但作为受监管市场又必须禁止。宝可梦卡：收藏家 King Pokémon 把估值约 5900 万美元的藏品挂 eBay 标价 5900 万美元（比市价高 1000–2000 万美元），只为展示、不想真卖。快讯：Anthropic IPO 定价或高于 70–78 美元区间；亚马逊、谷歌 IPO 后合计持股约 28%；德意志银行 1500 万份文件泄露；英伟达成立出口管制委员会。"
+    url: "https://www.bloomberg.com/opinion/newsletters/2026-11-17/the-agents-will-trade-the-bonds"
+    link_label: "在线版"
+  - title: "NYT Global Update"
+    role: "The New York Times"
+    summary: "头条：特朗普政府内部在 AI 芯片对华政策上公开分裂，英伟达丑闻加深了裂痕；特朗普本周赴中国参加 APEC 会晤习近平。音频节目：特朗普政府内部的 AI 之争与新任 007；另有一项关于学校手机禁令的新研究。毛泽东传记作者 Anne Thurston 去世，她记录了毛泽东私生活与文革创伤，获学术赞誉、也遭北京抨击。普京可能在深圳 APEC 期间会见金正恩；朝鲜尚未确认金正恩是否出席。英伟达财报前华尔街屏息：分析师想从财报中找黄仁勋下台后公司前景的线索。北京正系统性地把日本描绘成侵略者与重新军事化的威胁。特朗普与习近平表面友好，两国政府却在加紧军备与贸易投资限制，裂痕扩大。美国生物科技因担心中国对手抢夺创意而转向「什么都不分享」的新常态。卡尼与习近平宣布贸易协议，加中关系回暖与加美关系形成对比。观点：特朗普讨好威权者终将适得其反；英伟达丑闻本质是特朗普对国家安全的漫不经心。通胀蔓延到鞋子：鞋价涨幅持续高于整体物价，短期内难回落。"
+    url: "https://www.nytimes.com"
+    link_label: "在线版"
+  - title: "Lenny's Newsletter"
+    role: "Lenny Rachitsky"
+    summary: "本期是 Lenny's Newsletter Product Pass 的更新（非长文方法论）：新增五家合作产品——OpenRouter（650 美元价值，Insider 专享：一个 API 调用数百个 AI 模型）、Ploy（600 美元：AI 代理代跑增长营销）、Sentry（360 美元：错误监控与根因定位）、TextExpander（300 美元：快捷输入片段）、LangChain 的 LangSmith（468 美元：AI 代理可观测性与评估）。Product Pass 总计 35 款产品：Insider（400 美元/年）总价值 41,428 美元，Annual（200 美元/年）22 款、价值 37,062 美元；另含 Wispr Flow、Notion、Lovable、Linear、ElevenLabs、Runway、Replit 等全年免费。Lenny 称这是「软件史上最划算的交易」。注意：需为新用户才能兑换、名额先到先得、热门产品可能售罄；免费期从在合作方网站兑换时起算，部分有兑换截止日；Insider 享优先权与专属产品。"
+    url: "https://www.lennysnewsletter.com/p/35-premium-tools-free-for-a-yearnow"
+    link_label: "在线版"
+  - title: "Opening Bell Daily"
+    role: "Phil Rosen"
+    summary: "主线：英伟达首份「无黄仁勋」财报大超预期：营收 1158 亿美元、同比 +103%，比预期高近 70 亿美元；调整后 EPS 2.68 美元 vs 预期 2.48 美元；为 2024 年 2 月以来最大幅度超预期。本季指引约 1300 亿美元，高于约 1250 亿美元共识，且假设中国数据中心算力收入为零。关键数字：黄仁勋留下的赌注——未来数年供应商采购承诺 3900 亿美元，三个月前为 2790 亿美元，大半在 2028 财年到期（2030 亿美元）；若 AI 支出降温账单照付。毛利率指引降至 71%–72%（上季 74.9%）。盘后股价上涨，收盘略高于 155 美元，自黄仁勋辞职以来仍跌 10.5%。黄仁勋将于 12 月 1–2 日出席众议院委员会听证，是否回归 CEO 仍未定；SEC 据报正在调查英伟达。市场：周二全线下跌，苹果、摩根大通、微软、Workday 等大公司接连宕机引发担忧。其他：家得宝任命 CFO Richard McPhail 为下任 CEO，季营收 434 亿美元超预期、可比销售 +2.2%；10 月零售销售仅 +0.2%（9 月 +0.8%）；迪士尼超预期并提高分红、目标 2029 财年前节约 30 亿美元；Anthropic IPO 定价或高于 70–78 美元区间；微软发布六款新 AI 模型对标 OpenAI 与 Anthropic；耐克目标 2031 财年前新增 50 亿美元收入；达美今年 +21.5%，近三倍于标普。"
+    url: "https://www.openingbelldailynews.com/p/stock-market-outlook-nvidia-earnings-jensen-huang"
+    link_label: "在线版"
+  - title: "Morning Brew"
+    role: "Morning Brew"
+    summary: "头条：Anthropic 今日定价、明日以代码 ANT 在纳斯达克上市；发行价区间 70–78 美元，顶格募资 904 亿美元、估值 1.4 万亿美元，WSJ 称可能超 80 美元、估值达 1.6 万亿美元；认购超额 7 倍。首家上市的大型 AI 实验室，被视为 AI 行业与全球经济的压力测试。谁赚钱：约 300 位投资者，Menlo 2023 年投 7.5 亿美元、Lightspeed 领投 2025 年 35 亿美元轮、今年 650 亿美元大轮有红杉等；员工平均股权或达 7200 万美元；亚马逊与谷歌合计持股约 28%。上半年 AI 吸走美国 VC 资金的 86%（3559 亿美元），旧金山独占全球 VC 的三分之一。市场：纳指 24,328.38（-0.74%）、标普 7,340.53（-1.03%）、道指 50,759.42（-1.65%）、10 年期美债 5.103%、比特币 64,229.96 美元（-1.55%）；耐克 -6.30%，因称 2029 年前不预期销售增长。英伟达：首份无黄仁勋财报超预期，营收环比 +20%、Q4 指引 +12%，2028 年增长展望从 70% 上调至 75%；但将停止向中国销售部分芯片、支持其他 AI 公司将「有纪律、有选择」；黄仁勋称若董事会认为符合利益、愿「荣幸」回归，董事长称未在考虑；12 月 1 日他将赴国会作证。其他：美国失去麻疹消除地位，去年初以来超 7000 例、10 人死亡；NSA 高度机密通信网络宕机（称例行维护）；美联储理事 Lisa Cook 拒绝出席白宫 12 月 14 日听证；Kalshi 请 Martha Stewart 拍反内幕交易广告，但 WSJ 称 CFTC 已令其停掉「特朗普某日会说什么」押注市场；资金轮动至食品股：Tyson 一周 +8%、Campbell's 一个月 +22%；旅行者 1 号今日到达距地球恰好 1 光日。"
+    url: "https://www.morningbrew.com"
+    link_label: "在线版"
+  - title: "Dealroom Daily Deal"
+    role: "Dealroom"
+    summary: "头条：OpenAI 在 Anthropic IPO 当周推出 GPT-6.2 Astra，比 Claude 便宜 95%，主打复杂专业工作，另有轻量版 GPT-6.2 Sol；Destinus 称其 RUTA 巡航导弹 11 月 17 日击中克里米亚大桥、导致一段桥面坍塌。Chart of the day：北欧国防与军民两用初创 2026 年已募资 15 亿美元，为 2020 年 2.43 亿美元的 6.1 倍，全年有望达 19 亿美元；芬兰两家占 2020 年以来大头：雷达卫星 ICEYE 占 48%、量子计算 IQM 占 18%。Just raised 最大几笔：Isomorphic Labs 50 亿美元 C 轮（伦敦，AI 药物发现，Greenoaks 与红杉领投）；Genesis AI 5 亿美元 A 轮（巴黎，通用机器人，Eclipse 与 Khosla 支持）；Science 4 亿美元 D 轮（阿拉米达，神经工程/脑机接口，885 Capital 与 Khosla 支持）。过去 7 天共 235 轮、160 亿美元；按国家美国 130 亿美元居首。Just acquired：Indivi 收购 Cogitat（帝国理工 spin-out，EEG 解码认知功能）；UL Solutions 以 3.5 亿美元收购供应链软件 Worldly；Astromech 以 2.3 亿美元全股票收购 Form Bio。Just founded：Eetspots（查今晚哪些餐厅还有空位）；SIGPT（班加罗尔，从提示到 FPGA 的 AI 芯片工程）。其他：谷歌与 Quaise 签超 5 亿美元地热供电协议（俄勒冈，50MW，2030 年起供电）；ULA 火神火箭发射失败、40 颗亚马逊 Leo 卫星被毁；英国 20 多家公司联合竞标 3.3 亿英镑 NHS 数据平台合同、挑战 Palantir；Cyberstarts 募资 3.6 亿美元；Gemspring 第四只并购基金 35 亿美元封顶关闭；欧洲大学 spinout 总值近 5000 亿美元、今年已募资 138 亿美元（Dealroom 欧洲 Spinouts 报告）。"
+    url: "https://dealroom.co/dailydeal/2026-11-18/"
+    link_label: "在线版"
+---
