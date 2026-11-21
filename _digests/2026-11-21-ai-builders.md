@@ -1,7 +1,7 @@
 ---
 section: ai-builders
 section_name: AI Builders
-date: 2026-11-21 09:55:00 -0800
+date: 2026-11-21 10:00:00 -0800
 title: "AI Builders Digest — 2026-11-21"
 excerpt: "Gemini Neon 从一个帖子到当天上线、黎曼猜想迎来 AI 与人类双证明、Vercel 谈 AI 界的 SOC2；另有 Latent Space 对话 Linear COO：agent 时代的 GTM 没有 SDR，客服 AI 只起草不直发。"
 items:
