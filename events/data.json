@@ -1,26 +1,8 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-16",
-  "headline": "狄更斯开幕，圣诞公园亮灯迎感恩节周末",
+  "updated": "2026-11-23",
+  "headline": "胡桃夹子开演，灯光节与假日市集接力两个周末",
   "days": [
-    {
-      "date": "2026-11-21",
-      "title": "狄更斯市集开幕，伯克利 Big Game",
-      "picks": [
-        "dickens",
-        "biggame",
-        "westcoastcraft"
-      ]
-    },
-    {
-      "date": "2026-11-22",
-      "title": "勇士战绿军，酒乡小镇点灯",
-      "picks": [
-        "warriorsceltics",
-        "lightscape",
-        "yountville"
-      ]
-    },
     {
       "date": "2026-11-28",
       "title": "圣诞公园亮灯，假日市集扎堆",
@@ -38,6 +20,24 @@
         "figaro2",
         "zoolights-sf-zoo"
       ]
+    },
+    {
+      "date": "2026-12-05",
+      "title": "胡桃夹子开演，灯光节亮灯",
+      "picks": [
+        "nutcracker-sfballet",
+        "lets-glow-sf",
+        "pwhl-sap-center"
+      ]
+    },
+    {
+      "date": "2026-12-06",
+      "title": "胡桃夹子续演，真菌节开场",
+      "picks": [
+        "nutcracker-sfballet",
+        "smuin-christmas-ballet",
+        "muir-beach-holiday-arts-fair"
+      ]
     }
   ],
   "events": [
@@ -51,26 +51,26 @@
       "address": "86 Cañada Rd, Woodside",
       "sessions": [
         {
-          "date": "2026-11-21",
-          "start": "10:00"
-        },
-        {
-          "date": "2026-11-22",
-          "start": "10:00"
-        },
-        {
           "date": "2026-11-28",
           "start": "10:00"
         },
         {
           "date": "2026-11-29",
           "start": "10:00"
+        },
+        {
+          "date": "2026-12-05",
+          "start": "10:00"
+        },
+        {
+          "date": "2026-12-06",
+          "start": "10:00"
         }
       ],
       "time_note": "白天 10:00–15:30 · 灯会 16:00–22:00",
       "price": "白天 $40 起 · 灯会 $45 起",
       "free": false,
-      "family": true,
+      "family": false,
       "outdoor": true,
       "tags": [
         "灯会",
@@ -92,22 +92,22 @@
       "address": "9777 Golf Links Rd",
       "sessions": [
         {
-          "date": "2026-11-21",
-          "start": "16:30",
-          "end": "21:00"
-        },
-        {
-          "date": "2026-11-22",
-          "start": "16:30",
-          "end": "21:00"
-        },
-        {
           "date": "2026-11-28",
           "start": "16:30",
           "end": "21:00"
         },
         {
           "date": "2026-11-29",
+          "start": "16:30",
+          "end": "21:00"
+        },
+        {
+          "date": "2026-12-05",
+          "start": "16:30",
+          "end": "21:00"
+        },
+        {
+          "date": "2026-12-06",
           "start": "16:30",
           "end": "21:00"
         }
@@ -137,19 +137,19 @@
       "address": "2025 Addison St, Berkeley",
       "sessions": [
         {
-          "date": "2026-11-21",
-          "start": "14:00"
-        },
-        {
-          "date": "2026-11-22",
-          "start": "14:00"
-        },
-        {
           "date": "2026-11-28",
           "start": "14:00"
         },
         {
           "date": "2026-11-29",
+          "start": "14:00"
+        },
+        {
+          "date": "2026-12-05",
+          "start": "14:00"
+        },
+        {
+          "date": "2026-12-06",
           "start": "14:00"
         }
       ],
@@ -162,7 +162,7 @@
         "话剧",
         "戏剧"
       ],
-      "desc": "南方哥特惊悚剧（演至 12/13）：1930 年代乔治亚小镇、十字路口与魔鬼交易的传闻。11/21–22 与 11/28–29 均有午场与晚场，选座时在官网复核场次时间。",
+      "desc": "南方哥特惊悚剧（演至 12/13）：1930 年代乔治亚小镇、十字路口与魔鬼交易的传闻。11/28–29 与 12/5–6 均有午场与晚场，选座时在官网复核场次时间。",
       "url": "https://www.berkeleyrep.org/shows/covenant-c7h1",
       "link_type": "event",
       "source": "Berkeley Rep 官网"
@@ -177,22 +177,22 @@
       "address": "330 W San Carlos St, San Jose",
       "sessions": [
         {
-          "date": "2026-11-21",
-          "start": "16:30",
-          "end": "22:30"
-        },
-        {
-          "date": "2026-11-22",
-          "start": "16:30",
-          "end": "22:30"
-        },
-        {
           "date": "2026-11-28",
           "start": "16:30",
           "end": "22:30"
         },
         {
           "date": "2026-11-29",
+          "start": "16:30",
+          "end": "22:30"
+        },
+        {
+          "date": "2026-12-05",
+          "start": "16:30",
+          "end": "22:30"
+        },
+        {
+          "date": "2026-12-06",
           "start": "16:30",
           "end": "22:30"
         }
@@ -213,38 +213,6 @@
       "source": "sanjose.org（活动页）"
     },
     {
-      "id": "frozen",
-      "title": "《冰雪奇缘》音乐剧 · San Mateo",
-      "title_en": "Frozen by Bay Area ETC · San Mateo",
-      "region": "peninsula",
-      "city": "San Mateo",
-      "venue": "Bayside Performing Arts Center",
-      "address": "2025 Kehoe Ave, San Mateo",
-      "sessions": [
-        {
-          "date": "2026-11-21",
-          "start": "14:00"
-        },
-        {
-          "date": "2026-11-22",
-          "start": "14:00"
-        }
-      ],
-      "price": "票价待确认",
-      "free": false,
-      "family": true,
-      "outdoor": false,
-      "tags": [
-        "音乐剧",
-        "冰雪奇缘",
-        "迪士尼"
-      ],
-      "desc": "Bay Area ETC 的迪士尼《冰雪奇缘》音乐剧在圣马特奥 Bayside 演出，11/21 14:00 与 11/22 14:00 收官场。半岛带娃看戏难得不用进城，票价与余票见主办方页。",
-      "url": "https://www.bayareaetc.org/frozen-registration",
-      "link_type": "event",
-      "source": "Bay Area ETC 官网"
-    },
-    {
       "id": "dickens",
       "title": "狄更斯圣诞市集 · Cow Palace",
       "title_en": "The Great Dickens Christmas Fair 2026",
@@ -254,22 +222,22 @@
       "address": "2600 Geneva Ave, Daly City",
       "sessions": [
         {
-          "date": "2026-11-21",
-          "start": "10:00",
-          "end": "18:00"
-        },
-        {
-          "date": "2026-11-22",
-          "start": "10:00",
-          "end": "18:00"
-        },
-        {
           "date": "2026-11-28",
           "start": "10:00",
           "end": "18:00"
         },
         {
           "date": "2026-11-29",
+          "start": "10:00",
+          "end": "18:00"
+        },
+        {
+          "date": "2026-12-05",
+          "start": "10:00",
+          "end": "18:00"
+        },
+        {
+          "date": "2026-12-06",
           "start": "10:00",
           "end": "18:00"
         }
@@ -289,179 +257,6 @@
       "source": "Funcheap 限额精选（详情页）"
     },
     {
-      "id": "westcoastcraft",
-      "title": "West Coast Craft 冬季手作展",
-      "title_en": "West Coast Craft Winter '26 · Fort Mason",
-      "region": "sf",
-      "city": "San Francisco",
-      "venue": "Fort Mason Center Festival Pavilion",
-      "sessions": [
-        {
-          "date": "2026-11-21",
-          "start": "10:00",
-          "end": "18:00"
-        },
-        {
-          "date": "2026-11-22",
-          "start": "10:00",
-          "end": "18:00"
-        }
-      ],
-      "price": "免费入场",
-      "free": true,
-      "family": false,
-      "outdoor": false,
-      "tags": [
-        "手作市集",
-        "设计",
-        "假日购物"
-      ],
-      "desc": "275+ 位艺术家与设计师齐聚 Festival Pavilion：陶瓷、服饰、家居与纸品，感恩节前淘假日礼物的最佳一站。免费入场、全龄欢迎。",
-      "url": "https://www.westcoastcraft.com/wcc-attend",
-      "link_type": "event",
-      "source": "主办方 West Coast Craft 官网"
-    },
-    {
-      "id": "jonas",
-      "title": "Jonas Brothers · Chase Center",
-      "title_en": "Jonas Brothers: The Burning Up Tour All Over Again",
-      "region": "sf",
-      "city": "San Francisco",
-      "venue": "Chase Center",
-      "sessions": [
-        {
-          "date": "2026-11-21",
-          "start": "19:30"
-        }
-      ],
-      "price": "$79 起",
-      "free": false,
-      "family": false,
-      "outdoor": false,
-      "tags": [
-        "演唱会",
-        "流行"
-      ],
-      "desc": "Jonas Brothers 的 Burning Up Tour All Over Again 巡演旧金山站：从少年成名作一路唱到近作，是 11/21 Chase Center 的一号流行场。",
-      "url": "https://www.ticketmaster.com/jonas-brothers-tickets/artist/1052712",
-      "link_type": "listing",
-      "source": "Ticketmaster 艺人页"
-    },
-    {
-      "id": "biggame",
-      "title": "第129届 Big Game · Cal 主场迎斯坦福",
-      "title_en": "129th Big Game · California vs. Stanford",
-      "region": "east-bay",
-      "city": "Berkeley",
-      "venue": "California Memorial Stadium · Berkeley",
-      "address": "2227 Piedmont Ave, Berkeley",
-      "sessions": [
-        {
-          "date": "2026-11-21",
-          "start": "16:30"
-        }
-      ],
-      "price": "需购票",
-      "free": false,
-      "family": false,
-      "outdoor": true,
-      "tags": [
-        "大学橄榄球",
-        "德比",
-        "斯坦福斧"
-      ],
-      "desc": "始于 1892 年的西海岸最老德比：第 129 届 Big Game 在伯克利打响，Cal 主场迎战斯坦福、争夺 Stanford Axe，16:30 开球、ACC Network 直播。去年斯坦福客场取胜，今年 Cal 回到主场复仇。",
-      "url": "https://nightout.com/events/v/stanford-cardinal-at-california-golden-bears-football-california-memorial-stadium-berkeley-2026-11-21/tickets",
-      "link_type": "listing",
-      "source": "票务列表（多源核对）"
-    },
-    {
-      "id": "sharks2",
-      "title": "鲨鱼队 vs 西雅图海怪",
-      "title_en": "San Jose Sharks vs. Seattle Kraken",
-      "region": "south-bay",
-      "city": "San Jose",
-      "venue": "SAP Center · San Jose",
-      "sessions": [
-        {
-          "date": "2026-11-21",
-          "start": "19:00"
-        }
-      ],
-      "price": "$66 起",
-      "free": false,
-      "family": false,
-      "outdoor": false,
-      "tags": [
-        "NHL",
-        "鲨鱼队",
-        "主场"
-      ],
-      "desc": "鲨鱼队周六晚主场迎战西雅图海怪。Ticketmaster 标注 19:00 开球，是 11/21–22 南湾唯一的职业队主场比赛。",
-      "url": "https://www.ticketmaster.com/san-jose-sharks-tickets/artist/806018?home_away=home",
-      "link_type": "listing",
-      "source": "Ticketmaster 艺人页"
-    },
-    {
-      "id": "prettylights",
-      "title": "Pretty Lights · Fox Theater 奥克兰",
-      "title_en": "Pretty Lights (18+) · Fox Theater Oakland",
-      "region": "east-bay",
-      "city": "Oakland",
-      "venue": "Fox Theater · Oakland",
-      "sessions": [
-        {
-          "date": "2026-11-21",
-          "start": "19:30"
-        }
-      ],
-      "price": "转售 $89 起",
-      "free": false,
-      "family": false,
-      "outdoor": false,
-      "tags": [
-        "电子音乐",
-        "演唱会",
-        "18+"
-      ],
-      "desc": "Pretty Lights 在 Fox Theater 三连演的周六收官场：电子节拍混嘻哈与灵魂采样，现场灯光是招牌。18+，目前以转售票为主，下单前复核。",
-      "url": "https://www.ticketmaster.com/pretty-lights-tickets/artist/1299387",
-      "link_type": "listing",
-      "source": "Ticketmaster 艺人页"
-    },
-    {
-      "id": "musicman",
-      "title": "百老汇音乐剧《The Music Man》· Orpheum",
-      "title_en": "Meredith Willson's The Music Man · Orpheum Theatre",
-      "region": "sf",
-      "city": "San Francisco",
-      "venue": "Orpheum Theatre",
-      "address": "1192 Market St",
-      "sessions": [
-        {
-          "date": "2026-11-21",
-          "start": "13:00"
-        },
-        {
-          "date": "2026-11-22",
-          "start": "13:00"
-        }
-      ],
-      "time_note": "周六 13:00 / 19:30 · 周日 13:00",
-      "price": "$63 起",
-      "free": false,
-      "family": true,
-      "outdoor": false,
-      "tags": [
-        "音乐剧",
-        "百老汇巡演"
-      ],
-      "desc": "托尼奖经典音乐剧全国巡演只停三天：推销员 Harold Hill 与小镇乐队的故事，旋律一响就是黄金年代。推荐 6 岁以上观看（5 岁以下不可入场），周六有下午场，适合全家。",
-      "url": "https://www.todaytix.com/sf-bay-area/shows/48184-the-music-man",
-      "link_type": "event",
-      "source": "TodayTix 演出页"
-    },
-    {
       "id": "figaro2",
       "title": "SF 歌剧《费加罗的婚礼》（演至 11/29）",
       "title_en": "The Marriage of Figaro · San Francisco Opera",
@@ -470,10 +265,6 @@
       "venue": "War Memorial Opera House",
       "address": "301 Van Ness Ave",
       "sessions": [
-        {
-          "date": "2026-11-21",
-          "start": "14:00"
-        },
         {
           "date": "2026-11-29",
           "start": "14:00"
@@ -502,19 +293,19 @@
       "venue": "San Francisco Botanical Garden · Golden Gate Park, 1199 9th Ave",
       "sessions": [
         {
-          "date": "2026-11-21",
-          "start": "17:00"
-        },
-        {
-          "date": "2026-11-22",
-          "start": "17:00"
-        },
-        {
           "date": "2026-11-28",
           "start": "17:00"
         },
         {
           "date": "2026-11-29",
+          "start": "17:00"
+        },
+        {
+          "date": "2026-12-05",
+          "start": "17:00"
+        },
+        {
+          "date": "2026-12-06",
           "start": "17:00"
         }
       ],
@@ -543,22 +334,17 @@
       "address": "300 Powell St",
       "sessions": [
         {
-          "date": "2026-11-21",
-          "start": "11:00",
-          "end": "14:00"
-        },
-        {
-          "date": "2026-11-22",
-          "start": "11:00",
-          "end": "14:00"
-        },
-        {
           "date": "2026-11-28",
           "start": "11:00",
           "end": "14:00"
         },
         {
           "date": "2026-11-29",
+          "start": "11:00",
+          "end": "14:00"
+        },
+        {
+          "date": "2026-12-05",
           "start": "11:00",
           "end": "14:00"
         }
@@ -572,256 +358,10 @@
         "市中心",
         "广场"
       ],
-      "desc": "Union Square 入冬后的免费手作下午（11/5 起持续至 1/17，周四至周日）：11/21 周六是 SCRAP SF 的 Gelli 版画，11/22 周日是 Maker Studio Kidz 的感恩节卡片；11/28 周六 Gelli 版画，11/29 周日树形串珠手作。逛街顺路坐下来做一件小手工。",
+      "desc": "Union Square 入冬后的免费手作下午（11/5 起持续至 1/17，周四至周日）：11/28 周六是 Gelli 版画，11/29 周日是树形串珠手作；12/5 周六是纸质光明节烛台手作，12/6 无手作坊。逛街顺路坐下来做一件小手工。",
       "url": "https://secretsanfrancisco.com/union-square-free-crafting-winter/",
       "link_type": "listing",
       "source": "Secret SF（专题页）"
-    }
-    ,
-    {
-      "id": "nutcracker",
-      "title": "Los Gatos Ballet《胡桃夹子》",
-      "title_en": "Los Gatos Ballet: The Nutcracker",
-      "region": "south-bay",
-      "city": "Saratoga",
-      "venue": "McAfee Performing Arts Center · Saratoga",
-      "address": "20300 Herriman Ave, Saratoga",
-      "sessions": [
-        {
-          "date": "2026-11-21",
-          "start": "13:00"
-        },
-        {
-          "date": "2026-11-22",
-          "start": "13:00"
-        }
-      ],
-      "time_note": "13:00 与 18:00 两场",
-      "price": "$32–66",
-      "free": false,
-      "family": true,
-      "outdoor": false,
-      "tags": [
-        "芭蕾",
-        "胡桃夹子",
-        "假日季"
-      ],
-      "desc": "假日季的保留节目开演：Los Gatos Ballet 的《胡桃夹子》在 Saratoga 连演两天、每天午场与晚场两场。柴可夫斯基经典配乐，适合第一次带孩子看芭蕾。",
-      "url": "https://losgatosballet.org/nutcracker/",
-      "link_type": "event",
-      "source": "Los Gatos Ballet 官网"
-    },
-    {
-      "id": "wizard",
-      "title": "《绿野仙踪》青少年音乐剧 · Mountain View",
-      "title_en": "The Wizard of Oz · Peninsula Youth Theatre",
-      "region": "south-bay",
-      "city": "Mountain View",
-      "venue": "Mountain View Center for the Performing Arts",
-      "address": "500 Castro St, Mountain View",
-      "sessions": [
-        {
-          "date": "2026-11-21",
-          "start": "14:00"
-        },
-        {
-          "date": "2026-11-22",
-          "start": "13:00"
-        }
-      ],
-      "time_note": "周六 14:00 / 19:30 · 周日 13:00",
-      "price": "票价待确认",
-      "free": false,
-      "family": true,
-      "outdoor": false,
-      "tags": [
-        "音乐剧",
-        "青少年剧团",
-        "经典"
-      ],
-      "desc": "Peninsula Youth Theatre 的《绿野仙踪》：桃乐丝与稻草人、铁皮人、狮子的经典旅程，由本地青少年演员演出。11/14–22 上演，11/21–22 为收官周末。",
-      "url": "https://www.mvcpa.com/",
-      "link_type": "event",
-      "source": "Mountain View Center for the Performing Arts 官网"
-    },
-    {
-      "id": "zonarte",
-      "title": "Zonarte 假日市集 · 圣何塞（第 30 届）",
-      "title_en": "30th Annual Zonarte Holiday Market",
-      "region": "south-bay",
-      "city": "San Jose",
-      "venue": "Christmas in the Park",
-      "address": "194 S Market St, San Jose",
-      "sessions": [
-        {
-          "date": "2026-11-21",
-          "start": "10:00",
-          "end": "18:00"
-        },
-        {
-          "date": "2026-11-22",
-          "start": "10:00",
-          "end": "18:00"
-        }
-      ],
-      "time_note": "10:00–18:00（周五晚开幕酒会）",
-      "price": "免费入场",
-      "free": true,
-      "family": false,
-      "outdoor": false,
-      "tags": [
-        "假日市集",
-        "手作",
-        "拉丁文化"
-      ],
-      "desc": "第 30 届 Zonarte 假日市集：拉丁裔艺术家与手作者的礼物市集，设在圣诞公园内，周六周日 10:00–18:00 正式开逛。免费入场，顺路逛圣诞公园的灯展。",
-      "url": "https://sanjose.kidsoutandabout.com/category/season/december-holidays",
-      "link_type": "listing",
-      "source": "Kids Out and About San Jose（类目页）"
-    },
-    {
-      "id": "warriorsceltics",
-      "title": "勇士队 vs 波士顿凯尔特人",
-      "title_en": "Golden State Warriors vs. Boston Celtics",
-      "region": "sf",
-      "city": "San Francisco",
-      "venue": "Chase Center",
-      "sessions": [
-        {
-          "date": "2026-11-22",
-          "start": "17:30"
-        }
-      ],
-      "price": "需购票",
-      "free": false,
-      "family": false,
-      "outdoor": false,
-      "tags": [
-        "NBA",
-        "勇士队",
-        "主场"
-      ],
-      "desc": "周日傍晚的重头戏：勇士主场迎战凯尔特人，2022 年总决赛对手再聚 Chase Center。17:30 开球，看完球正好吃晚饭。",
-      "url": "https://www.ticketmaster.com/artist/K8vZ9171oa0",
-      "link_type": "listing",
-      "source": "Ticketmaster 艺人页"
-    },
-    {
-      "id": "chocolate",
-      "title": "SF 秋季假日巧克力沙龙",
-      "title_en": "San Francisco Fall Holiday Chocolate Salon and Festival 2026",
-      "region": "sf",
-      "city": "San Francisco",
-      "venue": "SF County Fair Building",
-      "address": "1199 9th Ave",
-      "sessions": [
-        {
-          "date": "2026-11-22",
-          "start": "11:00",
-          "end": "16:30"
-        }
-      ],
-      "price": "成人预售 $22 · 儿童 $13",
-      "free": false,
-      "family": false,
-      "outdoor": false,
-      "tags": [
-        "巧克力",
-        "美食节",
-        "品鉴"
-      ],
-      "desc": "手工与精品巧克力一次品遍的年度沙龙：门票含全部品鉴，假日季送礼先来这里试吃定夺。地点就在植物园对面，白天品巧克力、傍晚接 Lightscape 灯会正好。",
-      "url": "https://sf.funcheap.com/city-guide/november-street-fairs-festivals/",
-      "link_type": "listing",
-      "source": "Funcheap 限额精选（专题页）"
-    },
-    {
-      "id": "hanukkah",
-      "title": "光明节手作者市集 · JCCSF",
-      "title_en": "Hanukkah Maker's Market · JCCSF",
-      "region": "sf",
-      "city": "San Francisco",
-      "venue": "Jewish Community Center of San Francisco",
-      "address": "3200 California St",
-      "sessions": [
-        {
-          "date": "2026-11-22",
-          "start": "11:00",
-          "end": "16:00"
-        }
-      ],
-      "price": "免费",
-      "free": true,
-      "family": false,
-      "outdoor": false,
-      "tags": [
-        "手作市集",
-        "光明节",
-        "犹太"
-      ],
-      "desc": "JCCSF 的光明节市集：烛台、蜡烛与光明节用品，加上本地手作者的陶瓷、复古首饰与手工食品，配现场音乐。免费入场，需在 Eventbrite 登记。",
-      "url": "https://www.eventbrite.com/e/hanukkah-makers-market-registration-2003081399387",
-      "link_type": "event",
-      "source": "Eventbrite（详情页）"
-    },
-    {
-      "id": "yountville",
-      "title": "Yountville 小镇点灯仪式",
-      "title_en": "Yountville Town & Tree Lighting",
-      "region": "north-bay",
-      "city": "Yountville",
-      "venue": "Yountville Community Center",
-      "address": "6516 Washington St, Yountville",
-      "sessions": [
-        {
-          "date": "2026-11-22",
-          "start": "16:00",
-          "end": "19:00"
-        }
-      ],
-      "time_note": "16:00 手作 · 18:00 左右点灯",
-      "price": "免费",
-      "free": true,
-      "family": true,
-      "outdoor": true,
-      "tags": [
-        "点灯仪式",
-        "小镇",
-        "圣诞"
-      ],
-      "desc": "酒乡小镇的假日季开场：16:00 起先在社区中心做室内手作，18:00 左右户外演出，随后圣诞树与全镇灯光一起点亮。免费参加，可带一件未拆封玩具捐给 Napa Valley 男孩女孩俱乐部。",
-      "url": "https://gobayarea.com/events",
-      "link_type": "listing",
-      "source": "GoBayArea 日历（发现页）"
-    },
-    {
-      "id": "marinescience",
-      "title": "海洋科学周日：海洋盛宴 · Sausalito",
-      "title_en": "Marine Science Sunday: An Ocean Feast",
-      "region": "north-bay",
-      "city": "Sausalito",
-      "venue": "The Marine Mammal Center",
-      "address": "2000 Bunker Rd, Sausalito",
-      "sessions": [
-        {
-          "date": "2026-11-22",
-          "start": "10:30"
-        }
-      ],
-      "time_note": "10:30 / 12:00 / 14:00 三场，各 30 分钟",
-      "price": "免费（需提前在线预约入场）",
-      "free": true,
-      "family": true,
-      "outdoor": false,
-      "tags": [
-        "海洋科学",
-        "哺乳动物",
-        "科普"
-      ],
-      "desc": "每月第二、四个周日的海洋科学互动课：11/22 主题是海洋盛宴——鲸鱼如何用气泡捕鱼、水獭如何用工具进食。30 分钟一节，入场免费但须提前在线预约。",
-      "url": "https://www.marinemammalcenter.org/education/adults-families/marine-science-sunday",
-      "link_type": "event",
-      "source": "The Marine Mammal Center 官网"
     },
     {
       "id": "rollerdisco",
@@ -832,12 +372,12 @@
       "venue": "Skatin’ Place · Golden Gate Park",
       "sessions": [
         {
-          "date": "2026-11-22",
+          "date": "2026-11-29",
           "start": "13:00",
           "end": "17:00"
         },
         {
-          "date": "2026-11-29",
+          "date": "2026-12-06",
           "start": "13:00",
           "end": "17:00"
         }
@@ -867,19 +407,19 @@
       "address": "2640 College Ave, Berkeley",
       "sessions": [
         {
-          "date": "2026-11-21",
-          "start": "13:00"
-        },
-        {
-          "date": "2026-11-22",
-          "start": "14:00"
-        },
-        {
           "date": "2026-11-28",
           "start": "13:00"
         },
         {
           "date": "2026-11-29",
+          "start": "14:00"
+        },
+        {
+          "date": "2026-12-05",
+          "start": "13:00"
+        },
+        {
+          "date": "2026-12-06",
           "start": "14:00"
         }
       ],
@@ -968,7 +508,7 @@
           "start": "20:00"
         }
       ],
-      "price": "票价待确认",
+      "price": "票价约 $65 起（二级市场）",
       "free": false,
       "family": false,
       "outdoor": false,
@@ -1041,8 +581,7 @@
       "url": "https://www.todaytix.com/sf-bay-area/shows/48116-cirque-kalabante-wow-world-of-words",
       "link_type": "event",
       "source": "TodayTix 演出页"
-    }
-    ,
+    },
     {
       "id": "fiddler-on-the-roof",
       "title": "音乐剧《屋顶上的小提琴手》",
@@ -1054,7 +593,7 @@
       "sessions": [
         {
           "date": "2026-11-28",
-          "start": "14:00"
+          "start": "19:30"
         },
         {
           "date": "2026-11-29",
@@ -1070,7 +609,7 @@
         "经典",
         "犹太"
       ],
-      "desc": "圣何塞歌剧院上演经典音乐剧《屋顶上的小提琴手》，英文演出配英西字幕，11/28、11/29 均为 14:00。建议提前购票，剧场位于圣何塞市中心。",
+      "desc": "圣何塞歌剧院上演经典音乐剧《屋顶上的小提琴手》，英文演出配英西字幕，11/28 19:30、11/29 14:00。建议提前购票，剧场位于圣何塞市中心。",
       "url": "https://www.operasj.org/productions/fiddler",
       "link_type": "event",
       "source": "Opera San José 官网"
@@ -1091,9 +630,17 @@
         {
           "date": "2026-11-29",
           "start": "13:00"
+        },
+        {
+          "date": "2026-12-05",
+          "start": "14:00"
+        },
+        {
+          "date": "2026-12-06",
+          "start": "13:00"
         }
       ],
-      "time_note": "11/28 另有 20:00 场，11/29 另有 18:30 场",
+      "time_note": "11/28 14:00 / 20:00 · 11/29 13:00 / 18:30 · 12/5 14:00 / 20:00 · 12/6 13:00",
       "price": "票价 $38 起",
       "free": false,
       "family": false,
@@ -1103,7 +650,7 @@
         "戏剧",
         "百老汇"
       ],
-      "desc": "托尼奖提名话剧西海岸首演，五名高中女生重读《萨勒姆的女巫》，11/28 14:00、11/29 13:00。演出约 105 分钟无中场，涉及敏感议题。",
+      "desc": "托尼奖提名话剧西海岸首演，五名高中女生重读《萨勒姆的女巫》，11/28 14:00、11/29 13:00、12/5 14:00、12/6 13:00。演出约 105 分钟无中场，涉及敏感议题。",
       "url": "https://act-sf.org/villain",
       "link_type": "event",
       "source": "A.C.T. 官网"
@@ -1124,6 +671,14 @@
         {
           "date": "2026-11-29",
           "start": "14:00"
+        },
+        {
+          "date": "2026-12-05",
+          "start": "11:00"
+        },
+        {
+          "date": "2026-12-06",
+          "start": "14:00"
         }
       ],
       "price": "票价 $30–$125",
@@ -1135,7 +690,7 @@
         "儿童剧",
         "节日"
       ],
-      "desc": "ODC 舞团 40 周年经典节日舞剧，绒布小兔子变成真兔子的故事，11/28 11:00、11/29 14:00。11/29 13:00 有免费映前谈话，适合带孩子提前到场。",
+      "desc": "ODC 舞团 40 周年经典节日舞剧，绒布小兔子变成真兔子的故事，11/28 与 12/5 11:00、11/29 与 12/6 14:00。11/29 13:00 有免费映前谈话，适合带孩子提前到场。",
       "url": "https://odc.dance/velveteenrabbit",
       "link_type": "event",
       "source": "ODC/Dance（官网）"
@@ -1156,6 +711,16 @@
         },
         {
           "date": "2026-11-29",
+          "start": "17:30",
+          "end": "21:00"
+        },
+        {
+          "date": "2026-12-05",
+          "start": "17:30",
+          "end": "22:00"
+        },
+        {
+          "date": "2026-12-06",
           "start": "17:30",
           "end": "21:00"
         }
@@ -1249,6 +814,14 @@
         {
           "date": "2026-11-29",
           "start": "12:00"
+        },
+        {
+          "date": "2026-12-05",
+          "start": "12:00"
+        },
+        {
+          "date": "2026-12-06",
+          "start": "12:00"
         }
       ],
       "time_note": "11/28 18:00–19:00 开幕亮灯仪式；免费圣诞老人合影自 11/28 起",
@@ -1277,13 +850,13 @@
       "sessions": [
         {
           "date": "2026-11-28",
-          "start": "16:00",
-          "end": "18:00"
+          "start": "16:30",
+          "end": "19:00"
         }
       ],
       "price": "免费（建议提前 RSVP）",
       "free": true,
-      "family": true,
+      "family": false,
       "outdoor": true,
       "tags": [
         "圣诞",
@@ -1293,7 +866,8 @@
       "desc": "耶巴布埃纳花园第二届假日亮灯仪式：免费参加，RSVP 非必需但建议提前登记。",
       "url": "https://yerbabuenagardens.org/events/2026-holiday-tree-lighting",
       "link_type": "event",
-      "source": "Yerba Buena Gardens 官网"
+      "source": "Yerba Buena Gardens 官网",
+      "time_note": "16:30–19:00；约 17:05 点亮圣诞树，随后旋转木马亮灯"
     },
     {
       "id": "zoppe-circus",
@@ -1397,11 +971,21 @@
       "sessions": [
         {
           "date": "2026-11-28",
-          "start": "10:00",
+          "start": "09:00",
           "end": "16:00"
         },
         {
           "date": "2026-11-29",
+          "start": "10:00",
+          "end": "16:00"
+        },
+        {
+          "date": "2026-12-05",
+          "start": "09:00",
+          "end": "16:00"
+        },
+        {
+          "date": "2026-12-06",
           "start": "10:00",
           "end": "16:00"
         }
@@ -1416,7 +1000,7 @@
         "冬季",
         "冰雪"
       ],
-      "desc": "探索博物馆冬季主题活动，无冰溜冰场、巨型姜饼屋与玩具工坊；11/28–29 10:00–16:00 开放，周末雪地玩乐区同步开放。",
+      "desc": "探索博物馆冬季主题活动，无冰溜冰场、巨型姜饼屋与玩具工坊；周六 9:00–16:00、周日 10:00–16:00 开放，周末雪地玩乐区同步开放。",
       "url": "https://bayareadiscoverymuseum.org/events/winter-wonderlab/",
       "link_type": "event",
       "source": "Bay Area Discovery Museum"
@@ -1437,6 +1021,16 @@
         },
         {
           "date": "2026-11-29",
+          "start": "09:30",
+          "end": "16:30"
+        },
+        {
+          "date": "2026-12-05",
+          "start": "09:30",
+          "end": "16:30"
+        },
+        {
+          "date": "2026-12-06",
           "start": "09:30",
           "end": "16:30"
         }
@@ -1473,9 +1067,19 @@
           "date": "2026-11-29",
           "start": "17:00",
           "end": "23:00"
+        },
+        {
+          "date": "2026-12-05",
+          "start": "16:00",
+          "end": "23:00"
+        },
+        {
+          "date": "2026-12-06",
+          "start": "16:00",
+          "end": "23:00"
         }
       ],
-      "time_note": "11/28–29 每晚 18:30–21:30 现场音乐",
+      "time_note": "12/5–6 16:00–23:00；11/28–29 每晚 18:30–21:30 现场音乐",
       "price": "免费入场，游乐设施 $1.50 起，无限次手环 $40",
       "free": true,
       "family": true,
@@ -1508,6 +1112,16 @@
           "date": "2026-11-29",
           "start": "17:00",
           "end": "21:00"
+        },
+        {
+          "date": "2026-12-05",
+          "start": "17:00",
+          "end": "21:00"
+        },
+        {
+          "date": "2026-12-06",
+          "start": "17:00",
+          "end": "21:00"
         }
       ],
       "time_note": "11/28 18:00 免费放映电影《Hook》",
@@ -1524,32 +1138,455 @@
       "url": "https://www.marinmommies.com/lights-crafts-and-movie-nights-holiday-fun-returns-marin-fairgrounds",
       "link_type": "listing",
       "source": "Marin Mommies（专题页）"
+    },
+    {
+      "id": "nutcracker-sfballet",
+      "title": "旧金山芭蕾舞团《胡桃夹子》",
+      "title_en": "San Francisco Ballet: The Nutcracker",
+      "region": "sf",
+      "city": "San Francisco",
+      "venue": "War Memorial Opera House",
+      "address": "301 Van Ness Ave",
+      "sessions": [
+        {
+          "date": "2026-12-05",
+          "start": "14:00"
+        },
+        {
+          "date": "2026-12-06",
+          "start": "14:00"
+        }
+      ],
+      "time_note": "12/5–6 每天 14:00 与 19:00 两场",
+      "price": "$55 起",
+      "free": false,
+      "family": true,
+      "outdoor": false,
+      "tags": [
+        "芭蕾",
+        "节日",
+        "亲子"
+      ],
+      "desc": "旧金山芭蕾舞团经典《胡桃夹子》，12/4–27 在歌剧院上演：维多利亚时代旧金山背景、现场乐团伴奏，约 2 小时含中场休息。5 岁以上适宜，3 岁以下谢绝入场；周末建议订下午场。",
+      "url": "https://www.sfballet.org/productions/nutcracker/",
+      "link_type": "event",
+      "source": "SF Ballet 官网"
+    },
+    {
+      "id": "smuin-christmas-ballet",
+      "title": "Smuin 圣诞芭蕾（山景城）",
+      "title_en": "Smuin's The Christmas Ballet",
+      "region": "peninsula",
+      "city": "Mountain View",
+      "venue": "Mountain View Center for the Performing Arts",
+      "address": "500 Castro St, Mountain View",
+      "sessions": [
+        {
+          "date": "2026-12-05",
+          "start": "14:00"
+        },
+        {
+          "date": "2026-12-06",
+          "start": "14:00"
+        }
+      ],
+      "time_note": "12/5 14:00 / 19:30 两场",
+      "price": "$25–120",
+      "free": false,
+      "family": false,
+      "outdoor": false,
+      "tags": [
+        "芭蕾",
+        "节日",
+        "舞蹈"
+      ],
+      "desc": "Smuin 当代芭蕾年度圣诞舞剧：古典与现代混搭，含新编作品与《Santa Baby》等经典段落，约 2 小时含中场休息。半岛场仅 12/3–6，之后移师旧金山。",
+      "url": "https://www.smuinballet.org/events/christmas-ballet-2026/",
+      "link_type": "event",
+      "source": "Smuin Ballet 官网"
+    },
+    {
+      "id": "lets-glow-sf",
+      "title": "Let's Glow SF 节日灯光投影艺术节",
+      "title_en": "Let's Glow SF 2026",
+      "region": "sf",
+      "city": "San Francisco",
+      "venue": "Downtown San Francisco",
+      "address": "1 Ferry Building",
+      "sessions": [
+        {
+          "date": "2026-12-05",
+          "start": "17:30",
+          "end": "22:00"
+        },
+        {
+          "date": "2026-12-06",
+          "start": "17:30",
+          "end": "22:00"
+        }
+      ],
+      "price": "免费",
+      "free": true,
+      "family": true,
+      "outdoor": true,
+      "tags": [
+        "灯光",
+        "投影",
+        "节日"
+      ],
+      "desc": "全美最大免费假日投影艺术节：19 位国际艺术家的动画投影点亮市中心 6 栋建筑，步行路线约 1.1 英里、需 2.5 小时。12/4–13 每晚 17:30–22:00 循环播放，随到随看；官网有免费语音导览。",
+      "url": "https://www.eventbrite.com/e/lets-glow-sf-2026-tickets-2004206444427",
+      "link_type": "event",
+      "source": "Eventbrite"
+    },
+    {
+      "id": "east-bay-open-studios",
+      "title": "东湾艺术家开放工作室（冬季）",
+      "title_en": "East Bay Open Studios: Winter 2026",
+      "region": "east-bay",
+      "city": "Oakland",
+      "venue": "东湾多地艺术家工作室",
+      "sessions": [
+        {
+          "date": "2026-12-05",
+          "start": "11:00",
+          "end": "17:00"
+        },
+        {
+          "date": "2026-12-06",
+          "start": "11:00",
+          "end": "17:00"
+        }
+      ],
+      "price": "免费（可向艺术家直接购买作品）",
+      "free": true,
+      "family": false,
+      "outdoor": false,
+      "tags": [
+        "艺术",
+        "工作室",
+        "市集"
+      ],
+      "desc": "始于 1974 年的东湾开放工作室：210 多位艺术家开放工作室与画廊，按官网名录与地图自助参观、可直接购买作品。先上官网查艺术家地图再规划路线。",
+      "url": "https://www.eventbrite.com/e/east-bay-open-studios-winter-2026-tickets-2003028839178",
+      "link_type": "event",
+      "source": "Eventbrite"
+    },
+    {
+      "id": "omca-holiday-market",
+      "title": "OMCA 博物馆假日市集",
+      "title_en": "Holiday Market at the Museum!",
+      "region": "east-bay",
+      "city": "Oakland",
+      "venue": "Oakland Museum of California",
+      "address": "1000 Oak St, Oakland",
+      "sessions": [
+        {
+          "date": "2026-12-05",
+          "start": "11:30",
+          "end": "16:00"
+        }
+      ],
+      "price": "免费入场（展厅门票另计）",
+      "free": true,
+      "family": false,
+      "outdoor": false,
+      "tags": [
+        "市集",
+        "手作",
+        "节日"
+      ],
+      "desc": "OMCA 一年一度的假日市集：本地摊主售卖首饰、艺术版画、纺织品与宠物礼物，适合挑节日礼物。仅 12/5 一天；12/6 首个周日展厅免费开放。",
+      "url": "https://museumca.org/events/",
+      "link_type": "listing",
+      "source": "OMCA 官网"
+    },
+    {
+      "id": "lighted-yacht-parade",
+      "title": "奥克兰灯船巡游（第 50 届）",
+      "title_en": "Oakland Lighted Yacht Parade",
+      "region": "east-bay",
+      "city": "Oakland",
+      "venue": "Jack London Square 滨水区",
+      "address": "481 Water St, Oakland",
+      "sessions": [
+        {
+          "date": "2026-12-05",
+          "start": "17:30"
+        }
+      ],
+      "time_note": "17:30 奥克兰交响合唱团表演，随后船队巡游",
+      "price": "免费观赏",
+      "free": true,
+      "family": true,
+      "outdoor": true,
+      "tags": [
+        "游行",
+        "灯光",
+        "节日"
+      ],
+      "desc": "第 50 届灯船巡游：装饰彩灯的船队巡游奥克兰—阿拉米达河口，免费在杰克伦敦广场滨水区观看。提前到场占位，顺路可在广场订晚餐。",
+      "url": "https://www.freekidsevents.com/us/ca/oakland/christmas/",
+      "link_type": "listing",
+      "source": "Free Kids Events（奥克兰免费活动列表）"
+    },
+    {
+      "id": "kamasi-washington-uc-theatre",
+      "title": "Kamasi Washington 爵士慈善夜（伯克利）",
+      "title_en": "Kamasi Washington w/ Bartees Strange",
+      "region": "east-bay",
+      "city": "Berkeley",
+      "venue": "The UC Theatre",
+      "address": "2036 University Ave, Berkeley",
+      "sessions": [
+        {
+          "date": "2026-12-05",
+          "start": "20:00"
+        }
+      ],
+      "time_note": "19:00 开门",
+      "price": "票价约 $71 起（二级市场）",
+      "free": false,
+      "family": false,
+      "outdoor": false,
+      "tags": [
+        "爵士",
+        "音乐",
+        "慈善"
+      ],
+      "desc": "萨克斯手 Kamasi Washington 的 KEXP 圣诞慈善巡演，Bartees Strange 与 Hannah Lew 同台，收益支持 KEXP。UC Theatre 在市中心，BART 直达。",
+      "url": "https://www.ticketmaster.com/kamasi-washington-tickets/artist/2125319",
+      "link_type": "listing",
+      "source": "Ticketmaster"
+    },
+    {
+      "id": "string-cheese-fox",
+      "title": "The String Cheese Incident 演唱会",
+      "title_en": "The String Cheese Incident · Just Keep Spinning Tour",
+      "region": "east-bay",
+      "city": "Oakland",
+      "venue": "Fox Theater",
+      "address": "1807 Telegraph Ave, Oakland",
+      "sessions": [
+        {
+          "date": "2026-12-05",
+          "start": "19:00"
+        }
+      ],
+      "price": "票价约 $90 起（二级市场）",
+      "free": false,
+      "family": false,
+      "outdoor": false,
+      "tags": [
+        "摇滚",
+        "音乐",
+        "即兴"
+      ],
+      "desc": "即兴摇滚乐队 String Cheese Incident 两晚连演的第二晚，长篇即兴 set。Fox Theater 在 19th St Oakland BART 站旁。",
+      "url": "https://americanarenas.com/city/oakland-events/concerts/december/",
+      "link_type": "listing",
+      "source": "American Arenas（演出列表）"
+    },
+    {
+      "id": "pwhl-sap-center",
+      "title": "PWHL 女子冰球：圣何塞海狮对明尼苏达霜",
+      "title_en": "PWHL San Jose Sea Lions vs. Minnesota Frost",
+      "region": "south-bay",
+      "city": "San Jose",
+      "venue": "SAP Center at San Jose",
+      "address": "525 W Santa Clara St, San Jose",
+      "sessions": [
+        {
+          "date": "2026-12-05",
+          "start": "16:00"
+        }
+      ],
+      "price": "票价约 $33 起（二级市场）",
+      "free": false,
+      "family": false,
+      "outdoor": false,
+      "tags": [
+        "冰球",
+        "体育"
+      ],
+      "desc": "PWHL 女子职业冰球：圣何塞海狮主场揭幕战迎战明尼苏达霜，12/5 16:00 开赛。赛后可步行去市中心逛圣诞公园。",
+      "url": "https://www.ticketmaster.com/pwhl-san-jose-tickets/artist/4697531",
+      "link_type": "listing",
+      "source": "Ticketmaster"
+    },
+    {
+      "id": "santana-row-snow",
+      "title": "Santana Row 人造雪夜",
+      "title_en": "Snow Showers @ Santana Row",
+      "region": "south-bay",
+      "city": "San Jose",
+      "venue": "Santana Row",
+      "sessions": [
+        {
+          "date": "2026-12-05",
+          "start": "18:00",
+          "end": "20:00"
+        }
+      ],
+      "price": "免费",
+      "free": true,
+      "family": true,
+      "outdoor": true,
+      "tags": [
+        "人造雪",
+        "节日",
+        "亲子"
+      ],
+      "desc": "12 月每个周二与周六晚 18:00–20:00，Santana Row 降下人造雪、配节日音乐，每半小时一场。同区还有精灵寻宝（12/1–23）。",
+      "url": "https://visitsiliconvalley.org/events?page=2",
+      "link_type": "listing",
+      "source": "Visit Silicon Valley"
+    },
+    {
+      "id": "san-rafael-winter-wonderland",
+      "title": "圣拉斐尔冬日仙境 45 周年",
+      "title_en": "City of San Rafael's Winter Wonderland: 45th Anniversary",
+      "region": "north-bay",
+      "city": "San Rafael",
+      "venue": "Downtown San Rafael（Fourth Street）",
+      "sessions": [
+        {
+          "date": "2026-12-05",
+          "start": "13:00",
+          "end": "18:00"
+        }
+      ],
+      "price": "免费",
+      "free": true,
+      "family": true,
+      "outdoor": true,
+      "tags": [
+        "节日",
+        "亲子",
+        "市集"
+      ],
+      "desc": "圣拉斐尔 45 周年冬日庆典：圣诞老人见面、儿童小火车、充气城堡、脸部彩绘与现场音乐，压轴点亮圣诞树。Fourth Street 封路举办，市内停车场免费。",
+      "url": "https://sanrafaelwinterwonderland.com",
+      "link_type": "event",
+      "source": "City of San Rafael"
+    },
+    {
+      "id": "fungus-fair",
+      "title": "第 54 届真菌节（南旧金山）",
+      "title_en": "MSSF 54th Annual Fungus Fair",
+      "region": "peninsula",
+      "city": "South San Francisco",
+      "venue": "El Camino High School",
+      "address": "1320 Mission Rd, South San Francisco",
+      "sessions": [
+        {
+          "date": "2026-12-06",
+          "start": "10:00",
+          "end": "17:00"
+        }
+      ],
+      "price": "$25（工作坊另收费）",
+      "free": false,
+      "family": true,
+      "outdoor": false,
+      "tags": [
+        "真菌",
+        "科学",
+        "展览"
+      ],
+      "desc": "旧金山真菌学会年度盛会：300 多种本地采集真菌标本展、专家讲座、蘑菇识别与染色/陶土/版画手工坊。工作坊票建议提前在 Eventbrite 订。",
+      "url": "https://www.eventbrite.com/e/mycological-society-of-san-francisco-54th-fungus-fair-tickets-1995039207976",
+      "link_type": "event",
+      "source": "Eventbrite"
+    },
+    {
+      "id": "muir-beach-holiday-arts-fair",
+      "title": "穆尔海滩假日艺术市集",
+      "title_en": "Muir Beach Holiday Arts Fair",
+      "region": "north-bay",
+      "city": "Muir Beach",
+      "venue": "Muir Beach Community Center",
+      "address": "19 Seacape Dr, Muir Beach",
+      "sessions": [
+        {
+          "date": "2026-12-05",
+          "start": "10:00",
+          "end": "17:00"
+        },
+        {
+          "date": "2026-12-06",
+          "start": "10:00",
+          "end": "16:00"
+        }
+      ],
+      "price": "免费入场",
+      "free": true,
+      "family": false,
+      "outdoor": false,
+      "tags": [
+        "市集",
+        "艺术",
+        "海边"
+      ],
+      "desc": "50 多年传统的海边假日艺术市集：40 多位本地艺术家售卖手工珠宝、玻璃器、陶瓷与花环。海边风大注意保暖，停车位有限。",
+      "url": "https://sf.funcheap.com/muir-beach-holiday-arts-fair-2026/",
+      "link_type": "event",
+      "source": "Funcheap 限额精选（详情页）"
+    },
+    {
+      "id": "poem-jam-sfpl",
+      "title": "Poem Jam 诗歌朗读会：致敬 Zitkala-Ša",
+      "title_en": "Poem Jam Celebrates Zitkala-Ša's American Indian Stories",
+      "region": "sf",
+      "city": "San Francisco",
+      "venue": "San Francisco Main Library",
+      "address": "100 Larkin St, San Francisco",
+      "sessions": [
+        {
+          "date": "2026-11-29",
+          "start": "13:00",
+          "end": "14:30"
+        }
+      ],
+      "price": "免费",
+      "free": true,
+      "family": false,
+      "outdoor": false,
+      "tags": [
+        "诗歌",
+        "读书",
+        "文化"
+      ],
+      "desc": "SFPL 每月诗歌朗读会：桂冠诗人 Kim Shuck 主持，致敬原住民作家 Zitkala-Ša《美国印第安人故事》。免费公开参加，属图书馆原住民文化系列。",
+      "url": "https://bayareahuman.org/e/evt-b84f70d1",
+      "link_type": "event",
+      "source": "湾区人文 bayareahuman.org"
     }
   ],
   "notes": [
     {
-      "title": "本期来源配比（按卡片来源标注计，共 45 条）",
-      "body": "场馆/主办方/市府与演出团体官网 25 条（55.6%）、Ticketmaster 5 条（11.1%）、Funcheap 4 条（8.9%，在约 13% 封顶内）、TodayTix 2 条（4.4%）、票务列表多源核对 1 条、Secret SF 1 条、Kids Out and About San Jose 1 条、Eventbrite 1 条、GoBayArea 日历 1 条、SeatGeek 1 条、SF Station 1 条、Visit Oakland 1 条、Marin Mommies 1 条。Eventbrite 详情页本轮仅 1 条：感恩节周末的大型活动多为场馆与票务站直售，Eventbrite 详情页产出偏低，未以发现页链接凑数。"
+      "title": "本期来源配比",
+      "body": "共 44 条。按卡片来源标注计：Funcheap 限额精选（详情页） 3 条、Ticketmaster 3 条、Eventbrite 3 条、Filoli 官网 1 条、Oakland Zoo 官网 1 条、Berkeley Rep 官网 1 条、sanjose.org（活动页） 1 条、SF Opera 官网 1 条、Gardens of Golden Gate Park 官网 1 条、Secret SF（专题页） 1 条、Berkeley Playhouse 官网 1 条、SeatGeek（赛事页） 1 条、SF Station 1 条、Funcheap 1 条、TodayTix 演出页 1 条、Opera San José 官网 1 条、A.C.T. 官网 1 条、ODC/Dance（官网） 1 条、SF Zoo 官网 1 条、主办方 San José Made 官网 1 条、Visit Oakland（专题页） 1 条、Christmas in the Park 官网 1 条、Yerba Buena Gardens 官网 1 条、City of Redwood City 1 条、San Francisco Chamber Orchestra 1 条、Temple Hill 1 条、Bay Area Discovery Museum 1 条、CuriOdyssey 1 条、Winter Wonderland San Jose 1 条、Marin Mommies（专题页） 1 条、SF Ballet 官网 1 条、Smuin Ballet 官网 1 条、OMCA 官网 1 条、Free Kids Events（奥克兰免费活动列表） 1 条、American Arenas（演出列表） 1 条、Visit Silicon Valley 1 条、City of San Rafael 1 条、湾区人文 bayareahuman.org 1 条。Funcheap 来源 4 条（9.1%，在约 13% 封顶内；其中新卡 1 条）；Eventbrite 3 条；Ticketmaster 3 条；湾区人文 1 条。"
     },
     {
-      "title": "Tier 1 逐源产出（11/28–29 新卡）",
-      "body": "Ticketmaster 1 条（勇士对快船；另有 Journey、Porter Robinson 仅二级市场高价票未收录）；SeatGeek 1 条（49 人对海鹰）；SF Station 1 条（Jackie Greene）；Funcheap 1 条（Hook 电影交响音乐会详情页；金门公园轮滑迪斯科并入 11/22 同名常设活动）；TodayTix 1 条（Cirque Kalabanté）；Opera San José 官网 1 条；A.C.T. 官网 1 条；ODC 官网 1 条；SF Zoo 官网 1 条；San José Made 官网 1 条（SJMADE 假日市集）；Visit Oakland 1 条（Joy to the Town）。Eventbrite 0 条新卡（11/28 摄影工作坊票价 $103 未收录；11/29 发现页多为 49 人接驳车）；Luma 城市 iCal 0 条（城市页仅显示至 11/17 的活动）；DoTheBay 0 条（当日列表仅用于交叉核对）；510 Families 0 条（Joy to the Town 改由 Visit Oakland 专题页收录）；Bay Area Kid Fun 0 条（胡桃夹子木偶音乐会、佐佩马戏团等无单一可核实活动页，改由 Tier 2 官方源收录）；Fox Theater、SAP Center、Shoreline、Greek Theatre、Bill Graham 在窗口内无活动。"
+      "title": "区域与类别",
+      "body": "旧金山 14 条（31.8%）、东湾 12 条、南湾 8 条、半岛 6 条、北湾 4 条。免费 18 条；family=true 20 条（45.5%）；listing 链接 10 条（22.7%）。每天活动数：11/28 25 条（免费 8）、11/29 25 条（免费 7）、12/5 28 条（免费 11）、12/6 22 条（免费 7）。start 为 null 的活动 0 条。活动资料于 2026年11月23日核对，票价与时间可能变动，出发前请点开来源页复核。"
     },
     {
-      "title": "Tier 2 逐源产出（11/28–29 新卡）",
-      "body": "sanjose.org 1 条（圣诞公园）；Yerba Buena Gardens 官网 1 条；City of Redwood City 1 条（佐佩马戏团）；SFCO 官网 1 条（伯克利胡桃夹子木偶音乐会）；Temple Hill 1 条；Bay Area Discovery Museum 1 条；CuriOdyssey 1 条；Winter Wonderland SJ 1 条；Marin Mommies 1 条（马林灯光秀）。0 条：SJPL、SFPL、SF Travel、Berkeley 市/图书馆、SF Rec & Park、OMCA、de Young、Children's Discovery Museum、Tech Interactive、Stanford Live、Humanitix、Meetup、Mommy Poppins、Secret SF、7x7、SFMOMA（仅 30 分钟导览未收录）、Cal Academy（Wowsabout 为常设新展未收录）。MarinBuzz、BayList、COYOTE 未单独核查；Eddie's List 免费周日邮件无访问权限，未核查。"
+      "title": "逐源产出与零产出",
+      "body": "Tier 1：Ticketmaster 2 条新卡（Kamasi Washington、PWHL 海狮揭幕战），勇士 11/29 为沿用；Eventbrite 3 条（Let's Glow SF、东湾开放工作室、真菌节）；Luma 0 条（城市页未直接列出 12/5–6 活动）；SF Station 0 条新卡（仅 3 个活动页浮出，均未收录）；DoTheBay 0 条新卡（仅作交叉核对）；Visit Silicon Valley 1 条（Santana Row 人造雪）；510 Families 1 条（灯船巡游，经免费活动列表核对）；Bay Area Kid Fun 0 条新卡（多项缺场馆/时间未收录）；Funcheap 1 条（穆尔海滩艺术市集）。Tier 2：Smuin 官网 1 条、SF Ballet 官网 1 条、OMCA 官网 1 条、City of San Rafael 1 条、湾区人文 1 条（Poem Jam 诗歌朗读会 11/29）。0 条：SJPL、SFPL（除 Poem Jam 外）、SF Travel、Berkeley 市/图书馆、SF Rec & Park、SFMOMA（市集仅 12/6 一日且未核实详情页）、Cal Academy（圣诞季为常设节目未单独收录）、Children's Discovery Museum（光明节活动未核实详情页）、Tech Interactive（极地游戏日未核实详情页）、Stanford Live、Humanitix、DICE、Resident Advisor、Meetup、Marin Mommies、Mommy Poppins、Kids Out and About San Jose、MarinBuzz、BayList、COYOTE、Secret SF、7x7。Fox Theater、SAP Center（除 PWHL 与 Rush 外）、Shoreline、Greek Theatre、Bill Graham 在窗口内无新增收录活动。"
     },
     {
-      "title": "区域与类别说明",
-      "body": "旧金山 17 条（37.8%）、东湾 9 条（20.0%）、南湾 10 条（22.2%）、半岛 5 条（11.1%）、北湾 4 条（8.9%）。免费 15 条；family=true 22 条（48.9%——公共灯光展按非明确亲子节目计为 false，见下）；listing 链接 12 条（26.7%，略高于 25% 目标——多条大型活动仅有列表或发现页可核对，未以不可靠的详情页凑数）。每天活动数：11/21 19 条、11/22 20 条、11/28 25 条、11/29 24 条。音乐 11 条、节庆 10 条、艺术/博物馆 5 条、体育 5 条。活动资料于 2026年11月16日核对，票价与时间可能变动，出发前请点开来源页复核。"
-    },
-    {
-      "title": "family 判定说明",
-      "body": "本期把 family=true 控制在一半以下：只有明确面向儿童或全家的活动才算 true（儿童剧、动物园、儿童博物馆、亲子手作、圣诞老人合影等）。一般的市集、演唱会、体育比赛与公共灯光展即使能带孩子也填 false——圣何塞假日灯会、Lightscape、圣诞公园与马林灯光秀因此计为 false。"
+      "title": "沿用核对与更正",
+      "body": "30 条 11/28–29 沿用活动全部复核确认、无取消。更正 4 处：Fiddler on the Roof 11/28 为 19:30（非 14:00）；耶巴布埃纳亮灯为 16:30–19:00；BADM 周六 9:00 开门、周日 10:00；圣何塞冬日仙境 12/5–6 为 16:00–23:00。17 条沿用活动延续至 12/5–6。"
     },
     {
       "title": "未收录",
-      "body": "11/28 斯坦福对 SMU、Cal 对匹兹堡橄榄球开球时间未公布，未收录；太平洋芭蕾《胡桃夹子》（11/27–29，Mountain View）场次时间未核实，未收录；Cal Academy Wowsabout 新展为常设展览，未收录；Journey（11/28 Chase Center）、Porter Robinson（11/28–29 Pier 48）仅二级市场高价票，未收录；Union Square 圣诞树点灯仪式日期仍未公布，未收录；CSMA 假日艺术市集（11/21 山景城）已核实但本期 45 条已满，未收录；11/22 49 人队对维京人是指定主场、但在墨西哥城进行，不在湾区，未收录。"
+      "body": "梅里特湖光明节大庆典（12/6）与 Piedmont 大道点灯（12/6）无独立可核实活动页、且与灯船巡游共用同一列表链接，未收录；南湾中文脱口秀开放麦（12/5）无可核实场馆名与票价，未收录；勇士 12/6 为 NBA Cup 待定场次（对手与时间未定），未收录；Journey（11/28 Chase Center）与 Porter Robinson（11/28–29 Pier 48）仅二级市场高价票，未收录；Roaring Camp 假日灯光火车在 Felton（圣克鲁斯县），超出五个区域范围，未收录；Marc Maron 脱口秀（12/5）已售罄，未收录；PAAM 假日盛典周六开场时间两源不一致（13:00 与 17:00），未收录。"
+    },
+    {
+      "title": "family 判定说明",
+      "body": "family=true 控制在一半以下：只有明确面向儿童或全家的活动才算 true（儿童剧、动物园、儿童博物馆、亲子手作、圣诞老人合影等）。一般的市集、演唱会、体育比赛与公共灯光展即使能带孩子也填 false——圣何塞假日灯会、Lightscape、圣诞公园与马林灯光秀因此计为 false；耶巴布埃纳亮灯与 Filoli 灯会按一般公众活动计为 false。"
     }
   ]
 }
